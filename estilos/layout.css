@@ -1,0 +1,181 @@
+
+
+/** Formatacao Geral **/
+
+body {
+    font-family: sans-serif, Arial, Helvetica;
+    font-size: 12px;
+}
+
+a {text-decoration: none;}
+
+a:active { color: red;}
+
+
+/*** Reutilizável ***/
+.linha-do-cabecalho, main, footer div.linha-do-rodape {
+    width: 100%;
+    max-width: 1300px;
+    margin: 0 auto;
+}
+
+
+header, footer {
+    width: 100%;
+}
+
+
+@media screen and (max-width: 1300px) {
+    .linha-do-cabecalho, main, footer div.linha-do-rodape {
+        padding: 0 2%;
+    }
+}
+/*** Cabecalho ***/
+header {
+    box-shadow: 0 0 10px #ddd;
+    line-height: 2;
+}
+
+.linha-do-cabecalho, 
+.linha-do-cabecalho ul {
+    display: flex;
+    align-items: center;
+}
+
+
+.linha-do-cabecalho > a {
+    font-size: 18px;
+    color: #333;
+    letter-spacing: 1px;
+}
+
+.linha-do-cabecalho a span {
+    color: #888;
+    font-size: 16px;
+}
+
+.linha-do-cabecalho ul {
+    margin-left: 15px;
+}
+
+.linha-do-cabecalho ul li {
+    display: flex;
+    align-items: center;
+    padding: 5px 8px;
+    margin-right: 2px;
+}
+
+.linha-do-cabecalho ul li:nth-child(1) {
+    min-width: 220px;
+}
+
+.linha-do-cabecalho ul li:hover {
+    background-color: #f8f8f8;
+    border-bottom: 1px solid #ddd;
+}
+
+.linha-do-cabecalho ul li input {
+    width: 10px;
+    height: 10px;
+    margin-right: 5px;
+    cursor: pointer;
+}
+
+.linha-do-cabecalho ul li label {
+    color: #333;
+}
+
+.linha-do-cabecalho ul li label:active {
+    color: red;
+}
+
+.linha-do-cabecalho ul li label:hover {
+    cursor: pointer;
+}
+
+/*** Botão de Impressão ***/
+.linha-do-cabecalho button {
+    display: block;
+    margin-left: auto;
+    margin-right: 10px;
+    padding: 6px 12px;
+    background-color: #fff;
+    
+    font-size: 14px;
+    cursor: pointer;
+    border-radius: 8px;;
+    border: thin solid #ddd;
+   
+}
+
+
+.linha-do-cabecalho button:hover {
+    background-color: #eee;
+    cursor: pointer;
+}
+
+/** Active ***/
+.linha-do-cabecalho ul li.activo {
+    border-left: thin solid #333;
+}
+
+
+.linha-do-cabecalho ul li.activo label {
+    font-weight: bold;
+    color: #333;
+}
+
+
+
+/* main */
+
+
+main {
+    margin: 30px auto;
+}
+
+
+
+/*** Footer ***/
+
+footer {
+    background-color: #dce4f4;
+}
+
+footer div.linha-do-rodape {
+    display: grid;
+    grid-template-columns: 285px 1015px;
+    align-items: center;
+    grid-template-rows: 80px;
+}
+
+
+footer div.linha-do-rodape p {
+    color: #333;
+    text-align: center;
+    line-height: 2;
+}
+
+
+footer div.linha-do-rodape div.outros-servicos h2 {
+    line-height: 2;
+}
+
+footer div.linha-do-rodape ul {
+    /*list-style: disclosure-closed;*/
+    list-style: lower-roman;
+    list-style-position: inside;
+    padding-left: 4%;
+}
+
+
+footer div.linha-do-rodape ul li {
+    line-height: 1.5;
+}
+
+footer div.linha-do-rodape ul li a,
+footer div.linha-do-rodape ul li a:visited {
+    color: #333;
+}
+
+

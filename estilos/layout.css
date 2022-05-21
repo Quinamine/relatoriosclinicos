@@ -1,7 +1,3 @@
-
-
-/** Formatacao Geral **/
-
 body {
     font-family: sans-serif, Arial, Helvetica;
     font-size: 12px;
@@ -9,28 +5,35 @@ body {
 
 a {text-decoration: none;}
 
-a:active { color: red;}
+a:active,
+.linha-do-cabecalho ul li label:active,
+.linha-do-cabecalho button:active {
+    color: red;
+}
 
+.linha-do-cabecalho ul li label:hover,
+.linha-do-cabecalho button:hover {
+    cursor: pointer;
+}
 
-/*** Reutilizável ***/
+/* SUMIR COM MOBILE LAYOUT */
+
+.linha-do-cabecalho  .hamburguer {
+    display: none;
+}
+
+/*** REUTLIZAVEL ***/
+header, footer {
+    width: 100%;
+}
+
 .linha-do-cabecalho, main, footer div.linha-do-rodape {
     width: 100%;
     max-width: 1300px;
     margin: 0 auto;
 }
 
-
-header, footer {
-    width: 100%;
-}
-
-
-@media screen and (max-width: 1300px) {
-    .linha-do-cabecalho, main, footer div.linha-do-rodape {
-        padding: 0 2%;
-    }
-}
-/*** Cabecalho ***/
+/* CABECALHO */
 header {
     box-shadow: 0 0 10px #ddd;
     line-height: 2;
@@ -42,7 +45,7 @@ header {
     align-items: center;
 }
 
-
+/* LOGO */
 .linha-do-cabecalho > a {
     font-size: 18px;
     color: #333;
@@ -54,6 +57,7 @@ header {
     font-size: 16px;
 }
 
+/* LISTA DE MENU OU PREFÊRENCIAS */
 .linha-do-cabecalho ul {
     margin-left: 15px;
 }
@@ -63,15 +67,12 @@ header {
     align-items: center;
     padding: 5px 8px;
     margin-right: 2px;
-}
-
-.linha-do-cabecalho ul li:nth-child(1) {
     min-width: 220px;
 }
 
 .linha-do-cabecalho ul li:hover {
-    background-color: #f8f8f8;
     border-bottom: 1px solid #ddd;
+    background-color: #f4f4f4;
 }
 
 .linha-do-cabecalho ul li input {
@@ -85,97 +86,82 @@ header {
     color: #333;
 }
 
-.linha-do-cabecalho ul li label:active {
-    color: red;
-}
-
-.linha-do-cabecalho ul li label:hover {
-    cursor: pointer;
-}
-
 /*** Botão de Impressão ***/
 .linha-do-cabecalho button {
     display: block;
     margin-left: auto;
     margin-right: 10px;
-    padding: 6px 12px;
-    background-color: #fff;
-    
-    font-size: 14px;
-    cursor: pointer;
-    border-radius: 8px;;
-    border: thin solid #ddd;
-   
+    padding: 6px 3px;
+    border-radius: 4px;;
+    border: none;
+    background-color: #444;
+    color: #fff;
+    font-family: sans-serif, ARIAL, Helvetica;
+    min-width: 100px;
 }
 
-
 .linha-do-cabecalho button:hover {
-    background-color: #eee;
-    cursor: pointer;
+    background-color: #000;
 }
 
 /** Active ***/
-.linha-do-cabecalho ul li.activo {
-    border-left: thin solid #333;
-}
-
-
 .linha-do-cabecalho ul li.activo label {
     font-weight: bold;
-    color: #333;
 }
 
-
-
 /* main */
-
-
 main {
     margin: 30px auto;
 }
 
 
-
-/*** Footer ***/
-
+/* RODAPÉ */
 footer {
     background-color: #dce4f4;
+    padding: 10px 0 50px;
 }
 
-footer div.linha-do-rodape {
-    display: grid;
-    grid-template-columns: 285px 1015px;
+footer .linha-do-rodape {
+    display: flex;
     align-items: center;
-    grid-template-rows: 80px;
+    
+}
+
+/* OUTROS SERVIÇOS */
+.linha-do-rodape div.outros-servicos {
+    flex-basis: calc(226px + 120px);
 }
 
 
-footer div.linha-do-rodape p {
-    color: #333;
-    text-align: center;
-    line-height: 2;
-}
-
-
-footer div.linha-do-rodape div.outros-servicos h2 {
-    line-height: 2;
-}
-
-footer div.linha-do-rodape ul {
+div.outros-servicos ul {
     /*list-style: disclosure-closed;*/
-    list-style: lower-roman;
+    list-style: circle;
     list-style-position: inside;
     padding-left: 4%;
 }
 
-
-footer div.linha-do-rodape ul li {
+div.outros-servicos h2,
+div.outros-servicos ul li {
     line-height: 1.5;
 }
 
-footer div.linha-do-rodape ul li a,
-footer div.linha-do-rodape ul li a:visited {
+div.outros-servicos ul li a,
+div.outros-servicos ul li a:visited {
     color: #333;
 }
+
+
+/* PARAGRAFO */
+div.linha-do-rodape p {
+    color: #333;
+    line-height: 2;
+    flex: 1;
+    text-align: center;
+}
+
+
+
+
+
 
 

@@ -10,7 +10,7 @@ main h1 {
 main h1 input {
     border: none;
     outline: none;
-    width: 280px;
+    width: 330px;
     border-bottom: 1px solid #444;
     font-size: 16px;
 }
@@ -62,6 +62,7 @@ main h1 input:focus, .col-de-inputs :not(input[readonly]):focus,
 .col-da-linha-superior {
     grid-row: 2;
     grid-column: 3/23;  
+    position: -webkit-sticky;
 	position: sticky;
 	top: 0;
 	background-color: #fff;
@@ -231,18 +232,18 @@ span.sem-borda-superior {
     line-height: 3;
 }
 
-.col-da-linha-de-assinatura p input {
-    border-bottom: 1px solid #444;
-}
-
-.col-da-linha-de-assinatura p {
+.col-da-linha-de-assinatura p:last-child {
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
 
+.col-da-linha-de-assinatura p input {
+    border-bottom: 1px solid #444;
+}
+
 .col-da-linha-de-assinatura p:first-child input {
-    width: 308px;
+    width: 312px;
 }
 
 .col-da-linha-de-assinatura p:last-child span:first-child input {
@@ -251,3 +252,98 @@ span.sem-borda-superior {
 
 
 
+/* RESPONSIVIDADE */
+
+@media screen and (max-width: 1300px) {
+    .linha-do-cabecalho, footer div.linha-do-rodape {
+        padding: 0 20px;
+    }
+
+    main {
+        overflow-x: hidden;
+    }
+
+    main .contentor-da-grade {
+        overflow-x: scroll;
+    }
+
+    .contentor-da-grade .col-de-consultas-e-diagnosticos,
+    .linha-de-faixas-etarias span:first-child,
+    .linha-de-sexo span:first-child,
+    .col-da-linha-de-assinatura {
+        position: -webkit-sticky;
+        position: sticky;
+        left: 0;
+        background-color: #fff;
+    }
+
+    .col-da-linha-de-assinatura {
+        padding-left: 20px;
+    }
+
+    .col-da-linha-de-assinatura p:first-child input {
+        width: 295px;
+    }
+}
+
+
+
+@media screen and (max-width: 1023px) {
+    .linha-do-cabecalho ul,
+    .linha-do-cabecalho button {
+        display: none;
+    }
+
+    .linha-do-cabecalho {
+        justify-content: space-between;
+    }
+
+    .hamburguer {
+        display: flex !important;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 25px;
+        padding: 6px;
+        border-radius: 5px;
+    }
+
+
+    .hamburguer div {
+        width: 15px;
+        height: 2px;
+        margin: 1.5px 0;
+        background-color: #888;
+    }
+
+    .hamburguer:hover {
+        background-color: #eee;
+        cursor: pointer;
+    }
+
+
+    .linha-do-cabecalho ul.visible {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        position: absolute;
+        top: 30px;
+        right: 22px;
+        width: 40vw;
+        height: 16vh;
+        background: #fff;
+        box-shadow: 0 0 5px #ddd;
+        border-radius: 2px;
+        padding: 4px;
+        transition-duration: 150ms;
+    }
+
+    .linha-do-cabecalho ul.visible li {
+        width: 100%;
+    }
+
+    .linha-do-cabecalho ul.visible li:hover{
+        border: none;
+        cursor: pointer;
+    }
+}

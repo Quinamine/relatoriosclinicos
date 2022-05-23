@@ -67,6 +67,9 @@ header {
     align-items: center;
     padding: 5px 8px;
     margin-right: 2px;
+}
+
+.linha-do-cabecalho ul li:first-child {
     min-width: 220px;
 }
 
@@ -82,9 +85,13 @@ header {
     cursor: pointer;
 }
 
-.linha-do-cabecalho ul li label {
+.linha-do-cabecalho ul li label,
+.linha-do-cabecalho ul li a, 
+.linha-do-cabecalho ul li a:visited {
     color: #333;
 }
+
+
 
 /*** Botão de Impressão ***/
 .linha-do-cabecalho button {
@@ -96,7 +103,7 @@ header {
     border: none;
     background-color: #444;
     color: #fff;
-    font-family: sans-serif, ARIAL, Helvetica;
+    font-family: sans-serif, Arial, Helvetica;
     min-width: 100px;
 }
 

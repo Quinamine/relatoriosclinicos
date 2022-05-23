@@ -1,21 +1,17 @@
 
 const customizarFicha = new Object({
 
-    marcarDefinicoes: () => {
-        const checkBoxes = document.querySelectorAll("header .atalho");
-    
-        for (const box of checkBoxes) {
-            box.addEventListener("change", () => {
-                box.checked 
-                ? box.parentElement.classList.add("activo") 
-                : box.parentElement.classList.remove("activo");
-            })
-        }
+    DenegrirReadonlyCelsDarker: () => {
+
+        readonlyCelsDarker.addEventListener("change", () => {
+            readonlyCelsDarker.checked 
+            ? readonlyCelsDarker.parentElement.classList.add("activo") 
+            : readonlyCelsDarker.parentElement.classList.remove("activo");
+        })
     }, 
 
     denegrirReadonlyCels: () => {
         const colunasdosInputs = document.getElementsByClassName("col-de-inputs");
-        const readonlyCelsDarker = document.getElementById("readonly-cels-darker");
 
         readonlyCelsDarker.addEventListener("change", () => {
             for (const col of colunasdosInputs) {
@@ -24,6 +20,29 @@ const customizarFicha = new Object({
                 : col.classList.remove("readonly");
             }
         })
+    },
+
+    readonlyCelsObs: () => {
+        // Declaracao das Variáveis necessárias
+        let observacao = document.querySelector("p.readonlycels-obs"),
+            trechodeObs = document.querySelector("p.readonlycels-obs span");
+            tempodeObs = 1200;
+    
+        // Mostrar Obseervação
+        observacao.classList.add("on");
+    
+        // Recomendar "Dark readonly Cels"
+        if(!readonlyCelsDarker.checked) {
+            trechodeObs.classList.add("show");
+            tempodeObs = 3500;
+        }
+        else {
+            trechodeObs.classList.remove("show");
+        }
+      
+        setTimeout(() => {
+            observacao.classList.remove("on");
+        }, tempodeObs);
     },
 
     // MENU MOBILE
@@ -45,12 +64,19 @@ const customizarFicha = new Object({
 });
 
 
-
+let readonlyCelsDarker;
 window.addEventListener("load", () => {
-    customizarFicha.marcarDefinicoes();
-    customizarFicha.denegrirReadonlyCels();
+    readonlyCelsDarker = document.getElementById("readonly-cels-darker");
 
+    customizarFicha.DenegrirReadonlyCelsDarker();
+    customizarFicha.denegrirReadonlyCels();
     customizarFicha.abrirMenuMobile();
+
+    /**  Readonly els*/
+    let readonlyCels = document.querySelectorAll(".col-de-inputs input[readonly]");
+    for (const cel of readonlyCels) {
+        cel.addEventListener("click", customizarFicha.readonlyCelsObs); 
+    } 
 })
 
 

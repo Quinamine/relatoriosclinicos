@@ -258,7 +258,7 @@ span.sem-borda-superior {
 
 /* OBSERVACOES */
 
-.observacoes p.obs {
+.observacoes p.readonlycels-obs {
     max-width: 263px;
     padding: 10px;
     background-color: #fff;
@@ -273,27 +273,21 @@ span.sem-borda-superior {
     transition: all 20ms linear; 
 }
 
-.observacoes p.obs.on {
+.observacoes p.readonlycels-obs.on {
     opacity: 1;
     bottom: calc(50vh - 34px * 1/2); 
 }
 
-.observacoes p.obs > span {
+.observacoes p.readonlycels-obs > span {
     display: none;
 }
 
-.observacoes p.obs > span.show {
+.observacoes p.readonlycels-obs > span.show {
     display: initial !important;
 }
 
-.observacoes p.obs > span.show > span.entre-aspas {
+.observacoes p.readonlycels-obs > span.show > span.entre-aspas {
     font-weight: bold;
-}
-
-/*** SETAS DE ROLAGEM ***/
-
-.observacoes div.ancestral-de-seta {
-    display: none;
 }
 
 /* RESPONSIVIDADE */
@@ -330,45 +324,6 @@ span.sem-borda-superior {
     }
 
      /** SETAS ***/
-
-    .observacoes div.ancestral-de-seta {
-        display: block;
-        width: 50px;
-        height: 100vh; 
-        position: fixed;
-        top: 0;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        color: #fff;
-
-        transition-duration: 100ms;
-    }
-
-    .observacoes div.ancestral-de-seta:hover span {
-        background-color: rgba(0, 0, 0, .3);
-        flex: 1;
-        font-size: 50px;
-        text-align: center;
-        transition-duration: 100ms;
-        border-radius: 50%;
-    }
-
-    .observacoes div.ancestral-de-seta span:hover {
-        cursor: pointer;
-    }
-
-    .observacoes div.ancestral-de-seta span:active {
-        background-color: rgba(0, 0, 0, .6);
-    }
-
-    .observacoes div.ancestral-de-seta.lt {
-        left: 0;
-    }
-    
-    .observacoes div.ancestral-de-seta.gt {
-        right: 0;
-    }
 }
 
 

@@ -15,14 +15,30 @@ const customizarFicha = new Object({
 
     denegrirReadonlyCels: () => {
         const colunasdosInputs = document.getElementsByClassName("col-de-inputs");
-        const atalhodeBg = document.getElementById("atalho-de-bg");
+        const readonlyCelsDarker = document.getElementById("readonly-cels-darker");
 
-        atalhodeBg.addEventListener("change", () => {
+        readonlyCelsDarker.addEventListener("change", () => {
             for (const col of colunasdosInputs) {
-                atalhodeBg.checked
+                readonlyCelsDarker.checked
                 ? col.classList.add("readonly")
                 : col.classList.remove("readonly");
             }
+        })
+    },
+
+    // MENU MOBILE
+    abrirMenuMobile: () => {
+
+        const menuHamburguer = document.querySelector(".hamburguer");
+        const listadeDefinicoes = document.querySelector("header ul");
+        const main = document.querySelector("main");
+
+        menuHamburguer.addEventListener("click", () => {
+            listadeDefinicoes.classList.toggle("visible");
+        })
+
+        main.addEventListener("click", () => {
+            listadeDefinicoes.classList.remove("visible");
         })
     }
     
@@ -33,6 +49,8 @@ const customizarFicha = new Object({
 window.addEventListener("load", () => {
     customizarFicha.marcarDefinicoes();
     customizarFicha.denegrirReadonlyCels();
+
+    customizarFicha.abrirMenuMobile();
 })
 
 

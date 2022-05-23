@@ -10,7 +10,7 @@ main h1 {
 main h1 input {
     border: none;
     outline: none;
-    width: 330px;
+    width: 364px;
     border-bottom: 1px solid #444;
     font-size: 16px;
 }
@@ -34,8 +34,13 @@ main h1 input:focus, .col-de-inputs :not(input[readonly]):focus,
 .col-de-inputs input[readonly] {
     transition: background-color 400ms ease-out;
 }
+
 .col-de-inputs.readonly input[readonly] {
     background-color: #ccc;
+}
+
+.col-de-inputs input[readonly]:hover {
+    cursor: initial;
 }
 
 .bold {
@@ -251,6 +256,45 @@ span.sem-borda-superior {
 }
 
 
+/* OBSERVACOES */
+
+.observacoes p.obs {
+    max-width: 263px;
+    padding: 10px;
+    background-color: #fff;
+    box-shadow: 0 0 15px #555;
+    border-radius: 6px;
+    font-size: 14px;
+    position: fixed;
+    left: calc(50vw - 262px * 1/2);
+    bottom: 0;
+    opacity: 0;
+    line-height: 1.4;
+    transition: all 20ms linear; 
+}
+
+.observacoes p.obs.on {
+    opacity: 1;
+    bottom: calc(50vh - 34px * 1/2); 
+}
+
+.observacoes p.obs > span {
+    display: none;
+}
+
+.observacoes p.obs > span.show {
+    display: initial !important;
+}
+
+.observacoes p.obs > span.show > span.entre-aspas {
+    font-weight: bold;
+}
+
+/*** SETAS DE ROLAGEM ***/
+
+.observacoes div.ancestral-de-seta {
+    display: none;
+}
 
 /* RESPONSIVIDADE */
 
@@ -284,7 +328,49 @@ span.sem-borda-superior {
     .col-da-linha-de-assinatura p:first-child input {
         width: 295px;
     }
+
+     /** SETAS ***/
+
+    .observacoes div.ancestral-de-seta {
+        display: block;
+        width: 50px;
+        height: 100vh; 
+        position: fixed;
+        top: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #fff;
+
+        transition-duration: 100ms;
+    }
+
+    .observacoes div.ancestral-de-seta:hover span {
+        background-color: rgba(0, 0, 0, .3);
+        flex: 1;
+        font-size: 50px;
+        text-align: center;
+        transition-duration: 100ms;
+        border-radius: 50%;
+    }
+
+    .observacoes div.ancestral-de-seta span:hover {
+        cursor: pointer;
+    }
+
+    .observacoes div.ancestral-de-seta span:active {
+        background-color: rgba(0, 0, 0, .6);
+    }
+
+    .observacoes div.ancestral-de-seta.lt {
+        left: 0;
+    }
+    
+    .observacoes div.ancestral-de-seta.gt {
+        right: 0;
+    }
 }
+
 
 
 
@@ -294,10 +380,19 @@ span.sem-borda-superior {
         display: none;
     }
 
+    .linha-do-cabecalho ul li:hover {
+        background-color: initial;
+    }
+
+    .linha-do-cabecalho ul li label:active {
+        background-color: #f4f4f4;
+    }
+
     .linha-do-cabecalho {
         justify-content: space-between;
     }
 
+    /* Menu mobile */
     .hamburguer {
         display: flex !important;
         flex-direction: column;
@@ -321,7 +416,7 @@ span.sem-borda-superior {
         cursor: pointer;
     }
 
-
+    /* Definições do menu */
     .linha-do-cabecalho ul.visible {
         display: flex;
         flex-direction: column;
@@ -330,9 +425,9 @@ span.sem-borda-superior {
         top: 30px;
         right: 22px;
         width: 40vw;
-        height: 16vh;
+        height: 20vh;
         background: #fff;
-        box-shadow: 0 0 5px #ddd;
+        box-shadow: 0 0 8px #ddd;
         border-radius: 2px;
         padding: 4px;
         transition-duration: 150ms;
@@ -347,3 +442,73 @@ span.sem-borda-superior {
         cursor: pointer;
     }
 }
+
+
+@media screen and (max-width: 775px) {
+    .linha-do-cabecalho ul.visible {
+        width: 55vw;
+    }
+}
+
+@media screen and (max-width: 425px) {
+    .linha-do-cabecalho ul.visible {
+        width: 95vw;
+    }
+}
+
+
+@media screen and (max-width: 750px) {
+    .linha-do-rodape {
+        flex-direction: column;
+        align-items: flex-start !important;
+    }
+
+    .linha-do-rodape div.outros-servicos {
+        width: 100%;
+        flex-basis: initial !important;
+    }
+
+
+    .linha-do-rodape p {
+        margin-top: 5px;
+    }
+}
+
+
+
+
+@media print {
+    body {
+        visibility: hidden;
+    }
+
+    
+
+    main {
+        margin-top: 0;
+    } 
+    .contentor-da-grade {
+        visibility: initial;
+    }
+
+    .borda-escura {
+        border-top: 10px solid #444;
+    }
+
+    .col-de-enumeracao-das-linhas span {
+        border: 1px solid #888;
+        border-top: none;
+        color: #888
+    }
+
+    .col-da-linha-superior .linha-de-enumeracao-das-colunas span  {
+        border-color: #888;
+    }
+
+    body .col-de-inputs input {
+        border-color: #444 !important;
+    }
+
+    
+}
+

@@ -11,7 +11,8 @@
     <link rel="stylesheet" href="estilos/ficha-de-consultas.css" />
     <script src="funcoes/somarcasos.js"></script>
     <script src="funcoes/consultasexternas.js"></script>
-    <script src="funcoes/customizarficha.js"></script>    
+    <script src="funcoes/customizarficha.js"></script> 
+    <script src="funcoes/observacoes.js"></script>   
 </head>
 <body>
     <div id="involucro-de-todo-conteudo">
@@ -21,10 +22,10 @@
                 <a href="totalizador-de-resumo-mensal-de-consultas-externas.html">Totalizador <span>de</span> <span title="Resumo Mensal de Consultas Externas">RMCE</span></a>
 
                                       
-                <ul class="">
-                    <li title="Escurece o fundo de todas as células automáticas (Sub-totais e Totais).">
-                        <input type="checkbox" id="atalho-de-bg" class="atalho"/> 
-                        <label for="atalho-de-bg">Denegrir as células automáticas</label>
+                <ul>
+                    <li title="Escurecer o fundo de todas as células automáticas (Sub-totais e Totais).">
+                        <input type="checkbox" id="readonly-cels-darker"class="atalho"/> 
+                        <label for="readonly-cels-darker">Denegrir as células automáticas</label>
                     </li>
                     <li title="">
                         <input type="checkbox" id="atalho-de-obs" class="atalho"/> 
@@ -2008,6 +2009,20 @@
                 </div>
 
             </div>
+
+            <div class="observacoes">
+                <p class="obs">Inacessível. Esta célula é só de leitura. <span> Marque a opção <span class="entre-aspas">"Denegrir as células automáticas"</span> para distiguir as células de leitura das outras.</span></p>
+
+
+                <div class="ancestral-de-seta lt">
+                    <span> &lt; </span>
+                </div>
+
+                <div class="ancestral-de-seta gt">
+                    <span> &gt </span>
+                </div>
+            </div>
+
         </main>
 
 
@@ -2026,7 +2041,7 @@
                     </ul>
                 </div>
 
-                <p>Desenvolvido por <a href="https://quinamine.github.io/abordagem-pediatrica/paginas/sobremim.html">Adérito Félix Quinamine</a> &copy; Todos os direitos reservados | Desenvolvimento e Programação Web 2022</p>
+                <p>Desenvolvido com muito &#128153; por <a href="https://quinamine.github.io/abordagem-pediatrica/paginas/sobremim.html">Adérito Félix Quinamine</a> | &copy; Todos os direitos reservados | Desenvolvimento e Programação Web 2022</p>
 
             </div>
         </footer>

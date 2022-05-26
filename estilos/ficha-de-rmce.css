@@ -1,5 +1,11 @@
+main {
+    width: 100%;
+    max-width: 1300px;
+    margin: 30px auto;
+}
 
-/** Titulos **/
+
+/* TÍTULOS */
 
 main h1 {
     font-size: 24px;
@@ -15,13 +21,12 @@ main h1 input {
     font-size: 16px;
 }
 
-
 .contentor-da-grade {
     display: grid;
     grid-template-columns: 20px 90px 228px repeat(19, 50px);
 }
 
-/*** Formatacoes Comuns ***/
+/* FORMATAÇÕES COMUNS */
 
 main h1 input:focus, .col-de-inputs :not(input[readonly]):focus,
 .linha-de-enumeracao-das-colunas p input:focus,
@@ -30,7 +35,7 @@ main h1 input:focus, .col-de-inputs :not(input[readonly]):focus,
 }
 
 
-/*** Classe manipulável com JS ***/
+/* Classe manipulável com JS */
 .col-de-inputs input[readonly] {
     transition: background-color 400ms ease-out;
 }
@@ -63,7 +68,8 @@ main h1 input:focus, .col-de-inputs :not(input[readonly]):focus,
     color: #333;
 }
 
-/** Linha Superior **/
+/* LINHA SUPERIOR */
+
 .col-da-linha-superior {
     grid-row: 2;
     grid-column: 3/23;  
@@ -73,11 +79,10 @@ main h1 input:focus, .col-de-inputs :not(input[readonly]):focus,
 	background-color: #fff;
 }
 
-/** Enumeracao das Colunas **/
+/* ENUMERAÇÃO DAS COLUNAS */
 .col-da-linha-superior .linha-de-enumeracao-das-colunas {
     grid-template-rows: 18px;
 }
-
 
 .linha-de-enumeracao-das-colunas p {
     text-align: left;
@@ -94,8 +99,7 @@ main h1 input:focus, .col-de-inputs :not(input[readonly]):focus,
     border-color: #aaa;
 }
 
-
-/*** Faixas Etarias ***/
+/* FAIXAS ETÁRIAS */
 
 .col-da-linha-superior .linha-de-faixas-etarias {
     display: grid;
@@ -103,7 +107,6 @@ main h1 input:focus, .col-de-inputs :not(input[readonly]):focus,
     grid-template-rows: 24px;
     text-align: center;
 }
-
 
 .col-da-linha-superior span {
     border-right: 1px solid #888;
@@ -120,12 +123,12 @@ main h1 input:focus, .col-de-inputs :not(input[readonly]):focus,
     margin-left: -1px;
 }
 
-/*** Sexo ***/
+/* SEXO */
 span.sem-borda-superior {
     border-top: none;
 }
 
-/** Borda escura **/
+/* BORDA ESCURA */
 .borda-escura {
     grid-row: 3;
     grid-column: 1/23;
@@ -134,8 +137,7 @@ span.sem-borda-superior {
     background-color: #444;
 }
 
-
-/*** Enumeracao das linhas ***/
+/* ENUMERAÇÃO DAS LINHAS */
 
 .col-de-enumeracao-das-linhas,
 .col-de-titulos-principais-das-linhas,
@@ -144,14 +146,12 @@ span.sem-borda-superior {
     grid-row: 4;
 }
 
-
 .col-de-enumeracao-das-linhas,
 .col-de-consultas-e-diagnosticos,
 .col-de-inputs {
     display: grid;
     grid-template-rows: repeat(53, 24px);
 }
-
 
 .col-da-linha-superior span,
 .col-de-enumeracao-das-linhas span,
@@ -161,21 +161,18 @@ span.sem-borda-superior {
     align-items: center;
 }
 
-
 .col-de-enumeracao-das-linhas  span {
     background-color: #444;
     color: #fff;
     border-bottom: 1px solid #aaa;
 }
 
-
-/*** Titulos principais das linhas ***/
+/* TÍTULOS PRINCIPAIS DAS LINHAS */
 
 .col-de-titulos-principais-das-linhas {
     display: grid;
     grid-template-rows: calc(24px*3) calc(24px*4) 1fr calc(24px*6) repeat(2, calc(24px*3));
 }
-
 
 .col-de-titulos-principais-das-linhas div {
     border-bottom: 1px solid #888;
@@ -187,7 +184,8 @@ span.sem-borda-superior {
     transform: rotate(270deg);
 }
 
-/*** Consultas e diagnosticos ***/
+/* CONSULTAS E DIAGNÓSTICOS */
+
 .col-de-consultas-e-diagnosticos {
     border-left: 1px solid #888;
     border-right: 1px solid #888;
@@ -201,7 +199,7 @@ span.sem-borda-superior {
     padding-right: 1px;
 }
 
-/*** Campos de insercao ***/
+/* CAMPOS DE INSERÇÃO */
 
 .col-de-inputs {
     grid-template-columns: 50px;
@@ -225,7 +223,8 @@ span.sem-borda-superior {
     -moz-appearance: textfield;
 }
 
-/** Linha de assinatura **/
+/* LINHA DE ASSINATURA */
+
 .col-da-linha-de-assinatura {
     grid-row: 5;
     grid-column: 1/9;
@@ -254,216 +253,3 @@ span.sem-borda-superior {
 .col-da-linha-de-assinatura p:last-child span:first-child input {
     width: 276px;
 }
-
-
-/* OBSERVACOES */
-
-.observacoes p.readonlycels-obs {
-    max-width: 263px;
-    padding: 10px;
-    background-color: #fff;
-    box-shadow: 0 0 15px #555;
-    border-radius: 6px;
-    font-size: 14px;
-    position: fixed;
-    left: calc(50vw - 262px * 1/2);
-    bottom: 0;
-    opacity: 0;
-    line-height: 1.4;
-    transition: all 20ms linear; 
-}
-
-.observacoes p.readonlycels-obs.on {
-    opacity: 1;
-    bottom: calc(50vh - 34px * 1/2); 
-}
-
-.observacoes p.readonlycels-obs > span {
-    display: none;
-}
-
-.observacoes p.readonlycels-obs > span.show {
-    display: initial !important;
-}
-
-.observacoes p.readonlycels-obs > span.show > span.entre-aspas {
-    font-weight: bold;
-}
-
-/* RESPONSIVIDADE */
-
-@media screen and (max-width: 1300px) {
-    .linha-do-cabecalho, footer div.linha-do-rodape {
-        padding: 0 20px;
-    }
-
-    main {
-        overflow-x: hidden;
-    }
-
-    main .contentor-da-grade {
-        overflow-x: scroll;
-    }
-
-    .contentor-da-grade .col-de-consultas-e-diagnosticos,
-    .linha-de-faixas-etarias span:first-child,
-    .linha-de-sexo span:first-child,
-    .col-da-linha-de-assinatura {
-        position: -webkit-sticky;
-        position: sticky;
-        left: 0;
-        background-color: #fff;
-    }
-
-    .col-da-linha-de-assinatura {
-        padding-left: 20px;
-    }
-
-    .col-da-linha-de-assinatura p:first-child input {
-        width: 295px;
-    }
-
-     /** SETAS ***/
-}
-
-
-
-
-@media screen and (max-width: 1023px) {
-    .linha-do-cabecalho ul,
-    .linha-do-cabecalho button {
-        display: none;
-    }
-
-    .linha-do-cabecalho ul li:hover {
-        background-color: initial;
-    }
-
-    .linha-do-cabecalho ul li label:active {
-        background-color: #f4f4f4;
-    }
-
-    .linha-do-cabecalho {
-        justify-content: space-between;
-    }
-
-    /* Menu mobile */
-    .hamburguer {
-        display: flex !important;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        width: 25px;
-        padding: 6px;
-        border-radius: 5px;
-    }
-
-
-    .hamburguer div {
-        width: 15px;
-        height: 2px;
-        margin: 1.5px 0;
-        background-color: #888;
-    }
-
-    .hamburguer:hover {
-        background-color: #eee;
-        cursor: pointer;
-    }
-
-    /* Definições do menu */
-    .linha-do-cabecalho ul.visible {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        position: absolute;
-        top: 30px;
-        right: 22px;
-        width: 40vw;
-        height: 20vh;
-        background: #fff;
-        box-shadow: 0 0 8px #ddd;
-        border-radius: 2px;
-        padding: 4px;
-        transition-duration: 150ms;
-    }
-
-    .linha-do-cabecalho ul.visible li {
-        width: 100%;
-    }
-
-    .linha-do-cabecalho ul.visible li:hover{
-        border: none;
-        cursor: pointer;
-    }
-}
-
-
-@media screen and (max-width: 775px) {
-    .linha-do-cabecalho ul.visible {
-        width: 55vw;
-    }
-}
-
-@media screen and (max-width: 425px) {
-    .linha-do-cabecalho ul.visible {
-        width: 95vw;
-    }
-}
-
-
-@media screen and (max-width: 750px) {
-    .linha-do-rodape {
-        flex-direction: column;
-        align-items: flex-start !important;
-    }
-
-    .linha-do-rodape div.outros-servicos {
-        width: 100%;
-        flex-basis: initial !important;
-    }
-
-
-    .linha-do-rodape p {
-        margin-top: 5px;
-    }
-}
-
-
-
-
-@media print {
-    body {
-        visibility: hidden;
-    }
-
-    
-
-    main {
-        margin-top: 0;
-    } 
-    .contentor-da-grade {
-        visibility: initial;
-    }
-
-    .borda-escura {
-        border-top: 10px solid #444;
-    }
-
-    .col-de-enumeracao-das-linhas span {
-        border: 1px solid #888;
-        border-top: none;
-        color: #888
-    }
-
-    .col-da-linha-superior .linha-de-enumeracao-das-colunas span  {
-        border-color: #888;
-    }
-
-    body .col-de-inputs input {
-        border-color: #444 !important;
-    }
-
-    
-}
-

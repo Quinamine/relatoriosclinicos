@@ -1,0 +1,33 @@
+
+@media print {
+    body {
+        visibility: hidden;
+    }
+
+    main {
+        margin-top: 0;
+    } 
+    .contentor-da-grade {
+        visibility: initial;
+    }
+
+    .borda-escura {
+        border-top: 10px solid #444;
+    }
+
+    .col-de-enumeracao-das-linhas span {
+        border: 1px solid #888;
+        border-top: none;
+        color: #888
+    }
+
+    .col-da-linha-superior .linha-de-enumeracao-das-colunas span  {
+        border-color: #888;
+    }
+
+    body .col-de-inputs input {
+        border-color: #444 !important;
+    }
+
+    
+}

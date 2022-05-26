@@ -43,22 +43,6 @@ const customizarFicha = new Object({
         setTimeout(() => {
             observacao.classList.remove("on");
         }, tempodeObs);
-    },
-
-    // MENU MOBILE
-    abrirMenuMobile: () => {
-
-        const menuHamburguer = document.querySelector(".hamburguer");
-        const listadeDefinicoes = document.querySelector("header ul");
-        const main = document.querySelector("main");
-
-        menuHamburguer.addEventListener("click", () => {
-            listadeDefinicoes.classList.toggle("visible");
-        })
-
-        main.addEventListener("click", () => {
-            listadeDefinicoes.classList.remove("visible");
-        })
     }
     
 });
@@ -70,7 +54,6 @@ window.addEventListener("load", () => {
 
     customizarFicha.DenegrirReadonlyCelsDarker();
     customizarFicha.denegrirReadonlyCels();
-    customizarFicha.abrirMenuMobile();
 
     /**  Readonly els*/
     let readonlyCels = document.querySelectorAll(".col-de-inputs input[readonly]");

@@ -1,0 +1,111 @@
+@media screen and (max-width: 1300px) {
+    .linha-do-cabecalho, footer div.linha-do-rodape {
+        padding: 0 20px;
+    }
+
+    main {
+        overflow-x: hidden;
+    }
+
+    main .contentor-da-grade {
+        overflow-x: scroll;
+    }
+
+    .contentor-da-grade .col-de-consultas-e-diagnosticos,
+    .linha-de-faixas-etarias span:first-child,
+    .linha-de-sexo span:first-child,
+    .col-da-linha-de-assinatura {
+        position: -webkit-sticky;
+        position: sticky;
+        left: 0;
+        background-color: #fff;
+    }
+
+    .col-da-linha-de-assinatura {
+        padding-left: 20px;
+    }
+
+    .col-da-linha-de-assinatura p:first-child input {
+        width: 295px;
+    }
+
+     /** SETAS ***/
+}
+
+@media screen and (max-width: 1023px) {
+    .linha-do-cabecalho ul,
+    .linha-do-cabecalho button {
+        display: none;
+    }
+
+    .linha-do-cabecalho ul li:hover {
+        background-color: initial;
+    }
+
+    .linha-do-cabecalho ul li label:active {
+        background-color: #f4f4f4;
+    }
+
+    .linha-do-cabecalho {
+        justify-content: space-between;
+    }
+
+    /* Menu mobile */
+    .hamburguer {
+        display: flex !important;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 25px;
+        padding: 6px;
+        border-radius: 5px;
+
+        transition: border 100ms linear;
+    }
+
+    .hamburguer div {
+        width: 15px;
+        height: 2px;
+        margin: 1.5px 0;
+        background-color: #888;
+        transition: transform ease 100ms;
+    
+    }
+
+    .hamburguer:hover {
+        background-color: #eee;
+        cursor: pointer;
+    }
+
+
+    ul
+   
+    
+    
+    
+}
+
+
+@media screen and (max-width: 750px) {
+    header {
+        line-height: 3;
+    }
+    .linha-do-cabecalho, footer div.linha-do-rodape,
+    .col-da-linha-de-assinatura {
+        padding: 0 10px;
+    }
+
+    .linha-do-rodape {
+        flex-direction: column;
+        align-items: flex-start !important;
+    }
+
+    .linha-do-rodape div.outros-servicos {
+        width: 100%;
+        flex-basis: initial !important;
+    }
+
+    .linha-do-rodape p {
+        margin-top: 5px;
+    }
+}

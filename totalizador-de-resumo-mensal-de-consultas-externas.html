@@ -8,35 +8,42 @@
     <meta name="author" content="Adérito Félix Quinamine" />
     <link rel="stylesheet" href="estilos/reset.css" />
     <link rel="stylesheet" href="estilos/layout.css" />
-    <link rel="stylesheet" href="estilos/ficha-de-consultas.css" />
+    <link rel="stylesheet" href="estilos/ficha-de-rmce.css" />
+    <link rel="stylesheet" href="estilos/observacoes.css" >
+    <link rel="stylesheet" href="estilos/rmce-print.css" />
+    <link rel="stylesheet" href="estilos/rmce-responsividade.css" />
     <script src="funcoes/somarcasos.js"></script>
     <script src="funcoes/consultasexternas.js"></script>
-    <script src="funcoes/customizarficha.js"></script>   
+    <script src="funcoes/irpara.js"></script>
+    <script src="funcoes/customizarficha.js"></script>  
+    <script src="funcoes/hamburguer.js"></script> 
 </head>
 <body>
     <div id="involucro-de-todo-conteudo">
         <header>
-            <div class="linha-do-cabecalho ">
+            <div class="linha-do-cabecalho">
        
-                <a href="totalizador-de-resumo-mensal-de-consultas-externas.html">Totalizador <span>de</span> <span title="Resumo Mensal de Consultas Externas">RMCE</span></a>
+                <a href="totalizador-de-resumo-mensal-de-consultas-externas.html">TOTAL<span>IZADOR DE</span> <span title="Resumo Mensal de Consultas Externas">RMCE</span></a>
 
                                       
-                <ul>
-                    <li title="Escurecer o fundo de todas as células automáticas (Sub-totais e Totais).">
-                        <input type="checkbox" id="readonly-cels-darker"class="atalho"/> 
-                        <label for="readonly-cels-darker">Denegrir as células automáticas</label>
-                    </li>
+                <nav>
+                    <ul>
+                        <li title="Escurecer o fundo de todas as células automáticas (Sub-totais e Totais).">
+                            <input type="checkbox" id="readonly-cels-darker" class="atalho"/> 
+                            <label for="readonly-cels-darker">Denegrir as células automáticas</label>
+                        </li>
 
-                    <li>
-                        <a href="https://quinamine.github.io/abordagem-pediatrica/index.html" target="_blank">Produtos e serviços relacionados</a>
-                    </li>
+                        <li title="Pesquisar por um número de linha entre 1 e 53"><a href="javascript:void(0)" class="ir-para">Ir para linha...</a></li>  
+                            
 
-                </ul>
-                
-                <button onclick="window.print()">
-                    Imprimir
-                </button>
+                        <li title="Calculadora de Doses Pediátricas e Doseador de Antirretroviras"><a href="https://quinamine.github.io/abordagem-pediatrica/index.html" target="_blank">Produtos e serviços relacionados</a></li>
 
+                    </ul>
+                    
+                    <button onclick="window.print()">
+                        Imprimir
+                    </button>
+                </nav>
                 <div class="hamburguer">
                     <div></div>
                     <div></div>
@@ -2003,16 +2010,31 @@
                 <div class="col-da-linha-de-assinatura">
                     <p><span>Nome legível do responsável pelo preenchimento:<input type="text"></span></p>
 
-                    <p><span>Categoria:<input type="text"></span> <span>Data: <input type="date"></span></p>
+                    <p><span>Categoria:<input type="text" list="categorias"></span> <span>Data: <input type="date"></span></p>
                 </div>
+                <datalist id="categorias">
+                    <option value="Médico de Clínica Geral"></option>
+                    <option value="Técnico de Medicina Geral"></option>
+                    <option value="Enfermeira de SMI"></option>
+                    <option value="Agente de Medicina"></option>
+                </datalist>
 
             </div>
 
-            <div class="observacoes">
-                <p class="readonlycels-obs">Inacessível. Esta célula é só de leitura. <span> Marque a opção <span class="entre-aspas">"Denegrir as células automáticas"</span> para distiguir as células de leitura das outras.</span></p>
+            <div class="observacoes dialogo">
+                <p class="readonlycels-obs">Inacessível. Esta célula é só de leitura. <span> Marque a opção <span class="entre-aspas">"Denegrir as células automáticas"</span> para distiguir as células de leitura das outras.</span></p>  
 
+                <div class="caixa-de-pesquisa">
+                    <input type="number" class="pesquisar-linha" placeholder="Introduza o número da linha" min="1" max="53">    
+                    <button class="ir">Ir</button>
+                    <button class="fechar">&times;</button>
+                </div>
 
-                <p class="constatacoes"></p>
+                <div class="query-sem-resultados">
+                    <p>Nenhum resultado encontrado.</p>
+                    <p>Certifique-se de que o número esteja entre 1 e 53.</p>
+                    <button>OK</button>
+                </div>
             </div>
 
         </main>

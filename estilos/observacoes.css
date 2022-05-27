@@ -53,12 +53,13 @@
     position: fixed;
     top: -35px;
     right: calc(50vw - 245px / 2);
-
     transition: top 150ms linear;
+    visibility: hidden;
 }
 
 .observacoes div.caixa-de-pesquisa.on {
     top: 0;
+    visibility: initial;
 }
 
 div.caixa-de-pesquisa input.pesquisar-linha { 

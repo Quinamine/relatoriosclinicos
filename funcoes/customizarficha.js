@@ -1,38 +1,39 @@
 
-const customizarFicha = new Object({
+class PersonalizacaodaFicha {
 
-    DenegrirReadonlyCelsDarker: () => {
+    constructor(checkboxdeControl) {
+        this.checkboxdeControl = checkboxdeControl;
+    }
 
-        readonlyCelsDarker.addEventListener("change", () => {
-            readonlyCelsDarker.checked 
-            ? readonlyCelsDarker.parentElement.classList.add("activo") 
-            : readonlyCelsDarker.parentElement.classList.remove("activo");
-        })
-    }, 
+    activarCheckbox () {
+        let cb = this.checkboxdeControl;
+        cb.checked 
+            ? cb.parentElement.classList.add("activo") 
+            : cb.parentElement.classList.remove("activo");
+    }
 
-    denegrirReadonlyCels: () => {
-        const colunasdosInputs = document.getElementsByClassName("col-de-inputs");
+    denegrirAsCelulas () {
+        const colunasdasCelulas = document.querySelectorAll(".col-de-inputs");
+        let cb = this.checkboxdeControl;
 
-        readonlyCelsDarker.addEventListener("change", () => {
-            for (const col of colunasdosInputs) {
-                readonlyCelsDarker.checked
-                ? col.classList.add("readonly")
+        for (const col of colunasdasCelulas) {
+            cb.checked 
+                ? col.classList.add("readonly") 
                 : col.classList.remove("readonly");
-            }
-        })
-    },
+        }
+    }
 
-    readonlyCelsObs: () => {
+    protegerAcesssoAreadonlyCels () {
         // Declaracao das Variáveis necessárias
-        let observacao = document.querySelector("p.readonlycels-obs"),
-            trechodeObs = document.querySelector("p.readonlycels-obs span");
-            tempodeObs = 1200;
+        const observacao = document.querySelector("p.readonlycels-obs");
+        const trechodeObs = document.querySelector("p.readonlycels-obs span");
+        let tempodeObs = 1200;
     
-        // Mostrar Obseervação
+        // Mostrar Observação
         observacao.classList.add("on");
     
         // Recomendar "Dark readonly Cels"
-        if(!readonlyCelsDarker.checked) {
+        if(!this.checkboxdeControl.checked) {
             trechodeObs.classList.add("show");
             tempodeObs = 3500;
         }
@@ -44,23 +45,29 @@ const customizarFicha = new Object({
             observacao.classList.remove("on");
         }, tempodeObs);
     }
-    
-});
+}
 
 
-let readonlyCelsDarker;
 window.addEventListener("load", () => {
-    readonlyCelsDarker = document.getElementById("readonly-cels-darker");
 
-    customizarFicha.DenegrirReadonlyCelsDarker();
-    customizarFicha.denegrirReadonlyCels();
+    let checkboxdeControl = document.querySelector("#readonly-cels-darker");
 
-    /**  Readonly els*/
+    // INSTANCIAMENTO DA CLASSE
+    let personalizacao = new PersonalizacaodaFicha(checkboxdeControl);
+
+    // INSTANCIAMENTO DA CLASSE
+    checkboxdeControl.addEventListener("change", () => {
+        personalizacao.activarCheckbox();
+        personalizacao.denegrirAsCelulas();
+    });
+
     let readonlyCels = document.querySelectorAll(".col-de-inputs input[readonly]");
     for (const cel of readonlyCels) {
-        cel.addEventListener("click", customizarFicha.readonlyCelsObs); 
+        cel.addEventListener("click", () => {
+            personalizacao.protegerAcesssoAreadonlyCels();
+        }); 
     } 
+
+
+
 })
-
-
-

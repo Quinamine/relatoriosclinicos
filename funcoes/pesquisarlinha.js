@@ -141,4 +141,27 @@ window.addEventListener("load", () =>  {
         src.pesquisarLinha(campodePesquisa.value);
     })
 
+
+    // EVENTOS DO TECLADO
+    window.addEventListener("keyup", (event) => {
+        
+        let tecla = event.key.toLocaleLowerCase();
+
+        
+        // ABRIR CAIXA DE PESQUISA
+        if ((event.ctrlKey) &&  (tecla == "b")) {
+            src.mostrarCaixadePesquisa();
+        }
+
+        // FECHAR QUERY SEM RESULTADOS COM ENTER
+        if (tecla == "enter") {
+            // Fechar caixa de query sem resultados
+            src.nothingFound();
+            src.css().resetarBgdasLinhas();
+        }
+
+
+        
+    })
+
 });

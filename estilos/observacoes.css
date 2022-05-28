@@ -75,8 +75,20 @@ div.caixa-de-pesquisa input.pesquisar-linha:focus {
     border-color: rgb(116, 116, 235);
 }
 
+div.caixa-de-pesquisa button {
+    width: 24px;
+    height: 20px;
+    font-weight: bold;
+}
+
 div.caixa-de-pesquisa button.ir {
-    margin-left: 2px;
+    border: none;
+    margin: 0 2px;
+    background-color: #ddd;
+}
+
+div.caixa-de-pesquisa button.ir:hover {
+    background-color: #f4f4f4;
 }
 
 div.caixa-de-pesquisa button.fechar {
@@ -84,15 +96,18 @@ div.caixa-de-pesquisa button.fechar {
     border: none;
     outline: none;
     color: #fff;
-    font-size: 20px;
+    font-size: 16px;
 }
 
-div.caixa-de-pesquisa button:hover {
+div.caixa-de-pesquisa button.fechar:hover {
     cursor: pointer;
+    background-color: #D00;
+    border-radius: 2px;
 }
 
 div.caixa-de-pesquisa button:active {
     color: red;
+    border: none;
     outline: none;
 }
 
@@ -140,6 +155,81 @@ div.query-sem-resultados button:hover {
     background-color: #000;
 }
 
+/* ATALHOS */
+section.atalhos-do-teclado {
+    max-width: 320px;
+    background: #fafafa;
+    padding: 10px;
+    position: fixed;
+    top: -105vh;
+    right: 0;
+    transition: top 250ms linear;
+}  
+
+section.atalhos-do-teclado.on {
+    top: 0;
+    box-shadow: 0 8px 16px #aaa;
+}
+
+@media screen and (min-width: 1300px) {
+    section.atalhos-do-teclado {
+        right: calc(50vw - 1300px / 2);
+    }  
+}
+
+section.atalhos-do-teclado .conteudo * {
+    line-height: 1.5;
+    margin: 20px 0;
+}
+
+section.atalhos-do-teclado .conteudo h2 {
+    font-size: 18px;
+    color: #000;
+}
+
+section.atalhos-do-teclado kbd {
+    background-color: #ddd;
+    border: 1px solid #888;
+    padding: 2px;
+    border-radius: 4px;
+    font-weight: bold;
+}
+
+section.atalhos-do-teclado p.footer {
+    font-size: 12px;
+    text-align: center;
+    color: #888;
+    padding: 10px 0;
+}
+
+section.atalhos-do-teclado .conteudo {     
+    position: relative;
+}
+
+section.atalhos-do-teclado button.fechar-atalhos {
+    margin: 0;
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    top: -30px;
+    right: -10px;
+    border: none;
+    outline: none;
+    font-size: 12px;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+section.atalhos-do-teclado button.fechar-atalhos:hover {
+    background-color: #D00;
+    color: #fff;
+}
+
+section.atalhos-do-teclado button.fechar-atalhos:active {
+    color: red;
+}
 
 /*  JAVASCRIPT */
 html.smooth {

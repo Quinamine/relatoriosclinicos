@@ -17,7 +17,7 @@
     <script src="funcoes/pesquisarlinha.js"></script>
     <script src="funcoes/customizarficha.js"></script>
      
-    <script src="funcoes/hamburguer.js"></script> 
+    <script src="funcoes/menu.js"></script> 
 </head>
 <body>
     <div id="involucro-de-todo-conteudo">
@@ -36,6 +36,11 @@
 
                         <li title="Pesquisar por um número de linha entre 1 e 53"><a href="javascript:void(0)" class="ir-para">Ir para linha...</a></li>  
                             
+                        <li><a href="javascript:void(0)" class="para-atalhos-do-teclado">Atalhos do teclado</a></li>  
+
+                        
+
+                        
 
                         <li title="Calculadora de Doses Pediátricas e Doseador de Antirretroviras"><a href="https://quinamine.github.io/abordagem-pediatrica/index.html" target="_blank">Produtos e serviços relacionados</a></li>
 
@@ -2028,7 +2033,7 @@
                 <div class="caixa-de-pesquisa">
                     <input type="number" class="pesquisar-linha" placeholder="Introduza o número da linha" min="1" max="53">    
                     <button class="ir">Ir</button>
-                    <button class="fechar">&times;</button>
+                    <button class="fechar" title="Fechar">&times;</button>
                 </div>
 
                 <div class="query-sem-resultados">
@@ -2036,6 +2041,31 @@
                     <p>Certifique-se de que o número esteja entre 1 e 53.</p>
                     <button>OK</button>
                 </div>
+
+                <section class="atalhos-do-teclado">
+
+                    <div class="conteudo">
+                        <h2>Atalhos do teclado</h2>
+
+                        <p>Use a combinação das teclas abaixo para acessar as funcionalidades mais rapidamente e flexibilizar a navegação.</p>
+                        <ul>
+                            <li>
+                                <kbd>Ctrl</kbd> + <kbd>Space</kbd> (tecla de espaço) - Denegrir as células automáticas;
+                            </li>
+                            <li>
+                                <kbd>Ctrl</kbd> + <kbd>B</kbd> - Ir para linha (pesquisar por linha);
+                            </li>
+                            <li>
+                                <kbd>Ctrl</kbd> + <kbd>P</kbd> - Imprimir a ficha.
+                            </li>
+                        </ul>
+
+                        
+                            <p class="footer">&copy; 2022 - Totalizador de RMCE</p>
+                    
+                        <button class="fechar-atalhos" title="Fechar">&times;</button>
+                    </div>
+                </section>
             </div>
 
         </main>
@@ -2051,7 +2081,7 @@
                             <a href="http://quinamine.github.io/abordagem-pediatrica/paginas/doseador-de-arvs.html">Doseador pediátrico de antirretrovirais</a>
                         </li>
                         <li>
-                            <a href="http://quinamine.github.io/abordagem-pediatrica/paginas/Calculadora-de-doses.html">Calculadora de doses pediátricas</a>
+                            <a href="http://quinamine.github.io/abordagem-pediatrica/paginas/calculadora-de-doses.html">Calculadora de doses pediátricas</a>
                         </li>
                     </ul>
                 </div>

@@ -5,7 +5,7 @@ class PersonalizacaodaFicha {
         this.checkboxdeControl = checkboxdeControl;
     }
 
-    activarCheckbox () {
+   activarCheckbox () {
         let cb = this.checkboxdeControl;
         cb.checked 
             ? cb.parentElement.classList.add("activo") 
@@ -68,6 +68,19 @@ window.addEventListener("load", () => {
         }); 
     } 
 
+    // Denegrir as celulas com teclas 
+    document.addEventListener("keyup", (event) => {
+        
+        let tecla = event.keyCode;
 
-
+        if ((event.ctrlKey) &&  (tecla == 32)) {
+            if (!checkboxdeControl.checked) {
+                checkboxdeControl.setAttribute("checked", "");
+            } else {
+                checkboxdeControl.removeAttribute("checked");
+            }
+            personalizacao.activarCheckbox();
+            personalizacao.denegrirAsCelulas();
+        }
+    })
 })

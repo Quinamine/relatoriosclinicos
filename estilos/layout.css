@@ -11,11 +11,12 @@ body {
     font-size: 12px;
 }
 
-a {text-decoration: none;}
-
-a:active, .linha-do-cabecalho ul li label:active, button:active {
-    color: red !important;
+*::selection {
+    background-color: #444;
+    color: #fff;
 }
+
+a {text-decoration: none;}
 
 .linha-do-cabecalho ul li label:hover, button:hover {
     cursor: pointer;
@@ -91,6 +92,11 @@ header {
 .linha-do-cabecalho nav ul li a:hover,
 .linha-do-cabecalho nav ul li:first-child:hover {
     background-color: #f4f4f4;
+} 
+
+.linha-do-cabecalho nav ul li a:active,
+.linha-do-cabecalho nav ul li:first-child:active {
+    background-color: #ddd;
 } 
 
 .linha-do-cabecalho ul li input[type=checkbox] {

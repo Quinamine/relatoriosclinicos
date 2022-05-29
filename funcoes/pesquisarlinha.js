@@ -145,7 +145,7 @@ window.addEventListener("load", () =>  {
     // EVENTOS DO TECLADO
     window.addEventListener("keyup", (event) => {
         
-        let tecla = event.key.toLocaleLowerCase();
+        let tecla = event.key.toLowerCase();
 
         
         // ABRIR CAIXA DE PESQUISA

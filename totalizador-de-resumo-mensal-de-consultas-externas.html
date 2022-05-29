@@ -13,10 +13,10 @@
     <link rel="stylesheet" href="estilos/rmce-print.css" />
     <link rel="stylesheet" href="estilos/rmce-responsividade.css" />
     <script src="funcoes/somarcasos.js"></script>
-    <script src="funcoes/consultasexternas.js"></script>
+    <script src="funcoes/backup.js"></script>
+    <script src="funcoes/totalizador.js"></script>
     <script src="funcoes/pesquisarlinha.js"></script>
     <script src="funcoes/customizarficha.js"></script>
-     
     <script src="funcoes/menu.js"></script> 
 </head>
 <body>
@@ -29,12 +29,12 @@
                                       
                 <nav>
                     <ul>
-                        <li title="Escurecer o fundo de todas as células automáticas (Sub-totais e Totais).">
+                        <li title="Escurecer o fundo de Sub-totais e Totais. (Ctrl + Tecla de espaço)">
                             <input type="checkbox" id="readonly-cels-darker" class="atalho"/> 
                             <label for="readonly-cels-darker">Denegrir as células automáticas</label>
                         </li>
 
-                        <li title="Pesquisar por um número de linha entre 1 e 53"><a href="javascript:void(0)" class="ir-para">Ir para linha...</a></li>  
+                        <li title="Pesquisar por um número de linha entre 1 e 53. (Ctrl + B)"><a href="javascript:void(0)" class="ir-para">Ir para linha...</a></li>  
                             
                         <li><a href="javascript:void(0)" class="para-atalhos-do-teclado">Atalhos do teclado</a></li>  
 
@@ -42,7 +42,7 @@
 
                         
 
-                        <li title="Calculadora de Doses Pediátricas e Doseador de Antirretroviras"><a href="https://quinamine.github.io/abordagem-pediatrica/index.html" target="_blank">Produtos e serviços relacionados</a></li>
+                        <li title="Calculadora de doses pediátricas e Doseador de antirretroviras"><a href="https://quinamine.github.io/abordagem-pediatrica/index.html" target="_blank">Produtos e serviços relacionados</a></li>
 
                     </ul>
                     
@@ -60,7 +60,10 @@
 
         <main>   
             <div class="contentor-da-grade">
-                <h1>Resumo Mensal da US - Consultas <input type="text" placeholder="Nome da Unidade Sanitária"></h1>
+                <h1>
+                    <label for="nome-da-us">Resumo Mensal da US - Consultas </label>
+                    <input type="text" placeholder="Nome da Unidade Sanitária" id="nome-da-us" />
+                </h1>
 
                 <div class="col-da-linha-superior"> 
                     <div class="linha-de-enumeracao-das-colunas">
@@ -2014,9 +2017,22 @@
                 <!-- Assinatura -->
 
                 <div class="col-da-linha-de-assinatura">
-                    <p><span>Nome legível do responsável pelo preenchimento:<input type="text"></span></p>
+                    <p>
+                        <label for="nome-do-ps">Nome legível do responsável pelo preenchimento:</label>
+                        <input type="text" id="nome-do-ps" />
+                    </p>
 
-                    <p><span>Categoria:<input type="text" list="categorias"></span> <span>Data: <input type="date"></span></p>
+                    <div class="linha-de-categoria-e-data">
+                        <p>
+                            <label for="categoria">Categoria:</label>
+                            <input type="text" list="categorias" id="categoria" /> 
+                        </p>
+
+                        <p>
+                            <label class="data-de-realizacao">Data:</label> 
+                            <input type="date" id="data-de-realizacao" />
+                        </p>
+                    </div>
                 </div>
                 <datalist id="categorias">
                     <option value="Médico de Clínica Geral"></option>
@@ -2028,7 +2044,7 @@
             </div>
 
             <div class="observacoes dialogo">
-                <p class="readonlycels-obs">Inacessível. Esta célula é só de leitura. <span> Marque a opção <span class="entre-aspas">"Denegrir as células automáticas"</span> para distiguir as células de leitura das outras.</span></p>  
+                <p class="readonlycels-obs">Inacessível. Esta célula é só de leitura. <span> Marque a opção <span class="entre-aspas">"Denegrir as células automáticas"</span> para distinguir as células de leitura das outras.</span></p>  
 
                 <div class="caixa-de-pesquisa">
                     <input type="number" class="pesquisar-linha" placeholder="Introduza o número da linha" min="1" max="53">    

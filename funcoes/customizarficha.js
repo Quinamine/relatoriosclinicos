@@ -5,13 +5,6 @@ class PersonalizacaodaFicha {
         this.checkboxdeControl = checkboxdeControl;
     }
 
-   activarCheckbox () {
-        let cb = this.checkboxdeControl;
-        cb.checked 
-            ? cb.parentElement.classList.add("activo") 
-            : cb.parentElement.classList.remove("activo");
-    }
-
     denegrirAsCelulas () {
         const colunasdasCelulas = document.querySelectorAll(".col-de-inputs");
         let cb = this.checkboxdeControl;
@@ -45,6 +38,54 @@ class PersonalizacaodaFicha {
             observacao.classList.remove("on");
         }, tempodeObs);
     }
+
+    confirmarEsvaziamento () {
+        const ficha = document.querySelectorAll(".col-de-inputs input");
+        let status = 0;
+
+        for (let i = 0; i < ficha.length; i++) {
+            if (ficha[i].value != "") {status++;} 
+        }
+
+        if(status>=1){
+            const caixadeConfirmacao = document.querySelector(".caixa-de-confirmacao");
+            caixadeConfirmacao.classList.add("on");
+            desfocarFundo(1)
+        } 
+        else {
+            const fichaVaziaObs = document.querySelector("p.ficha-vazia-obs")
+            fichaVaziaObs.classList.add("on");
+
+            setTimeout(() => {
+                fichaVaziaObs.classList.remove("on");
+            }, 1200);
+        }
+    }
+
+    esvaziarFicha () {
+        const ficha = document.querySelectorAll(".col-de-inputs input");
+
+        for (let p = 0; p < ficha.length; p++) {
+            ficha[p].value = "";
+            localStorage.removeItem(`input${p}`);
+        }
+
+        const mesUsPsCategoriaData = document.querySelectorAll("input[type=text], #data-de-realizacao");
+        const chaves = new Array ("mes", "us", "ps", "categoria", "data");
+
+        for (let i = 0; i < mesUsPsCategoriaData.length; i++) {
+            mesUsPsCategoriaData[i].value = "";
+            localStorage.removeItem(`${chaves[i]}`);
+        }
+
+        
+    }
+
+    fecharCaixadeConfirmacao () {
+        const caixadeConfirmacao = document.querySelector(".caixa-de-confirmacao");
+        caixadeConfirmacao.classList.remove("on");
+        desfocarFundo(0)
+    }
 }
 
 
@@ -57,7 +98,6 @@ window.addEventListener("load", () => {
 
     // INSTANCIAMENTO DA CLASSE
     checkboxdeControl.addEventListener("change", () => {
-        personalizacao.activarCheckbox();
         personalizacao.denegrirAsCelulas();
     });
 
@@ -79,8 +119,31 @@ window.addEventListener("load", () => {
             } else {
                 checkboxdeControl.removeAttribute("checked");
             }
-            personalizacao.activarCheckbox();
             personalizacao.denegrirAsCelulas();
         }
+    })
+
+
+    // ESVAZIAR FICHA
+
+    // Confirmar esvaziamento
+    const aEsvaziarFicha = document.querySelector("a.esvaziar-ficha");
+    aEsvaziarFicha.addEventListener("click", () => {
+        personalizacao.confirmarEsvaziamento();
+    })
+
+    // Esvaziar ficha propriamente dita
+    const botaoEsvaziar = document.querySelector("button.esvaziar");
+
+    botaoEsvaziar.addEventListener("click", () => {
+        personalizacao.esvaziarFicha();
+        personalizacao.fecharCaixadeConfirmacao();
+    })
+
+
+    // Cancelar esvaziameto
+    const botaoCancelar = document.querySelector("button.cancelar");
+    botaoCancelar.addEventListener("click", () => {
+        personalizacao.fecharCaixadeConfirmacao();
     })
 })

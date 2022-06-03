@@ -1,18 +1,31 @@
-/* OBSERVACOES */
+/* REUTILIZAVEL */
+section.atalhos-do-teclado,
+div.caixa-de-confirmacao {
+    max-width: 320px;
+    padding: 10px;
+    position: fixed;
+}  
 
-.observacoes p.readonlycels-obs {
+.observacoes p.readonlycels-obs,
+.esvaziamento-da-ficha p.ficha-vazia-obs {
     max-width: 263px;
     padding: 10px;
     border-radius: 6px;
     font-size: 14px;
     position: fixed;
     left: calc(50vw - 262px * 1/2);
-    bottom: -263px;
     box-shadow: 0 0 15px #555;
     background-color: #fff;
-    opacity: 0;
     line-height: 1.4;
     transition: all 150ms linear; 
+    visibility: hidden;
+}
+
+/* OBSERVACOES */
+
+.observacoes p.readonlycels-obs {
+    bottom: -263px;
+    opacity: 0;
 }
 
 @-moz-document url-prefix() {
@@ -28,6 +41,7 @@
 .observacoes p.readonlycels-obs.on {
     opacity: 1;
     bottom: calc(50vh - 34px * 1/2); 
+    visibility: initial;
 }
 
 .observacoes p.readonlycels-obs > span {
@@ -157,18 +171,15 @@ div.query-sem-resultados button:hover {
 
 /* ATALHOS */
 section.atalhos-do-teclado {
-    max-width: 320px;
     background: #fafafa;
-    padding: 10px;
-    position: fixed;
     top: -105vh;
     right: 0;
-    transition: top 250ms linear;
+    transition: top 125ms linear;
+    z-index: 9;
 }  
 
 section.atalhos-do-teclado.on {
     top: 0;
-    box-shadow: 0 8px 16px #aaa;
 }
 
 @media screen and (min-width: 1300px) {
@@ -180,6 +191,7 @@ section.atalhos-do-teclado.on {
 section.atalhos-do-teclado .conteudo * {
     line-height: 1.5;
     margin: 20px 0;
+    font-size: 14px;
 }
 
 section.atalhos-do-teclado .conteudo h2 {
@@ -192,13 +204,12 @@ section.atalhos-do-teclado kbd {
     border: 1px solid #888;
     padding: 2px;
     border-radius: 4px;
-    font-weight: bold;
 }
 
 section.atalhos-do-teclado p.footer {
     font-size: 12px;
     text-align: center;
-    color: #888;
+    color: #555;
     padding: 10px 0;
 }
 
@@ -229,6 +240,83 @@ section.atalhos-do-teclado button.fechar-atalhos:hover {
 
 section.atalhos-do-teclado button.fechar-atalhos:active {
     color: red;
+}
+
+/* CAIXA DE CONFIRMACAO */
+
+div.caixa-de-confirmacao {
+    background: #fff;
+    top: calc(50vh - 114px / 2);
+    right: calc(50vw - 297px / 2);
+    border-radius: 8px;
+    display: none;
+    z-index: 10;
+}
+
+div.caixa-de-confirmacao.on {
+    display: block;
+}
+
+
+div.caixa-de-confirmacao h3,
+div.caixa-de-confirmacao p {
+    margin: 10px 0;
+    text-align: center;
+    font-size: 14px;
+}
+
+div.caixa-de-confirmacao p {
+    color: #555;
+}
+
+div.caixa-de-confirmacao div.botoes-de-confirmacao {
+    display: flex;
+    justify-content: space-around;
+  
+    margin: 20px auto auto auto;
+}
+
+div.botoes-de-confirmacao button {
+    width: calc(50% - 5px);
+    font-size: 14px;
+    padding: 5px 0;
+    border-radius: 4px;
+    border: none;
+    outline: none;
+}
+
+div.botoes-de-confirmacao button:nth-child(1):hover {
+    background-color: #ddd;
+}
+
+div.botoes-de-confirmacao button:nth-child(2) {
+    background-color: #d00;
+    color: #fff;
+}
+
+div.botoes-de-confirmacao button:nth-child(2):hover {
+    background-color: #b00;
+}
+
+/* FICHA VAZIA OBS*/
+.esvaziamento-da-ficha p.ficha-vazia-obs {
+    bottom: calc(-50vh - 40px / 2);
+    transition: bottom 150ms linear;
+}
+
+.esvaziamento-da-ficha p.ficha-vazia-obs.on {
+    bottom: calc(50vh - 40px / 2);
+    visibility: initial;
+}
+
+
+/* DESFOQUE DO FUNDO */
+div.desfoque-do-fundo.on {
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    background-color: rgba(24, 24, 24, .5);
 }
 
 /*  JAVASCRIPT */

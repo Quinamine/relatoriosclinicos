@@ -15,6 +15,7 @@
     <script src="funcoes/somarcasos.js"></script>
     <script src="funcoes/backup.js"></script>
     <script src="funcoes/totalizador.js"></script>
+    <script src="funcoes/desfocarbg.js"></script>
     <script src="funcoes/pesquisarlinha.js"></script>
     <script src="funcoes/customizarficha.js"></script>
     <script src="funcoes/menu.js"></script> 
@@ -29,18 +30,21 @@
                                       
                 <nav>
                     <ul>
-                        <li title="Escurecer o fundo de Sub-totais e Totais. (Ctrl + Tecla de espaço)">
+                        <li title="Escurecer o fundo de Subtotais e Totais. (Ctrl + Tecla de espaço)">
                             <input type="checkbox" id="readonly-cels-darker" class="atalho"/> 
                             <label for="readonly-cels-darker">Denegrir as células automáticas</label>
                         </li>
 
                         <li title="Pesquisar por um número de linha entre 1 e 53. (Ctrl + B)"><a href="javascript:void(0)" class="ir-para">Ir para linha...</a></li>  
                             
-                        <li><a href="javascript:void(0)" class="para-atalhos-do-teclado">Atalhos do teclado</a></li>  
+                        <li><a href="javascript:void(0)" class="esvaziar-ficha">Esvaziar ficha</a></li>
+
+                        <li><a href="javascript:void(0)" class="para-atalhos-do-teclado">Atalhos do teclado</a></li> 
 
                         
 
-                        
+                        <li><a href="javascript:void(0)" class="cookies">Politica de cookies</a></li>
+                        <li><a href="javascript:void(0)" class="sobre">Sobre</a></li>
 
                         <li title="Calculadora de doses pediátricas e Doseador de antirretroviras"><a href="https://quinamine.github.io/abordagem-pediatrica/index.html" target="_blank">Produtos e serviços relacionados</a></li>
 
@@ -99,11 +103,11 @@
                         <span>0 - 11 meses</span>
                         <span>1 - 4 anos</span>
                         <span>5 - 14 anos</span>
-                        <span>SUB-TOTAL</span>
+                        <span>SUBTOTAL</span>
                         <span>15 - 24 anos</span>
                         <span>25- 59 anos</span>
                         <span>&ge; 60 anos</span>
-                        <span>SUB-TOTAL</span>
+                        <span>SUBTOTAL</span>
                         <span>TOTAL</span>
 
                         <span class="sem-borda-inferior">
@@ -247,7 +251,7 @@
                     <span>Traumatismo/Envenenamento</span>
                     <span>Queimadura</span>
                     <span>Acidente de Viação</span>
-                    <span>Perturb. Mentais e Alter. de Comportamento</span>
+                    <span>Perturbações Mentais e Alteração de Comportamento</span>
                     <span>Tentativa de Suicídio</span>
                     <span>Toxicodependência</span>
                     <span>Doença do Olho</span>
@@ -2044,20 +2048,38 @@
             </div>
 
             <div class="observacoes dialogo">
+                <!-- Celulas Automaticas -->
                 <p class="readonlycels-obs">Inacessível. Esta célula é só de leitura. <span> Marque a opção <span class="entre-aspas">"Denegrir as células automáticas"</span> para distinguir as células de leitura das outras.</span></p>  
 
-                <div class="caixa-de-pesquisa">
-                    <input type="number" class="pesquisar-linha" placeholder="Introduza o número da linha" min="1" max="53">    
-                    <button class="ir">Ir</button>
-                    <button class="fechar" title="Fechar">&times;</button>
-                </div>
+                <!-- Caixa de pesquisa "Ir para" -->
+                <section class="pesquisa">
+                    <div class="caixa-de-pesquisa">
+                        <input type="number" class="pesquisar-linha" placeholder="Introduza o número da linha" min="1" max="53">    
+                        <button class="ir">Ir</button>
+                        <button class="fechar" title="Fechar">&times;</button>
+                    </div>
 
-                <div class="query-sem-resultados">
-                    <p>Nenhum resultado encontrado.</p>
-                    <p>Certifique-se de que o número esteja entre 1 e 53.</p>
-                    <button>OK</button>
-                </div>
+                    <div class="query-sem-resultados">
+                        <p>Nenhum resultado encontrado.</p>
+                        <p>Certifique-se de que o número esteja entre 1 e 53.</p>
+                        <button>OK</button>
+                    </div>
+                </section>
 
+                <!-- Esvaziar ficha -->
+                <section class="esvaziamento-da-ficha">
+                    <div class="caixa-de-confirmacao">
+                        <h3>Tem certeza de que pretende esvaziar a ficha?</h3>
+                        <p>Será impossível reverter esta acção.</p>
+                        <div class="botoes-de-confirmacao">
+                            <button class="cancelar">Cancelar</button>
+                            <button class="esvaziar">Esvaziar</button>
+                        </div>
+                    </div>
+                    <p class="ficha-vazia-obs">A ficha encontra-se vazia.</p>
+                </section>
+
+                <!-- Atalhos do teclado -->
                 <section class="atalhos-do-teclado">
 
                     <div class="conteudo">
@@ -2082,10 +2104,12 @@
                         <button class="fechar-atalhos" title="Fechar">&times;</button>
                     </div>
                 </section>
+
+                <!-- Desfoque do fundo -->
+                
             </div>
 
         </main>
-
 
         <footer>
             <div class="linha-do-rodape">
@@ -2102,13 +2126,13 @@
                     </ul>
                 </div>
 
-                <p>Desenvolvido com muito &#128153; por <a href="https://quinamine.github.io/abordagem-pediatrica/paginas/sobremim.html">Adérito Félix Quinamine</a> | &copy; Todos os direitos reservados | Desenvolvimento e Programação Web 2022</p>
+                <p>Desenvolvido com &#128153; por <a href="https://quinamine.github.io/abordagem-pediatrica/paginas/sobremim.html">Adérito Félix Quinamine</a> | &copy; 2022 - Totalizador de Resumo Mensal de Consultas Externas</p>
 
             </div>
         </footer>
     </div>
 
 
-    
+    <div class="desfoque-do-fundo"></div>
 </body>
 </html>

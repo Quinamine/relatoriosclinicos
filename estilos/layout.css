@@ -60,7 +60,7 @@ header {
     flex: 1;
     display: flex;
     align-items: center;
-    margin-left: 30px;
+    margin-left: 20px;
 }
 
 .linha-do-cabecalho nav ul {
@@ -70,14 +70,12 @@ header {
 .linha-do-cabecalho nav ul li:first-child {
     display: flex;
     align-items: center;
-    min-width: 222px;
 }
 
 .linha-do-cabecalho nav ul li:first-child {
     display: flex;
     align-items: center;
     justify-content: center;
-    min-width: 222px;
 }
 
 .linha-do-cabecalho nav ul li label {
@@ -171,12 +169,6 @@ div.linha-do-rodape p {
     flex: 1;
     text-align: center;
 }
-
-/* MANIPULACAO COM JS */
-.linha-do-cabecalho ul li.activo label {
-    font-weight: bold;
-}
-
 
 
 

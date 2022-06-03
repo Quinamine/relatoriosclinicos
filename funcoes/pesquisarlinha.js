@@ -151,6 +151,7 @@ window.addEventListener("load", () =>  {
         // ABRIR CAIXA DE PESQUISA
         if ((event.ctrlKey) &&  (tecla == "b")) {
             src.mostrarCaixadePesquisa();
+            console.log(tecla)
         }
 
         // FECHAR QUERY SEM RESULTADOS COM ENTER

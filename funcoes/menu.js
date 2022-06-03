@@ -34,11 +34,13 @@ window.onload = () => {
         const aTarget = document.querySelector("a.para-atalhos-do-teclado");
         aTarget.addEventListener("click", () => {
             Menu.abrirOuFecharAtalhos("abrir");
+            desfocarFundo(1);
         });
 
         const botaoFechar = document.querySelector("button.fechar-atalhos");
         botaoFechar.addEventListener("click", () => {
             Menu.abrirOuFecharAtalhos("fechar");
+            desfocarFundo(0);
         });
 
 

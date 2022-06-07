@@ -182,7 +182,7 @@ section.atalhos-do-teclado {
     background: #fafafa;
     top: -105vh;
     right: 0;
-    transition: top 125ms linear;
+    transition: top 50ms linear;
     z-index: 9;
     visibility: hidden;
 }  
@@ -317,7 +317,8 @@ div.botoes-de-confirmacao button:nth-child(2):hover {
 
 /* ARTIGOS */
 
-article.politica-de-cookies {
+article.politica-de-cookies,
+article.sobre {
     width: 100%;
     max-width: 793px;
     height: 100vh;
@@ -332,10 +333,11 @@ article.politica-de-cookies {
     z-index: 10;
     box-shadow: 0 0 15px #555;
     visibility: hidden;
-    transition: top 125ms linear;
+    transition: top 50ms linear;
 }
 
-article.politica-de-cookies.on {
+article.politica-de-cookies.on,
+article.sobre.on {
     visibility: initial;
     top: 0;
 }

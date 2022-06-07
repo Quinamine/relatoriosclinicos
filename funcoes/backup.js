@@ -9,11 +9,11 @@ const saveOnStorage = {
             inputs[p].addEventListener("input", () => { 
                 // BACKUP - SALVAR NO LOCALSTORAGE
                 let valor = (`${inputs[p].value}`);
-                localStorage.setItem(`input${p}`, valor);
+                localStorage.setItem(`cel${p}`, valor);
             });
 
             // SAIDA - RETORNO DO BACKUP
-            let storageReturn = localStorage.getItem(`input${p}`);
+            let storageReturn = localStorage.getItem(`cel${p}`);
             inputs[p].value = storageReturn;
         }
     },
@@ -56,6 +56,21 @@ const saveOnStorage = {
             localStorage.setItem("data", `${datadeRealizacao.value}`);
         })
         datadeRealizacao.value = localStorage.getItem("data");
+    },
+
+    salvarReadonlyCelsBg: () => {
+        const checkboxDarker = document.querySelector("#readonly-cels-darker");
+
+        checkboxDarker.addEventListener("change", () => {
+            localStorage.setItem("darkmode", checkboxDarker.checked);
+        });
+
+        if(localStorage.getItem("darkmode") == "true") {
+            checkboxDarker.setAttribute("checked", "");
+        }
+        else {
+            checkboxDarker.removeAttribute("checked");
+        }
     }
 }
 
@@ -69,4 +84,5 @@ window.addEventListener("load", () => {
     saveOnStorage.salvarNome();
     saveOnStorage.salvarCategoria();
     saveOnStorage.salvarData();
+    saveOnStorage.salvarReadonlyCelsBg();
 })

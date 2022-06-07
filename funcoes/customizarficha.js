@@ -65,9 +65,10 @@ class PersonalizacaodaFicha {
     esvaziarFicha () {
         const ficha = document.querySelectorAll(".col-de-inputs input");
 
+        // Ficha propriamente dita
         for (let p = 0; p < ficha.length; p++) {
             ficha[p].value = "";
-            localStorage.removeItem(`input${p}`);
+            localStorage.removeItem(`cel${p}`);
         }
 
         const mesUsPsCategoriaData = document.querySelectorAll("input[type=text], #data-de-realizacao");
@@ -76,9 +77,7 @@ class PersonalizacaodaFicha {
         for (let i = 0; i < mesUsPsCategoriaData.length; i++) {
             mesUsPsCategoriaData[i].value = "";
             localStorage.removeItem(`${chaves[i]}`);
-        }
-
-        
+        }  
     }
 
     fecharCaixadeConfirmacao () {
@@ -96,7 +95,10 @@ window.addEventListener("load", () => {
     // INSTANCIAMENTO DA CLASSE
     let personalizacao = new PersonalizacaodaFicha(checkboxdeControl);
 
-    // INSTANCIAMENTO DA CLASSE
+    // Denegrir células no load do windows
+    personalizacao.denegrirAsCelulas();
+
+    // Denegrir as células com checkbox
     checkboxdeControl.addEventListener("change", () => {
         personalizacao.denegrirAsCelulas();
     });
@@ -120,6 +122,7 @@ window.addEventListener("load", () => {
                 checkboxdeControl.removeAttribute("checked");
             }
             personalizacao.denegrirAsCelulas();
+            localStorage.setItem("darkmode", checkboxdeControl.checked);
         }
     })
 

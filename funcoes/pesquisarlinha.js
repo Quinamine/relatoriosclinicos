@@ -41,11 +41,12 @@ class Pesquisa {
 
         const linhas = document.querySelectorAll(".col-de-enumeracao-das-linhas span");
         let iRow = query - 1;
-
         this.css().suavizarRolagemHTML("sim");
         
-        linhas[iRow].scrollIntoView();
-
+       
+            linhas[iRow].scrollIntoView();
+    
+        
         this.css().resetarBgdasLinhas();
         linhas[iRow].classList.add("fundo-laranja");
         
@@ -141,6 +142,11 @@ window.addEventListener("load", () =>  {
         src.pesquisarLinha(campodePesquisa.value);
     })
 
+
+    /// ENCONTRAR ATRAVES DO MOUSE UP
+    campodePesquisa.addEventListener("mouseup", () => {
+        src.pesquisarLinha(campodePesquisa.value);
+    })
 
     // EVENTOS DO TECLADO
     window.addEventListener("keyup", (event) => {

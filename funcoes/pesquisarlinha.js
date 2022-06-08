@@ -43,13 +43,12 @@ class Pesquisa {
         let iRow = query - 1;
         this.css().suavizarRolagemHTML("sim");
         
-       
+        if ((linhas[iRow].getBoundingClientRect().bottom < 0) || linhas[iRow].getBoundingClientRect().top > window.innerHeight) {
             linhas[iRow].scrollIntoView();
-    
-        
+        }
+       
         this.css().resetarBgdasLinhas();
         linhas[iRow].classList.add("fundo-laranja");
-        
     }
 
     nothingFound(status) {
@@ -157,7 +156,6 @@ window.addEventListener("load", () =>  {
         // ABRIR CAIXA DE PESQUISA
         if ((event.ctrlKey) &&  (tecla == "b")) {
             src.mostrarCaixadePesquisa();
-            console.log(tecla)
         }
 
         // FECHAR QUERY SEM RESULTADOS COM ENTER

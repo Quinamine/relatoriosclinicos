@@ -38,6 +38,18 @@ header, footer {
     margin: 0 auto;
 }
 
+.linha-do-rodape span.heart {
+    display: inline-block;
+    width: 15px;
+    font-size: 10px;
+    filter: invert(1);
+}
+
+.linha-do-rodape span.heart.sistole {
+    font-size: 12px;
+    filter: invert(1);
+}
+
 
 /* CABECALHO */
 header {

@@ -1,17 +1,6 @@
 
 const Menu = {
 
-   /* abrirOuFecharAtalhos: (accao) => {
-
-        
-
-        accao == "abrir" ? 
-            conteudo.classList.add("on") 
-            : 
-            conteudo.classList.remove("on");
-    }*/
-
-
     abrirOuFecharAba: (accao, aba) => {
         if(accao == "abrir") { 
             aba.classList.add("on");
@@ -24,16 +13,16 @@ const Menu = {
     }
 }
 
-
-
+// Esta variável global uso no trecho "Ver politica de cookies" do conteudo "SOBRE";
+let conteudodeCookies; 
 
 window.onload = () => {
 
     // Abrir e Fechar conteúdo de atalhos
     const conteudodeAtalhos = document.querySelector("section.atalhos-do-teclado");
 
-    const aAbriAtalhos = document.querySelector("a.para-atalhos-do-teclado");
-    aAbriAtalhos.addEventListener("click", () => {
+    const aAbrirAtalhos = document.querySelector("a.atalhos-do-teclado");
+    aAbrirAtalhos.addEventListener("click", () => {
         Menu.abrirOuFecharAba("abrir", conteudodeAtalhos);
     });
 
@@ -43,18 +32,32 @@ window.onload = () => {
     });
 
     // Abrir e Fechar conteúdo de cookies
-    const conteudodeCookies = document.querySelector("article.politica-de-cookies");
+    conteudodeCookies = document.querySelector("article.politica-de-cookies");
 
     const aAbrirCookies = document.querySelector("a.cookies");
     aAbrirCookies.addEventListener("click", () => {
         Menu.abrirOuFecharAba("abrir", conteudodeCookies);
     })  
 
-    const botaoFecharCookies = document.querySelector("button.fechar-artigo");
+    const botaoFecharCookies = document.querySelector("button.fechar-artigo.cookies");
     botaoFecharCookies.addEventListener("click", () => {
         Menu.abrirOuFecharAba("fechar", conteudodeCookies);
+        Menu.abrirOuFecharAba("fechar", conteudoSobre);
     });
 
+
+    // Abrir e Fechar conteúdo de sobre
+    const conteudoSobre = document.querySelector("article.sobre");
+
+    const aAbrirSobre = document.querySelector("a.sobre");
+    aAbrirSobre.addEventListener("click", () => {
+        Menu.abrirOuFecharAba("abrir", conteudoSobre);
+    })  
+
+    const botaoFecharSobre = document.querySelector("button.fechar-artigo.sobre");
+    botaoFecharSobre.addEventListener("click", () => {
+        Menu.abrirOuFecharAba("fechar", conteudoSobre);
+    });
 
 
 

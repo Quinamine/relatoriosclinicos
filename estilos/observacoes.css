@@ -22,7 +22,7 @@ div.caixa-de-confirmacao {
 }
 
 section.atalhos-do-teclado p.footer,
-article.politica-de-cookies p.footer {
+article p.footer {
     font-size: 12px;
     text-align: center;
     color: #555;
@@ -317,8 +317,7 @@ div.botoes-de-confirmacao button:nth-child(2):hover {
 
 /* ARTIGOS */
 
-article.politica-de-cookies,
-article.sobre {
+main article {
     width: 100%;
     max-width: 793px;
     height: 100vh;
@@ -336,8 +335,12 @@ article.sobre {
     transition: top 50ms linear;
 }
 
-article.politica-de-cookies.on,
-article.sobre.on {
+article.politica-de-cookies {
+    z-index: 11;
+}
+
+
+main article.on {
     visibility: initial;
     top: 0;
 }

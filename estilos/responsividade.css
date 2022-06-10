@@ -30,7 +30,6 @@
     }
 }
 
-
 @media screen and (max-width: 1220px) {
 
     .linha-do-cabecalho {
@@ -43,28 +42,61 @@
         width: 100%;
         padding-left: 10px;
     }
-
-
 }
 
+@media screen and (max-width: 1178px) {
+    .linha-do-rodape {
+        position: relative;
+    }
+
+    .linha-do-rodape p {
+        align-self: flex-start;
+        flex: 1;
+        margin-right: 0;
+    }
+
+    .linha-do-rodape a.voltar {
+        position: absolute;
+        bottom: -30px;
+        left: 5px;
+    }
+}
 
 @media screen and (max-width: 1023px) {
     .linha-do-cabecalho button,
-    .linha-do-cabecalho a.atalhos-do-teclado {
+    .linha-do-cabecalho a.abrir-atalhos-do-teclado {
         display: none;
     }   
 }
 
-
 @media screen and (max-width: 790px) {
+    body.hide-overflow {
+        overflow: hidden;
+    }
+
+    header.sticky {
+        position: sticky;
+        top: 0;
+        background-color: #fff;
+        z-index: 2;
+    }
+
+    .linha-do-cabecalho {
+        min-height: 50px;
+        justify-content: center;
+        align-items: center;
+    }
 
     .linha-do-cabecalho .hamburguer {
         width: 35px;
         display: flex;
         flex-direction: column;
         position: absolute;
-        top: 0;
+        top: 8px;
         right: 2px;
+
+        top: 10px;
+        left: 0px;
         padding: 8px;
     }
 
@@ -77,7 +109,7 @@
         height: 2px;
         background-color: #888;
         margin: 1.5px 0;
-        transition: all 40ms linear;
+        transition: all 100ms ease;
     }
 
     .hamburguer.on div:nth-child(1) {
@@ -92,24 +124,30 @@
         transform: rotate(45deg) translate(-6px, -5px);
     }
 
-
     /** Formatação do nav **/
-
+   
     .linha-do-cabecalho nav {
         position: absolute;
-        top: 33px;
-        left: -75vw;
         background-color: #fff;
-        z-index: 10;
-        padding: 0 0 0 10px;
-        visibility: hidden;
-        transition: all 40ms linear;
+        z-index: 3;
+        padding: 0 0 0 15px;
+        left: -790px;
+        top: 51px;
+        width: 76vw;
+        transition: left 100ms ease;
+    }
+
+    /* ABERTURA DO MENU */
+    .linha-do-cabecalho nav.on {
+        left: 0;
+       
     }
 
     .linha-do-cabecalho nav ul {
         flex-direction: column;
         align-items: flex-start;
         margin-right: 10px;
+        width: 100%;
     }
 
     .linha-do-cabecalho nav ul li {
@@ -118,9 +156,19 @@
 
     .linha-do-cabecalho nav ul li:nth-child(1) {
         justify-content: flex-start;
+        padding: 10px;
+        position: relative;
     }
 
-    .linha-do-cabecalho nav ul li:nth-child(1),
+    .linha-do-cabecalho nav ul li:nth-child(1) input {
+        position: absolute;
+        left: 185px;
+    }
+
+    .linha-do-cabecalho nav ul li:nth-child(1) label {
+        flex: 1;
+    }
+
     .linha-do-cabecalho nav ul a {
         padding: 10px !important;
         width: 100%;
@@ -128,28 +176,48 @@
 
     .linha-do-cabecalho nav ul li:hover,
     .linha-do-cabecalho nav ul a:hover {
-        background-color: #fff;
+        background-color: #fff !important;
     }
 
     .linha-do-cabecalho nav ul li:nth-child(1):active,
     .linha-do-cabecalho nav ul a:active {
-        background-color: #ddd;
+        background-color: #ddd !important
     }
 
     .linha-do-cabecalho nav ul li:nth-child(1) input {
         order: 2;
     }
 
-    .linha-do-cabecalho nav.on {
+    /* ARTIGOS */
+    main article {
+        top: 51px !important;
         left: 0;
-        visibility: visible;
-        width: 75vw;
+        box-shadow: none;
     }
 
-   /* DESFOQUE */
-   div.desfoque-do-fundo.on {
-        top: 33px;
+    main article.z-index-up {
+        z-index: 2;
     }
+
+    div.close-article button.fechar-artigo {
+        top: 51px;
+        
+    }
+
+    div.close-article button.fechar-artigo:active {
+        background-color: #D00 !important;
+    }
+
+
+   /* DESFOQUE */
+    div.desfoque-do-fundo {
+        transition-duration: 100ms;
+    }
+
+    div.desfoque-do-fundo.on.parcial {
+        top: 51px;
+    }
+
 }
 
 @media screen and (max-width: 590px) {
@@ -167,5 +235,5 @@
         margin-top: 20px;
         border-top: thin dashed #aaa;
         padding: 10px 0;
-    }
+    }  
 }

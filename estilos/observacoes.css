@@ -42,7 +42,7 @@ article p.footer {
     }
 
     .col-da-linha-de-assinatura p:first-child input {
-        width: 308px;
+        width: 305px;
     }
 }
 
@@ -74,7 +74,7 @@ article p.footer {
     justify-content: space-between;
     position: fixed;
     top: -35px;
-    right: calc(50vw - 245px / 2);
+    right: calc(50vw - 257px / 2);
     transition: top 150ms linear;
     visibility: hidden;
 }
@@ -134,11 +134,11 @@ div.caixa-de-pesquisa button:active {
 }
 
 div.query-sem-resultados {
-    max-width: 400px;
+    max-width: 320px;
     padding: 8px;
     position: fixed;
     top: -133px;
-    left: calc(50vw - 400px / 2);
+    left: calc(50vw - 302.17px / 2);
     border: 1px solid #aaa;
     border-radius: 8px;
     background-color: #fff;
@@ -183,7 +183,7 @@ section.atalhos-do-teclado {
     top: -105vh;
     right: 0;
     transition: top 50ms linear;
-    z-index: 9;
+    z-index: 1;
     visibility: hidden;
 }  
 
@@ -252,10 +252,10 @@ div.close-article button.fechar-artigo:active {
 div.caixa-de-confirmacao {
     background: #fff;
     top: calc(50vh - 114px / 2);
-    right: calc(50vw - 297px / 2);
+    right: calc(50vw - 311.06px / 2);
     border-radius: 8px;
     display: none;
-    z-index: 10;
+    z-index: 1;
 }
 
 div.caixa-de-confirmacao.on {
@@ -306,6 +306,7 @@ div.botoes-de-confirmacao button:nth-child(2):hover {
 /* FICHA VAZIA OBS*/
 .esvaziamento-da-ficha p.ficha-vazia-obs {
     bottom: calc(-50vh - 40px / 2);
+    left: calc(50vw - 180.31px / 2);
     transition: bottom 150ms linear;
 }
 
@@ -319,26 +320,35 @@ div.botoes-de-confirmacao button:nth-child(2):hover {
 
 main article {
     width: 100%;
-    max-width: 793px;
+    max-width: 700px;
     height: 100vh;
     overflow-y: scroll;
     margin: auto;
-    padding: 20px 113px;
+    padding: 20px 3%;
     background-color: #fff;
     font-size: 14px;
     position: fixed;
     top: -100vh;
     left: calc(50vw - 700px * (1/2));
-    z-index: 10;
+    z-index: 1;
     box-shadow: 0 0 15px #555;
     visibility: hidden;
     transition: top 50ms linear;
 }
 
-article.politica-de-cookies {
-    z-index: 11;
+main article::-webkit-scrollbar {
+    width: 10px;
+    border: thin solid #ddd;
+    padding: 4px;
 }
 
+main article::-webkit-scrollbar-thumb {
+    background-color: #ddd;
+}
+
+article.politica-de-cookies {
+    z-index: 2;
+}
 
 main article.on {
     visibility: initial;
@@ -374,7 +384,6 @@ ol li {
     font-size: 18px;
 }
 
-
 article .bold {
     color: #333;
 }
@@ -383,6 +392,7 @@ article p.consentimento {
     border: 1px solid #aaa;
     background-color: #f4f4f4;
     padding: 10px;
+    font-size: 12px;
 }
 
 div.close-article {
@@ -394,13 +404,15 @@ div.close-article {
 
 div.close-article button.fechar-artigo {
     outline: none;
-    border: thin solid #eee;
+    border: thin solid #ddd;
+    border-right: none;
     position: fixed;
     top: 0;
-    margin-right: -113px;
+    margin-right: -3%;
     font-size: 28px;
     width: 35px;
     height: 35px;
+    opacity: 0.8;
 }
 
 
@@ -412,6 +424,7 @@ div.desfoque-do-fundo.on {
     position: fixed;
     top: 0;
     background-color: rgba(0, 0, 0, 0.5);
+    
 }
 
 

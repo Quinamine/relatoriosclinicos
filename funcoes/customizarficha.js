@@ -19,7 +19,7 @@ class PersonalizacaodaFicha {
     protegerAcesssoAreadonlyCels () {
         // Declaracao das Variáveis necessárias
         const observacao = document.querySelector("p.readonlycels-obs");
-        const trechodeObs = document.querySelector("p.readonlycels-obs span");
+        const trechodeRecomendacao = observacao.querySelector("span");
         let tempodeObs = 1200;
     
         // Mostrar Observação
@@ -27,11 +27,11 @@ class PersonalizacaodaFicha {
     
         // Recomendar "Dark readonly Cels"
         if(!this.checkboxdeControl.checked) {
-            trechodeObs.classList.add("show");
+            trechodeRecomendacao.classList.add("show");
             tempodeObs = 3500;
         }
         else {
-            trechodeObs.classList.remove("show");
+            trechodeRecomendacao.classList.remove("show");
         }
       
         setTimeout(() => {
@@ -50,7 +50,7 @@ class PersonalizacaodaFicha {
         if(status>=1){
             const caixadeConfirmacao = document.querySelector(".caixa-de-confirmacao");
             caixadeConfirmacao.classList.add("on");
-            desfocarFundo(1)
+            Desfoque._100Viewport();
         } 
         else {
             const fichaVaziaObs = document.querySelector("p.ficha-vazia-obs")
@@ -83,7 +83,7 @@ class PersonalizacaodaFicha {
     fecharCaixadeConfirmacao () {
         const caixadeConfirmacao = document.querySelector(".caixa-de-confirmacao");
         caixadeConfirmacao.classList.remove("on");
-        desfocarFundo(0)
+        Foco._100Viewport();
     }
 }
 
@@ -125,7 +125,6 @@ window.addEventListener("load", () => {
             localStorage.setItem("darkmode", checkboxdeControl.checked);
         }
     })
-
 
     // ESVAZIAR FICHA
 

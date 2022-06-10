@@ -120,16 +120,6 @@ window.addEventListener("load", () =>  {
         src.css().resetarBgdasLinhas();
     })
 
-    // IR PARA LINHA
-    botaoIrdacaixadePesquisa.addEventListener("click", () => {
-        let retornodaPesquisa = src.pesquisarLinha(campodePesquisa.value);
-        src.css().resetarBgdasLinhas();
-
-        if(retornodaPesquisa != false) {
-            src.omitirCaixadePesquisa();
-        }
-    })
-
     // FECHAR
     botaoOkdeQuerySemResultados.addEventListener("click", () => {
         src.nothingFound();
@@ -140,7 +130,6 @@ window.addEventListener("load", () =>  {
     campodePesquisa.addEventListener("keyup", () => {
         src.pesquisarLinha(campodePesquisa.value);
     })
-
 
     /// ENCONTRAR ATRAVES DO MOUSE UP
     campodePesquisa.addEventListener("mouseup", () => {
@@ -161,11 +150,11 @@ window.addEventListener("load", () =>  {
         // FECHAR QUERY SEM RESULTADOS COM ENTER
         if (tecla == "enter") {
             // Fechar caixa de query sem resultados
-            src.nothingFound();
-            src.css().resetarBgdasLinhas();
+            if(botaoOkdeQuerySemResultados.parentElement.classList.contains("on")) {
+                src.nothingFound();
+                src.css().resetarBgdasLinhas();
+            }  
         }
-
-
         
     })
 

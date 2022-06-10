@@ -45,7 +45,7 @@ main h1 input:focus, .col-de-inputs :not(input[readonly]):focus,
 }
 
 .col-de-inputs input[readonly]:hover {
-    cursor: initial;
+    cursor: context-menu;
 }
 
 .bold {

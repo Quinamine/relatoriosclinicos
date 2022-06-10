@@ -15,7 +15,7 @@
     <script src="funcoes/somarcasos.js"></script>
     <script src="funcoes/backup.js"></script>
     <script src="funcoes/totalizador.js"></script>
-    <script src="funcoes/desfocarbg.js"></script>
+    <script src="funcoes/desfocarfundo.js"></script>
     <script src="funcoes/pesquisarlinha.js"></script>
     <script src="funcoes/customizarficha.js"></script>
     <script src="funcoes/menu.js"></script>
@@ -40,18 +40,18 @@
                             
                         <li><a href="javascript:void(0)" class="esvaziar-ficha">Esvaziar ficha</a></li>
 
-                        <li><a href="javascript:void(0)" class="atalhos-do-teclado">Atalhos do teclado</a></li> 
+                        <li><a href="javascript:void(0)" class="abrir-atalhos-do-teclado">Atalhos do teclado</a></li> 
 
                         
 
-                        <li><a href="javascript:void(0)" class="cookies">Politica de cookies</a></li>
-                        <li><a href="javascript:void(0)" class="sobre">Sobre</a></li>
+                        <li><a href="javascript:void(0)" class="abrir-politica-de-cookies">Politica de cookies</a></li>
+                        <li><a href="javascript:void(0)" class="abrir-conteudo-sobre">Sobre</a></li>
 
                         <li title="Calculadora de doses pediátricas e Doseador de antirretroviras"><a href="https://quinamine.github.io/abordagem-pediatrica/index.html" target="_blank">Produtos e serviços relacionados</a></li>
 
                     </ul>
                     
-                    <button onclick="window.print()">
+                    <button onclick="window.print()" title="Ctrl + P">
                         Imprimir
                     </button>
                 </nav>
@@ -2153,24 +2153,24 @@
 
 
                 <ol start="3">
-                    <li>Salvar as preferências do usuário:</li>
+                    <li>Salvar as preferências do usuário</li>
                 </ol>
 
                 <p>Por exemplo, quando o usuário marca a opção <span class="bold">“Denegrir as células automáticas”</span>, essa escolha é salva no Local Storage para manter nas próximas visitas do usuário ao site.</p>
 
-                <h3>Qual é o destino e o tratamento dos dados?</h3>  
+                <h3>Qual é o destino e tratamento dos dados?</h3>  
 
-                <p>O Totalizador de Resumo Mensal de Consultas Externas foi desenvolvido apenas com recurso a tecnologias client-side (que funcionam no navegador, lado do cliente ou usuário) e não existe nenhum banco de dados com que está conectado que salva os dados da ficha. Todas alterações são salvas localmente. Em suma, o serviço não tem acesso remoto dos dados e mesmo se tivesse, não divulgaria ou compartilharia os dados com terceiros sem permissão do usuário. O armazenamento local dos dados é para fins principalmente de memorização e com isso melhorar a experiência do usuário com o serviço.</p>
+                <p>O Totalizador de Resumo Mensal de Consultas Externas foi desenvolvido apenas com recurso a tecnologias client-side (que funcionam no navegador, lado do cliente ou usuário) e não existe nenhum banco de dados com que está conectado que salva os dados da ficha. Todas alterações são salvas localmente. Em suma, o serviço não tem acesso remoto dos dados e mesmo se tivesse, não divulgaria ou compartilharia os dados com terceiros sem a permissão do usuário. O armazenamento local dos dados é para fins principalmente de memorização e com isso melhorar a experiência do usuário com o serviço.</p>
 
                 <h3>Como o usuário pode  gerir os seus dados?</h3>
 
                 <p>Pensando nos direitos do usuário, <span class="bold">adicionei a opção “esvaziar ficha” na barra do menu que  permite ao usuário apagar todos os dados da ficha salvos pelo Totalizador no Local Storage</span>. Em paralelo, o usuário sempre que quiser pode excluir os dados salvos através das configurações do seu navegador:</p>
 
                 <ul>
-                    <li><a href="http://">Veja aqui se estiver a usar o Microsoft Edge;</a></li>
-                    <li><a href="http://">Veja aqui se estiver a usar o Google Chrome;</a></li>
-                    <li><a href="http://">Veja aqui se estiver a usar o Modzilla Firefox;</a></li>
-                    <li><a href="http://">Veja aqui se estiver a usar o Opera Mini.</a></li>
+                    <li><a href="http://">Veja aqui se estiver usando Microsoft Edge;</a></li>
+                    <li><a href="http://">Veja aqui se estiver usando Google Chrome;</a></li>
+                    <li><a href="http://">Veja aqui se estiver usando Modzilla Firefox;</a></li>
+                    <li><a href="http://">Veja aqui se estiver usando Opera Mini.</a></li>
                 </ul>
                 
                 <p class="consentimento">A aceitação dos termos de serviço e de armazenamento apresentados neste bloco é dada pela utilização do Totalizador de Resumo Mensal de Consultas Externas.</p>
@@ -2189,7 +2189,7 @@
  
                 <h3>Qual é o propósito?</h3>
 
-                <p>O propósito é de flexibilizar a elaboração do resumo mensal de consultas externas auxiliando no cálculo automático dos subtotais e totais e minimizando possíveis erros de soma por desatenção durante o uso de uma máquina calculadora (por exemplo, somar valores de células não correspondentes, como Feminino e Masculino para achar um Subtotal feminino ou vice versa) através do uso de um algorítimo atenciosamente programado para realizar cálculos de soma de forma correcta e com a vantagem de autopreencher as células correspondentes (Subtotais e Totais).</p>
+                <p>O propósito é de flexibilizar a elaboração do resumo mensal de consultas externas auxiliando no <span class="bold">cálculo automático dos subtotais e totais</span> e minimizando possíveis erros de soma por desatenção durante o uso de uma máquina calculadora (por exemplo, somar valores de células não correspondentes, como Feminino e Masculino para achar um Subtotal feminino ou vice versa) <span class="bold">através do uso de um algorítimo atenciosamente programado para realizar cálculos de soma de forma correcta e com a vantagem de autopreencher as células correspondentes (Subtotais e Totais)</span>.</p>
 
                 <h3>Como funciona?</h3>
 
@@ -2201,7 +2201,7 @@
 
                 <h3>Qual é o destino dos dados que o usuário insere?</h3>
 
-                <p>Eles são guardados no seu próprio navegador através de um recurso chamado Local Storage (armazenamento local). E mesmo fechano o navegador, eles permanecem no local por pelo menos 90 dias ou até o usuário eliminá-los. Para mais informações, <a href="javascript:void(0)" onclick="Menu.abrirOuFecharAba('abrir', conteudodeCookies)">veja aqui a politica de cookies.</a></p>
+                <p>Eles são guardados no seu próprio navegador através de um recurso chamado Local Storage (armazenamento local). E mesmo fechano o navegador, eles permanecem no local por pelo menos 90 dias ou até o usuário eliminá-los. Para mais informações, <a href="javascript:void(0)" class="abrir-politica-de-cookies">veja aqui a politica de cookies.</a></p>
 
 
                 <h3>Quais as vantagem de se usar o serviço?</h3>
@@ -2234,10 +2234,22 @@
         </main>
 
         <footer>
+            
             <div class="linha-do-rodape">
+                
+
+                <div>
+                    <h4>TOTALIZADOR DE RMCE</h4>
+                    <ul>
+                        <li><a href="javascript:void(0)" class="abrir-conteudo-sobre">Sobre</a></li>
+                        <li><a href="javascript:void(0)" class="abrir-politica-de-cookies">Politica de cookies</a></li>
+                        
+                    </ul>
+                    
+                </div>
 
                 <div class="outros-servicos">
-                    <h2>Outros Serviços</h2>
+                    <h4>OUTROS SERVIÇOS</h4>
                     <ul>
                         <li>
                             <a href="http://quinamine.github.io/abordagem-pediatrica/paginas/doseador-de-arvs.html">Doseador pediátrico de antirretrovirais</a>
@@ -2250,6 +2262,7 @@
 
                 <p>Desenvolvido com &#128153; por <a href="https://quinamine.github.io/abordagem-pediatrica/paginas/sobremim.html">Adérito Félix Quinamine</a> | &copy; 2022 - Totalizador de Resumo Mensal de Consultas Externas</p>
 
+                <a href="#involucro-de-todo-conteudo" class="voltar">Voltar ao topo</a>
             </div>
         </footer>
     </div>

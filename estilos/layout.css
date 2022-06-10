@@ -38,18 +38,6 @@ header, footer {
     margin: 0 auto;
 }
 
-.linha-do-rodape span.heart {
-    display: inline-block;
-    width: 15px;
-    font-size: 10px;
-    filter: invert(1);
-}
-
-.linha-do-rodape span.heart.sistole {
-    font-size: 12px;
-    filter: invert(1);
-}
-
 
 /* CABECALHO */
 header {
@@ -153,41 +141,26 @@ footer {
 
 footer .linha-do-rodape {
     display: flex;
-    align-items: center;
-    
-}
-
-/* OUTROS SERVIÇOS */
-.linha-do-rodape div.outros-servicos {
-    flex-basis: calc(226px + 120px);
-}
-
-div.outros-servicos ul {
-    /*list-style: disclosure-closed;*/
-    list-style: circle;
-    list-style-position: inside;
-    padding-left: 4%;
-}
-
-div.outros-servicos h2,
-div.outros-servicos ul li {
+    align-items: flex-start;
     line-height: 2;
 }
 
-div.outros-servicos ul li a,
-div.outros-servicos ul li a:visited {
-    color: #333;
+.linha-do-rodape div {
+    margin-right: 4%;
 }
 
-/* PARAGRAFO */
-div.linha-do-rodape p {
-    color: #333;
-    line-height: 2;
+
+.linha-do-rodape p {
+    align-self: center;
     flex: 1;
     text-align: center;
+    margin-right: 10px;
 }
 
-
-
-
+.linha-do-rodape a.voltar,
+.linha-do-rodape a:visited {
+    margin-right: 10px;
+    padding: 5px;
+    color: #888;
+}
 

@@ -28,7 +28,7 @@ const Foco = {
     },
 
     destacarConteudo: (conteudo) => {
-        const conteudosFocais = document.querySelectorAll("header nav, article.politica-de-cookies, article.sobre");
+        const conteudosFocais = document.querySelectorAll("header nav, article.politica-de-cookies, article.sobre, article.conversao-pdf");
 
         for (const c of conteudosFocais) {
             c.classList.remove("z-index-10");

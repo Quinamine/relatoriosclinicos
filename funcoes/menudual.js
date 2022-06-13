@@ -32,7 +32,7 @@ window.addEventListener("load", () => {
             abrirOuFecharAbasDoMenu("abrir", conteudoDeCookies);
             Foco.destacarConteudo(conteudoDeCookies);
         });
-    })
+    });
     botaoFecharCookies.addEventListener("click", () => abrirOuFecharAbasDoMenu("fechar", conteudoDeCookies));
 
     
@@ -46,6 +46,20 @@ window.addEventListener("load", () => {
             abrirOuFecharAbasDoMenu("abrir", conteudoSobre);
             Foco.destacarConteudo(conteudoSobre);
         });
-    })
+    });
     botaoFecharSobre.addEventListener("click", () => abrirOuFecharAbasDoMenu("fechar", conteudoSobre));
+
+
+    // ABBRIR OU FECHAR CONTEUDO DE CONERSAO PARA PDF
+    const conteudoPdf = document.querySelector("article.conversao-pdf");
+    const aAbrirConteudoPdf = document.querySelector("a.abrir-conteudo-pdf");
+    const botaoFecharPdf = document.querySelector("button.fechar-artigo.pdf");
+
+    aAbrirConteudoPdf.addEventListener("click", () => { 
+        abrirOuFecharAbasDoMenu("abrir", conteudoPdf);
+        Foco.destacarConteudo(conteudoPdf);
+    });
+    botaoFecharPdf.addEventListener("click", () => abrirOuFecharAbasDoMenu("fechar", conteudoPdf));
+
+
 })

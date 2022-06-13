@@ -64,7 +64,9 @@
 @media screen and (max-width: 1023px) {
     
     .linha-do-cabecalho button,
-    .linha-do-cabecalho a.abrir-atalhos-do-teclado {
+    .linha-do-cabecalho a.abrir-atalhos-do-teclado,
+    a.abrir-conteudo-pdf, 
+    article.conversao-pdf {
         display: none;
     }   
 }

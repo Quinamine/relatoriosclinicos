@@ -92,6 +92,17 @@ window.addEventListener("load", () => {
         botao.addEventListener("click", () => {
             MenuHamburguer.desomitirRolagemBody();
 
+
+            const ArtigoAberto = MenuHamburguer.desomitirRolagemBody();
+
+            if(ArtigoAberto == false) {
+                return false;
+            }
+
+            header.classList.remove("sticky");
+            header.classList.remove("z-index-10");
+
+
         });
     })
 

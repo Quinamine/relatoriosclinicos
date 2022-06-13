@@ -203,7 +203,7 @@ section.atalhos-do-teclado .conteudo h2 {
 section.atalhos-do-teclado kbd {
     background-color: #ddd;
     border: 1px solid #888;
-    padding: 2px;
+    padding: 2px 6px;
     border-radius: 4px;
 }
 
@@ -317,7 +317,7 @@ main article {
     margin: auto;
     padding: 20px 3%;
     background-color: #fff;
-    font-size: 14px;
+    font-size: 0.875rem;
     position: fixed;
     top: -100vh;
     left: calc(50vw - 700px * (1/2));
@@ -343,7 +343,7 @@ main article::-webkit-scrollbar-thumb {
 }
 
 article h2, article h3,
-article p {
+article p, article.conversao-pdf ol li {
     line-height: 1.4;
     margin: 20px 0;
 }
@@ -375,9 +375,31 @@ article ol li {
     font-size: 1.125rem
 }
 
-article .bold {
-    color: #333;
+article.conversao-pdf ol li {
+    font-size: 0.875rem;
 }
+
+article.conversao-pdf mark.imprimir {
+    display: inline-block;
+    padding: 4px;
+    text-align: center;
+    margin: 0;
+}
+
+article.conversao-pdf .nota {
+    background-color: #dce4f4;
+    border-left: 4px solid  blue;
+    padding: 8px;
+    border-radius: 5px;
+}
+
+article.conversao-pdf ol p.nota {
+    margin-left: 4%;
+    font-size: 12.5px;
+}
+
+
+
 
 article p.consentimento {
     border: 1px solid #aaa;

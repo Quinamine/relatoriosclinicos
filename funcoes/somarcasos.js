@@ -1,9 +1,9 @@
 
-function somarCasos(celulasporSomar, celuladeSaida) {      
+function somarCasos(celulasPorSomar, celulaDeSaida) {      
     let soma = 0;
 
-    for (const cel of celulasporSomar) {
+    for (const cel of celulasPorSomar) {
         soma+= Number(cel.value);
     }
-    celuladeSaida.value = soma;
+    celulaDeSaida.value = soma;
 }

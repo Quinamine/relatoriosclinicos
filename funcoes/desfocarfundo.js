@@ -27,9 +27,15 @@ const Foco = {
         }
     },
 
-    abaixoDoCabecalho: () => {
-        desfoque.classList.remove("on");
-    },
+    destacarConteudo: (conteudo) => {
+        const conteudosFocais = document.querySelectorAll("header nav, article.politica-de-cookies, article.sobre");
+
+        for (const c of conteudosFocais) {
+            c.classList.remove("z-index-10");
+        }
+
+        conteudo.classList.add("z-index-10");
+    }
 }
 
 
@@ -38,5 +44,7 @@ window.addEventListener("load", () => {
     desfoque = document.querySelector(".desfoque-do-fundo");
     janelasDesfocantes = document.querySelectorAll("div.caixa-de-confirmacao, .atalhos-do-teclado, article.politica-de-cookies, article.sobre, div.hamburguer");
 
+
+    
     
 })

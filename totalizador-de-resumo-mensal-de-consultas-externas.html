@@ -17,9 +17,10 @@
     <script src="funcoes/totalizador.js"></script>
     <script src="funcoes/desfocarfundo.js"></script>
     <script src="funcoes/pesquisarlinha.js"></script>
-    <script src="funcoes/customizarficha.js"></script>
-    <script src="funcoes/menu.js"></script>
-    <script src="funcoes/hamburguer.js"></script> 
+    <script src="funcoes/personalizacao.js"></script>
+    <script src="funcoes/menudual.js"></script>
+    <script src="funcoes/menumobile.js"></script>
+    <script src="funcoes/zindex.js"></script>
 </head>
 <body>
     <div id="involucro-de-todo-conteudo">
@@ -2050,13 +2051,12 @@
 
             <div class="observacoes dialogo">
                 <!-- Celulas Automaticas -->
-                <p class="readonlycels-obs">Inacessível. Esta célula é só de leitura. <span> Marque a opção <span class="entre-aspas">"Denegrir as células automáticas"</span> para distinguir as células de leitura das outras.</span></p>  
+                <p class="readonlycels-obs">Inacessível. Esta célula é só de leitura. <span> Marque a opção <b>"Denegrir as células automáticas"</b> para distinguir as células de leitura das outras.</span></p>  
 
                 <!-- Caixa de pesquisa "Ir para" -->
                 <section class="pesquisa">
                     <div class="caixa-de-pesquisa">
                         <input type="number" class="pesquisar-linha" placeholder="Introduza o número da linha" min="1" max="53">    
-                        <button class="ir">Ir</button>
                         <button class="fechar" title="Fechar">&times;</button>
                     </div>
 
@@ -2115,14 +2115,14 @@
 
                 <h3>O que são cookies?</h3>
 
-                <p>Em tecnologia, cookies são trechos de texto armazenados no seu navegador por algorítimos da maioria dos sites/apps da web que você visita, para guardar algumas informações. Eles são importantes pois funcionam como um bloco de anotações que os sites recorrem para recordar-se das acções e preferências dos seus usuários com a finalidade de oferecê-los a melhor experiência possível.</p>
+                <p>Em tecnologia, cookies são trechos de texto armazenados no seu navegador por algorítimos da maioria dos sites/apps da web que você visita, para guardar algumas informações. Eles são importantes pois funcionam como um bloco de anotações que posteriormente os sites recorrem para recordar-se das acções e preferências dos seus usuários com o objectivo de oferecê-los a melhor experiência possível.</p>
 
-                <p>O Totalizador de Resumo Mensal de Consultas Externas utiliza uma tecnologia paralela designada Local Storage ou Armazenamento local (um espaço disponível nos navegadores para guardar pequenas informações). Basicamente, existem 2 tipos de Storage ou Armazenamento:</p>
+                <p>O Totalizador de Resumo Mensal de Consultas Externas utiliza uma tecnologia paralela designada Web Storage (um espaço disponível nos navegadores para guardar pequenas informações). Basicamente, existem 2 tipos de Web Storage ou Armazenamento:</p>
 
                 <ul>
-                    <li><span class="bold">Armazenamento de sessão ou Session Storage</span> – que elimina os dados gravados quando a janela do navegador é fechada.</li>
+                    <li><b>Armazenamento de Sessão ou Session Storage</b> – que elimina os dados gravados quando a janela do navegador é fechada.</li>
 
-                    <li><span class="bold">Armazenamento local ou Local Storage</span> – que mantém os dados salvos por um periodo determinado ou até que você (usuário) os exclua.</li>
+                    <li><b>Armazenamento Local ou Local Storage</b> – que mantém os dados salvos por um periodo determinado ou até que você (usuário) os exclua.</li>
                 </ul>
                
 
@@ -2149,31 +2149,31 @@
                     <li>Durabilidade dos dados </li>
                 </ol>
 
-                <p>Memorizar e mais tarde manter os dados previamente inseridos no preenchimento da ficha. Isso é importante, pois possibilita a que o profissional interrompa sem receio de voltar à estaca zero,  a elaboração do resumo para continuar num outro momento oportuno, sobretudo se ainda não tiver em mãos dados de alguns indicadores para inserir na ficha.</p>
+                <p>Memorizar e mais tarde manter os dados previamente inseridos no preenchimento da ficha. Isso é importante, pois possibilita ao profissional interromper sem receio de voltar à estaca zero,  a elaboração do resumo para continuar num outro momento oportuno, sobretudo se ainda não tiver em mãos dados de alguns indicadores para inserir na ficha.</p>
 
 
                 <ol start="3">
                     <li>Salvar as preferências do usuário</li>
                 </ol>
 
-                <p>Por exemplo, quando o usuário marca a opção <span class="bold">“Denegrir as células automáticas”</span>, essa escolha é salva no Local Storage para manter nas próximas visitas do usuário ao site.</p>
+                <p>Por exemplo, quando o usuário marca a opção <b>“Denegrir as células automáticas”</b>, essa escolha é salva no Local Storage para manter nas próximas visitas do usuário à plataforma.</p>
 
                 <h3>Qual é o destino e tratamento dos dados?</h3>  
 
-                <p>O Totalizador de Resumo Mensal de Consultas Externas foi desenvolvido apenas com recurso a tecnologias client-side (que funcionam no navegador, lado do cliente ou usuário) e não existe nenhum banco de dados com que está conectado que salva os dados da ficha. Todas alterações são salvas localmente. Em suma, o serviço não tem acesso remoto dos dados e mesmo se tivesse, não divulgaria ou compartilharia os dados com terceiros sem a permissão do usuário. O armazenamento local dos dados é para fins principalmente de memorização e com isso melhorar a experiência do usuário com o serviço.</p>
+                <p>O Totalizador de Resumo Mensal de Consultas Externas foi desenvolvido apenas com recurso a tecnologias client-side (que funcionam no navegador, lado do cliente ou usuário) e não existe nenhum banco de dados com que está conectado que salva os dados da ficha. Todas alterações são salvas localmente (no navegador). Em suma, o serviço não tem acesso remoto dos dados e mesmo se tivesse, não divulgaria ou compartilharia os dados com terceiros sem a permissão do usuário. O armazenamento local dos dados é para fins principalmente de memorização e com isso melhorar a experiência do usuário com o serviço.</p>
 
                 <h3>Como o usuário pode  gerir os seus dados?</h3>
 
-                <p>Pensando nos direitos do usuário, <span class="bold">adicionei a opção “esvaziar ficha” na barra do menu que  permite ao usuário apagar todos os dados da ficha salvos pelo Totalizador no Local Storage</span>. Em paralelo, o usuário sempre que quiser pode excluir os dados salvos através das configurações do seu navegador:</p>
+                <p>Pensando nos direitos do usuário, <strong>adicionei a opção “esvaziar ficha” na barra do menu que  permite ao usuário apagar todos os dados da ficha salvos pelo Totalizador no Local Storage</strong>. Em paralelo, o usuário sempre que quiser pode excluir os dados salvos através das configurações do seu navegador:</p>
 
                 <ul>
-                    <li><a href="http://">Veja aqui se estiver usando Microsoft Edge;</a></li>
-                    <li><a href="http://">Veja aqui se estiver usando Google Chrome;</a></li>
-                    <li><a href="http://">Veja aqui se estiver usando Modzilla Firefox;</a></li>
-                    <li><a href="http://">Veja aqui se estiver usando Opera Mini.</a></li>
+                    <li><a href="https://support.microsoft.com/pt-br/microsoft-edge/excluir-cookies-no-microsoft-edge-63947406-40ac-c3b8-57b9-2a946a29ae09" target="_blank">Veja aqui se estiver usando Microsoft Edge;</a></li>
+                    <li><a href="https://support.google.com/chrome/answer/95647" target="_blank">Veja aqui se estiver usando Google Chrome;</a></li>
+                    <li><a href="https://support.mozilla.org/pt-PT/kb/limpar-cookies-e-dados-de-site-no-firefox" target="_blank">Veja aqui se estiver usando Modzilla Firefox;</a></li>
+                    <li><a href="https://support.apple.com/pt-br/guide/safari/sfri11471/mac" target="_blank">Veja aqui se estiver usando Safari.</a></li>
                 </ul>
                 
-                <p class="consentimento">A aceitação dos termos de serviço e de armazenamento apresentados neste bloco é dada pela utilização do Totalizador de Resumo Mensal de Consultas Externas.</p>
+                <p class="consentimento"><strong>A aceitação dos termos de serviço e de armazenamento apresentados neste bloco é dada pela utilização do Totalizador de Resumo Mensal de Consultas Externas.</strong></p>
 
                 <p class="footer">&copy; 2022 - Totalizador de RMCE</p>
                     
@@ -2184,42 +2184,39 @@
 
             <article class="sobre">
                 <h2>Sobre</h2>
+                
 
-                <p>O Totalizador de RMCE  (Resumo Mensal de Consultas Externas) é um serviço online gratuito que, como o nome sugere,  auxilia na elaboração de relatório de consultas externas através do cálculo dos Subtotais e Totais com base nos dados reportados. Foi desenvolvido baseando-se na mesma estrutura da ficha de resumo mensal de consultas externas actualmente em vigor no Serviço Nacional de Saúde (SNS).</p>
+                <p><strong>O Totalizador de RMCE  (Resumo Mensal de Consultas Externas)</strong> é um serviço online gratuito que, como o nome sugere,  <strong>auxilia na elaboração de relatório de consultas externas através do cálculo dos subtotais e totais com base nos dados reportados</strong>. Foi desenvolvido baseando-se no mesmo modelo da ficha de resumo mensal de consultas externas actualmente em vigor no Serviço Nacional de Saúde (SNS).</p>
  
                 <h3>Qual é o propósito?</h3>
 
-                <p>O propósito é de flexibilizar a elaboração do resumo mensal de consultas externas auxiliando no <span class="bold">cálculo automático dos subtotais e totais</span> e minimizando possíveis erros de soma por desatenção durante o uso de uma máquina calculadora (por exemplo, somar valores de células não correspondentes, como Feminino e Masculino para achar um Subtotal feminino ou vice versa) <span class="bold">através do uso de um algorítimo atenciosamente programado para realizar cálculos de soma de forma correcta e com a vantagem de autopreencher as células correspondentes (Subtotais e Totais)</span>.</p>
+                <p>O propósito é de flexibilizar a elaboração do resumo mensal de consultas externas auxiliando no <b>cálculo automático dos subtotais e totais</b> e minimizando possíveis erros de soma por desatenção durante o uso de uma máquina calculadora (por exemplo, somar valores de células não correspondentes, como Feminino e Masculino para achar um Subtotal feminino ou vice versa) <b>através do uso de um algorítimo atenciosamente programado para realizar cálculos de soma de forma correcta e com a vantagem de autopreencher as células correspondentes (Subtotais e Totais)</b>.</p>
 
                 <h3>Como funciona?</h3>
 
-                <p>O serviço espera como parâmetros, os dados colhidos do  livro de registo de Consultas Externas da  respectiva Unidade Sanitária durante o mês em consideração e com base nesses dados, as células correspondentes aos subtotais e totais são calculadas automaticamente e em tempo real.</p>
+                <p>O serviço espera como parâmetros, os dados colhidos do(s)  Livro(s) de Registo de Consultas Externas da  respectiva Unidade Sanitária durante o mês em consideração e com base nesses dados, as células correspondentes aos subtotais e totais são calculadas automaticamente e em tempo real.</p>
 
                 <h3>O que o usuário precisa dispor?</h3>
 
-                <p>Além de um dispositivo como computador (recomendável para uma melhor experiência) ou celular (alternativo) e outros serviços (internet) para ter acesso a plataforma, é importante que o profissional (usuário) tenha colhido os dados relativos as variáveis ou indicadores da ficha no(s) Livro(s) de  Registo de Consultas Externas da sua Unidade Sanitária. <span class="bold">Essa responsabilidade é inteiramente do usúário, a plataforma só se limita a fazer cálculo dos Subtotais e Totais.</span></p>
+                <p>Além de um dispositivo como computador (recomendável para uma melhor experiência) ou celular (alternativo) e outros serviços (internet) para ter acesso à plataforma, é importante que o profissional (usuário) tenha colhido os dados relativos as variáveis ou indicadores da ficha no(s) Livro(s) de  Registo de Consultas Externas da sua Unidade Sanitária. <strong>Essa responsabilidade é inteiramente do usúário, a plataforma só se limita a fazer cálculo dos subtotais e totais.</strong></p>
 
                 <h3>Qual é o destino dos dados que o usuário insere?</h3>
 
-                <p>Eles são guardados no seu próprio navegador através de um recurso chamado Local Storage (armazenamento local). E mesmo fechano o navegador, eles permanecem no local por pelo menos 90 dias ou até o usuário eliminá-los. Para mais informações, <a href="javascript:void(0)" class="abrir-politica-de-cookies">veja aqui a politica de cookies.</a></p>
+                <p>Eles são guardados no seu próprio navegador através de um recurso chamado Local Storage (Armazenamento Local). E mesmo fechano o navegador, eles permanecem no local até o usuário eliminá-los. Para se informar melhor, <a href="javascript:void(0)" class="abrir-politica-de-cookies">veja aqui a Politica de cookies.</a></p>
 
 
                 <h3>Quais as vantagem de se usar o serviço?</h3>
 
                 <ul>
-                    <li>Calcula e preenche automaticamente as células correspondentes aos Subtotais e Totais;</li>
+                    <li>Calcula e preenche automaticamente as células correspondentes aos subtotais e totais;</li>
                     <li>É lógico (fornece resultados verdadeiros);</li>
                     <li> Flexibiliza a realização do relatório;</li>
                     <li>Salva os dados no navegador por um prazo específico ou até o usuário eliminá -los.</li>
                 </ul>
-
-                <h3>Quais as desvantagens de se usar o serviço?</h3>
-
-                <p>É indispensável o uso de um computador ou telemóvel com acesso à internet.</p>
-                
+           
                 <h3>Como prosseguir após inserir os dados e obter os (Sub)Totais?</h3>
                 
-                <p>Você pode optar por copiar os valores para a ficha física de resumo mensal a partir da tela do seu dispositivo ou imprimir (SOS) a ficha para fazê-lo logo a seguir. Ainda é possível salvar em formato PDF.</p>
+                <p>Você pode optar por copiar os valores para a ficha física de resumo mensal a partir da tela do seu dispositivo ou imprimir a ficha para fazê-lo logo a seguir. Ainda é possível salvar em formato PDF.</p>
                 
                 <h3>Quem criou?</h3> 
                 <p> O serviço foi criado por mim, <a href="https://quinamine.github.io/abordagem-pediatrica/paginas/sobremim.html">Adérito Félix Quinamine</a>, Técnico de Medicina de profissão e Desenvolvedor Web autodidata.</p>

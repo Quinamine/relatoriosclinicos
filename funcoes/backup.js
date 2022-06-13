@@ -2,19 +2,19 @@
 const saveOnStorage = {
 
     salvarFicha: () => {
-        const inputs = document.querySelectorAll(".col-de-inputs input");
+        const celulas = document.querySelectorAll(".col-de-inputs input");
 
-        for (let p = 0; p < inputs.length; p++) {
+        for (let p = 0; p < celulas.length; p++) {
             
-            inputs[p].addEventListener("input", () => { 
+            celulas[p].addEventListener("input", () => { 
                 // BACKUP - SALVAR NO LOCALSTORAGE
-                let valor = (`${inputs[p].value}`);
+                let valor = (`${celulas[p].value}`);
                 localStorage.setItem(`cel${p}`, valor);
             });
 
             // SAIDA - RETORNO DO BACKUP
             let storageReturn = localStorage.getItem(`cel${p}`);
-            inputs[p].value = storageReturn;
+            celulas[p].value = storageReturn;
         }
     },
 

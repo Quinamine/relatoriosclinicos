@@ -1,42 +1,42 @@
 
-class PersonalizacaodaFicha {
+class personalizacaoDaFicha {
 
-    constructor(checkboxdeControl) {
-        this.checkboxdeControl = checkboxdeControl;
+    constructor(checkboxDeControl) {
+        this.checkboxDeControl = checkboxDeControl;
     }
 
     denegrirAsCelulas () {
-        const colunasdasCelulas = document.querySelectorAll(".col-de-inputs");
-        let cb = this.checkboxdeControl;
+        const colunasDasCelulas = document.querySelectorAll(".col-de-inputs");
+        let cb = this.checkboxDeControl;
 
-        for (const col of colunasdasCelulas) {
+        for (const col of colunasDasCelulas) {
             cb.checked 
                 ? col.classList.add("readonly") 
                 : col.classList.remove("readonly");
         }
     }
 
-    protegerAcesssoAreadonlyCels () {
+    protegerReadonlyCelsContraAcesso () {
         // Declaracao das Variáveis necessárias
         const observacao = document.querySelector("p.readonlycels-obs");
-        const trechodeRecomendacao = observacao.querySelector("span");
-        let tempodeObs = 1200;
+        const trechoDeRecomendacao = observacao.querySelector("span");
+        let duracaoDeDisplay = 1200;
     
         // Mostrar Observação
         observacao.classList.add("on");
     
         // Recomendar "Dark readonly Cels"
-        if(!this.checkboxdeControl.checked) {
-            trechodeRecomendacao.classList.add("show");
-            tempodeObs = 3500;
+        if(!this.checkboxDeControl.checked) {
+            trechoDeRecomendacao.classList.add("show");
+            duracaoDeDisplay = 3500;
         }
         else {
-            trechodeRecomendacao.classList.remove("show");
+            trechoDeRecomendacao.classList.remove("show");
         }
       
         setTimeout(() => {
             observacao.classList.remove("on");
-        }, tempodeObs);
+        }, duracaoDeDisplay);
     }
 
     confirmarEsvaziamento () {
@@ -48,8 +48,8 @@ class PersonalizacaodaFicha {
         }
 
         if(status>=1){
-            const caixadeConfirmacao = document.querySelector(".caixa-de-confirmacao");
-            caixadeConfirmacao.classList.add("on");
+            const caixaDeConfirmacao = document.querySelector(".caixa-de-confirmacao");
+            caixaDeConfirmacao.classList.add("on");
             Desfoque._100Viewport();
         } 
         else {
@@ -80,9 +80,9 @@ class PersonalizacaodaFicha {
         }  
     }
 
-    fecharCaixadeConfirmacao () {
-        const caixadeConfirmacao = document.querySelector(".caixa-de-confirmacao");
-        caixadeConfirmacao.classList.remove("on");
+    fecharCaixaDeConfirmacao () {
+        const caixaDeConfirmacao = document.querySelector(".caixa-de-confirmacao");
+        caixaDeConfirmacao.classList.remove("on");
         Foco._100Viewport();
     }
 }
@@ -90,23 +90,23 @@ class PersonalizacaodaFicha {
 
 window.addEventListener("load", () => {
 
-    let checkboxdeControl = document.querySelector("#readonly-cels-darker");
+    let checkboxDeControl = document.querySelector("#readonly-cels-darker");
 
     // INSTANCIAMENTO DA CLASSE
-    let personalizacao = new PersonalizacaodaFicha(checkboxdeControl);
+    let personalizacao = new personalizacaoDaFicha(checkboxDeControl);
 
     // Denegrir células no load do windows
     personalizacao.denegrirAsCelulas();
 
     // Denegrir as células com checkbox
-    checkboxdeControl.addEventListener("change", () => {
+    checkboxDeControl.addEventListener("change", () => {
         personalizacao.denegrirAsCelulas();
     });
 
     let readonlyCels = document.querySelectorAll(".col-de-inputs input[readonly]");
     for (const cel of readonlyCels) {
         cel.addEventListener("click", () => {
-            personalizacao.protegerAcesssoAreadonlyCels();
+            personalizacao.protegerReadonlyCelsContraAcesso();
         }); 
     } 
 
@@ -116,13 +116,13 @@ window.addEventListener("load", () => {
         let tecla = event.keyCode;
 
         if ((event.ctrlKey) &&  (tecla == 32)) {
-            if (!checkboxdeControl.checked) {
-                checkboxdeControl.setAttribute("checked", "");
+            if (!checkboxDeControl.checked) {
+                checkboxDeControl.setAttribute("checked", "");
             } else {
-                checkboxdeControl.removeAttribute("checked");
+                checkboxDeControl.removeAttribute("checked");
             }
             personalizacao.denegrirAsCelulas();
-            localStorage.setItem("darkmode", checkboxdeControl.checked);
+            localStorage.setItem("darkmode", checkboxDeControl.checked);
         }
     })
 
@@ -139,13 +139,13 @@ window.addEventListener("load", () => {
 
     botaoEsvaziar.addEventListener("click", () => {
         personalizacao.esvaziarFicha();
-        personalizacao.fecharCaixadeConfirmacao();
+        personalizacao.fecharCaixaDeConfirmacao();
     })
 
 
     // Cancelar esvaziameto
     const botaoCancelar = document.querySelector("button.cancelar");
     botaoCancelar.addEventListener("click", () => {
-        personalizacao.fecharCaixadeConfirmacao();
+        personalizacao.fecharCaixaDeConfirmacao();
     })
 })

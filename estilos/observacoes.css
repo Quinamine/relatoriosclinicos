@@ -60,9 +60,7 @@ article p.footer {
     display: initial !important;
 }
 
-.observacoes p.readonlycels-obs > span.show > span.entre-aspas {
-    font-weight: bold;
-}
+
 
 /* Ir para */
 .observacoes div.caixa-de-pesquisa { 
@@ -103,22 +101,13 @@ div.caixa-de-pesquisa button {
     font-weight: bold;
 }
 
-div.caixa-de-pesquisa button.ir {
-    border: none;
-    margin: 0 2px;
-    background-color: #ddd;
-}
-
-div.caixa-de-pesquisa button.ir:hover {
-    background-color: #f4f4f4;
-}
-
 div.caixa-de-pesquisa button.fechar {
     background-color: inherit;
     border: none;
     outline: none;
     color: #fff;
     font-size: 16px;
+    margin-left: 2px;
 }
 
 div.caixa-de-pesquisa button.fechar:hover {
@@ -143,11 +132,13 @@ div.query-sem-resultados {
     border-radius: 8px;
     background-color: #fff;
     transition: top 50ms linear;
+    visibility: hidden;
 }
 
 div.query-sem-resultados.on {
     top: 0;
     box-shadow: 0 0 15px #555;
+    visibility: visible;
 }
 
 div.query-sem-resultados p {
@@ -330,10 +321,15 @@ main article {
     position: fixed;
     top: -100vh;
     left: calc(50vw - 700px * (1/2));
-    z-index: 1;
     box-shadow: 0 0 15px #555;
     visibility: hidden;
     transition: top 50ms linear;
+    z-index: 1;
+}
+
+main article.on {
+    visibility: initial;
+    top: 0;
 }
 
 main article::-webkit-scrollbar {
@@ -344,15 +340,6 @@ main article::-webkit-scrollbar {
 
 main article::-webkit-scrollbar-thumb {
     background-color: #ddd;
-}
-
-article.politica-de-cookies {
-    z-index: 2;
-}
-
-main article.on {
-    visibility: initial;
-    top: 0;
 }
 
 article h2, article h3,
@@ -376,12 +363,16 @@ article ol li {
 }
 
 article h2 {
-    font-size: 22px;
+    font-size: 1.375rem;
 }
 
-article h3, 
-ol li {
-    font-size: 18px;
+
+article h3 {
+    font-size: 1.25rem;
+}
+
+article ol li {
+    font-size: 1.125rem
 }
 
 article .bold {
@@ -415,8 +406,6 @@ div.close-article button.fechar-artigo {
     opacity: 0.8;
 }
 
-
-
 /* DESFOQUE DO FUNDO */
 div.desfoque-do-fundo.on {
     width: 100%;
@@ -436,4 +425,8 @@ html.smooth {
 .fundo-laranja {
     background-color: #faa032 !important;
     transition-duration: 150ms;
+}
+
+article.z-index-10 {
+    z-index: 10 !important;
 }

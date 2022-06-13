@@ -40,7 +40,6 @@
     .linha-do-cabecalho nav {
         margin: 0;
         width: 100%;
-        padding-left: 10px;
     }
 }
 
@@ -63,6 +62,7 @@
 }
 
 @media screen and (max-width: 1023px) {
+    
     .linha-do-cabecalho button,
     .linha-do-cabecalho a.abrir-atalhos-do-teclado {
         display: none;
@@ -74,11 +74,15 @@
         overflow: hidden;
     }
 
+    header {
+        transition: position 1000ms ease;
+    }
+
     header.sticky {
         position: sticky;
         top: 0;
         background-color: #fff;
-        z-index: 2;
+        z-index: 1;
     }
 
     .linha-do-cabecalho {
@@ -93,10 +97,8 @@
         flex-direction: column;
         position: absolute;
         top: 8px;
-        right: 2px;
-
         top: 10px;
-        left: 0px;
+        left: 2px;
         padding: 8px;
     }
 
@@ -109,7 +111,7 @@
         height: 2px;
         background-color: #888;
         margin: 1.5px 0;
-        transition: all 100ms ease;
+        transition: all 250ms ease;
     }
 
     .hamburguer.on div:nth-child(1) {
@@ -128,19 +130,21 @@
    
     .linha-do-cabecalho nav {
         position: absolute;
-        background-color: #fff;
-        z-index: 3;
-        padding: 0 0 0 15px;
-        left: -790px;
+        left: -77vw;
         top: 51px;
-        width: 76vw;
-        transition: left 100ms ease;
+        width: 77vw;
+        padding: 0 0 0 15px;
+        background-color: #fff;
+        font-size: 14px;
+        z-index: 1;
+        visibility: hidden;
+        transition: left 50ms ease;
     }
 
     /* ABERTURA DO MENU */
     .linha-do-cabecalho nav.on {
         left: 0;
-       
+        visibility: visible;
     }
 
     .linha-do-cabecalho nav ul {
@@ -162,7 +166,9 @@
 
     .linha-do-cabecalho nav ul li:nth-child(1) input {
         position: absolute;
-        left: 185px;
+        left: 214px;
+        height: 16px;
+        width: 16px;
     }
 
     .linha-do-cabecalho nav ul li:nth-child(1) label {
@@ -190,24 +196,26 @@
 
     /* ARTIGOS */
     main article {
-        top: 51px !important;
-        left: 0;
         box-shadow: none;
+        max-width: 100%;
+        padding-bottom: 40px;
+        left: -100vw;
+        transition: left 250ms ease;
+        top: 51px;
     }
 
-    main article.z-index-up {
-        z-index: 2;
+    main article.on {
+        top: 51px;
+        left: 0;
     }
 
     div.close-article button.fechar-artigo {
         top: 51px;
-        
     }
 
     div.close-article button.fechar-artigo:active {
         background-color: #D00 !important;
     }
-
 
    /* DESFOQUE */
     div.desfoque-do-fundo {
@@ -216,6 +224,15 @@
 
     div.desfoque-do-fundo.on.parcial {
         top: 51px;
+    }
+
+    .z-index-9 {
+        z-index: 9;
+    }
+
+    header.z-index-10,
+    nav.z-index-10 {
+        z-index: 10 !important;
     }
 
 }
@@ -231,9 +248,21 @@
         width: 100%;
     }
 
+    .linha-do-rodape h4,
+    .linha-do-rodape li,
+    .linha-do-rodape a.voltar {
+        font-size: 14px;
+    }
+
     .linha-do-rodape p {
         margin-top: 20px;
         border-top: thin dashed #aaa;
         padding: 10px 0;
     }  
+}
+
+@media screen and (max-width: 330px) {
+    .linha-do-cabecalho nav {
+        width: 82vw;
+    }
 }

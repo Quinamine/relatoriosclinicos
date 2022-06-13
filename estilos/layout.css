@@ -23,6 +23,7 @@ h1, h2, h3, h4, h5, h6 {
 
 a {text-decoration: none;}
 
+.linha-do-cabecalho a.logo span,
 .linha-do-cabecalho ul li label:hover, button:hover {
     cursor: pointer;
 }
@@ -158,7 +159,7 @@ footer .linha-do-rodape {
 }
 
 .linha-do-rodape a.voltar,
-.linha-do-rodape a:visited {
+.linha-do-rodape a.voltar:visited {
     margin-right: 10px;
     padding: 5px;
     color: #888;

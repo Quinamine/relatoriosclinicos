@@ -2,39 +2,39 @@
 
 class Pesquisa {
 
-    constructor(caixadePesquisa, campodePesquisa) {
-        this.caixadePesquisa = caixadePesquisa;
-        this.campodePesquisa = campodePesquisa;
+    constructor(caixaDePesquisa, campoDePesquisa) {
+        this.caixaDePesquisa = caixaDePesquisa;
+        this.campoDePesquisa = campoDePesquisa;
     }
 
-    mostrarCaixadePesquisa() {
-        this.caixadePesquisa.classList.add("on");
+    mostrarCaixaDePesquisa() {
+        this.caixaDePesquisa.classList.add("on");
 
-        this.campodePesquisa.removeAttribute("readonly");
-        this.campodePesquisa.focus();
+        this.campoDePesquisa.removeAttribute("readonly");
+        this.campoDePesquisa.focus();
         
-        let query = this.campodePesquisa.value;
+        let query = this.campoDePesquisa.value;
         if(query != "") {
-            this.campodePesquisa.select();
+            this.campoDePesquisa.select();
         }
     }
 
-    omitirCaixadePesquisa() {
-        this.caixadePesquisa.classList.remove("on");
-        this.campodePesquisa.value = "";
+    omitirCaixaDePesquisa() {
+        this.caixaDePesquisa.classList.remove("on");
+        this.campoDePesquisa.value = "";
     }
 
     pesquisarLinha(query) {
 
         if (query == "") {
-            this.mostrarCaixadePesquisa();
+            this.mostrarCaixaDePesquisa();
             this.css().resetarBgdasLinhas();
             return false;
         }
 
         else if ((query < 1) || (query > 53)) {   
             this.css().resetarBgdasLinhas();
-            this.omitirCaixadePesquisa();
+            this.omitirCaixaDePesquisa();
             this.nothingFound(1);
             return false;
         } 
@@ -96,44 +96,44 @@ class Pesquisa {
 window.addEventListener("load", () =>  {
 
     // Variáveis para a passagem como parâmetros 
-    const caixadePesquisa = document.querySelector("div.caixa-de-pesquisa");
-    const campodePesquisa = document.querySelector("input.pesquisar-linha");
+    const caixaDePesquisa = document.querySelector("div.caixa-de-pesquisa");
+    const campoDePesquisa = document.querySelector("input.pesquisar-linha");
 
 
     // EVENT LISTENERS
     const aIrPara = document.querySelector("a.ir-para");
-    const botaoXdaCaixadePesquisa = document.querySelector("div.caixa-de-pesquisa button.fechar");
-    const botaoIrdacaixadePesquisa = document.querySelector("div.caixa-de-pesquisa button.ir");
-    const botaoOkdeQuerySemResultados = document.querySelector("div.query-sem-resultados button");
+    const botaoXdaCaixaDePesquisa = document.querySelector("div.caixa-de-pesquisa button.fechar");
+    const botaoIrdacaixaDePesquisa = document.querySelector("div.caixa-de-pesquisa button.ir");
+    const botaoOkDeQuerySemResultados = document.querySelector("div.query-sem-resultados button");
 
     // INSTANCIAMENTO DA CLASSE
-    let src = new Pesquisa(caixadePesquisa, campodePesquisa);
+    let src = new Pesquisa(caixaDePesquisa, campoDePesquisa);
 
     // ABRIR A CAIXA DE PESQUISA
     aIrPara.addEventListener("click", () => { 
-        src.mostrarCaixadePesquisa();
+        src.mostrarCaixaDePesquisa();
     });
 
     // FECHAR A CAIXA DE PESQUISA 
-    botaoXdaCaixadePesquisa.addEventListener("click", () => {
-        src.omitirCaixadePesquisa();
+    botaoXdaCaixaDePesquisa.addEventListener("click", () => {
+        src.omitirCaixaDePesquisa();
         src.css().resetarBgdasLinhas();
     })
 
     // FECHAR
-    botaoOkdeQuerySemResultados.addEventListener("click", () => {
+    botaoOkDeQuerySemResultados.addEventListener("click", () => {
         src.nothingFound();
         src.css().resetarBgdasLinhas();
     })
 
     // ENCONTRAR ATRAVES DO KEY UP
-    campodePesquisa.addEventListener("keyup", () => {
-        src.pesquisarLinha(campodePesquisa.value);
+    campoDePesquisa.addEventListener("keyup", () => {
+        src.pesquisarLinha(campoDePesquisa.value);
     })
 
     /// ENCONTRAR ATRAVES DO MOUSE UP
-    campodePesquisa.addEventListener("mouseup", () => {
-        src.pesquisarLinha(campodePesquisa.value);
+    campoDePesquisa.addEventListener("mouseup", () => {
+        src.pesquisarLinha(campoDePesquisa.value);
     })
 
     // EVENTOS DO TECLADO
@@ -144,13 +144,13 @@ window.addEventListener("load", () =>  {
         
         // ABRIR CAIXA DE PESQUISA
         if ((event.ctrlKey) &&  (tecla == "b")) {
-            src.mostrarCaixadePesquisa();
+            src.mostrarCaixaDePesquisa();
         }
 
         // FECHAR QUERY SEM RESULTADOS COM ENTER
         if (tecla == "enter") {
             // Fechar caixa de query sem resultados
-            if(botaoOkdeQuerySemResultados.parentElement.classList.contains("on")) {
+            if(botaoOkDeQuerySemResultados.parentElement.classList.contains("on")) {
                 src.nothingFound();
                 src.css().resetarBgdasLinhas();
             }  

@@ -60,8 +60,6 @@ article p.footer {
     display: initial !important;
 }
 
-
-
 /* Ir para */
 .observacoes div.caixa-de-pesquisa { 
     display: flex;
@@ -100,7 +98,6 @@ div.caixa-de-pesquisa button {
     height: 20px;
     font-weight: bold;
 }
-
 div.caixa-de-pesquisa button.fechar {
     background-color: inherit;
     border: none;
@@ -117,7 +114,7 @@ div.caixa-de-pesquisa button.fechar:hover {
 }
 
 div.caixa-de-pesquisa button:active {
-    color: red;
+    color: red !important;
     border: none;
     outline: none;
 }
@@ -128,8 +125,7 @@ div.query-sem-resultados {
     position: fixed;
     top: -133px;
     left: calc(50vw - 302.17px / 2);
-    border: 1px solid #aaa;
-    border-radius: 8px;
+    border-radius: 4px;
     background-color: #fff;
     transition: top 50ms linear;
     visibility: hidden;
@@ -253,7 +249,6 @@ div.caixa-de-confirmacao.on {
     display: block;
 }
 
-
 div.caixa-de-confirmacao h3,
 div.caixa-de-confirmacao p {
     margin: 10px 0;
@@ -306,137 +301,66 @@ div.botoes-de-confirmacao button:nth-child(2):hover {
     visibility: initial;
 }
 
-
-/* ARTIGOS */
-
-main article {
-    width: 100%;
-    max-width: 700px;
-    height: 100vh;
-    overflow-y: scroll;
-    margin: auto;
-    padding: 20px 3%;
+/* REFERÊNCIA*/
+main div.referencia {
+    width: 100%; 
+    max-width: 320px;
+    display: grid;
+    grid-template-columns: 1fr 210px;
+    grid-template-rows: 3fr;
+    grid-template-areas: "referencia referencia"
+               "celula-actual faixa-etaria"
+               "celula-actual sexo";
+    font-size: 0.875rem;
+    line-height: 1.5;
+    box-shadow: 0 0 10px #888;
+    position: fixed;
+    top: 5px;
+    right: 0;
     background-color: #fff;
-    font-size: 0.875rem;
-    position: fixed;
-    top: -100vh;
-    left: calc(50vw - 700px * (1/2));
-    box-shadow: 0 0 15px #555;
-    visibility: hidden;
-    transition: top 50ms linear;
-    z-index: 1;
+    border: 2px solid #aaa;
+    border-radius: 0px;
 }
 
-main article.on {
-    visibility: initial;
-    top: 0;
+div.referencia > div {
+    padding: 5px
 }
 
-main article::-webkit-scrollbar {
-    width: 10px;
-    border: thin solid #ddd;
-    padding: 4px;
-}
-
-main article::-webkit-scrollbar-thumb {
-    background-color: #ddd;
-}
-
-article h2, article h3,
-article p, article.conversao-pdf ol li {
-    line-height: 1.4;
-    margin: 20px 0;
-}
-
-article ul li {
-    margin-bottom: 10px;
-    line-height: 1.4;
-    list-style: disc inside;
-}
-
-article ul li:last-child {
-    margin-bottom: 20px;
-}
-
-article ol li {
-    list-style: numeric inside;
-}
-
-article h2 {
-    font-size: 1.375rem;
-}
-
-
-article h3 {
-    font-size: 1.25rem;
-}
-
-article ol li {
-    font-size: 1.125rem
-}
-
-article.conversao-pdf ol li {
-    font-size: 0.875rem;
-}
-
-article.conversao-pdf mark.imprimir {
-    display: inline-block;
-    padding: 4px;
+div.referencia div:nth-child(1) {
+    grid-area: referencia;
     text-align: center;
-    margin: 0;
+    background-color: #ddd;
+    font-weight: bold;
+    color: #555;
+    border-bottom: thin solid #aaa;
 }
 
-article.conversao-pdf .nota {
-    background-color: #dce4f4;
-    border-left: 4px solid  blue;
-    padding: 8px;
-    border-radius: 5px;
-}
-
-article.conversao-pdf ol p.nota {
-    margin-left: 4%;
-    font-size: 12.5px;
-}
-
-
-
-
-article p.consentimento {
-    border: 1px solid #aaa;
-    background-color: #f4f4f4;
-    padding: 10px;
-    font-size: 12px;
-}
-
-div.close-article {
-    position: relative;
-    max-width: 100%;
+div.referencia div:nth-child(2) {
+    grid-area: celula-actual;
+    align-self: center;
+    height: 100%;
     display: flex;
-    justify-content: flex-end;
+    align-items: center;
+    border-right: thin solid #aaa;
+    background-color: #dce4f4;
+    color: #555;
 }
 
-div.close-article button.fechar-artigo {
-    outline: none;
-    border: thin solid #ddd;
-    border-right: none;
-    position: fixed;
-    top: 0;
-    margin-right: -3%;
-    font-size: 28px;
-    width: 35px;
-    height: 35px;
-    opacity: 0.8;
+div.referencia div:nth-child(3) {
+    grid-area: faixa-etaria;
+    border-bottom: thin solid #aaa;
 }
 
-/* DESFOQUE DO FUNDO */
-div.desfoque-do-fundo.on {
-    width: 100%;
-    height: 100vh;
-    position: fixed;
-    top: 0;
-    background-color: rgba(0, 0, 0, 0.5);
-    
+div.referencia div:nth-child(4) {
+    grid-area: sexo;
 }
+
+
+div.referencia output {
+    font-weight: bold;
+}
+
+
 
 
 /*  JAVASCRIPT */
@@ -449,6 +373,3 @@ html.smooth {
     transition-duration: 150ms;
 }
 
-article.z-index-10 {
-    z-index: 10 !important;
-}

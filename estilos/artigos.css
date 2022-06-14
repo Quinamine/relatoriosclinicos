@@ -1,0 +1,119 @@
+section.artigos article {
+    width: 100%;
+    max-width: 700px;
+    height: 100vh;
+    overflow-y: scroll;
+    margin: auto;
+    padding: 20px 3%;
+    background-color: #fff;
+    font-size: 0.875rem;
+    position: fixed;
+    top: -100vh;
+    left: calc(50vw - 700px * (1/2));
+    box-shadow: 0 0 15px #555;
+    visibility: hidden;
+    transition: top 50ms linear;
+    z-index: 1;
+}
+
+section.artigos article.on {
+    visibility: initial;
+    top: 0;
+}
+
+section.artigos article::-webkit-scrollbar {
+    width: 10px;
+    border: thin solid #ddd;
+    padding: 4px;
+}
+
+section.artigos article::-webkit-scrollbar-thumb {
+    background-color: #ddd;
+}
+
+article h2, article h3,
+article p, article.conversao-pdf ol li {
+    line-height: 1.4;
+    margin: 20px 0;
+}
+
+article ul li {
+    margin-bottom: 10px;
+    line-height: 1.4;
+    list-style: disc inside;
+}
+
+article ul li:last-child {
+    margin-bottom: 20px;
+}
+
+article ol li {
+    list-style: numeric inside;
+}
+
+article h2 {
+    font-size: 1.375rem;
+}
+
+
+article h3 {
+    font-size: 1.25rem;
+}
+
+article ol li {
+    font-size: 1.125rem
+}
+
+article.conversao-pdf ol li {
+    font-size: 0.875rem;
+}
+
+article.conversao-pdf mark.imprimir {
+    display: inline-block;
+    padding: 4px;
+    text-align: center;
+    margin: 0;
+}
+
+article.conversao-pdf .nota {
+    background-color: #dce4f4;
+    border-left: 4px solid  blue;
+    padding: 8px;
+    border-radius: 5px;
+}
+
+article.conversao-pdf ol p.nota {
+    margin-left: 4%;
+    font-size: 12.5px;
+}
+
+article p.consentimento {
+    border: 1px solid #aaa;
+    background-color: #f4f4f4;
+    padding: 10px;
+    font-size: 12px;
+}
+
+div.close-article {
+    position: relative;
+    max-width: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+div.close-article button.fechar-artigo {
+    outline: none;
+    border: thin solid #ddd;
+    border-right: none;
+    position: fixed;
+    top: 0;
+    margin-right: -3%;
+    font-size: 28px;
+    width: 35px;
+    height: 35px;
+    opacity: 0.8;
+}
+
+article.z-index-10 {
+    z-index: 10 !important;
+}

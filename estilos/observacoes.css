@@ -211,7 +211,7 @@ section.atalhos-do-teclado .conteudo {
     position: relative;
 }
 
-section.atalhos-do-teclado button.fechar-atalhos {
+section.atalhos-do-teclado button.fechar-conteudo-de-atalhos-do-teclado {
     margin: 0;
     width: 30px;
     height: 30px;
@@ -227,13 +227,13 @@ section.atalhos-do-teclado button.fechar-atalhos {
     justify-content: center;
 }
 
-section.atalhos-do-teclado button.fechar-atalhos:hover,
+section.atalhos-do-teclado button.fechar-conteudo-de-atalhos-do-teclado:hover,
 div.close-article button.fechar-artigo:hover  {
     background-color: #D00;
     color: #fff;
 }
 
-section.atalhos-do-teclado button.fechar-atalhos:active,
+section.atalhos-do-teclado button.fechar-conteudo-de-atalhos-do-teclado:active,
 div.close-article button.fechar-artigo:active {
     color: red;
 }

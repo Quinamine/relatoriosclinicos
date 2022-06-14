@@ -15,51 +15,51 @@ window.addEventListener("load", () => {
 
     // ABRIR CONTEUDO DE ATALHOS
     const conteudoDeAtalhos = document.querySelector("section.atalhos-do-teclado");
-    const aAbrirAtalhos = document.querySelector("a.abrir-atalhos-do-teclado");
-    const botaoFecharAtalhos = document.querySelector("button.fechar-atalhos");
+    const aAbrirConteudoDeAtalhos = document.querySelector("a.abrir-conteudo-de-atalhos-do-teclado");
+    const botaoFecharConteudoDeAtalhos = document.querySelector("button.fechar-conteudo-de-atalhos-do-teclado");
 
-    aAbrirAtalhos.addEventListener("click", () => abrirOuFecharAbasDoMenu("abrir", conteudoDeAtalhos));
-    botaoFecharAtalhos.addEventListener("click", () => abrirOuFecharAbasDoMenu("fechar", conteudoDeAtalhos));
+    aAbrirConteudoDeAtalhos.addEventListener("click", () => abrirOuFecharAbasDoMenu("abrir", conteudoDeAtalhos));
+    botaoFecharConteudoDeAtalhos.addEventListener("click", () => abrirOuFecharAbasDoMenu("fechar", conteudoDeAtalhos));
 
 
     // ABRIR OU FECHAR CONTEÚDO DE COOKIES
-    const conteudoDeCookies = document.querySelector("article.politica-de-cookies");
-    const aAbrirCookies = document.querySelectorAll("a.abrir-politica-de-cookies"); 
-    const botaoFecharCookies = document.querySelector("button.fechar-artigo.cookies");
+    const politicaDeCookies = document.querySelector("article.politica-de-cookies");
+    const aAbrirpoliticaDeCookies = document.querySelectorAll("a.abrir-politica-de-cookies"); 
+    const botaoFecharPoliticaDeCookies = document.querySelector("button.fechar-artigo.cookies");
 
-    aAbrirCookies.forEach ( a => { 
+    aAbrirpoliticaDeCookies.forEach ( a => { 
         a.addEventListener("click", () => {
-            abrirOuFecharAbasDoMenu("abrir", conteudoDeCookies);
-            Foco.destacarConteudo(conteudoDeCookies);
+            abrirOuFecharAbasDoMenu("abrir", politicaDeCookies);
+            Foco.destacarConteudo(politicaDeCookies);
         });
     });
-    botaoFecharCookies.addEventListener("click", () => abrirOuFecharAbasDoMenu("fechar", conteudoDeCookies));
+    botaoFecharPoliticaDeCookies.addEventListener("click", () => abrirOuFecharAbasDoMenu("fechar", politicaDeCookies));
 
     
     // ABRIR OU FECHAR CONTEÚDO SOBRE
-    const conteudoSobre = document.querySelector("article.sobre");
-    const aAbrirConteudoSobre = document.querySelectorAll("a.abrir-conteudo-sobre");
-    const botaoFecharSobre = document.querySelector("button.fechar-artigo.sobre");
+    const artigoSobre = document.querySelector("article.sobre");
+    const aAbrirArtigoSobre = document.querySelectorAll("a.abrir-artigo-sobre");
+    const botaoFecharArtigoSobre = document.querySelector("button.fechar-artigo.sobre");
 
-    aAbrirConteudoSobre.forEach ( a => {
+    aAbrirArtigoSobre.forEach ( a => {
         a.addEventListener("click", () => {
-            abrirOuFecharAbasDoMenu("abrir", conteudoSobre);
-            Foco.destacarConteudo(conteudoSobre);
+            abrirOuFecharAbasDoMenu("abrir", artigoSobre);
+            Foco.destacarConteudo(artigoSobre);
         });
     });
-    botaoFecharSobre.addEventListener("click", () => abrirOuFecharAbasDoMenu("fechar", conteudoSobre));
+    botaoFecharArtigoSobre.addEventListener("click", () => abrirOuFecharAbasDoMenu("fechar", artigoSobre));
 
 
     // ABBRIR OU FECHAR CONTEUDO DE CONERSAO PARA PDF
-    const conteudoPdf = document.querySelector("article.conversao-pdf");
-    const aAbrirConteudoPdf = document.querySelector("a.abrir-conteudo-pdf");
-    const botaoFecharPdf = document.querySelector("button.fechar-artigo.pdf");
+    const artigoDeConversaoPdf = document.querySelector("article.conversao-pdf");
+    const aAbrirartigoDeConversaoPdf = document.querySelector("a.abrir-artigo-de-conversao-pdf");
+    const botaoFecharArtigoDeConversaoPdf = document.querySelector("button.fechar-artigo.pdf");
 
-    aAbrirConteudoPdf.addEventListener("click", () => { 
-        abrirOuFecharAbasDoMenu("abrir", conteudoPdf);
-        Foco.destacarConteudo(conteudoPdf);
+    aAbrirartigoDeConversaoPdf.addEventListener("click", () => { 
+        abrirOuFecharAbasDoMenu("abrir", artigoDeConversaoPdf);
+        Foco.destacarConteudo(artigoDeConversaoPdf);
     });
-    botaoFecharPdf.addEventListener("click", () => abrirOuFecharAbasDoMenu("fechar", conteudoPdf));
+    botaoFecharArtigoDeConversaoPdf.addEventListener("click", () => abrirOuFecharAbasDoMenu("fechar", artigoDeConversaoPdf));
 
 
 })

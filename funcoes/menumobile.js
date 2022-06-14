@@ -15,26 +15,46 @@ const MenuHamburguer = {
         }
     },
 
-
-    omitirRolagemBody() {
-        body.classList.add("hide-overflow");
-    },
-
-    desomitirRolagemBody() {
-
+    ArtigoSobreOuCookiesAberto() {
         const artigos = document.querySelectorAll("article");
 
         for (i=0; i<artigos.length; i++) {
             if(artigos[i].classList.contains("on")) {
-                return false
+                return true;
             }
         }
+    },
+
+    omitirRolagemDoBody() {
+        body.classList.add("hide-overflow");
+    },
+
+    desomitirRolagemDoBody() {
+        if(this.ArtigoSobreOuCookiesAberto()) {
+            return false;
+        }
         body.classList.remove("hide-overflow");
+    },
+
+    omitirAlgunsItensDoNavNaJanelaDosArtigosSobreECookies() {
+        for (const item of itensDoNavOmissos) {
+            item.classList.add("omitir-na-janela-de-cookies-e-sobre");
+        }
+    },
+
+    desomitirAlgunsItensDoNavNaJanelaDosArtigosSobreECookies() {
+        if (this.ArtigoSobreOuCookiesAberto()) {
+            return false;
+        } 
+        for (const item of itensDoNavOmissos) {
+            item.classList.remove("omitir-na-janela-de-cookies-e-sobre");
+        } 
     }
 }
 
-let hamburguer, nav, body;
+let hamburguer, nav, itensDoNavOmissos, body;
 window.addEventListener("load", () => {
+    
     // Inicialização das variáveis
     hamburguer = document.querySelector(".hamburguer");
     nav = document.querySelector("header nav")
@@ -45,17 +65,17 @@ window.addEventListener("load", () => {
         
         if(hamburguer.classList.contains("on")) {
             MenuHamburguer.abrirOuFechar("fechar");
-            MenuHamburguer.desomitirRolagemBody()
+            MenuHamburguer.desomitirRolagemDoBody()
             desfoque.classList.remove("z-index-9");
         }
         else {
             MenuHamburguer.abrirOuFechar("abrir");
-            MenuHamburguer.omitirRolagemBody();
+            MenuHamburguer.omitirRolagemDoBody();
             desfoque.classList.add("z-index-9");
         }
 
         Foco.destacarConteudo(nav);
-    })
+    });
 
 
     // Fechar Hamburguer com Itens do Menu
@@ -64,46 +84,61 @@ window.addEventListener("load", () => {
     menuItens.forEach ( item => {   
         item.addEventListener("click", () => {
             MenuHamburguer.abrirOuFechar("fechar");
-            MenuHamburguer.desomitirRolagemBody();
+            MenuHamburguer.desomitirRolagemDoBody();
             desfoque.classList.remove("z-index-9");
+
+
+            if(item.classList.contains("esvaziar-ficha")) {
+                const celulas = document.querySelectorAll(".col-de-inputs input");
+                let celulasPreenchidas = 0;
+
+                for (const cel of celulas) { 
+                    if(cel.value != "") celulasPreenchidas++;
+                }
+
+                if(celulasPreenchidas>0) {
+                    desfoque.classList.remove("parcial");
+                }
+            }
         })
     });
 
 
     // Footer Menu Itens
-    const aAbrirArtigosDoRodape = document.querySelectorAll("footer a.abrir-conteudo-sobre, a.abrir-politica-de-cookies");
+    const aAbrirArtigosPelosLinksDoRodape = document.querySelectorAll("footer a.abrir-artigo-sobre, a.abrir-politica-de-cookies");
     const header = document.querySelector("header");
 
-    aAbrirArtigosDoRodape.forEach ( a => {
+    aAbrirArtigosPelosLinksDoRodape.forEach ( a => {
         a.addEventListener("click", () => {
-            MenuHamburguer.omitirRolagemBody();
+            MenuHamburguer.omitirRolagemDoBody();
 
             // Fixar Menu
             header.classList.add("sticky");
             header.classList.add("z-index-10");
         })
-    })
-
+    });
 
     // Desomitir Rolagem Body com Botoes do artigo
     const botoesFecharArtigo = document.querySelectorAll("button.fechar-artigo");
 
     botoesFecharArtigo.forEach( botao => {
         botao.addEventListener("click", () => {
-            MenuHamburguer.desomitirRolagemBody();
+            MenuHamburguer.desomitirRolagemDoBody();
+            MenuHamburguer.desomitirAlgunsItensDoNavNaJanelaDosArtigosSobreECookies();
 
-
-            const ArtigoAberto = MenuHamburguer.desomitirRolagemBody();
-
-            if(ArtigoAberto == false) {
+            if(MenuHamburguer.ArtigoSobreOuCookiesAberto()) {
                 return false;
             }
-
             header.classList.remove("sticky");
             header.classList.remove("z-index-10");
-
-
         });
-    })
+    });
 
+    // Omitir alguns itens do menu no conteudo Sobre e cookies
+    itensDoNavOmissos = document.querySelectorAll("li.visivel-so-na-janela-da-ficha");
+    const aOmitirAlgunsItensDoNav = document.querySelectorAll("a.abrir-artigo-sobre, a.abrir-politica-de-cookies");
+
+    aOmitirAlgunsItensDoNav.forEach ( a => {
+        a.addEventListener("click", () => MenuHamburguer.omitirAlgunsItensDoNavNaJanelaDosArtigosSobreECookies());
+    });  
 })

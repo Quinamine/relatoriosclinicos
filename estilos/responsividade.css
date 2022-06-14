@@ -64,11 +64,19 @@
 @media screen and (max-width: 1023px) {
     
     .linha-do-cabecalho button,
-    .linha-do-cabecalho a.abrir-atalhos-do-teclado,
-    a.abrir-conteudo-pdf, 
+    .linha-do-cabecalho a.abrir-conteudo-de-atalhos-do-teclado,
+    a.abrir-artigo-pdf, 
     article.conversao-pdf {
         display: none;
-    }   
+    }  
+
+    
+    div.caixa-de-pesquisa button {
+        width: 48px;
+        background: #888;
+        height: 23px;
+        border: thin solid #888 !important;
+    }
 }
 
 @media screen and (max-width: 790px) {
@@ -219,6 +227,7 @@
         background-color: #D00 !important;
     }
 
+     /** JS **/
    /* DESFOQUE */
     div.desfoque-do-fundo {
         transition-duration: 100ms;
@@ -235,6 +244,10 @@
     header.z-index-10,
     nav.z-index-10 {
         z-index: 10 !important;
+    }
+
+    li.omitir-na-janela-de-cookies-e-sobre {
+        display: none !important;
     }
 
 }

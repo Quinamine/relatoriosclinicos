@@ -21,7 +21,7 @@
     <script src="funcoes/personalizacao.js"></script>
     <script src="funcoes/menudual.js"></script>
     <script src="funcoes/menumobile.js"></script>
-    <script src="funcoes/zindex.js"></script>
+    <script src="funcoes/referencia.js"></script>
 </head>
 <body>
     <div id="involucro-de-todo-conteudo">
@@ -2112,25 +2112,27 @@
                 <!-- Desfoque do fundo -->
                 
             </div>
-
+        </main>
+        <div class="linha-de-referencia">
             <div class="referencia">
                 <div>
-                    <h3>REFERÊNCIA</h3>
+                    <h3>
+                        <span>REFERÊNCIA</span>
+                        <span class="ref">REF.:</span>
+                    </h3>
                 </div>
-                <div>
-                    <span>Cêlula actual</span>
-                    
-                </div>
+
+                <span class="seta">&rarr;</span>
                 <div>
                     <span>Faixa etária:</span>
-                    <output class="faixa-etaria">1 - 4 anos</output>
+                    <output class="faixa-etaria"></output>
                 </div>
                 <div>
                     <span>Sexo:</span>
-                    <output class="sexo">M</output>
+                    <output class="sexo"></output>
                 </div>
             </div>
-        </main>
+        </div>
         <section class="artigos">
             <article class="politica-de-cookies">
                 <h2>Política de cookies e tecnologias paralelas</h2>

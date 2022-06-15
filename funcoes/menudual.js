@@ -62,4 +62,4 @@ window.addEventListener("load", () => {
     botaoFecharArtigoDeConversaoPdf.addEventListener("click", () => abrirOuFecharAbasDoMenu("fechar", artigoDeConversaoPdf));
 
 
-})
+});

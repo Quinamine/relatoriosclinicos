@@ -148,4 +148,4 @@ window.addEventListener("load", () => {
     botaoCancelar.addEventListener("click", () => {
         personalizacao.fecharCaixaDeConfirmacao();
     })
-})
+});

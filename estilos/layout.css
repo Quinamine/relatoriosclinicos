@@ -1,6 +1,7 @@
 /* MOBILE ITEMS - DISPLAY NONE */
 
-.linha-do-cabecalho  .hamburguer {
+.linha-do-cabecalho .hamburguer,
+.linha-de-referencia {
     display: none;
 }
 

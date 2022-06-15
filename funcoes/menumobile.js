@@ -141,4 +141,4 @@ window.addEventListener("load", () => {
     aOmitirAlgunsItensDoNav.forEach ( a => {
         a.addEventListener("click", () => MenuHamburguer.omitirAlgunsItensDoNavNaJanelaDosArtigosSobreECookies());
     });  
-})
+});

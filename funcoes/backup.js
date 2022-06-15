@@ -85,4 +85,4 @@ window.addEventListener("load", () => {
     saveOnStorage.salvarCategoria();
     saveOnStorage.salvarData();
     saveOnStorage.salvarReadonlyCelsBg();
-})
+});

@@ -28,6 +28,61 @@
         padding-left: 10px;
         padding-right: 10px;
     }
+
+    /* REFERENCIA */
+
+    /* Linha de Referência */
+
+    .linha-de-referencia {
+        display: block;
+        width: 100%;
+        position: fixed;
+        bottom: 0;
+        background-color: #fff;
+        line-height: 1.5;
+        box-shadow: 0 0 10px #ddd;
+        z-index: 1;
+    }
+
+    .linha-de-referencia .referencia {
+        max-width: 1300px;
+        min-width: 40%;
+        display: flex;
+        align-items: center;
+        margin: 0 auto;
+        font-size: 0.875rem;
+        padding: 5px;
+        line-height: 2;
+    }
+
+    .linha-de-referencia .referencia > *{
+        margin: 0 5px;
+        display: flex;
+        align-items: center;
+    }
+
+    .referencia h3 span.ref {
+        display: none;
+    }
+    .referencia h3, .referencia output {
+        font-weight: bold;
+    }
+
+    .referencia output {
+        border: thin solid #ddd;
+        margin: 0 5px;
+        text-align: center;
+        display: inline-block;
+        min-height: 30px;
+    }
+
+    .referencia output.faixa-etaria {
+        min-width: 93px;
+    }
+
+    .referencia output.sexo {
+        min-width: 24px;
+    } 
 }
 
 @media screen and (max-width: 1220px) {
@@ -144,7 +199,7 @@
         width: 77vw;
         padding: 0 0 0 15px;
         background-color: #fff;
-        font-size: 14px;
+        font-size: 0.875rem;
         z-index: 1;
         visibility: hidden;
         transition: left 50ms ease;
@@ -264,7 +319,7 @@
     .linha-do-rodape h4,
     .linha-do-rodape li,
     .linha-do-rodape a.voltar {
-        font-size: 14px;
+        font-size: 0.875rem;
     }
 
     .linha-do-rodape p {
@@ -274,9 +329,29 @@
     }  
 }
 
+@media screen and (max-width: 410px) {
+  
+    .referencia h3 span.ref {
+        display: initial;
+    }
+
+    .referencia h3 span:nth-child(1),
+    .referencia span.seta {
+        display: none;
+    }
+}
+
 @media screen and (max-width: 330px) {
     .linha-do-cabecalho nav {
         width: 82vw;
+    }
+
+    .linha-de-referencia .referencia {
+        font-size: 0.75rem;
+    }
+
+    .referencia h3, .referencia output {
+        min-height: 26px;
     }
 }
 

@@ -42,11 +42,34 @@ function mostrarReferencia (outputFaixaEtaria, outputSexo) {
     }
 }
 
-
+let outputFaixaEtaria, outputSexo;
 window.addEventListener("load", () => {
-    const outputFaixaEtaria = document.querySelector("output.faixa-etaria");
-           const outputSexo = document.querySelector("output.sexo");
+    outputFaixaEtaria = document.querySelector("output.faixa-etaria");
+           outputSexo = document.querySelector("output.sexo");
 
 
     mostrarReferencia(outputFaixaEtaria, outputSexo);
+
+
+    const referencia = document.querySelector(".linha-de-referencia");
+    window.addEventListener("scroll", () => {
+
+        const tituloDaFicha = document.querySelector(".col-da-linha-superior");
+        const posicao = tituloDaFicha.getBoundingClientRect().top;
+        
+
+        posicao < 0 ? referencia.classList.add("on") : referencia.classList.remove("on");
+        
+
+    })
 })
+
+
+
+window.onclick = function(event) {
+    
+    if ((!event.target.matches("input[type='number']")) || (event.target.matches("input[readonly]"))) {
+        outputFaixaEtaria.innerHTML = "";
+        outputSexo.innerHTML = "";
+    }
+}

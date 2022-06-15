@@ -59,19 +59,26 @@ window.addEventListener("load", () => {
     hamburguer = document.querySelector(".hamburguer");
     nav = document.querySelector("header nav")
     body = document.querySelector("body");
+    const header = document.querySelector("header");
 
     // Eventos 
     hamburguer.addEventListener("click", () => {
         
-        if(hamburguer.classList.contains("on")) {
+        if (hamburguer.classList.contains("on")) {
+
             MenuHamburguer.abrirOuFechar("fechar");
-            MenuHamburguer.desomitirRolagemDoBody()
+            MenuHamburguer.desomitirRolagemDoBody();
+            header.classList.remove("z-index-10");
             desfoque.classList.remove("z-index-9");
+
         }
         else {
+
             MenuHamburguer.abrirOuFechar("abrir");
             MenuHamburguer.omitirRolagemDoBody();
+            Foco.destacarConteudo(header);
             desfoque.classList.add("z-index-9");
+
         }
 
         Foco.destacarConteudo(nav);
@@ -85,9 +92,11 @@ window.addEventListener("load", () => {
         item.addEventListener("click", () => {
             MenuHamburguer.abrirOuFechar("fechar");
             MenuHamburguer.desomitirRolagemDoBody();
+            header.classList.remove("z-index-10");
             desfoque.classList.remove("z-index-9");
 
 
+            // Desfoque total
             if(item.classList.contains("esvaziar-ficha")) {
                 const celulas = document.querySelectorAll(".col-de-inputs input");
                 let celulasPreenchidas = 0;
@@ -106,16 +115,10 @@ window.addEventListener("load", () => {
 
     // Footer Menu Itens
     const aAbrirArtigosPelosLinksDoRodape = document.querySelectorAll("footer a.abrir-artigo-sobre, a.abrir-politica-de-cookies");
-    const header = document.querySelector("header");
+
 
     aAbrirArtigosPelosLinksDoRodape.forEach ( a => {
-        a.addEventListener("click", () => {
-            MenuHamburguer.omitirRolagemDoBody();
-
-            // Fixar Menu
-            header.classList.add("sticky");
-            header.classList.add("z-index-10");
-        })
+        a.addEventListener("click", () => MenuHamburguer.omitirRolagemDoBody());    
     });
 
     // Desomitir Rolagem Body com Botoes do artigo
@@ -125,11 +128,6 @@ window.addEventListener("load", () => {
         botao.addEventListener("click", () => {
             MenuHamburguer.desomitirRolagemDoBody();
             MenuHamburguer.desomitirAlgunsItensDoNavNaJanelaDosArtigosSobreECookies();
-
-            if(MenuHamburguer.ArtigoSobreOuCookiesAberto()) {
-                return false;
-            }
-            header.classList.remove("sticky");
             header.classList.remove("z-index-10");
         });
     });
@@ -142,3 +140,5 @@ window.addEventListener("load", () => {
         a.addEventListener("click", () => MenuHamburguer.omitirAlgunsItensDoNavNaJanelaDosArtigosSobreECookies());
     });  
 });
+
+

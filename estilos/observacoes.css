@@ -34,6 +34,7 @@ article p.footer {
 .observacoes p.readonlycels-obs {
     bottom: -263px;
     opacity: 0;
+    z-index: 2;
 }
 
 @-moz-document url-prefix() {
@@ -73,6 +74,7 @@ article p.footer {
     right: calc(50vw - 257px / 2);
     transition: top 150ms linear;
     visibility: hidden;
+    z-index: 2;
 }
 
 .observacoes div.caixa-de-pesquisa.on {
@@ -129,6 +131,7 @@ div.query-sem-resultados {
     background-color: #fff;
     transition: top 50ms linear;
     visibility: hidden;
+    z-index: 2;
 }
 
 div.query-sem-resultados.on {
@@ -170,7 +173,7 @@ section.atalhos-do-teclado {
     top: -105vh;
     right: 0;
     transition: top 50ms linear;
-    z-index: 1;
+    z-index: 2;
     visibility: hidden;
 }  
 
@@ -242,7 +245,7 @@ div.caixa-de-confirmacao {
     right: calc(50vw - 311.06px / 2);
     border-radius: 8px;
     display: none;
-    z-index: 1;
+    z-index: 2;
 }
 
 div.caixa-de-confirmacao.on {
@@ -294,6 +297,7 @@ div.botoes-de-confirmacao button:nth-child(2):hover {
     bottom: calc(-50vh - 40px / 2);
     left: calc(50vw - 180.31px / 2);
     transition: bottom 150ms linear;
+    z-index: 2;
 }
 
 .esvaziamento-da-ficha p.ficha-vazia-obs.on {
@@ -301,26 +305,57 @@ div.botoes-de-confirmacao button:nth-child(2):hover {
     visibility: initial;
 }
 
+/* Aviso de uso de cookies */
+div.aviso-de-uso-de-cookies {
+    width: 100%;
+    max-width: 1290px;
+    margin: 0 auto;
+    position: fixed;
+    bottom: -132px;
+    line-height: 1.5;
+    padding: 20px;
+    left: calc(50vw - 1300px /2);
+    box-shadow: 0 0 8px #888;
+    border-radius: 15px;
+    background: #fff;
+    font-size: 14px;
+    z-index: 10;
+    background: rgba(0, 0, 0, .6); 
+    color: #fff; 
+    visibility: hidden;
+    transition: bottom 150ms ease;
+}
 
-@media screen and (max-width: 400px) {
-    .linha-de-referencia .referencia {
-        display: grid;
-        grid-template-columns: 2fr 1fr;
-        grid-template-areas: "referencia referencia"
-                             "faixaEtaria sexo";
-    }
+div.aviso-de-uso-de-cookies.on {
+    bottom: 20px;
+    visibility: visible;
+}
 
-    .referencia div:nth-child(1) {
-        grid-area: referencia;
-    }
+div.aviso-de-uso-de-cookies p {
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+}
 
-    .referencia div:nth-child(2) {
-        grid-area: sexo;
-    }
+div.aviso-de-uso-de-cookies a {
+    text-decoration: underline;
+    color: #fff;
+}
 
-    .referencia .seta {
-        display: none;
-    }
+
+div.aviso-de-uso-de-cookies button {
+    border: none;
+    min-width: 200px;
+    background-color: #000;
+    border: 2px solid #fff;
+    padding: 10px;
+    color: #fff;
+    font-size: 0.875rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+div.aviso-de-uso-de-cookies button:hover {
+    border-color: #aaa;
 }
 
 

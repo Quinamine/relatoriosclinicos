@@ -13,7 +13,7 @@ section.artigos article {
     box-shadow: 0 0 15px #555;
     visibility: hidden;
     transition: top 50ms linear;
-    z-index: 1;
+    z-index: 2;
 }
 
 section.artigos article.on {
@@ -117,3 +117,4 @@ div.close-article button.fechar-artigo {
 article.z-index-10 {
     z-index: 10 !important;
 }
+

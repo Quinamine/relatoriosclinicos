@@ -1,5 +1,15 @@
 
 @media screen and (max-width: 1300px) {
+    body {
+        padding-top: 64px;
+    }
+    body header {
+        position: fixed;
+        top: 0;
+        z-index: 1;
+        background: #fff;
+    }
+
     header .linha-do-cabecalho {
         padding-left: 10px;
     }
@@ -37,11 +47,16 @@
         display: block;
         width: 100%;
         position: fixed;
-        bottom: 0;
+        bottom: -36px;
         background-color: #fff;
         line-height: 1.5;
-        box-shadow: 0 0 10px #ddd;
+        box-shadow: 0 -2px 8px #ddd;
         z-index: 1;
+        transition: bottom 50ms linear;
+    }
+
+    .linha-de-referencia.on {
+        bottom: 0;
     }
 
     .linha-de-referencia .referencia {
@@ -50,7 +65,6 @@
         display: flex;
         align-items: center;
         margin: 0 auto;
-        font-size: 0.875rem;
         padding: 5px;
         line-height: 2;
     }
@@ -73,16 +87,21 @@
         margin: 0 5px;
         text-align: center;
         display: inline-block;
-        min-height: 30px;
+        min-height: 26px;
     }
 
     .referencia output.faixa-etaria {
-        min-width: 93px;
+        min-width: 86px;
     }
 
     .referencia output.sexo {
         min-width: 24px;
     } 
+
+    /* Desfoque */
+    div.desfoque-do-fundo.on {
+        z-index: 1;
+    }
 }
 
 @media screen and (max-width: 1220px) {
@@ -140,13 +159,7 @@
 
     header {
         transition: position 1000ms ease;
-    }
-
-    header.sticky {
-        position: sticky;
-        top: 0;
-        background-color: #fff;
-        z-index: 1;
+        position: initial;
     }
 
     .linha-do-cabecalho {
@@ -195,12 +208,12 @@
     .linha-do-cabecalho nav {
         position: absolute;
         left: -77vw;
-        top: 51px;
+        top: 50px;
+        border-top: thin solid #eee;
         width: 77vw;
         padding: 0 0 0 15px;
         background-color: #fff;
         font-size: 0.875rem;
-        z-index: 1;
         visibility: hidden;
         transition: left 50ms ease;
     }
@@ -265,11 +278,12 @@
         padding-bottom: 40px;
         left: -100vw;
         transition: left 250ms ease;
-        top: 51px;
+        top: 50px;
+        border-top: thin solid #eee;
     }
 
     section.artigos article.on {
-        top: 51px;
+        top: 50px;
         left: 0;
     }
 
@@ -283,21 +297,21 @@
 
      /** JS **/
    /* DESFOQUE */
-    div.desfoque-do-fundo {
-        transition-duration: 100ms;
+    div.desfoque-do-fundo.on {
+        z-index: initial;
+    }
+
+    div.desfoque-do-fundo.on.z-index-9 {
+        z-index: 9 !important;
+    }
+
+    header.z-index-10,
+    header nav.z-index-10 {
+        z-index: 10;
     }
 
     div.desfoque-do-fundo.on.parcial {
         top: 51px;
-    }
-
-    .z-index-9 {
-        z-index: 9;
-    }
-
-    header.z-index-10,
-    nav.z-index-10 {
-        z-index: 10 !important;
     }
 
     li.omitir-na-janela-de-cookies-e-sobre {
@@ -329,7 +343,29 @@
     }  
 }
 
-@media screen and (max-width: 410px) {
+
+@media screen and (max-width: 400px) {
+    .linha-de-referencia .referencia {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        grid-template-areas: "referencia referencia"
+                             "faixaEtaria sexo";
+    }
+
+    .referencia div:nth-child(1) {
+        grid-area: referencia;
+    }
+
+    .referencia div:nth-child(2) {
+        grid-area: sexo;
+    }
+
+    .referencia .seta {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 355px) {
   
     .referencia h3 span.ref {
         display: initial;
@@ -344,14 +380,6 @@
 @media screen and (max-width: 330px) {
     .linha-do-cabecalho nav {
         width: 82vw;
-    }
-
-    .linha-de-referencia .referencia {
-        font-size: 0.75rem;
-    }
-
-    .referencia h3, .referencia output {
-        min-height: 26px;
     }
 }
 

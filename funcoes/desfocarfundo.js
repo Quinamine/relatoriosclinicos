@@ -42,9 +42,5 @@ const Foco = {
 let desfoque, janelasDesfocantes;
 window.addEventListener("load", () => {
     desfoque = document.querySelector(".desfoque-do-fundo");
-    janelasDesfocantes = document.querySelectorAll("div.caixa-de-confirmacao, .atalhos-do-teclado, article.politica-de-cookies, article.sobre, div.hamburguer");
-
-
-    
-    
+    janelasDesfocantes = document.querySelectorAll("div.caixa-de-confirmacao, .atalhos-do-teclado, article.politica-de-cookies, article.sobre, div.hamburguer, .aviso-de-uso-de-cookies");
 })

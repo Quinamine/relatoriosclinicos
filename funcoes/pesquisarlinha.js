@@ -101,7 +101,7 @@ window.addEventListener("load", () =>  {
 
 
     // EVENT LISTENERS
-    const aIrPara = document.querySelector("a.ir-para");
+    const botaoIrPara = document.querySelector("button.ir-para");
     const botaoXdaCaixaDePesquisa = document.querySelector("div.caixa-de-pesquisa button.fechar");
     const botaoIrdacaixaDePesquisa = document.querySelector("div.caixa-de-pesquisa button.ir");
     const botaoOkDeQuerySemResultados = document.querySelector("div.query-sem-resultados button");
@@ -110,7 +110,7 @@ window.addEventListener("load", () =>  {
     let src = new Pesquisa(caixaDePesquisa, campoDePesquisa);
 
     // ABRIR A CAIXA DE PESQUISA
-    aIrPara.addEventListener("click", () => { 
+    botaoIrPara.addEventListener("click", () => { 
         src.mostrarCaixaDePesquisa();
     });
 

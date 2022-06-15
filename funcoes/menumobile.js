@@ -5,12 +5,12 @@ const MenuHamburguer = {
 
         if(accao=="abrir") {
             hamburguer.classList.add("on");
-            nav.classList.add("on");
+            sectionMenu.classList.add("on");
             Desfoque.abaixoDoCabecalho();
         }
         else {
             hamburguer.classList.remove("on");
-            nav.classList.remove("on");
+            sectionMenu.classList.remove("on");
             Foco._100Viewport();
         }
     },
@@ -52,12 +52,12 @@ const MenuHamburguer = {
     }
 }
 
-let hamburguer, nav, itensDoNavOmissos, body;
+let hamburguer, sectionMenu, itensDoNavOmissos, body;
 window.addEventListener("load", () => {
     
     // Inicialização das variáveis
     hamburguer = document.querySelector(".hamburguer");
-    nav = document.querySelector("header nav")
+    sectionMenu = document.querySelector("header section.menu")
     body = document.querySelector("body");
     const header = document.querySelector("header");
 
@@ -81,12 +81,12 @@ window.addEventListener("load", () => {
 
         }
 
-        Foco.destacarConteudo(nav);
+        Foco.destacarConteudo(sectionMenu);
     });
 
 
     // Fechar Hamburguer com Itens do Menu
-    const menuItens = document.querySelectorAll("header nav ul li:nth-child(1), header nav ul li a");
+    const menuItens = document.querySelectorAll("header nav ul li:nth-child(1), header nav ul li button");
 
     menuItens.forEach ( item => {   
         item.addEventListener("click", () => {
@@ -114,11 +114,11 @@ window.addEventListener("load", () => {
 
 
     // Footer Menu Itens
-    const aAbrirArtigosPelosLinksDoRodape = document.querySelectorAll("footer a.abrir-artigo-sobre, a.abrir-politica-de-cookies");
+    const botoesAbrirArtigosNoRodape = document.querySelectorAll("footer button.abrir-artigo-sobre, button.abrir-politica-de-cookies");
 
 
-    aAbrirArtigosPelosLinksDoRodape.forEach ( a => {
-        a.addEventListener("click", () => MenuHamburguer.omitirRolagemDoBody());    
+    botoesAbrirArtigosNoRodape.forEach ( botao => {
+        botao.addEventListener("click", () => MenuHamburguer.omitirRolagemDoBody());    
     });
 
     // Desomitir Rolagem Body com Botoes do artigo
@@ -134,7 +134,7 @@ window.addEventListener("load", () => {
 
     // Omitir alguns itens do menu no conteudo Sobre e cookies
     itensDoNavOmissos = document.querySelectorAll("li.visivel-so-na-janela-da-ficha");
-    const aOmitirAlgunsItensDoNav = document.querySelectorAll("a.abrir-artigo-sobre, a.abrir-politica-de-cookies");
+    const aOmitirAlgunsItensDoNav = document.querySelectorAll("button.abrir-artigo-sobre, button.abrir-politica-de-cookies");
 
     aOmitirAlgunsItensDoNav.forEach ( a => {
         a.addEventListener("click", () => MenuHamburguer.omitirAlgunsItensDoNavNaJanelaDosArtigosSobreECookies());

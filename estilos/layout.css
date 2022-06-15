@@ -28,8 +28,22 @@ body b, strong {
 
 a {text-decoration: none;}
 
-.linha-do-cabecalho a.logo span,
-.linha-do-cabecalho ul li label:hover, button:hover {
+section.menu ul li button:hover,
+section.menu ul li:first-child:hover,
+section.menu ul li a:hover {
+    background-color: #f4f4f4 !important;
+} 
+
+section.menu ul li button:active,
+section.menu ul li:first-child:active, 
+section.menu ul li a:active {
+    background-color: #ddd !important;
+    color: inherit !important;
+} 
+
+.linha-do-cabecalho a.logo span:hover,
+.linha-do-cabecalho ul li label:hover, 
+button:hover {
     cursor: pointer;
 }
 
@@ -67,66 +81,61 @@ header {
 }
 
 /* NAVEGACAO */
-.linha-do-cabecalho nav {
+.linha-do-cabecalho section.menu {
     flex: 1;
     display: flex;
     align-items: center;
     margin-left: 20px;
 }
 
-.linha-do-cabecalho nav ul {
-    display: flex;
-}
-
-.linha-do-cabecalho nav ul li:first-child {
+section.menu ul {
     display: flex;
     align-items: center;
 }
 
-.linha-do-cabecalho nav ul li:first-child {
+section.menu ul li:first-child {
+    display: flex;
+    align-items: center;
+}
+
+section.menu ul li:first-child {
     display: flex;
     align-items: center;
     justify-content: center;
+
 }
 
-.linha-do-cabecalho nav ul li label {
+section.menu ul li label {
     padding: 4px 10px 4px 0;
 }
 
-.linha-do-cabecalho nav ul li a {
-    display: inline-block;
-    padding: 4px 10px;
-} 
-
-.linha-do-cabecalho nav ul li a:hover,
-.linha-do-cabecalho nav ul li:first-child:hover {
-    background-color: #f4f4f4;
-} 
-
-.linha-do-cabecalho nav ul li a:active,
-.linha-do-cabecalho nav ul li:first-child:active {
-    background-color: #ddd;
-} 
-
-.linha-do-cabecalho ul li input[type=checkbox] {
+section.menu ul li input[type=checkbox] {
     width: 10px;
     height: 10px;
     margin-right: 4px;
     cursor: pointer;
 }
 
-.linha-do-cabecalho ul li label,
-.linha-do-cabecalho ul li a, 
-.linha-do-cabecalho ul li a:visited {
-    color: #333;
+/* BOTOES DO MENU e às */
+section.menu ul li button {
+    border: none;
+    background-color: inherit !important;
+    font-size: 12px;
+    display: inline-block;
+    padding: 9px;
 }
 
+section.menu ul li a {
+    padding: 10px;
+}
+
+
 /*** Botão de Impressão ***/
-.linha-do-cabecalho button,
+.linha-do-cabecalho button.imprimir,
 article mark.imprimir {
     display: block;
     margin-left: auto;
-    margin-right: 10px;
+    margin-right: 9px;
     padding: 6px 3px;
     border-radius: 4px;;
     border: none;
@@ -136,7 +145,7 @@ article mark.imprimir {
     min-width: 100px;
 }
 
-.linha-do-cabecalho button:hover {
+.linha-do-cabecalho button.imprimir:hover {
     background-color: #000;
 }
 
@@ -156,6 +165,12 @@ footer .linha-do-rodape {
     margin-right: 4%;
 }
 
+.linha-do-rodape div button {
+    border: none;
+    padding: 0;
+    background-color: inherit !important;
+    font-size: 12px;
+}
 
 .linha-do-rodape p {
     align-self: center;

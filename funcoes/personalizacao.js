@@ -129,8 +129,8 @@ window.addEventListener("load", () => {
     // ESVAZIAR FICHA
 
     // Confirmar esvaziamento
-    const aEsvaziarFicha = document.querySelector("a.esvaziar-ficha");
-    aEsvaziarFicha.addEventListener("click", () => {
+    const botaoEsvaziarFicha = document.querySelector("button.esvaziar-ficha");
+    botaoEsvaziarFicha.addEventListener("click", () => {
         personalizacao.confirmarEsvaziamento();
     })
 

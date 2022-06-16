@@ -59,7 +59,7 @@ const saveOnStorage = {
     },
 
     salvarReadonlyCelsBg: () => {
-        const checkboxDarker = document.querySelector("#readonly-cels-darker");
+        const checkboxDarker = document.querySelector("#denegrir-readonlycels");
 
         checkboxDarker.addEventListener("change", () => {
             localStorage.setItem("darkmode", checkboxDarker.checked);

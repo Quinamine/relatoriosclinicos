@@ -90,7 +90,7 @@ class personalizacaoDaFicha {
 
 window.addEventListener("load", () => {
 
-    let checkboxDeControl = document.querySelector("#readonly-cels-darker");
+    let checkboxDeControl = document.querySelector("#denegrir-readonlycels");
 
     // INSTANCIAMENTO DA CLASSE
     let personalizacao = new personalizacaoDaFicha(checkboxDeControl);

@@ -5,12 +5,12 @@ const MenuHamburguer = {
 
         if(accao=="abrir") {
             hamburguer.classList.add("on");
-            sectionMenu.classList.add("on");
+            menu.classList.add("on");
             Desfoque.abaixoDoCabecalho();
         }
         else {
             hamburguer.classList.remove("on");
-            sectionMenu.classList.remove("on");
+            menu.classList.remove("on");
             Foco._100Viewport();
         }
     },
@@ -52,12 +52,12 @@ const MenuHamburguer = {
     }
 }
 
-let hamburguer, sectionMenu, itensDoNavOmissos, body;
+let hamburguer, menu, itensDoNavOmissos, body;
 window.addEventListener("load", () => {
     
     // Inicialização das variáveis
     hamburguer = document.querySelector(".hamburguer");
-    sectionMenu = document.querySelector("header section.menu")
+    menu = document.querySelector("header section.menu")
     body = document.querySelector("body");
     const header = document.querySelector("header");
 
@@ -81,12 +81,12 @@ window.addEventListener("load", () => {
 
         }
 
-        Foco.destacarConteudo(sectionMenu);
+        Foco.destacarConteudo(menu);
     });
 
 
     // Fechar Hamburguer com Itens do Menu
-    const menuItens = document.querySelectorAll("header nav ul li:nth-child(1), header nav ul li button");
+    const menuItens = document.querySelectorAll("li.denegrir-as-celulas-automaticas, .linha-do-cabecalho button, .linha-do-cabecalho a");
 
     menuItens.forEach ( item => {   
         item.addEventListener("click", () => {
@@ -94,7 +94,6 @@ window.addEventListener("load", () => {
             MenuHamburguer.desomitirRolagemDoBody();
             header.classList.remove("z-index-10");
             desfoque.classList.remove("z-index-9");
-
 
             // Desfoque total
             if(item.classList.contains("esvaziar-ficha")) {

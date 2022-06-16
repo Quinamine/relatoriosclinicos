@@ -110,7 +110,6 @@ div.caixa-de-pesquisa button.fechar {
 }
 
 div.caixa-de-pesquisa button.fechar:hover {
-    cursor: pointer;
     background-color: #D00;
     border-radius: 2px;
 }
@@ -210,8 +209,8 @@ section.atalhos-do-teclado .conteudo {
     position: relative;
 }
 
-section.atalhos-do-teclado button.fechar-conteudo-de-atalhos-do-teclado {
-    margin: 0;
+button.fechar-conteudo-de-atalhos-do-teclado {
+    margin: 0 !important;
     width: 30px;
     height: 30px;
     position: absolute;
@@ -219,21 +218,20 @@ section.atalhos-do-teclado button.fechar-conteudo-de-atalhos-do-teclado {
     right: -10px;
     border: none;
     outline: none;
-    font-size: 12px;
-    font-size: 20px;
+    font-size: 1.25rem !important;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-section.atalhos-do-teclado button.fechar-conteudo-de-atalhos-do-teclado:hover,
-div.close-article button.fechar-artigo:hover  {
+button.fechar-conteudo-de-atalhos-do-teclado:hover,
+button.fechar-artigo:hover  {
     background-color: #D00;
     color: #fff;
 }
 
-section.atalhos-do-teclado button.fechar-conteudo-de-atalhos-do-teclado:active,
-div.close-article button.fechar-artigo:active {
+button.fechar-conteudo-de-atalhos-do-teclado:active,
+button.fechar-artigo:active {
     color: red;
 }
 
@@ -357,8 +355,6 @@ div.aviso-de-uso-de-cookies button {
 div.aviso-de-uso-de-cookies button:hover {
     border-color: #aaa;
 }
-
-
 
 /*  JAVASCRIPT */
 html.smooth {

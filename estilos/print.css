@@ -2,6 +2,8 @@
 @media print {
     body {
         visibility: hidden;
+        padding: 0;
+        -webkit-print-color-adjust: exact;
     }
 
     main {
@@ -15,19 +17,21 @@
         border-top: 10px solid #444;
     }
 
-    .col-de-enumeracao-das-linhas span {
-        border: 1px solid #888;
-        border-top: none;
-        color: #888
-    }
-
-    .col-da-linha-superior .linha-de-enumeracao-das-colunas span  {
-        border-color: #888;
-    }
-
     body .col-de-inputs input {
         border-color: #444 !important;
     }
 
+
+    @-moz-document url-prefix() {
+        .col-de-enumeracao-das-linhas span {
+            border: 1px solid #444;
+            border-top: none;
+            color: #888
+        }
     
+        .col-da-linha-superior .linha-de-enumeracao-das-colunas span {
+            color: #888 !important;
+            border-color: #444 !important;
+        }
+    }
 }

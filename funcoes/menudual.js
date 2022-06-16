@@ -23,7 +23,7 @@ window.addEventListener("load", () => {
 
 
     // ABRIR OU FECHAR CONTEÚDO DE COOKIES
-    const politicaDeCookies = document.querySelector("article.politica-de-cookies");
+    const politicaDeCookies = document.querySelector("article#politica-de-cookies");
     const botaoAbrirpoliticaDeCookies = document.querySelectorAll("button.abrir-politica-de-cookies"); 
     const botaoFecharPoliticaDeCookies = document.querySelector("button.fechar-artigo.cookies");
 
@@ -37,7 +37,7 @@ window.addEventListener("load", () => {
 
     
     // ABRIR OU FECHAR CONTEÚDO SOBRE
-    const artigoSobre = document.querySelector("article.sobre");
+    const artigoSobre = document.querySelector("article#sobre");
     const botaoAbrirArtigoSobre = document.querySelectorAll("button.abrir-artigo-sobre");
     const botaoFecharArtigoSobre = document.querySelector("button.fechar-artigo.sobre");
 

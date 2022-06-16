@@ -24,18 +24,18 @@
     <script src="funcoes/referencia.js"></script>
     <script src="funcoes/avisodecookies.js"></script>
 </head>
-<body>
+<body ontouchstart="">
     <div id="involucro-de-todo-conteudo">
         <header>
             <div class="linha-do-cabecalho">
        
                 <a href="totalizador-de-resumo-mensal-de-consultas-externas.html" class="logo">TOTAL<span>IZADOR DE</span> <span title="Resumo Mensal de Consultas Externas">RMCE</span></a>
                                       
-                <section class="menu">
+                <section class="menu" role="navigation">
                     <ul>
-                        <li title="Escurecer o fundo de Subtotais e Totais. (Ctrl + Tecla de espaço)" class="visivel-so-na-janela-da-ficha">
-                            <input type="checkbox" id="readonly-cels-darker" class="atalho"/> 
-                            <label for="readonly-cels-darker">Denegrir as células automáticas</label>
+                        <li title="Escurecer o fundo de Subtotais e Totais. (Ctrl + Tecla de espaço)" class="visivel-so-na-janela-da-ficha denegrir-as-celulas-automaticas">
+                            <input type="checkbox" id="denegrir-readonlycels"/> 
+                            <label for="denegrir-readonlycels">Denegrir as células automáticas</label>
                         </li>
 
                         <li title="Pesquisar por um número de linha entre 1 e 53. (Ctrl + B)" class="visivel-so-na-janela-da-ficha">
@@ -58,6 +58,15 @@
                     <button onclick="window.print()" title="Ctrl + P" class="imprimir">
                         Imprimir
                     </button>
+                    
+                    <div class="partilha">
+                        <div class="fb">
+                            <a href="#">Partilhar no Facebook</a>
+                        </div>
+                        <div class="whatsapp">
+                            <a href="#">Partilhar no WhatsApp</a>
+                        </div>
+                    </div>
                 </section>
 
                 <div class="hamburguer">
@@ -100,7 +109,7 @@
                         <span>16</span>
                         <span>17</span>
                         <span>18</span>
-                        <span>19</span>
+                        <span class="ultimo-span-de-enumeracao-das-colunas">19</span>
                         
                     </div>
                     <div class="linha-de-faixas-etarias">
@@ -2144,7 +2153,7 @@
         </div>
         <section class="artigos">
         
-            <article class="politica-de-cookies">
+            <article id="politica-de-cookies">
                 <h2>Política de cookies e tecnologias paralelas</h2>
 
                 <h3>O que são cookies?</h3>
@@ -2216,7 +2225,7 @@
                 </div>
             </article>
 
-            <article class="sobre">
+            <article id="sobre" >
                 <h2>Sobre</h2>
                 
 
@@ -2236,7 +2245,7 @@
 
                 <h3>Qual é o destino dos dados que o usuário insere?</h3>
 
-                <p>Eles são guardados no seu próprio navegador através de um recurso chamado Local Storage (Armazenamento Local). E mesmo fechano o navegador, eles permanecem no local até o usuário eliminá-los. Para se informar melhor, <button class="abrir-politica-de-cookies">veja aqui a Politica de cookies.</button></p>
+                <p>Eles são guardados no seu próprio navegador através de um recurso chamado Local Storage (Armazenamento Local). E mesmo fechano o navegador, eles permanecem no local até o usuário eliminá-los. Para se informar melhor, sugiro que <button class="abrir-politica-de-cookies">leia aqui a Politica de cookies.</button></p>
 
 
                 <h3>Quais as vantagem de se usar o serviço?</h3>
@@ -2262,7 +2271,7 @@
                 </div>
             </article>
 
-            <article class="conversao-pdf">
+            <article id="conversao-pdf">
                 <h2>Como salvar a ficha em PDF?</h2>
 
                 <ol>
@@ -2281,8 +2290,7 @@
 
                 <p class="nota">Não se preocupe se na janela de impressão haver omissão de algumas linhas da ficha. Isso é ilusão de óptica, as linhas ainda permanecem lá.</p>
 
-                <p class="nota">Importa referir que esta funcionalidade  depende do seu sistema operativo, pois não é nativa do Totalizador. Os testes foram feitos no Windows 10 e os resultados são satisfatórios.</p>
-
+                <p class="nota">Importa referir que esta funcionalidade  depende do seu sistema operativo, pois não é nativa do Totalizador. Os testes foram feitos no Windows 10 e os resultados foram satisfatórios.</p>
 
                 <p class="footer">&copy; 2022 - Totalizador de RMCE</p>
                     

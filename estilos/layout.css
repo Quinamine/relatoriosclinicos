@@ -1,7 +1,7 @@
 /* MOBILE ITEMS - DISPLAY NONE */
 
 .linha-do-cabecalho .hamburguer,
-.linha-de-referencia {
+.linha-de-referencia, .partilha {
     display: none;
 }
 
@@ -26,43 +26,28 @@ body b, strong {
     color: #fff;
 }
 
-a {text-decoration: none;}
+a {
+    text-decoration: none;
+}
 
-section.menu ul li button:hover,
-section.menu ul li:first-child:hover,
-section.menu ul li a:hover {
-    background-color: #f4f4f4 !important;
-} 
-
-section.menu ul li button:active,
-section.menu ul li:first-child:active, 
-section.menu ul li a:active {
-    background-color: #ddd !important;
-    color: inherit !important;
-} 
-
-.linha-do-cabecalho a.logo span:hover,
-.linha-do-cabecalho ul li label:hover, 
 button:hover {
     cursor: pointer;
 }
-
-/*** REUTLIZAVEL ***/
+/* CABECALHO E RODAPE */
 header, footer {
     width: 100%;
 }
 
-.linha-do-cabecalho, footer div.linha-do-rodape {
-    width: 100%;
-    max-width: 1300px;
-    margin: 0 auto;
-}
-
-
-/* CABECALHO */
 header {
     box-shadow: 0 0 10px #ddd;
     line-height: 2;
+}
+
+.linha-do-cabecalho, 
+.linha-do-rodape {
+    width: 100%;
+    max-width: 1300px;
+    margin: 0 auto;
 }
 
 .linha-do-cabecalho {
@@ -70,6 +55,7 @@ header {
     align-items: center;
 }
 
+/* LOGO */
 .linha-do-cabecalho > a {
     font-size: 16px!important;
     color: #333;
@@ -80,36 +66,41 @@ header {
     font-weight: initial;
 }
 
+.linha-do-cabecalho a.logo span:hover,
+.linha-do-cabecalho ul li label:hover {
+    cursor: pointer;
+}
+
+
 /* NAVEGACAO */
-.linha-do-cabecalho section.menu {
+.linha-do-cabecalho .menu {
     flex: 1;
     display: flex;
     align-items: center;
     margin-left: 20px;
 }
 
-section.menu ul {
+.menu ul {
     display: flex;
     align-items: center;
 }
 
-section.menu ul li:first-child {
+.menu ul li.denegrir-as-celulas-automaticas {
     display: flex;
     align-items: center;
 }
 
-section.menu ul li:first-child {
+.menu ul li.denegrir-as-celulas-automaticas {
     display: flex;
     align-items: center;
     justify-content: center;
-
 }
 
-section.menu ul li label {
+.menu ul li label {
     padding: 4px 10px 4px 0;
 }
 
-section.menu ul li input[type=checkbox] {
+.menu ul li input[type=checkbox] {
     width: 10px;
     height: 10px;
     margin-right: 4px;
@@ -117,16 +108,32 @@ section.menu ul li input[type=checkbox] {
 }
 
 /* BOTOES DO MENU e às */
-section.menu ul li button {
+.menu ul li button {
     border: none;
-    background-color: inherit !important;
+    outline: none;
+    background-color: inherit;
     font-size: 12px;
     display: inline-block;
     padding: 9px;
 }
 
-section.menu ul li a {
+.menu ul li a {
     padding: 10px;
+    color: inherit;
+}
+
+/** Hovers e actives **/
+.menu ul li:first-child:hover,
+.menu ul li button:hover,
+.menu ul li a:hover {
+    background-color: #f4f4f4;
+}
+
+.menu ul li:first-child:active,
+.menu ul li button:active, 
+.menu ul li a:active {
+    background-color: #ddd;
+    color: inherit;
 }
 
 
@@ -147,7 +154,10 @@ article mark.imprimir {
 
 .linha-do-cabecalho button.imprimir:hover {
     background-color: #000;
+    cursor: pointer;
 }
+
+
 
 /* RODAPÉ */
 footer {
@@ -155,7 +165,7 @@ footer {
     padding: 10px 0 80px;
 }
 
-footer .linha-do-rodape {
+.linha-do-rodape {
     display: flex;
     align-items: flex-start;
     line-height: 2;
@@ -170,6 +180,11 @@ footer .linha-do-rodape {
     padding: 0;
     background-color: inherit !important;
     font-size: 12px;
+    color: #0000EE;
+}
+
+.linha-do-rodape div button:active {
+    color: red;
 }
 
 .linha-do-rodape p {
@@ -183,7 +198,7 @@ footer .linha-do-rodape {
 .linha-do-rodape a.voltar:visited {
     margin-right: 10px;
     padding: 5px;
-    color: #888;
+    color: #555;
 }
 
 /* DESFOQUE DO FUNDO */

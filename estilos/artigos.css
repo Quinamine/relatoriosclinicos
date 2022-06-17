@@ -92,19 +92,16 @@ article#conversao-pdf mark.imprimir {
 
 article#conversao-pdf .nota {
     background-color: #dce4f4;
-    border-left: 4px solid  blue;
+    border-top: 1px solid #aaa;
     padding: 8px;
-    border-radius: 5px;
+    font-size: 13px;
+
 }
 
-article#conversao-pdf ol p.nota {
-    margin-left: 4%;
-    font-size: 12.5px;
-}
 
 article p.consentimento {
-    border: 1px solid #aaa;
-    background-color: #f4f4f4;
+    border-top: 1px solid #aaa;
+    background-color: #dce4f4;
     padding: 10px;
     font-size: 12px;
 }
@@ -130,8 +127,10 @@ div.close-article button.fechar-artigo {
 }
 
 article p.footer {
-    padding-top: 40px;
-    border-top: 1px dotted #aaa;
+    margin: 0;
+    border-top: 1px solid #ddd;
+
+    padding: 70px 0 50px;
 }
 
 

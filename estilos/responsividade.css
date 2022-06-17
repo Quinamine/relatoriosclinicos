@@ -48,7 +48,7 @@
         bottom: -36px;
         background-color: #fff;
         line-height: 1.5;
-        box-shadow: 0 -2px 8px #ddd;
+        box-shadow: 0 -1px 5px #eee;
         z-index: 1;
         visibility: hidden;
         transition: bottom 50ms linear;
@@ -98,10 +98,22 @@
         min-width: 24px;
     } 
 
+    /* Cookies */
+    div.aviso-de-uso-de-cookies {
+        max-width: 100%;
+        left: 0;
+    }
+
+    div.aviso-de-uso-de-cookies.on {
+        bottom: 0;
+    }
+
     /* Desfoque */
     div.desfoque-do-fundo.on {
         z-index: 1;
     }
+
+    
 }
 
 @media screen and (max-width: 1220px) {
@@ -319,6 +331,10 @@
         border-top: 2px solid #0000EE;
     }
 
+    div.partilha div.fb a:visited {
+        color: #3b5998;
+    }
+
 
     div.partilha div.whatsapp {
         border-top: 2px solid greenyellow;
@@ -329,14 +345,13 @@
     }
 
     div.partilha div.whatsapp a:visited {
-        color: green;
+        color: #34AF23;
     }
    
     /* ARTIGOS */
     section.artigos article {
         box-shadow: none;
         max-width: 100%;
-        padding-bottom: 80px;
         left: -100vw;
         transition: left 250ms ease;
         top: 50px;

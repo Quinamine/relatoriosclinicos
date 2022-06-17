@@ -10,6 +10,11 @@
 body {
     font-family: sans-serif, Arial, Helvetica;
     font-size: 12px;
+    color: #202122;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: #000;
 }
 
 body p, span, label, ul, ol,
@@ -28,6 +33,10 @@ body b, strong {
 
 a {
     text-decoration: none;
+}
+
+button {
+    color: #202122;
 }
 
 button:hover {
@@ -58,7 +67,7 @@ header {
 /* LOGO */
 .linha-do-cabecalho > a {
     font-size: 16px!important;
-    color: #333;
+    color: #000;
     font-weight: bold;
 }
 

@@ -43,9 +43,18 @@ class Pesquisa {
         let iRow = query - 1;
         this.css().suavizarRolagemHTML("sim");
         
+        
         if ((linhas[iRow].getBoundingClientRect().bottom < 0) || linhas[iRow].getBoundingClientRect().top > window.innerHeight) {
-            linhas[iRow].scrollIntoView();
+            if(iRow < 3) {
+                const body = document.querySelector("body");
+                body.scrollIntoView();
+            }
+            else {
+                linhas[iRow-3].scrollIntoView();
+            }
+            
         }
+        
        
         this.css().resetarBgdasLinhas();
         linhas[iRow].classList.add("fundo-laranja");

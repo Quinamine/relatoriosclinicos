@@ -314,12 +314,11 @@ div.aviso-de-uso-de-cookies {
     padding: 20px;
     left: calc(50vw - 1300px /2);
     box-shadow: 0 0 8px #888;
-    border-radius: 15px;
     background: #fff;
     font-size: 14px;
     z-index: 10;
-    background: rgba(0, 0, 0, .6); 
-    color: #fff; 
+    background: rgba(0, 0, 0, .7); 
+    color: #d4d8da;
     visibility: hidden;
     transition: bottom 150ms ease;
 }
@@ -330,30 +329,43 @@ div.aviso-de-uso-de-cookies.on {
 }
 
 div.aviso-de-uso-de-cookies p {
-    margin-bottom: 10px;
-    letter-spacing: 1px;
+    margin-bottom: 20px;
 }
 
-div.aviso-de-uso-de-cookies a {
+div.aviso-de-uso-de-cookies p a {
+    background-color: inherit;
     text-decoration: underline;
+    color: inherit;
+}
+
+div.aviso-de-uso-de-cookies p a:hover {
     color: #fff;
 }
+div.aviso-de-uso-de-cookies p a:active {
+    color: #aaa;
+}
 
 
-div.aviso-de-uso-de-cookies button {
-    border: none;
+div.aviso-de-uso-de-cookies > button {
     min-width: 200px;
     background-color: #000;
-    border: 2px solid #fff;
+    border: 2px solid #aaa;
     padding: 10px;
-    color: #fff;
+    color: #d4d8da;
     font-size: 0.875rem;
-    font-weight: bold;
-    letter-spacing: 1px;
-}
+    display: block;
+    margin: auto;
+}  
 
 div.aviso-de-uso-de-cookies button:hover {
-    border-color: #aaa;
+    border-color: #fff;
+    color: #fff;
+}
+
+div.aviso-de-uso-de-cookies button:active {
+    background-color: #fff;
+    color: #000;
+    font-weight: bold;
 }
 
 /*  JAVASCRIPT */

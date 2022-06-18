@@ -31,7 +31,11 @@ main h1 input {
 main h1 input:focus, .col-de-inputs input[data-subtotal]:focus,
 .linha-de-enumeracao-das-colunas p input:focus,
 .col-da-linha-de-assinatura p input:focus {
-    border-bottom: 2px solid #000;
+    border-bottom: 2px solid #0000EE;
+}
+
+.col-da-linha-de-assinatura p input[type=date]:focus {
+    border-bottom: 1px solid #444;
 }
 
 /* Classe manipulável com JS */

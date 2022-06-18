@@ -68,11 +68,6 @@ header {
 .linha-do-cabecalho > a {
     font-size: 16px!important;
     color: #000;
-    font-weight: bold;
-}
-
-.linha-do-cabecalho a span {
-    font-weight: initial;
 }
 
 .linha-do-cabecalho a.logo span:hover,

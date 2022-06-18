@@ -1,10 +1,4 @@
 /* REUTILIZAVEL */
-section.atalhos-do-teclado,
-div.caixa-de-confirmacao {
-    max-width: 320px;
-    padding: 10px;
-    position: fixed;
-}  
 
 .observacoes p.readonlycels-obs,
 .esvaziamento-da-ficha p.ficha-vazia-obs {
@@ -26,7 +20,7 @@ article p.footer {
     font-size: 12px;
     text-align: center;
     color: #555;
-    padding: 10px 0;
+    padding: 20px;
 }
 
 /* OBSERVACOES */
@@ -168,13 +162,24 @@ div.query-sem-resultados button:hover {
 
 /* ATALHOS */
 section.atalhos-do-teclado {
-    background: #fafafa;
+    max-width: 350px;
+    padding: 10px;
+    position: fixed;
     top: -105vh;
     right: 0;
+    background: #fff;
     transition: top 50ms linear;
     z-index: 2;
     visibility: hidden;
+    max-width: 350px;
 }  
+
+section.atalhos-do-teclado ul {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-left: 6px solid #ddd;
+} 
+
 
 section.atalhos-do-teclado.on {
     top: 0;
@@ -238,10 +243,13 @@ button.fechar-artigo:active {
 /* CAIXA DE CONFIRMACAO */
 
 div.caixa-de-confirmacao {
-    background: #fff;
+    max-width: 320px;
+    position: fixed;
     top: calc(50vh - 114px / 2);
     right: calc(50vw - 311.06px / 2);
+    background: #fff;
     border-radius: 8px;
+    padding: 10px;
     display: none;
     z-index: 2;
 }

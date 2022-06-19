@@ -160,6 +160,10 @@ div.query-sem-resultados button:hover {
     background-color: #000;
 }
 
+div.query-sem-resultados button:active {
+    opacity: .7;
+}
+
 /* ATALHOS */
 section.atalhos-do-teclado {
     max-width: 350px;

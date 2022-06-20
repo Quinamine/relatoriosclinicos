@@ -4,7 +4,7 @@ section.artigos article {
     height: 100vh;
     overflow-y: scroll;
     margin: auto;
-    padding: 20px 3% 80px 3%;
+    padding: 20px 3%;
     background-color: #fff;
     font-size: 0.875rem;
     position: fixed;
@@ -19,16 +19,6 @@ section.artigos article {
 section.artigos article.on {
     visibility: initial;
     top: 0;
-}
-
-section.artigos article::-webkit-scrollbar {
-    width: 10px;
-    border: thin solid #ddd;
-    padding: 4px;
-}
-
-section.artigos article::-webkit-scrollbar-thumb {
-    background-color: #ddd;
 }
 
 article h2, article h3,
@@ -47,8 +37,8 @@ article ul li:last-child {
     margin-bottom: 20px;
 }
 
-article ol li {
-    list-style: numeric inside;
+article ol {
+    list-style: decimal inside;
 }
 
 article h2 {
@@ -100,7 +90,7 @@ article#conversao-pdf .nota {
 
 
 article p.consentimento {
-    border-top: 1px solid #aaa;
+    border: thin solid #0000EE;
     background-color: #dce4f4;
     padding: 10px;
     font-size: 12px;
@@ -124,13 +114,16 @@ div.close-article button.fechar-artigo {
     width: 35px;
     height: 35px;
     opacity: 0.8;
+    background-color: #fff;
+    border: none;
+    box-shadow: 0 0 8px #ddd;
+    
 }
 
 article p.footer {
     margin: 0;
     border-top: 1px solid #ddd;
-
-    padding: 70px 0 50px;
+    padding: 30px 0 50px;
 }
 
 

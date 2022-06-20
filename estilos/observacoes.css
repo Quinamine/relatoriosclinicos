@@ -231,11 +231,12 @@ button.fechar-conteudo-de-atalhos-do-teclado {
     display: flex;
     align-items: center;
     justify-content: center;
+    background-color: inherit;
 }
 
 button.fechar-conteudo-de-atalhos-do-teclado:hover,
 button.fechar-artigo:hover  {
-    background-color: #D00;
+    background-color: #D00 !important;
     color: #fff;
 }
 

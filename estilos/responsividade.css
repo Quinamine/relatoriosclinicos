@@ -159,8 +159,12 @@
     
     div.caixa-de-pesquisa button {
         width: 35px;
-        background: #888;
+        background-color: #555 !important;
         height: 23px;
+    }
+
+    div.caixa-de-pesquisa button:active {
+        background-color: #D00 !important;
     }
 }
 

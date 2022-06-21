@@ -148,16 +148,16 @@ window.addEventListener("load", () =>  {
     // EVENTOS DO TECLADO
     window.addEventListener("keyup", (event) => {
         
-        let tecla = event.key.toLowerCase();
+        let tecla = event.key;
 
         
         // ABRIR CAIXA DE PESQUISA
-        if ((event.ctrlKey) &&  (tecla == "b")) {
+        if ((event.ctrlKey) &&  (tecla.toLowerCase() == "b")) {
             src.mostrarCaixaDePesquisa();
         }
 
         // FECHAR QUERY SEM RESULTADOS COM ENTER
-        if (tecla == "enter") {
+        if (tecla.toLocaleLowerCase() == "enter") {
             // Fechar caixa de query sem resultados
             if(botaoOkDeQuerySemResultados.parentElement.classList.contains("on")) {
                 src.nothingFound();

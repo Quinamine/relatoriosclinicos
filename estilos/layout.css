@@ -143,7 +143,7 @@ header {
 
 /*** Botão de Impressão ***/
 .linha-do-cabecalho button.imprimir,
-article mark.imprimir {
+article mark.print {
     display: block;
     margin-left: auto;
     margin-right: 9px;

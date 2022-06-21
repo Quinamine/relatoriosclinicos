@@ -65,7 +65,6 @@ window.addEventListener("load", () => {
     const outputFaixaEtaria = document.querySelector("output.faixa-etaria");
     const outputSexo = document.querySelector("output.sexo");
 
-
     Referencia.mostrarIdadeESexo(outputFaixaEtaria, outputSexo);
 
     // Retornar Referência vazia se o foco for fora das celulas
@@ -76,10 +75,7 @@ window.addEventListener("load", () => {
     })
 
     // Omitir a linha de referência quando a linha de Faixas-etárias e Sexo estiver visível
-    window.addEventListener("scroll", () =>  Referencia.mostrarOuOmitirConteudo());
-
-
-    
+    window.addEventListener("scroll", () =>  Referencia.mostrarOuOmitirConteudo());  
 })
 
 

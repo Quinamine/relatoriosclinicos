@@ -73,7 +73,7 @@ article#conversao-pdf ol li {
     font-size: 0.875rem;
 }
 
-article#conversao-pdf mark.imprimir {
+article#conversao-pdf mark.print {
     display: inline-block;
     padding: 4px;
     text-align: center;

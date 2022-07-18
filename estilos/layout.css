@@ -1,20 +1,31 @@
-/* MOBILE ITEMS - DISPLAY NONE */
-
-.linha-do-cabecalho .hamburguer,
-.linha-de-referencia, .partilha {
-    display: none;
+/* FORMATACOES GERAIS */
+:root {
+    --fullblack: #000;
+    --blackalpha: rgba(0, 0, 0, .5);
+    --cinza3: #333;
+    --cinza4: #444;
+    --cinza5: #555;
+    --cinza8: #888;
+    --cinza10: #aaa;
+    --cinzac: #ccc;
+    --cinzad: #ddd;
+    --cinzae: #eee;
+    --cinzaf0: #f0f0f0;
+    --cinzaf4: #f4f4f4;
+    --white: #fff;
+    --azul60e: #0060EE;
+    --azuldeancora: #1558bc;
+    --azulclaro: #dce4f4;
 }
 
-
-/* FORMATACOES GERAIS */
 body {
     font-family: sans-serif, Arial, Helvetica;
-    font-size: 12px;
-    color: #202122;
+    font-size: 0.75rem;
+    color: var(--cinza3);
 }
 
 h1, h2, h3, h4, h5, h6 {
-    color: #000;
+    color: var(--fullblack);
 }
 
 body p, span, label, ul, ol,
@@ -26,35 +37,60 @@ body b, strong {
     font-weight: bold;
 }
 
-*::selection {
-    background-color: #444;
-    color: #fff;
-}
-
 a {
     text-decoration: none;
+    color: var(--azuldeancora)
 }
 
 button {
-    color: #202122;
+    color: var(--cinza3);
+    border: none;
+    outline: none;
 }
 
 button:hover {
     cursor: pointer;
 }
-/* CABECALHO E RODAPE */
-header, footer {
+
+input {
+    border: none;
+    outline: none;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type=number] {
+    -moz-appearance: textfield;
+}
+
+input:focus {
+    border-bottom: 2px solid var(--azul60e) !important;
+}
+
+input[readonly] {
+    font-weight: bold;
+    cursor: context-menu;
+    transition: background-color 400ms ease-out;
+}
+
+#involucro > header, 
+#involucro > footer {
     width: 100%;
 }
 
-header {
-    box-shadow: 0 0 10px #ddd;
+/* HEADER */
+
+#involucro > header {
+    box-shadow: 0 0 10px var(--cinzad);
     line-height: 2;
 }
 
 .linha-do-cabecalho, 
 .linha-do-rodape {
-    width: 100%;
     max-width: 1300px;
     margin: 0 auto;
 }
@@ -64,19 +100,18 @@ header {
     align-items: center;
 }
 
-/* LOGO */
-.linha-do-cabecalho > a {
-    font-size: 16px!important;
-    color: #000;
+.linha-do-cabecalho .logo {
+    font-size: 1rem !important;
+    color: var(--fullblack);
 }
 
-.linha-do-cabecalho a.logo span:hover,
+.linha-do-cabecalho .logo span:hover,
 .linha-do-cabecalho ul li label:hover {
     cursor: pointer;
 }
 
-
 /* NAVEGACAO */
+
 .linha-do-cabecalho .menu {
     flex: 1;
     display: flex;
@@ -89,12 +124,12 @@ header {
     align-items: center;
 }
 
-.menu ul li.denegrir-as-celulas-automaticas {
+.menu ul li.destacar-as-celulas-automaticas {
     display: flex;
     align-items: center;
 }
 
-.menu ul li.denegrir-as-celulas-automaticas {
+.menu ul li.destacar-as-celulas-automaticas {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -111,12 +146,10 @@ header {
     cursor: pointer;
 }
 
-/* BOTOES DO MENU e às */
+/* BOTOES DO MENU e LINKS */
 .menu ul li button {
-    border: none;
-    outline: none;
     background-color: inherit;
-    font-size: 12px;
+    font-size: 0.75rem;
     display: inline-block;
     padding: 9px;
 }
@@ -126,20 +159,28 @@ header {
     color: inherit;
 }
 
+.menu ul li a.print-to-pdf span.help {
+    background-color: var(--azuldeancora);
+    background-color: var(--blackalpha);
+    color: var(--white);
+    font-weight: bold;
+    padding: 2px 6px 1px 6px;
+    border-radius: 50%;
+}
+
 /** Hovers e actives **/
 .menu ul li:first-child:hover,
 .menu ul li button:hover,
 .menu ul li a:hover {
-    background-color: #f4f4f4;
+    background-color: var(--cinzaf0);
 }
 
 .menu ul li:first-child:active,
 .menu ul li button:active, 
 .menu ul li a:active {
-    background-color: #ddd;
+    background-color: var(--cinzad);
     color: inherit;
 }
-
 
 /*** Botão de Impressão ***/
 .linha-do-cabecalho button.imprimir,
@@ -147,17 +188,17 @@ article mark.print {
     display: block;
     margin-left: auto;
     margin-right: 9px;
-    padding: 6px 3px;
+    padding: 4px 3px;
     border-radius: 4px;;
-    border: none;
-    background-color: #444;
-    color: #fff;
+    border: 1px solid var(--cinza4);
+    background-color: var(--cinza4);
+    color: var(--white);
     font: bold 12px sans-serif, Arial, Helvetica;
     min-width: 100px;
 }
 
 .linha-do-cabecalho button.imprimir:hover {
-    background-color: #000;
+    background-color: var(--fullblack);
     cursor: pointer;
 }
 
@@ -166,9 +207,10 @@ article mark.print {
 }
 
 /* RODAPÉ */
-footer {
-    background-color: #dce4f4;
-    padding: 10px 0 80px;
+#involucro > footer {
+    background-color: var(--azulclaro);
+    padding: 40px 0 80px;
+    color: var(--cinza5);
 }
 
 .linha-do-rodape {
@@ -177,20 +219,22 @@ footer {
     line-height: 2;
 }
 
-.linha-do-rodape div {
+.linha-do-rodape .hiperligacoes {
     margin-right: 4%;
 }
 
-.linha-do-rodape div button {
-    border: none;
-    padding: 0;
-    background-color: inherit !important;
-    font-size: 12px;
-    color: #0000EE;
+.hiperligacoes h4 {
+    color: var(--cinza5);
 }
 
-.linha-do-rodape div button:active {
-    color: red;
+.hiperligacoes h4,
+.hiperligacoes a#abordagem-pediatrica {
+    font-weight: bold;
+    line-height: 3;
+}
+
+a#abordagem-pediatrica + ul {
+    list-style: square inside;
 }
 
 .linha-do-rodape p {
@@ -204,11 +248,11 @@ footer {
 .linha-do-rodape a.voltar:visited {
     margin-right: 10px;
     padding: 5px;
-    color: #555;
+    color: var(--cinza8);
 }
 
 .linha-do-rodape a.voltar:active {
-    color: #888;
+    color: var(--cinza5);
 }
 
 /* DESFOQUE DO FUNDO */
@@ -217,5 +261,5 @@ div.desfoque-do-fundo.on {
     height: 100vh;
     position: fixed;
     top: 0;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: var(--blackalpha);
 }

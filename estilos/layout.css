@@ -1,21 +1,26 @@
 /* FORMATACOES GERAIS */
 :root {
-    --fullblack: #000;
-    --blackalpha: rgba(0, 0, 0, .5);
-    --cinza3: #333;
-    --cinza4: #444;
-    --cinza5: #555;
-    --cinza8: #888;
-    --cinza10: #aaa;
-    --cinzac: #ccc;
-    --cinzad: #ddd;
-    --cinzae: #eee;
+    --fullblack: #000000;
+    --blackalpha5: rgba(0, 0, 0, .5);
+    --blackalpha8: rgba(0, 0, 0, .8);
+    --cinza3: #333333;
+    --cinza4: #444444;
+    --cinza5: #555555;
+    --cinza8: #888888;
+    --cinza10: #aaaaaa;
+    --cinza12: #cccccc;
+    --cinza13: #dddddd;
+    --cinza14: #eeeeee;
     --cinzaf0: #f0f0f0;
     --cinzaf4: #f4f4f4;
-    --white: #fff;
-    --azul60e: #0060EE;
-    --azuldeancora: #1558bc;
+    --white: #ffffff;
+    --azul: #0060EE;
+    --azulminiopaco: #1558bc;
     --azulclaro: #dce4f4;
+    --roxoclaro: rgb(116, 116, 235);
+    --red: #dd0000;
+    --redalpha: rgba(238, 0, 0, .8);
+    --orange: #faa032;
 }
 
 body {
@@ -39,7 +44,7 @@ body b, strong {
 
 a {
     text-decoration: none;
-    color: var(--azuldeancora)
+    color: var(--azulminiopaco)
 }
 
 button {
@@ -68,7 +73,7 @@ input[type=number] {
 }
 
 input:focus {
-    border-bottom: 2px solid var(--azul60e) !important;
+    border-bottom: 2px solid var(--azul) !important;
 }
 
 input[readonly] {
@@ -85,7 +90,7 @@ input[readonly] {
 /* HEADER */
 
 #involucro > header {
-    box-shadow: 0 0 10px var(--cinzad);
+    box-shadow: 0 0 10px var(--cinza13);
     line-height: 2;
 }
 
@@ -160,8 +165,7 @@ input[readonly] {
 }
 
 .menu ul li a.print-to-pdf span.help {
-    background-color: var(--azuldeancora);
-    background-color: var(--blackalpha);
+    background-color: var(--blackalpha5);
     color: var(--white);
     font-weight: bold;
     padding: 2px 6px 1px 6px;
@@ -178,7 +182,7 @@ input[readonly] {
 .menu ul li:first-child:active,
 .menu ul li button:active, 
 .menu ul li a:active {
-    background-color: var(--cinzad);
+    background-color: var(--cinza13);
     color: inherit;
 }
 
@@ -255,11 +259,12 @@ a#abordagem-pediatrica + ul {
     color: var(--cinza5);
 }
 
-/* DESFOQUE DO FUNDO */
+
+/* JAVASCRIPT */
 div.desfoque-do-fundo.on {
     width: 100%;
     height: 100vh;
     position: fixed;
     top: 0;
-    background-color: var(--blackalpha);
+    background-color: var(--blackalpha5);
 }

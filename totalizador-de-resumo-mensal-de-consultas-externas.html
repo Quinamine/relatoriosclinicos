@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Totalizador de Resumo Mensal de Consultas Externas</title>
     <meta name="robots" content="index, follow"/>
-    <meta name="description" content="Auxilia na elaboração de resumo de consultas externas totalizado-o automaticamente com base nos dados inseridos. Foi desenvolvido baseando-se no mesmo modelo da ficha actualmente em vigor no Serviço Nacional de Saúde."/>
-    <meta name="keywords" content="Totalizador de Resumo mensal de Consultas Externas, Totalizador, Resumo, Consultas,  Consultas Externas, Unidade Sanitária, Profissional de Saúde." />
+    <meta name="description" content="Totaliza o resumo automaticamente com base nos dados que o usuário insere, flexibilizando assim a elaboração. Tem estrutura idêntica ao modelo da ficha actualmente em vigor no Serviço Nacional de Saúde."/>
+    <meta name="keywords" content="Totalizador de resumo mensal de consultas externas, Totalizador de relatório mensal de consultas externas, Totalizador de relatório mensal, Ficha de resumo mensal de consultas externas." />
     <meta name="author" content="Adérito Félix Quinamine" />
 
 
@@ -16,10 +16,10 @@
 
     <meta property="og:title" content="Totalizador de Resumo Mensal de Consultas Externas" >
     
-    <meta property="og:description" content="Auxilia na elaboração de resumo de consultas externas totalizado-o automaticamente com base nos dados inseridos. Foi desenvolvido baseando-se no mesmo modelo da ficha actualmente em vigor no Serviço Nacional de Saúde." />
+    <meta property="og:description" content="Totaliza o resumo automaticamente com base nos dados que o usuário insere, flexibilizando assim a elaboração. Tem estrutura idêntica ao modelo da ficha actualmente em vigor no Serviço Nacional de Saúde." />
 
-    <meta property="og:image" content="https://www.quinamine.github.io/relatoriosclinicos/previa/previa.png" />
-    <meta property="og:image:secure_url" content="https://www.quinamine.github.io/relatoriosclinicos/previa/previa.png" />
+    <meta property="og:image" content="https://www.quinamine.github.io/relatoriosclinicos/imagens/previa-rmce.png" />
+    <meta property="og:image:secure_url" content="https://www.quinamine.github.io/relatoriosclinicos/imagens/previa-rmce.png" />
     <meta property="og:image:type" content="image/png" />
     <meta property="og:image:width" content="600" />
     <meta property="og:image:height" content="401" />
@@ -29,7 +29,7 @@
     <link rel="stylesheet" href="estilos/reset.css" />
     <link rel="stylesheet" href="estilos/layout.css" />
     <link rel="stylesheet" href="estilos/fichadermce.css" />
-    <link rel="stylesheet" href="estilos/observacoes.css" />
+    <link rel="stylesheet" href="estilos/manipulacaodomenu.css" />
     <link rel="stylesheet" href="estilos/artigos.css">
     <link rel="stylesheet" href="estilos/responsividade.css" />
     <link rel="stylesheet" href="estilos/printrmce.css" />
@@ -2098,8 +2098,35 @@
                 </footer>
             </div>
 
+            <div class="linha-de-referencia">
+                <div class="referencia">      
+                    <h3>
+                        <span>Referência</span>
+                        <span class="ref">Ref.:</span>
+                    </h3>
+                    
+                    <span class="seta">
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </span>
+
+                    <div>
+                        <span>Faixa etária:</span>
+                        <output class="faixa-etaria"></output>
+                    </div>
+
+                    <div>
+                        <span>Sexo:</span>
+                        <output class="sexo"></output>
+                    </div>
+                </div>
+            </div>
     
-            <div class="manipulacao do menu">
+            <div class="manipulacao-do-menu">
+
+                <!-- Acessar subtotais -->
+                <p class="aviso-de-restricao-de-acesso-a-readonlyinputs">
+                    Inacessível. Esta célula é só de leitura. <span class="recomendacao"> Marque a opção <b>"Destacar as células automáticas"</b> para distinguir as células de leitura das outras.</span>
+                </p> 
 
                 <!-- Caixa de pesquisa "Ir para" -->
                 <section class="pesquisa">
@@ -2113,73 +2140,93 @@
                         <p>Certifique-se de que o número esteja entre 1 e 53.</p>
                         <button>OK</button>
                     </div>
-                </section>
-
-                <!-- Celulas Automaticas -->
-                <p class="readonlycels-obs">Inacessível. Esta célula é só de leitura. <span> Marque a opção <b>"Destacar as células automáticas"</b> para distinguir as células de leitura das outras.</span></p>  
+                </section> 
 
                 <!-- Esvaziar ficha -->
                 <section class="esvaziamento-da-ficha">
                     <div class="caixa-de-confirmacao">
-                        <h3>Tem certeza de que pretende esvaziar a ficha?</h3>
-                        <p>Será impossível reverter esta acção.</p>
+                        <h3>Esvaziar ficha</h3>
+
+                        <p>Tem certeza de que pretende esvaziar a ficha?</p>
+
+                        <div class="alerta">
+                            <svg style="width: 40px; height: 40px; ">
+
+                                <linearGradient id="meuGradiente" x1="0%" y1="0%" x2="0%" y2="100%">
+                                    <stop offset="0%" style="stop-color: #aaa" />
+                                    <stop offset="100%" style="stop-color: yellow" />
+                                </linearGradient>>
+
+                                <polygon points="20,0 40,40, 0,40" fill="url(#meuGradiente)" stroke-width="1" stroke="#333"/>
+
+                                <text x="15.335" y="35.5" style="font-weight: bold; font-size: 28px">!</text>
+                            </svg>
+
+                            <p>Esta acção não pode ser desfeita.</p>
+
+                        </div>
+
+                        <h4>Dados adicionais</h4>
+                        <ul>
+                            <li>
+                                <input type="checkbox" id="nome-da-us" checked/>
+                                <label for="mome-da-us">Nome da US</label>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="month" checked/>
+                                <label for="month">Mês</label>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="nome" checked/>
+                                <label for="nome">Nome do responsável pelo preenchimento</label>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="ocupacao" checked/>
+                                <label for="ocupacao">Categoria</label>
+                            </li>
+
+                            <li>
+                                <input type="checkbox" id="date" checked/>
+                                <label for="date">Data</label>
+                            </li>
+                        </ul>
+
                         <div class="botoes-de-confirmacao">
                             <button class="cancelar">Cancelar</button>
                             <button class="esvaziar">Esvaziar</button>
                         </div>
                     </div>
-                    <p class="ficha-vazia-obs">A ficha encontra-se vazia.</p>
+                    <p class="resposta-para-ficha-vazia">A ficha encontra-se vazia.</p>
                 </section>
 
                 <!-- Atalhos do teclado -->
-                <section class="atalhos-do-teclado">
-
-                    <div class="conteudo">
-                        <h2>Atalhos do teclado</h2>
-
-                        <p>Use a combinação das teclas abaixo para acessar as funcionalidades mais rapidamente e flexibilizar a navegação.</p>
-                        <ul>
-                            <li>
-                                <kbd>Ctrl</kbd> + <kbd>Space</kbd> (tecla de espaço) - Denegrir as células automáticas;
-                            </li>
-                            <li>
-                                <kbd>Ctrl</kbd> + <kbd>B</kbd> - Ir para linha (pesquisar por linha);
-                            </li>
-                            <li>
-                                <kbd>Ctrl</kbd> + <kbd>P</kbd> - Imprimir a ficha.
-                            </li>
-                        </ul>        
+                <article class="atalhos-do-teclado">
+                    <div class="contentor-do-botao-fechar-atalhos">
                         <button class="fechar-atalhos-do-teclado" title="Fechar">&times;</button>
                     </div>
-                </section>   
+                    <h2>Atalhos do teclado</h2>
+
+                    <p>Use a combinação das teclas abaixo para acessar as funcionalidades mais rapidamente e flexibilizar a navegação.</p>
+                    <ul>
+                        <li>
+                            <kbd>Ctrl</kbd> + <kbd>Space</kbd> (tecla de espaço) - Denegrir as células automáticas;
+                        </li>
+                        <li>
+                            <kbd>Ctrl</kbd> + <kbd>B</kbd> - Ir para linha (pesquisar por linha);
+                        </li>
+                        <li>
+                            <kbd>Ctrl</kbd> + <kbd>P</kbd> - Imprimir a ficha.
+                        </li>
+                    </ul> 
+   
+                </article>
+                  
             </div>
         </main>
-        <div class="linha-de-referencia">
-            <div class="referencia">
-                <div>
-                    <h3>
-                        <span>Referência</span>
-                        <span class="ref">Ref.:</span>
-                    </h3>
-                </div>
-
-                <span class="seta">
-                    <i class="fa-solid fa-arrow-right"></i>
-                </span>
-                <div>
-                    <span>Faixa etária:</span>
-                    <output class="faixa-etaria"></output>
-                </div>
-                <div>
-                    <span>Sexo:</span>
-                    <output class="sexo"></output>
-                </div>
-            </div>
-        </div>
-
+        
         <div class="aviso-de-uso-de-cookies">
             <p>
-                A fim de melhorar a sua experiência de navegação, esta plataforma utiliza tecnologias paralelas à cookies e, ao usá-la, você concorda com os <a href="javascript:void(0)" class="abrir-politica-de-cookies" role="button">termos de serviço e armazenamento definidos qui, de acordo com a minha política de cookies</a>.
+                A fim de melhorar a sua experiência de navegação, esta plataforma utiliza tecnologias paralelas à cookies e, ao usá-la, você concorda com os <a href="totalizadordermce/politica-de-cookies.html">termos de serviço e armazenamento definidos qui, de acordo com a minha política de cookies</a>.
             </p>
 
             <button class="aceitar-cookies">Prosseguir</button>

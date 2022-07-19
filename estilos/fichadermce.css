@@ -65,7 +65,7 @@ main {
 
 .cabecalho-da-ficha .linha-de-enumeracao-das-colunas span {
     background-color: var(--cinza4);
-    color: var(--cinzad);
+    color: var(--cinza13);
     border-color: var(--cinza10);
 }
 
@@ -134,7 +134,7 @@ main {
 
 .coluna-de-enumeracao-das-linhas span {
     background-color: var(--cinza4);
-    color: var(--cinzad);
+    color: var(--cinza13);
     border-bottom: 1px solid var(--cinza10);
     border-left: 1px solid var(--cinza8);
     border-right: 1px solid var(--cinza8);
@@ -220,4 +220,10 @@ div.linha-de-categoria-e-data input#categoria {
 
 .linha-de-assinatura p input[type=date]:focus {
     border-bottom: 1px solid var(--cinza4) !important;
+}
+
+/* JAVASCRIPT */
+.contentor-da-ficha span.fundo-laranja {
+    background-color: var(--orange) !important;
+    transition-duration: 150ms;
 }

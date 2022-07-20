@@ -3,14 +3,10 @@ const Cookies = {
 
     mostrarAviso () {
         aviso.classList.add("on");
-        desfoque.classList.add("on");
-        desfoque.classList.add("z-index-9");
     },
 
     omitirAviso () {
         aviso.classList.remove("on");
-        desfoque.classList.remove("on");
-        desfoque.classList.remove("z-index-9");
     },
 
     criarSessao () {

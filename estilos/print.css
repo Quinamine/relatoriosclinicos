@@ -1,16 +1,23 @@
 
 @media print {
     body {
-        visibility: hidden;
         padding: 0;
         -webkit-print-color-adjust: exact;
+        visibility: hidden;
+    }
+
+    #involucro > footer,
+    .linha-de-referencia {
+        display: none;
     }
 
     main {
         margin-top: 0;
+        margin-bottom: 0;
     } 
 
-    .contentor-da-ficha {
+    .contentor-da-ficha,
+    .ficha {
         visibility: initial;
     }
 
@@ -25,11 +32,7 @@
         border-color: #444 !important;
     }
 
-    .involucro > footer, 
-    .linha-de-referencia,
-    .aviso-de-uso-de-cookies {
-        display: none !important;
-    }
+    
 
     @-moz-document url-prefix() {
         .coluna-de-enumeracao-das-linhas span {

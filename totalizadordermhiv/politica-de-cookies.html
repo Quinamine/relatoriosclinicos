@@ -4,10 +4,10 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Política de cookies e Local Storage - Totalizador de RMCE</title>
+    <title>Política de cookies e Armazenamento local - Totalizador de RM-HIV/SIDA</title>
     <meta name="robots" content="index, follow"/>
 
-    <meta name="description" content="Cookies são trechos de texto armazenados no seu navegador por algorítimos da maioria dos sites da web que você visita. O Totalizador de Resumo Mensal de Consultas Externas utiliza uma tecnologia paralela designada Web Storage." />
+    <meta name="description" content="O Totalizador de Resumo Mensal de HIV/SIDA utiliza uma tecnologia paralela aos cookies designada Web Storage." />
     <meta name="author" content="Adérito Félix Quinamine" />
 
     <!-- DESIGN -->
@@ -33,17 +33,17 @@
     <noscript>O seu navegador está com o JavaScript desabilitado e isso interfere negativamente no funcionamento deste serviço. Habilite-o nas configurações do seu navegador e recarregue a página.</noscript>
 </head>
 <body ontouchstart="">
-    <div id="involucro">
+    <div id="involucro" class="rmhiv">
         <header>
             <div class="linha-do-cabecalho">
        
-                <a href="../totalizador-de-resumo-mensal-de-consultas-externas.html" class="logo"><strong>TOTAL</strong>IZADOR DE <span title="Resumo Mensal de Consultas Externas">RMCE</span></a>
+                <a href="../totalizador-de-resumo-mensal-de-hiv-sida.html" class="logo"><strong>Total</strong>izador de Resumo Mensal de HIV/SIDA</a>
                                       
                 <section class="menu" role="navigation">
                     <ul>
 
                         <li>
-                            <a href="politica-de-cookies.html">Política de cookies</a>
+                            <a href="politica-de-cookies.html">Cookies</a>
                         </li>
 
                         <li>
@@ -72,60 +72,65 @@
 
         <main>   
             <article id="politica-de-cookies">
-                <h1>Política de cookies e tecnologias paralelas</h1>
+                <h1>Política de cookies e Web Storage</h1>
     
-                <h2>O que são cookies?</h2>
+                <p><b>Cookies</b> é um recurso de armazenamento local (no navegador do usuário) de dados em forma de texto que a maioria dos sites utiliza para guardar predefinições. Eles são de suma importância pois são como anotações que os sites fazem sobre o comportamento de navegação de cada usuário e posteriormente recorrem-nas para recordar-se das acções e preferências do usuário a fim de oferecê-lo a melhor experiência possível. É graças maioritariamente aos cookies que um site ou aplicativo mantém um usuário logado ou o modo escuro activo por exemplo.</p>
     
-                <p>Em tecnologia, cookies são trechos de texto armazenados no seu navegador por algorítimos da maioria dos sites que você visita, para guardar algumas informações. Eles são importantes pois funcionam como um bloco de anotações que posteriormente os sites recorrem para recordar-se das acções e preferências dos seus usuários com a finalidade de oferecê-los a melhor experiência possível.</p>
-    
-                <p>O Totalizador de Resumo Mensal de Consultas Externas utiliza uma tecnologia paralela designada Web Storage (um espaço disponível nos navegadores para guardar pequenas informações). Basicamente, existem 2 tipos de Web Storage ou Armazenamento:</p>
+                <p>Para salvar os dados da ficha no navegador do usúario, o Totalizador de Resumo Mensal de HIV/SIDA utiliza uma tecnologia semelhante designada <b>Web Storage</b>.
+                </p>
+
+                <p>Existem 2 tipos de Web Storage:</p>
     
                 <ul>
-                    <li><b>Armazenamento de Sessão ou Session Storage</b> – que elimina os dados gravados quando a janela do navegador é fechada.</li>
+                    <li><b>Session Storage (Armazenamento de Sessão)</b> – elimina os dados gravados quando a janela da página é fechada.</li>
     
-                    <li><b>Armazenamento Local ou Local Storage</b> – que mantém os dados salvos por um período determinado ou até que o usuário os exclua.</li>
+                    <li><b>Local Storage (Armazenamento Local)</b> – mantém os dados salvos por um período determinado ou até que o usuário os exclua.</li>
                 </ul>
                
     
-                <h2>Por que o Totalizador utiliza Local Storage?</h2>
+                <p>
+                    O Totalizador utiliza o primeiro para guardar o consentimento do usuário à utilização de "cookies" e o último pelos três motivos abaixo:
+                </p>
     
-                <p>Por três (3) motivos, a destacar:</p>
-
-
                 <dl>
                     <dt id="um">Fazer um backup local</dt>
 
                     <dd>
-                        Fazer uma cópia de segurança dos seus dados da ficha no seu navegador até que você os exclua. Se forem inseridos, os dados que são salvos incluem:
+                        Fazer uma cópia de segurança dos dados da ficha no navegador do usuário até que este os exclua. Se forem preenchidos, os dados que são salvos incluem:
                     </dd>
                     <ul>
-                        <li>Nome da <span title="Unidade Sanitária">US;</span></li>
-                        <li>Mês;</li>
-                        <li>Nome do Profissional que preencheu;</li>
-                        <li>Categoria;</li>
-                        <li>Data da elaboração;</li>
-                        <li>E os dados da ficha propriamente dita.</li>
+                        <li>
+                            Os dados da ficha propriamente dita.
+                        </li>
+                        <li>
+                            Dados adicionais como:
+                            <ul>
+                                <li>Província;</li>
+                                <li>Distrito;</li>
+                                <li>Nome da Unidade Sanitária;</li>
+                                <li>NID da Unidade Sanitária;</li>
+                                <li>Nome do Profissional;</li>
+                                <li>Data de elaboração.</li>
+                            </ul>  
+                        </li>
+                                             
                     </ul>
 
                     <dt id="dois">Durabilidade dos dados</dt>
                     <dd>
-                        Memorizar e mais tarde manter os seus dados previamente inseridos no acto de preenchimento da ficha. Isso é importante, pois o possibilita interromper sem o risco de voltar à estaca zero, a elaboração do resumo para continuar num outro momento oportuno, sobretudo se ainda lhe faltar dados de alguns indicadores para preencher nas respectivas células da ficha.
+                        Memorizar e mais tarde manter os dados do usuário previamente inseridos no acto de preenchimento da ficha. Isso é importante, pois possibilita ao Profissional de Saúde interromper sem o risco de voltar à estaca zero, a elaboração do resumo para continuar num outro momento oportuno, sobretudo se ainda lhe faltar dados de alguns indicadores para preencher nas respectivas células da ficha.
                     </dd>
 
-                    <dt id="tres">Salvar as suas preferências</dt>
+                    <dt id="tres">Salvar preferências</dt>
 
                     <dd>
-                        Por exemplo, quando você marca a opção <b>“Destacar as células automáticas"</b>, essa escolha é salva no Local Storage para manter nas suas próximas visitas à plataforma.
+                        Por exemplo, quando o usuário marca a opção <b>“Destacar as células automáticas"</b>, essa escolha é salva no Local Storage para manter nas suas próximas visitas à plataforma.
                     </dd>
                 </dl>
     
-                <h2>Qual é o destino e tratamento dos dados?</h2>  
+                <h2>Gerenciamento de cookies e Web Storage</h2>
     
-                <p>O Totalizador de Resumo Mensal de Consultas Externas foi desenvolvido apenas com recurso a tecnologias client-side (que funcionam no navegador, lado do cliente ou usuário) e não existe nenhum banco de dados com que está conectado que salva os dados da ficha. Todas as alterações são salvas localmente (no seu navegador). Em suma, o serviço não tem acesso remoto dos seus dados. O armazenamento local dos dados é para fins principalmente de memorização e com isso melhorar a sua experiência com a plataforma.</p>
-    
-                <h2>Como eu (usuário) posso  gerir os meus dados?</h2>
-    
-                <p>Por padrão os navegadores estão habilitados para permitir o Armazenamento Local e de Cookies, mas você pode desabilitá-los nas configurações do seu navegador (embora não seja recomendável). Como alternativa você pode optar por apagar os cookies armazenados ao invés de desabilitar a funcionalidade. <b>No menu do Totalizador, existe a opção “esvaziar ficha”, que o permite apagar todos os seus dados da ficha salvos pelo Totalizador no Local Storage</b>. Em paralelo, sempre que quiser poderá excluir os seus dados salvos através das configurações do seu navegador. Aprenda mais sobre o gerenciamento de cookies, nos seguintes endereços:</p>
+                <p>Por padrão os navegadores estão habilitados para permitir o Armazenamento Local e de Cookies, porém o usuário pode desabilitá-los nas configurações do seu navegador (embora não seja recomendável). Como alternativa o usuário pode optar por apagar os cookies armazenados ao invés de desabilitar a funcionalidade. <b>No menu do Totalizador, existe a opção “esvaziar ficha”, que o permite apagar todos os seus dados da ficha salvos pelo Totalizador no Local Storage</b>. Em paralelo, sempre que o usuário quiser poderá excluir os seus dados salvos através das configurações do seu navegador. Para mais detalhes sobre o gerenciamento de cookies:</p>
     
                 <ul class="lista-de-navegadores">
                     <li><a href="https://support.microsoft.com/pt-br/microsoft-edge/excluir-cookies-no-microsoft-edge-63947406-40ac-c3b8-57b9-2a946a29ae09" target="_blank">Veja aqui se estiver usando o Microsoft Edge;</a></li>
@@ -134,7 +139,8 @@
                     <li><a href="https://support.apple.com/pt-br/guide/safari/sfri11471/mac" target="_blank">Veja aqui se estiver usando o Safari.</a></li>
                 </ul>
                 
-                <p class="consentimento"><strong>A aceitação dos termos de serviço e de armazenamento apresentados neste bloco é dada pela utilização do Totalizador de Resumo Mensal de Consultas Externas.</strong></p>
+                <p class="consentimento"><strong>Ao utilizar o Totalizador de Resumo Mensal de HIV/SIDA, você consente com os  termos de serviço e armazenamento apresentados neste bloco.</strong></p>
+
             </article>
 
             
@@ -142,12 +148,12 @@
 
         <footer>         
             <div class="linha-do-rodape">
-                
+
                 <div class="hiperligacoes">
                     <h4>Hiperligações para outros serviços relacionados</h4>
                     <ul>
                         <li>
-                            <a href="https://quinamine.github.io/relatoriosclinicos/totalizador-de-resumo-mensal-de-hiv-sida.html" target="_blank">Totalizador de Resumo Mensal de HIV/SIDA</a>
+                            <a href="https://quinamine.github.io/relatoriosclinicos/totalizador-de-resumo-mensal-de-consultas-externas.html" target="_blank">Totalizador de Resumo Mensal de Consultas Externas</a>
                         </li>
                         <li>
                             <a href="https://quinamine.github.io/abordagem-pediatrica/index.html" id="abordagem-pediatrica" target="_blank">Abordagem Pediátrica</a>
@@ -163,7 +169,7 @@
                     </ul>   
                 </div>
 
-                <p>Desenvolvido com &#128153; por <a href="https://quinamine.github.io/abordagem-pediatrica/paginas/sobremim.html">Adérito Félix Quinamine</a> | &copy; 2022 - Totalizador de Resumo Mensal de Consultas Externas</p>
+                <p>Desenvolvido com &#128153; por <a href="https://quinamine.github.io/abordagem-pediatrica/paginas/sobremim.html">Adérito Félix Quinamine</a> | &copy; 2022 - Totalizador de Resumo Mensal de HIV/SIDA</p>
 
                 <a href="#involucro" class="voltar">Voltar ao topo</a>
             </div>

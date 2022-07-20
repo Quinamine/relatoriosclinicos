@@ -347,7 +347,7 @@ p.resposta-para-ficha-vazia.on {
     bottom: -132px;
     line-height: 1.5;
     padding: 20px;
-    left: calc(50vw - 1300px /2);
+    right: calc(50vw - 1300px / 2);
     box-shadow: 0 0 8px var(--cinza8);
     background: var(--white);
     font-size: 14px;
@@ -399,7 +399,7 @@ p.resposta-para-ficha-vazia.on {
 
 .aviso-de-uso-de-cookies button:active {
     background-color: var(--white);
-    color: var(--black);
+    color: var(--fullblack);
     font-weight: bold;
 }
 

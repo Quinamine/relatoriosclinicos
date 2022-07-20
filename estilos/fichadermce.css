@@ -9,12 +9,6 @@ input {
     border-bottom: 1px solid var(--cinza4);
 }
 
-main {
-    width: 100%;
-    max-width: 1300px;
-    margin: 30px auto;
-}
-
 /* FICHA */
 .contentor-da-ficha {
     display: grid;

@@ -6,10 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Totalizador de Resumo Mensal de Consultas Externas</title>
     <meta name="robots" content="index, follow"/>
-    <meta name="description" content="Totaliza o resumo automaticamente com base nos dados que o usuário insere, flexibilizando assim a elaboração. Tem estrutura idêntica ao modelo da ficha actualmente em vigor no Serviço Nacional de Saúde."/>
+    <meta name="description" content="Auxilia na elaboração do resumo totalizando-o automaticamente com base nos dados inseridos pelo Profissional (usuário). A sua estrutura é idêntica ao modelo da ficha actualmente vigente no SNS em Moçambique."/>
     <meta name="keywords" content="Totalizador de resumo mensal de consultas externas, Totalizador de relatório mensal de consultas externas, Totalizador de relatório mensal, Ficha de resumo mensal de consultas externas." />
     <meta name="author" content="Adérito Félix Quinamine" />
-
 
     <!-- PARTILHA NAS REDES SOCIAIS -->
     <meta property="og:url" content="https://www.quinamine.github.io/relatoriosclinicos/totalizador-de-resumo-mensal-de-consultas-externas.html" />
@@ -30,9 +29,8 @@
     <link rel="stylesheet" href="estilos/layout.css" />
     <link rel="stylesheet" href="estilos/fichadermce.css" />
     <link rel="stylesheet" href="estilos/manipulacaodomenu.css" />
-    <link rel="stylesheet" href="estilos/artigos.css">
     <link rel="stylesheet" href="estilos/responsividade.css" />
-    <link rel="stylesheet" href="estilos/printrmce.css" />
+    <link rel="stylesheet" href="estilos/print.css" />
 
     <!-- FUNCIONALIDADES -->
     <script src="funcoes/somarcasos.js"></script>
@@ -68,7 +66,7 @@
                                       
                 <section class="menu" role="navigation">
                     <ul>
-                        <li class=" destacar-as-celulas-automaticas" 
+                        <li class="destacar-as-celulas-automaticas" 
                             title="Escurecer o fundo de Subtotais e Totais. (Ctrl + Tecla de espaço)">
                             <input type="checkbox" id="dark-readonlycels"/> 
                             <label for="dark-readonlycels">Destacar as células automáticas</label>
@@ -89,7 +87,7 @@
                         </li>
 
                         <li>
-                            <a href="totalizadordermce/sobre.html">Sobre</a>
+                            <a href="totalizadordermce/sobre-o-totalizador.html">Sobre</a>
                         </li>
 
                         <li>
@@ -275,7 +273,7 @@
                 <section class="coluna-de-consultas-e-diagnosticos">
                     <span>1ªˢ Consultas</span>
                     <span>Consultas de Seguimento</span>
-                    <span class="bold">TOTAL DE CONSULTAS</span>
+                    <span><b>TOTAL DE CONSULTAS</b></span>
                     <span>Parteira Tradicional</span>
                     <span>APE's</span>
                     <span>Praticante de Medicina Tradicional (PMT)</span>
@@ -324,7 +322,7 @@
                     <span>Tratamento | ASAQ</span> 
                     <span>Vacinada (Vac.)</span>
                     <span>Não Vacinada (Não Vac.)</span>
-                    <span class="bold">TOTAL SARAMPO (9 - 23 M.)</span>
+                    <span><b>TOTAL SARAMPO (9 - 23 M.)</b></span>
                     <span>Outra Consulta</span>
                     <span>Internamento</span>
                     <span>US</span>
@@ -2098,29 +2096,6 @@
                 </footer>
             </div>
 
-            <div class="linha-de-referencia">
-                <div class="referencia">      
-                    <h3>
-                        <span>Referência</span>
-                        <span class="ref">Ref.:</span>
-                    </h3>
-                    
-                    <span class="seta">
-                        <i class="fa-solid fa-arrow-right"></i>
-                    </span>
-
-                    <div>
-                        <span>Faixa etária:</span>
-                        <output class="faixa-etaria"></output>
-                    </div>
-
-                    <div>
-                        <span>Sexo:</span>
-                        <output class="sexo"></output>
-                    </div>
-                </div>
-            </div>
-    
             <div class="manipulacao-do-menu">
 
                 <!-- Acessar subtotais -->
@@ -2222,15 +2197,38 @@
                 </article>
                   
             </div>
-        </main>
-        
-        <div class="aviso-de-uso-de-cookies">
-            <p>
-                A fim de melhorar a sua experiência de navegação, esta plataforma utiliza tecnologias paralelas à cookies e, ao usá-la, você concorda com os <a href="totalizadordermce/politica-de-cookies.html">termos de serviço e armazenamento definidos qui, de acordo com a minha política de cookies</a>.
-            </p>
 
-            <button class="aceitar-cookies">Prosseguir</button>
-        </div> 
+            <div class="aviso-de-uso-de-cookies">
+                <p>
+                    A fim de melhorar a sua experiência de navegação, esta plataforma utiliza tecnologias paralelas à cookies e, ao usá-la, você concorda com os <a href="totalizadordermce/politica-de-cookies.html">termos de serviço e armazenamento definidos qui, de acordo com a minha política de cookies</a>.
+                </p>
+    
+                <button class="aceitar-cookies">Prosseguir</button>
+            </div> 
+        </main>
+
+        <div class="linha-de-referencia on">
+            <div class="referencia">      
+                <h3>
+                    <span>Referência</span>
+                    <span class="ref">Ref.:</span>
+                </h3>
+                
+                <span class="seta">
+                    <i class="fa-solid fa-arrow-right"></i>
+                </span>
+
+                <div>
+                    <span>Faixa etária:</span>
+                    <output class="faixa-etaria"></output>
+                </div>
+
+                <div>
+                    <span>Sexo:</span>
+                    <output class="sexo"></output>
+                </div>
+            </div>
+        </div>
 
         <footer>
             
@@ -2239,27 +2237,22 @@
                 <div class="hiperligacoes">
                     <h4>Hiperligações para outros serviços relacionados</h4>
                     <ul>
-    
                         <li>
-                            <a href="https://quinamine.github.io/abordagem-pediatrica/index.html">Totaliador de Resumo Mensal de HIV/SIDA</a>
+                            <a href="https://quinamine.github.io/relatoriosclinicos/totalizador-de-resumo-mensal-de-hiv-sida.html" target="_blank">Totalizador de Resumo Mensal de HIV/SIDA</a>
                         </li>
                         <li>
-                            <a href="https://quinamine.github.io/abordagem-pediatrica/index.html" id="abordagem-pediatrica">Abordagem Pediátrica</a>
+                            <a href="https://quinamine.github.io/abordagem-pediatrica/index.html" id="abordagem-pediatrica" target="_blank">Abordagem Pediátrica</a>
                             <ul>
                                 <li>
-                                    <a href="http://quinamine.github.io/abordagem-pediatrica/paginas/doseador-de-arvs.html">Doseador pediátrico de antirretrovirais</a>
+                                    <a href="https://quinamine.github.io/abordagem-pediatrica/paginas/doseador-de-arvs.html" target="_blank">Doseador pediátrico de antirretrovirais</a>
                                 </li>
                                 <li>
-                                    <a href="http://quinamine.github.io/abordagem-pediatrica/paginas/calculadora-de-doses.html">Calculadora de doses pediátricas</a>
+                                    <a href="https://quinamine.github.io/abordagem-pediatrica/paginas/calculadora-de-doses.html" target="_blank">Calculadora de doses pediátricas</a>
                                 </li>
                             </ul>
-                        </li>
-                        
-                    </ul>
-                    
+                        </li>                    
+                    </ul>   
                 </div>
-
-                
 
                 <p>Desenvolvido com &#128153; por <a href="https://quinamine.github.io/abordagem-pediatrica/paginas/sobremim.html">Adérito Félix Quinamine</a> | &copy; 2022 - Totalizador de Resumo Mensal de Consultas Externas</p>
 
@@ -2267,7 +2260,6 @@
             </div>
         </footer>
     </div>
-
 
     <div class="desfoque-do-fundo"></div>
 </body>

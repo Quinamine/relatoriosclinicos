@@ -112,7 +112,6 @@ window.addEventListener("load", () =>  {
     // EVENT LISTENERS
     const botaoIrPara = document.querySelector("button.ir-para");
     const botaoXdaCaixaDePesquisa = document.querySelector("div.caixa-de-pesquisa button.fechar");
-    const botaoIrdacaixaDePesquisa = document.querySelector("div.caixa-de-pesquisa button.ir");
     const botaoOkDeQuerySemResultados = document.querySelector("div.query-sem-resultados button");
 
     // INSTANCIAMENTO DA CLASSE

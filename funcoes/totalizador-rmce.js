@@ -1,6 +1,8 @@
 
+
+
 window.addEventListener("load", () => {
-    let cels = document.querySelectorAll(".col-de-inputs input");
+    let cels = document.querySelectorAll(".coluna-de-inputs input");
     
     for (const cel of cels) {
         
@@ -12,7 +14,7 @@ window.addEventListener("load", () => {
                 let subtotal = document.querySelectorAll(`.${cel.dataset.subtotal}`);
                 let subtotalOutput = document.querySelector(`.${cel.dataset.subtotaloutput}`);
 
-                somarCasos(subtotal, subtotalOutput);
+                somarCelulas(subtotal, subtotalOutput);
             }
 
             if(cel.dataset.totaldeconsultaseixoy) {
@@ -21,7 +23,7 @@ window.addEventListener("load", () => {
                 let totalDeConsultasEixoY = document.querySelectorAll(`.${cel.dataset.totaldeconsultaseixoy}`);
                 let totalDeConsultasOutput = document.querySelector(`.${cel.dataset.totaldeconsultasoutput}`);
 
-                somarCasos(totalDeConsultasEixoY, totalDeConsultasOutput);
+                somarCelulas(totalDeConsultasEixoY, totalDeConsultasOutput);
             }
 
             if(cel.dataset.subtotaldetotaldeconsultas) {
@@ -30,7 +32,7 @@ window.addEventListener("load", () => {
                 let subtotalDeTotalDeConsultas = document.querySelectorAll(`.${cel.dataset.subtotaldetotaldeconsultas}`);
                 let subtotalDeTotalDeConsultasOutput = document.querySelector(`.${cel.dataset.subtotaldetotaldeconsultasoutput}`);
 
-                somarCasos(subtotalDeTotalDeConsultas, subtotalDeTotalDeConsultasOutput);
+                somarCelulas(subtotalDeTotalDeConsultas, subtotalDeTotalDeConsultasOutput);
             }
 
             if(cel.dataset.totalporsexo) {
@@ -39,7 +41,7 @@ window.addEventListener("load", () => {
                 let totalPorSexo = document.querySelectorAll(`.${cel.dataset.totalporsexo}`);
                 let totalPorSexoOutput = document.querySelector(`.${cel.dataset.totalporsexooutput}`);
 
-                somarCasos(totalPorSexo, totalPorSexoOutput);
+                somarCelulas(totalPorSexo, totalPorSexoOutput);
             }
 
             if(cel.dataset.totalgeral) {
@@ -48,7 +50,7 @@ window.addEventListener("load", () => {
                 let totalGeral = document.querySelectorAll(`.${cel.dataset.totalgeral}`);
                 let totalGeralOutput = document.querySelector(`.${cel.dataset.totalgeraloutput}`);
 
-                somarCasos(totalGeral, totalGeralOutput);
+                somarCelulas(totalGeral, totalGeralOutput);
             }
 
             if(cel.dataset.totalporsexodetotaldeconsultas) {
@@ -57,7 +59,7 @@ window.addEventListener("load", () => {
                 let totalPorSexoDeTotalDeConsultas = document.querySelectorAll(`.${cel.dataset.totalporsexodetotaldeconsultas}`);
                 let totalPorSexoDeTotalDeConsultasOutput = document.querySelector(`.${cel.dataset.totalporsexodetotaldeconsultasoutput}`);
 
-                somarCasos(totalPorSexoDeTotalDeConsultas, totalPorSexoDeTotalDeConsultasOutput);
+                somarCelulas(totalPorSexoDeTotalDeConsultas, totalPorSexoDeTotalDeConsultasOutput);
             }
 
             if(cel.dataset.totalgeraldetotaldeconsultas) {
@@ -66,10 +68,9 @@ window.addEventListener("load", () => {
                 let totalGeralDeTotalDeConsultas = document.querySelectorAll(`.${cel.dataset.totalgeraldetotaldeconsultas}`);
                 let totalGeralDeTotalDeConsultasOutput = document.querySelector(`.${cel.dataset.totalgeraldetotaldeconsultasoutput}`);
 
-                somarCasos(totalGeralDeTotalDeConsultas, totalGeralDeTotalDeConsultasOutput);
+                somarCelulas(totalGeralDeTotalDeConsultas, totalGeralDeTotalDeConsultasOutput);
             }         
         })
-
 
         if (cel.value != "")  {
             if(cel.dataset.subtotal) {
@@ -78,7 +79,7 @@ window.addEventListener("load", () => {
                 let subtotal = document.querySelectorAll(`.${cel.dataset.subtotal}`);
                 let subtotalOutput = document.querySelector(`.${cel.dataset.subtotaloutput}`);
 
-                somarCasos(subtotal, subtotalOutput);
+                somarCelulas(subtotal, subtotalOutput);
             }
 
             if(cel.dataset.totaldeconsultaseixoy) {
@@ -87,7 +88,7 @@ window.addEventListener("load", () => {
                 let totalDeConsultasEixoY = document.querySelectorAll(`.${cel.dataset.totaldeconsultaseixoy}`);
                 let totalDeConsultasOutput = document.querySelector(`.${cel.dataset.totaldeconsultasoutput}`);
 
-                somarCasos(totalDeConsultasEixoY, totalDeConsultasOutput);
+                somarCelulas(totalDeConsultasEixoY, totalDeConsultasOutput);
             }
 
             if(cel.dataset.subtotaldetotaldeconsultas) {
@@ -96,7 +97,7 @@ window.addEventListener("load", () => {
                 let subtotalDeTotalDeConsultas = document.querySelectorAll(`.${cel.dataset.subtotaldetotaldeconsultas}`);
                 let subtotalDeTotalDeConsultasOutput = document.querySelector(`.${cel.dataset.subtotaldetotaldeconsultasoutput}`);
 
-                somarCasos(subtotalDeTotalDeConsultas, subtotalDeTotalDeConsultasOutput);
+                somarCelulas(subtotalDeTotalDeConsultas, subtotalDeTotalDeConsultasOutput);
             }
 
             if(cel.dataset.totalporsexo) {
@@ -105,7 +106,7 @@ window.addEventListener("load", () => {
                 let totalPorSexo = document.querySelectorAll(`.${cel.dataset.totalporsexo}`);
                 let totalPorSexoOutput = document.querySelector(`.${cel.dataset.totalporsexooutput}`);
 
-                somarCasos(totalPorSexo, totalPorSexoOutput);
+                somarCelulas(totalPorSexo, totalPorSexoOutput);
             }
 
             if(cel.dataset.totalgeral) {
@@ -114,7 +115,7 @@ window.addEventListener("load", () => {
                 let totalGeral = document.querySelectorAll(`.${cel.dataset.totalgeral}`);
                 let totalGeralOutput = document.querySelector(`.${cel.dataset.totalgeraloutput}`);
 
-                somarCasos(totalGeral, totalGeralOutput);
+                somarCelulas(totalGeral, totalGeralOutput);
             }
 
             if(cel.dataset.totalporsexodetotaldeconsultas) {
@@ -123,7 +124,7 @@ window.addEventListener("load", () => {
                 let totalPorSexoDeTotalDeConsultas = document.querySelectorAll(`.${cel.dataset.totalporsexodetotaldeconsultas}`);
                 let totalPorSexoDeTotalDeConsultasOutput = document.querySelector(`.${cel.dataset.totalporsexodetotaldeconsultasoutput}`);
 
-                somarCasos(totalPorSexoDeTotalDeConsultas, totalPorSexoDeTotalDeConsultasOutput);
+                somarCelulas(totalPorSexoDeTotalDeConsultas, totalPorSexoDeTotalDeConsultasOutput);
             }
 
             if(cel.dataset.totalgeraldetotaldeconsultas) {
@@ -132,7 +133,7 @@ window.addEventListener("load", () => {
                 let totalGeralDeTotalDeConsultas = document.querySelectorAll(`.${cel.dataset.totalgeraldetotaldeconsultas}`);
                 let totalGeralDeTotalDeConsultasOutput = document.querySelector(`.${cel.dataset.totalgeraldetotaldeconsultasoutput}`);
 
-                somarCasos(totalGeralDeTotalDeConsultas, totalGeralDeTotalDeConsultasOutput);
+                somarCelulas(totalGeralDeTotalDeConsultas, totalGeralDeTotalDeConsultasOutput);
             } 
         }     
     }

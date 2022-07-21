@@ -6,14 +6,14 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Totalizador de Resumo Mensal de HIV/SIDA</title>
         <meta name="robots" content="index, follow" />
-        <meta name="description" content="Totaliza o resumo automaticamente com base nos dados que o usuário insere, flexibilizando assim a elaboração. Tem estrutura idêntica ao modelo da ficha de resumo mensal de HIV/SIDA actualmente vigente no SNS em Moçambique." />
+        <meta name="description" content="Totaliza o resumo automaticamente com base nos dados que o usuário insere, flexibilizando assim a elaboração. Tem a estrutura idêntica ao modelo da ficha de resumo mensal de HIV/SIDA actualmente vigente no SNS em Moçambique." />
         <meta name="keywords" content="Totalizador de resumo mensal de HIV/SIDA, Totalizador de relatório mensal de HIV/SIDA, Totalizador de relatório mensal, Ficha de resumo mensal de HIV/SIDA" />
         <meta name="author" content="Adérito Félix Quinamine" />
 
         <!-- COMPARTILHAMENTO NAS REDES SOCIAIS -->
         <meta property="og:url" content="https://www.quinamine.github.io/relatoriosclinicos/totalizador-de-resumo-mensal-de-hiv-sida.html" />
         <meta property="Og:title" content="Totalizador de Resumo Mensal de HIV/SIDA" />
-        <meta property="og:description" content="Totaliza o resumo automaticamente com base nos dados que o usuário insere, flexibilizando assim a elaboração. Tem estrutura idêntica ao modelo da ficha de resumo mensal de HIV/SIDA actualmente vigente no SNS em Moçambique."/>
+        <meta property="og:description" content="Totaliza o resumo automaticamente com base nos dados que o usuário insere, flexibilizando assim a elaboração. Tem a estrutura idêntica ao modelo da ficha de resumo mensal de HIV/SIDA actualmente vigente no SNS em Moçambique."/>
         <meta property="og:image" content=https://www.quinamine.github.io/relatoriosclinicos/imagens/previa-rmhiv.png />
 
         <!-- DESING -->
@@ -24,7 +24,10 @@
         <link rel="stylesheet" href="estilos/print.css" />
 
         <!-- INTERATIVIDADE -->
+        <script src="funcoes/soma.js"></script>
+        <script src="funcoes/backup-rmhiv.js"></script>
         <script src="funcoes/totalizador-rmhiv.js"></script>
+        <script src="funcoes/customizacao.js"></script>
 
         <!-- Global site tag (gtag.js) - Google Analytics -->
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-N0KRLP03SB"></script>
@@ -50,8 +53,8 @@
                             
                             <li class="destacar-as-celulas-automaticas" 
                             title="Escurecer o fundo de Totais.">
-                            <input type="checkbox" id="dark-readonlycels"/> 
-                            <label for="dark-readonlycels">Destacar as células automáticas</label>
+                            <input type="checkbox" id="readonlyinputs-darker"/> 
+                            <label for="readonlyinputs-darker">Destacar as células automáticas</label>
                             </li>
 
                             <li>
@@ -116,7 +119,7 @@
                             
                         </div>
                     </header>
-                    <div class="grade-superior">
+                    <div class="grade grade-superior">
                         
                         <div class="linha linha-de-faixas-etarias-e-sexo-1">
                             
@@ -331,7 +334,7 @@
                         </div>                          
                     </div>
 
-                    <div class="grade-intermedia">
+                    <div class="grade grade-intermedia">
                         <div class="coluna-de-entradas-e-saidas">
                             <div>
                                 <span>
@@ -834,7 +837,7 @@
                         </div>
                     </div>
 
-                    <div class="grade-inferior">
+                    <div class="grade grade-inferior">
                         <div class="linha b10">
                             <div>
                                 <span>
@@ -1004,7 +1007,7 @@
                         </div>
                     </div>
 
-                    <div class="grade-extra superior">
+                    <div class="grade grade-extra superior">
                         <div class="coluna-de-cs">
                             <span>C.1)</span>
                             <span>C.2)</span>
@@ -1031,7 +1034,7 @@
                         </div>
                     </div>
 
-                    <div class="grade-extra intermedia">
+                    <div class="grade grade-extra intermedia">
                         <div class="coluna-de-cs">
                             <span>E.1)</span>
                             <span>E.2)</span>
@@ -1070,7 +1073,7 @@
                         
                     </div>
 
-                    <div class="grade-extra inferior">
+                    <div class="grade grade-extra inferior">
                         <div class="coluna-de-cs">
                             <span>E.1)</span>
                             <span>E.2)</span>
@@ -1097,7 +1100,7 @@
                         </div>
                     </div>
 
-                    <div class="linha-de-assinatura">
+                    <footer class="linha-de-assinatura">
                         <div>
                             <label for="nome">Nome</label>
                             <input type="text"  id="nome" />
@@ -1110,7 +1113,7 @@
                             <label for="data">Data</label>
                             <input type="date"  id="data" />
                         </div>
-                    </div>
+                    </footer>
                 </div>
             </main>
 

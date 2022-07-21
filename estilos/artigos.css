@@ -15,12 +15,13 @@
 article {
     max-width: 700px;
     font-size: 0.875rem;
-    padding: 20px;
     border-radius: 8px;
-    margin: 0 auto;
-    box-shadow: 0 0 10px var(--cinza13);
+    margin-left: 190.52px;
 }
 
+.rmhiv article {
+    margin-left: 20px;
+}
 
 /* Titulos */
 article h1 {
@@ -106,12 +107,17 @@ article ol {
     border-bottom: 1px solid var(--cinza13);
 }
 
-#politica-de-cookies p.consentimento {
-    padding-left: 15px;
+#politica-de-cookies p.consentimento,
+#conversao-pdf .nota {
+    padding: 2px 2px 2px 15px;
+    border-radius: 0 4px 4px 0;
+    border: 1px solid var(--cinza10);
     border-left: 6px solid var(--cinza4);
+    font-weight: bold;
 }
 
-.rmhiv #politica-de-cookies p.consentimento {
+.rmhiv #politica-de-cookies p.consentimento,
+.rmhiv #conversao-pdf .nota {
     border-color: var(--azul);
 }
 
@@ -123,22 +129,30 @@ article ol {
 }
 
 #conversao-pdf .nota {
-    padding: 2px 2px 2px 15px;
     font-size: 12px;
-    border-radius: 4px;
-    border: 1px solid var(--cinza13);
-    border-left: 6px solid var(--cinza4);
-    font-weight: bold;
 }
-
 
 .rmhiv #conversao-pdf .nota {
     border-left-color: var(--azul);
+    font-size: 0.875rem;
 }
 
 /** SOBRE **/
+.rmhiv #sobre ul:last-child {
+    font-weight: bold;
+}
 
 img {
     max-width: 100%;
     object-fit: cover;
+}
+
+figure figcaption {
+    color: var(--cinza8);
+    border: 1px solid var(--cinza10);
+    max-width: 698.5px;
+    margin: -2px auto 0 auto;
+    font-size: 0.75rem;
+    padding: 2px;
+    font-style: italic;
 }

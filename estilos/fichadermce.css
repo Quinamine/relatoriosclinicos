@@ -1,5 +1,9 @@
 
 /* FORMATACAO GERAL */
+html {
+    scroll-behavior: smooth;
+}
+
 *::selection {
     background-color: var(--cinza4);
     color: var(--white);
@@ -219,5 +223,6 @@ div.linha-de-categoria-e-data input#categoria {
 /* JAVASCRIPT */
 .contentor-da-ficha span.fundo-laranja {
     background-color: var(--orange) !important;
+    color: var(--white);
     transition-duration: 150ms;
 }

@@ -49,7 +49,7 @@ strong {
 }
 
 .ficha header input {
-    border-bottom: 1px solid #444;
+    border-bottom: 1px solid var(--cinza4);
 }
 
 .contentor-de-provincia-e-distrito {
@@ -102,8 +102,8 @@ strong {
 
 .linha > div,
 .linha-de-faixas-etarias-e-sexo-2 > div {
-    border-left: 1px solid #444;
-    border-bottom: 1px solid #444;
+    border-left: 1px solid var(--cinza4);
+    border-bottom: 1px solid var(--cinza4);
 }
 
 .linha > div:nth-child(11),
@@ -114,7 +114,7 @@ strong {
 
 .linha > div:last-child, 
 .border-right-1 {
-    border-right: 1px solid #444;
+    border-right: 1px solid var(--cinza4);
 }
 
 .linha-de-faixas-etarias-e-sexo-1 {
@@ -124,7 +124,7 @@ strong {
 .linha-de-faixas-etarias-e-sexo-1 > div:nth-child(n+2),
 .linha-de-faixas-etarias-e-sexo-2 > div {
     min-height: 36px;
-    border-top: 1px solid #444;
+    border-top: 1px solid var(--cinza4);
     font-size: 11px;
     text-align: center;
     padding: 2px 0;
@@ -136,14 +136,14 @@ strong {
 .linha-de-faixas-etarias-e-sexo-1 div.contentor-de-nid {
     display: block !important;
     border: none;
-    border-bottom: 1px solid #444;
+    border-bottom: 1px solid var(--cinza4);
     padding-bottom: 10px !important;
     font-family: sans-serif, Arial, Helvetica;
 }
 
 .contentor-de-nid input {
     width: 210px;
-    border-bottom: 1px solid #444;
+    border-bottom: 1px solid var(--cinza4);
     text-align: initial !important;
 }
 
@@ -163,7 +163,7 @@ strong {
 .contentor-de-faixa-etaria {
     align-items: center;
     justify-content: center;
-    border-bottom: 1px solid #444; 
+    border-bottom: 1px solid var(--cinza4); 
 }
 
 .contentor-de-sexo {
@@ -178,7 +178,7 @@ strong {
 }
 
 .contentor-de-sexo span:nth-child(2) {
-    border-left: 1px solid #444;
+    border-left: 1px solid var(--cinza4);
 }
 
 .contentor-de-sexo span.margin-left--1 {
@@ -236,15 +236,15 @@ input[readonly]:focus {
 
 .linha.b1 > div:nth-child(1),
 .linha.b1 > div:nth-child(2) {
-    margin-top: -1px;
-    border-top: 1px solid #444;
+    margin-top: -0.5px;
+    border-top: 1px solid var(--cinza4);
 }
 
 .linha.b4 div,
 .linha.b4 input , 
 .linha.b9 div,
 .linha.b9 input {
-    background-color: #ddd;
+    background-color: var(--cinza13);
 }
 
 /*** Coluna de Entradas e Saidas  */
@@ -252,12 +252,12 @@ input[readonly]:focus {
     grid-row: 2;
     display: grid;
     grid-template-rows: calc(33.78px * 4) 1fr;
-    border: 1px solid #444;
+    border: 1px solid var(--cinza4);
     border-right: none;
-    margin-top: -1px;
+    margin-top: -0.5px;
 }
 .coluna-de-entradas-e-saidas div:nth-child(1) {
-    border-bottom: 1px solid #444;
+    border-bottom: 1px solid var(--cinza4);
 }
 
 .coluna-de-entradas-e-saidas div {
@@ -278,7 +278,7 @@ input[readonly]:focus {
 }
 
 .grade-inferior .linha.b10 > div {
-    border-top: 1px solid #444;
+    border-top: 1px solid var(--cinza4);
 }
 
 /* GRADE EXTRA */
@@ -293,14 +293,14 @@ input[readonly]:focus {
 .grade-extra .coluna-de-cs,
 .contentor-de-conteudo {
     grid-row: 2;
-    border: 1px solid #444;
+    border: 1px solid var(--cinza4);
 }
 
 .coluna-de-cs span,
 .contentor-de-conteudo div {
     display: flex;
     align-items: center;
-    border-bottom: 1px solid #444;
+    border-bottom: 1px solid var(--cinza4);
 }
 
 .coluna-de-cs span:last-child,
@@ -326,7 +326,7 @@ input[readonly]:focus {
 }
 
 .grade-extra .coluna-de-total {
-    border: 1px solid #444;
+    border: 1px solid var(--cinza4);
 }
 
 .grade-extra .coluna-de-total {
@@ -336,7 +336,7 @@ input[readonly]:focus {
 
 .grade-extra .coluna-de-total > div {
     min-height: 33.77px;
-    border-bottom: 1px solid #444;
+    border-bottom: 1px solid var(--cinza4);
     display: flex;
 }
 
@@ -400,17 +400,17 @@ input[readonly]:focus {
 
 .linha-de-assinatura div input,
 .linha-de-assinatura div input[type=date]:focus {
-    border-bottom: 1px solid #444;
+    border-bottom: 1px solid var(--cinza4);
     min-width: 200px;
     text-align: center;
 }
 
 
-/** Rodapé **/
-
-footer {
-    background-color: #ddd;
+/* JavaScript */
+div.gray {
+    background-color: var(--cinza12);
 }
+
 
 
 

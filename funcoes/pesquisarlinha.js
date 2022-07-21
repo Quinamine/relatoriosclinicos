@@ -28,20 +28,19 @@ class Pesquisa {
 
         if (query == "") {
             this.mostrarCaixaDePesquisa();
-            this.css().resetarBgdasLinhas();
+            this.resetarBgdasLinhas();
             return false;
         }
 
         else if ((query < 1) || (query > 53)) {   
-            this.css().resetarBgdasLinhas();
+            this.resetarBgdasLinhas();
             this.omitirCaixaDePesquisa();
             this.nothingFound(1);
             return false;
         } 
 
-        const linhas = document.querySelectorAll(".col-de-enumeracao-das-linhas span");
+        const linhas = document.querySelectorAll(".coluna-de-enumeracao-das-linhas span");
         let iRow = query - 1;
-        this.css().suavizarRolagemHTML("sim");
         
         
         if ((linhas[iRow].getBoundingClientRect().bottom < 0) || linhas[iRow].getBoundingClientRect().top > window.innerHeight) {
@@ -55,8 +54,7 @@ class Pesquisa {
             
         }
         
-       
-        this.css().resetarBgdasLinhas();
+        this.resetarBgdasLinhas();
         linhas[iRow].classList.add("fundo-laranja");
     }
 
@@ -71,32 +69,12 @@ class Pesquisa {
         }
     }
 
-    // ESTILOS
+    resetarBgdasLinhas () {
 
-    css() {
-        return this.Efeitos = {
-
-            suavizarRolagemHTML: preferencia => {
-                let html = document.querySelector("html");
-
-                if (preferencia == "sim") {
-                    html.classList.add("smooth");
-                } else {
-                    html.classList.remove("smooth");
-                } 
-            },
-
-            resetarBgdasLinhas: () => {
-
-                const linhas = document.querySelectorAll(".col-de-enumeracao-das-linhas span");
-                
-                for (const linha of linhas) {
-                    if (linha.classList.contains("fundo-laranja")) {
-                        linha.classList.remove("fundo-laranja");
-                    }
-                }
-            }
-            
+        const linhas = document.querySelectorAll(".coluna-de-enumeracao-das-linhas span");
+        
+        for (const linha of linhas) {
+            linha.classList.remove("fundo-laranja");
         }
     }
 }
@@ -125,13 +103,13 @@ window.addEventListener("load", () =>  {
     // FECHAR A CAIXA DE PESQUISA 
     botaoXdaCaixaDePesquisa.addEventListener("click", () => {
         src.omitirCaixaDePesquisa();
-        src.css().resetarBgdasLinhas();
+        src.resetarBgdasLinhas();
     })
 
     // FECHAR
     botaoOkDeQuerySemResultados.addEventListener("click", () => {
         src.nothingFound();
-        src.css().resetarBgdasLinhas();
+        src.resetarBgdasLinhas();
     })
 
     // ENCONTRAR ATRAVES DO KEY UP
@@ -160,7 +138,7 @@ window.addEventListener("load", () =>  {
             // Fechar caixa de query sem resultados
             if(botaoOkDeQuerySemResultados.parentElement.classList.contains("on")) {
                 src.nothingFound();
-                src.css().resetarBgdasLinhas();
+                src.resetarBgdasLinhas();
             }  
         }
         

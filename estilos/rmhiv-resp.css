@@ -1,0 +1,233 @@
+
+
+@media screen and (max-width: 1024px) {
+    
+    button.print,
+    a.print-to-pdf,
+    article#conversao-pdf {
+        display: none !important;
+    }  
+}
+
+@media screen and (max-width: 1023px) {
+    body.hide-overflow {
+        overflow: hidden;
+    }
+
+    .linha-do-cabecalho {
+        min-height: 50px;
+        justify-content: center;
+        align-items: center;
+    }
+
+    /* MENU HAMBURGUER */
+
+    .linha-do-cabecalho .hamburguer {
+        width: 35px;
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 8px;
+        top: 10px;
+        left: 8px;
+        padding: 8px;
+    }
+
+    .linha-do-cabecalho .hamburguer:active {
+        background-color: #ddd;
+    }
+
+    .hamburguer div {
+        width: 100%;
+        height: 2px;
+        background-color: #888;
+        margin: 1.5px 0;
+        transition: all 250ms ease;
+    }
+
+    .hamburguer.on div:nth-child(1) {
+        transform: rotate(-45deg) translate(-2px, 1px);
+    }
+
+    .hamburguer.on div:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburguer.on div:nth-child(3) {
+        transform: rotate(45deg) translate(-6px, -5px);
+    }
+
+    /** Formatação do .menu **/
+   
+    .linha-do-cabecalho .menu {
+        position: absolute;
+        left: -77vw;
+        top: 50px;
+        border-top: thin solid #ddd;
+        width: 77vw;
+        padding: 0;
+        background-color: #fff;
+        font-size: 0.875rem;
+        visibility: hidden;
+        transition: left 50ms ease;
+        height: 100vh;
+        overflow-y: auto;
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    /* ABERTURA DO MENU */
+    .linha-do-cabecalho .menu.on {
+        left: 0;
+        visibility: visible;
+    }
+
+    .menu ul {
+        flex-direction: column;
+        align-items: flex-start;
+        margin-right: 10px;
+        width: 100%;
+        padding-left: 15px;
+    }
+
+    .menu ul li {
+        width: 100%;
+        padding: 0;
+    }
+
+    .menu ul li.denegrir-as-celulas-automaticas {
+        justify-content: flex-start;
+        position: relative;
+        line-height: 2;
+        padding: 10px;
+        border-bottom: thin solid #ddd;
+    }
+
+    .menu ul li.denegrir-as-celulas-automaticas input {
+        position: absolute;
+        left: 214px;
+        height: 16px;
+        width: 16px;
+    }
+
+    .menu ul li.denegrir-as-celulas-automaticas label {
+        flex: 1;
+        padding: 0;
+    }
+
+    .menu ul li a {
+        display: inline-block;
+    }
+
+    .menu ul li button,
+    .menu ul li a {
+        padding: 0;
+        width: 100%;
+        text-align: left;
+        font-size: 0.875rem;
+        line-height: 2;
+        padding: 10px;
+        border-bottom: thin solid #ddd;
+    }
+
+    .menu ul li:hover,
+    .menu ul button:hover,
+    .menu ul li a:hover {
+        background-color: inherit !important;
+    }
+
+    .menu ul li:active,
+    .menu ul button:active,
+    .menu ul li a:active {
+        background-color: #ddd !important;
+    }
+
+    .menu ul li.denegrir-as-celulas-automaticas input {
+        order: 2;
+    }
+
+    .ficha {
+        width: 100%;
+        overflow: scroll !important;
+        align-items: initial;
+    }
+
+    footer .linha-do-rodape, header .linha-do-cabecalho  {
+        padding: 0 15px;
+    }
+
+    section.menu.on {
+        display: block;
+        margin: 0;
+    }
+
+    .menu.on li.destacar-as-celulas-automaticas {
+        display: block;
+        padding: 8px;
+    }
+}
+
+@media screen and (max-width: 590px) {
+    .none-no-pc {
+        display: initial !important;
+    }
+
+    .none-no-cel {
+        display: none !important;
+    }
+    .linha-do-rodape {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .linha-do-rodape div.outros-servicos {
+        flex-basis: auto;
+        width: 100%;
+    }
+
+    .linha-do-rodape h4,
+    .linha-do-rodape li button,
+    .linha-do-rodape li a,
+    .linha-do-rodape a.voltar {
+        font-size: 0.875rem;
+    }
+
+    .linha-do-rodape p {
+        margin-top: 20px;
+        border-top: thin dashed #aaa;
+        padding: 10px 0;
+    }  
+}
+
+@media screen and (max-width: 380px) {
+  
+    div.partilha div a {
+        padding-right: 10px;
+    }
+}
+
+
+@media screen and (max-width: 355px) {
+  
+    .referencia h3 span.ref {
+        display: initial;
+    }
+
+    .referencia h3 span:nth-child(1),
+    .referencia span.seta {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 330px) {
+    .linha-do-cabecalho .menu {
+        width: 82vw;
+    }
+}
+
+@media screen and (max-height: 296px) {
+    .linha-do-cabecalho .menu ul a, 
+    .linha-do-cabecalho .menu ul li:nth-child(1) {
+        padding: 5px !important;
+    }
+}

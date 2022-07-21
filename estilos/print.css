@@ -1,1 +1,58 @@
-@media print{body{visibility:hidden;padding:0;-webkit-print-color-adjust:exact}main{margin-top:0}.contentor-da-grade{visibility:initial}.borda-escura{border-top:10px solid #444}body .col-de-inputs input{border-color:#444!important}@-moz-document url-prefix(){.col-de-enumeracao-das-linhas span{border:1px solid #444;border-top:none;color:#888}.col-da-linha-superior .linha-de-enumeracao-das-colunas span{color:#888!important;border-color:#444!important}}}
+
+@media print {
+    body {
+        padding: 0;
+        -webkit-print-color-adjust: exact;
+        visibility: hidden;
+    }
+
+    #involucro > footer,
+    .linha-de-referencia {
+        display: none;
+    }
+
+    main {
+        margin-top: 0;
+        margin-bottom: 0;
+    } 
+
+    .contentor-da-ficha,
+    .ficha {
+        visibility: initial;
+    }
+
+    .borda-escura {
+        border-top: 10px solid #444;
+    }
+
+    .coluna-de-titulos-das-secoes-das-linhas div,
+    .coluna-de-consultas-e-diagnosticos span,
+    .coluna-de-inputs input,
+    .cabecalho-da-linha span {
+        border-color: #444 !important;
+    }
+
+    
+
+    @-moz-document url-prefix() {
+        .coluna-de-enumeracao-das-linhas span {
+            border: 1px solid #444;
+            border-top: none;
+            color: #888
+        }
+    
+        .cabecalho-da-linha .linha-de-enumeracao-das-colunas span {
+            color: #888 !important;
+            border-color: #444 !important;
+        }
+
+        .linha-de-enumeracao-das-colunas span.marginleft-1 {
+            margin-left: -1px;
+            border-left: 1px solid #444;
+        }
+
+        .linha-de-enumeracao-das-colunas span:last-child {
+            border-right: 1px solid #444;
+        }
+    }
+}

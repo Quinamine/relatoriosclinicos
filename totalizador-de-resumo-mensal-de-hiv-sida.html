@@ -1,0 +1,1146 @@
+<!DOCTYPE html>
+<html lang="pt-PT" dir="ltr">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Totalizador de Resumo Mensal de HIV/SIDA</title>
+        <meta name="robots" content="index, follow" />
+        <meta name="description" content="Totaliza o resumo automaticamente com base nos dados que o usuário insere, flexibilizando assim a elaboração. Tem a estrutura idêntica ao modelo da ficha de resumo mensal de HIV/SIDA actualmente vigente no SNS em Moçambique." />
+        <meta name="keywords" content="Totalizador de resumo mensal de HIV/SIDA, Totalizador de relatório mensal de HIV/SIDA, Totalizador de relatório mensal, Ficha de resumo mensal de HIV/SIDA" />
+        <meta name="author" content="Adérito Félix Quinamine" />
+
+        <!-- COMPARTILHAMENTO NAS REDES SOCIAIS -->
+        <meta property="og:url" content="https://www.quinamine.github.io/relatoriosclinicos/totalizador-de-resumo-mensal-de-hiv-sida.html" />
+        <meta property="Og:title" content="Totalizador de Resumo Mensal de HIV/SIDA" />
+        <meta property="og:description" content="Totaliza o resumo automaticamente com base nos dados que o usuário insere, flexibilizando assim a elaboração. Tem a estrutura idêntica ao modelo da ficha de resumo mensal de HIV/SIDA actualmente vigente no SNS em Moçambique."/>
+        <meta property="og:image" content=https://www.quinamine.github.io/relatoriosclinicos/imagens/previa-rmhiv.png />
+
+        <!-- DESING -->
+        <link rel="shortcut icon" type="image/x-icon" href="favicon.ico"/>
+        <link rel="stylesheet" href="estilos/reset.css" />
+        <link rel="stylesheet" href="estilos/esquema.css" />
+        <link rel="stylesheet" href="estilos/fichadermhiv.css" />
+        <link rel="stylesheet" href="estilos/rmhiv-resp.css">
+        <link rel="stylesheet" href="estilos/print.css" />
+
+        <!-- INTERATIVIDADE -->
+        <script src="funcoes/menumobile.js"></script>
+        <script src="funcoes/totalizador-rmhiv.js"></script>
+        <script src="funcoes/readonly.js"></script>
+
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-N0KRLP03SB"></script>
+        <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-N0KRLP03SB');
+        </script>
+
+        <noscript>O seu navegador está com o JavaScript desabilitado e isso interfere negativamente no funcionamento deste serviço. Habilite-o nas configurações do seu navegador e recarregue a página.</noscript>
+    </head>
+    <body ontouchstart="">
+        <div id="involucro" class="rmhiv">
+            <header>
+                <div class="linha-do-cabecalho">
+           
+                    <a href="totalizador-de-resumo-mensal-de-hiv-sida.html" class="logo"><strong>Total</strong>izador de <span class="none-no-cel">Resumo Mensal de HIV/SIDA</span><span class="none-no-pc">RM-HIV/SIDA</span></a>
+                                          
+                    <section class="menu" role="navigation">
+                        <ul>
+                            
+                            <li class="destacar-as-celulas-automaticas" 
+                            title="Escurecer o fundo de Totais.">
+                            <input type="checkbox" id="dark-readonlycels"/> 
+                            <label for="dark-readonlycels">Destacar as células automáticas</label>
+                            </li>
+
+                            <li>
+                                <button onclick="window.print()" title="Ctrl + P" class="print">Imprimir</button>
+                            </li>
+                            
+
+                            <li>
+                                <a href="totalizadordermhiv/sobre-o-totalizador.html">Sobre</a>
+                            </li>
+
+                            <li>
+                                <a href="totalizadordermhiv/salvar-a-ficha-como-pdf-tutorial.html" class="print-to-pdf" class="print-to-pdf">
+                                    Salvar como PDF <span class="help">?</span>
+                                </a>
+                            </li>
+    
+                        </ul>
+                        
+                        
+                    </section>
+    
+                    <div class="hamburguer">
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                    </div>
+                </div>
+            </header>
+
+            <main>
+                
+                <div class="ficha">
+                    <header>
+                        <h1>Ficha de Resumo Mensal para a Unidade Sanitária - HIV / SIDA</h1>
+                        <div class="contentor-de-provincia-e-distrito">
+                            <div>
+                                <label for="provincia">Província:</label><input type="text" id="provincia" />
+                            </div>
+                            <div>
+                                <label for="distrito">Distrito:</label><input type="text" id="distrito"/>
+                            </div>
+                        </div>
+    
+                        <div class="contentor-de-us-mes-e-ano">
+                            <div class="us">
+                                <label for="us">Unidade Sanitária:</label><input type="text" id="us"/>
+                            </div>
+                            <div class="mes">
+                                <label for="mes">Mês:</label><input type="text" id="mes"/>
+                            </div>
+                            <div class="ano">
+                                <label for="ano">Ano:</label><input type="number" id="ano"/>
+                            </div>
+                            
+                        </div>
+                    </header>
+                    <div class="grade-superior">
+                        
+                        <div class="linha linha-de-faixas-etarias-e-sexo-1">
+                            
+                            <div class="contentor-de-nid">
+                                <label for="nid">NID da Unidade Sanitária: </label>
+                                <input type="number" id="nid" min="0"/>
+                            </div>
+        
+                            <div>
+                                <span>
+                                    0-4 <br/> anos
+                                </span>
+                            </div>
+
+                            <div>
+                                <span>
+                                    5-9 <br/>anos
+                                </span>
+                            </div>
+
+                            <div class="contentor-de-faixa-etaria-e-sexo">
+                                <div class="contentor-de-faixa-etaria">
+                                    <span>10-14 anos</span>
+                                </div>
+
+                                <div class="contentor-de-sexo">
+                                    <span>F</span>
+                                    <span>M</span>
+                                </div>
+                            </div>
+
+                            <div class="contentor-de-faixa-etaria-e-sexo">
+                                <div class="contentor-de-faixa-etaria">
+                                    <span>15-19 anos</span>
+                                </div>
+                                <div class="contentor-de-sexo">
+                                    <span>F</span>
+                                    <span>M</span>
+                                </div>
+                            </div>
+
+                            <div class="contentor-de-faixa-etaria-e-sexo border-right-1">
+                                <div class="contentor-de-faixa-etaria">
+                                    <span>20 /+ anos</span>
+                                </div>
+                                <div class="contentor-de-sexo">
+                                    <span>F</span>
+                                    <span class="margin-left--1">M</span>
+                                </div>
+                            </div>
+
+                           <div class="margin-left-2">
+                                <span>Total <br/> 0-14 anos</span>
+                            </div>
+
+                            <div>
+                                <span>Total <br/> 15 /+ anos</span>
+                            </div>
+
+                            <div class="border-right-1">
+                                <span>TOTAL GERAL</span>
+                            </div>
+
+                            <div>
+                                <span>
+                                    Adoles<br/>centes 10-19 A.
+                                </span>
+                            </div>
+                        </div>
+
+                        <div class="linha a1">
+                            <div>
+                                <span>
+                                    A.1)
+                                </span>
+                            </div>
+                            <div>
+                                <span>Nº cumulativo de pacientes que iniciou Pré-TARV (cuidados HIV) nesta US <strong>até ao fim do mês anterior</strong> (copiar A.3 do mês anterior)</span>
+                            </div>
+
+                            <div>
+                                <input type="number" min="0" data-total0a14eixox="a1-c1c2c3c4" data-total0a14eixoxoutput="a1-c9" data-totalgeraleixox="a1-c1c2c3c4c5c6c7c8" data-totalgeraleixoxoutput="a1-c11" data-totaleixoy="a1a2-c1" data-totaleixoyoutput="a3-c1" data-total0a14eixoy="a1a2-c1c2c3c4" data-total0a14eixoyoutput="a3-c9" data-totalgeraleixoy="a1a2-c1c2c3c4c5c6c7c8" data-totalgeraleixoyoutput="a3-c11"/>
+                            </div>
+                            <div>
+                                <input type="number" min="0" data-total0a14eixox="a1-c1c2c3c4" data-total0a14eixoxoutput="a1-c9" data-totalgeraleixox="a1-c1c2c3c4c5c6c7c8" data-totalgeraleixoxoutput="a1-c11" data-totaleixoy="a1a2-c2" data-totaleixoyoutput="a3-c2" data-total0a14eixoy="a1a2-c1c2c3c4" data-total0a14eixoyoutput="a3-c9" data-totalgeraleixoy="a1a2-c1c2c3c4c5c6c7c8" data-totalgeraleixoyoutput="a3-c11"/>
+                            </div>
+                            <div>
+                                <input type="number" min="0" data-total0a14eixox="a1-c1c2c3c4" data-total0a14eixoxoutput="a1-c9" data-totalgeraleixox="a1-c1c2c3c4c5c6c7c8" data-totalgeraleixoxoutput="a1-c11" data-total10a19eixox="a1-c3c4c5c6" data-total10a19eixoxoutput="a1-c12" data-totaleixoy="a1a2-c3" data-totaleixoyoutput="a3-c3" data-total0a14eixoy="a1a2-c1c2c3c4" data-total0a14eixoyoutput="a3-c9" data-totalgeraleixoy="a1a2-c1c2c3c4c5c6c7c8" data-totalgeraleixoyoutput="a3-c11" data-total10a19eixoy="a1a2-c3c4c5c6" data-total10a19eixoyoutput="a3-c12" />
+                            </div>
+                            <div>
+                                <input type="number" min="0" data-total0a14eixox="a1-c1c2c3c4" data-total0a14eixoxoutput="a1-c9" data-totalgeraleixox="a1-c1c2c3c4c5c6c7c8" data-totalgeraleixoxoutput="a1-c11" data-total10a19eixox="a1-c3c4c5c6" data-total10a19eixoxoutput="a1-c12" data-totaleixoy="a1a2-c4" data-totaleixoyoutput="a3-c4" data-total0a14eixoy="a1a2-c1c2c3c4" data-total0a14eixoyoutput="a3-c9" data-totalgeraleixoy="a1a2-c1c2c3c4c5c6c7c8" data-totalgeraleixoyoutput="a3-c11"  data-total10a19eixoy="a1a2-c3c4c5c6" data-total10a19eixoyoutput="a3-c12" />
+                            </div>
+                            <div>
+                                <input type="number" min="0" data-total15oumaiseixox="a1-c5c6c7c8" data-total15oumaiseixoxoutput="a1-c10" data-totalgeraleixox="a1-c1c2c3c4c5c6c7c8" data-totalgeraleixoxoutput="a1-c11" data-total10a19eixox="a1-c3c4c5c6" data-total10a19eixoxoutput="a1-c12" data-totaleixoy="a1a2-c5" data-totaleixoyoutput="a3-c5" data-total15oumaiseixoy="a1a2-c5c6c7c8" data-total15oumaiseixoyoutput="a3-c10" data-totalgeraleixoy="a1a2-c1c2c3c4c5c6c7c8" data-totalgeraleixoyoutput="a3-c11"  data-total10a19eixoy="a1a2-c3c4c5c6" data-total10a19eixoyoutput="a3-c12" />
+                            </div>
+                            <div>
+                                <input type="number" min="0" data-total15oumaiseixox="a1-c5c6c7c8" data-total15oumaiseixoxoutput="a1-c10" data-totalgeraleixox="a1-c1c2c3c4c5c6c7c8" data-totalgeraleixoxoutput="a1-c11" data-total10a19eixox="a1-c3c4c5c6" data-total10a19eixoxoutput="a1-c12" data-totaleixoy="a1a2-c6" data-totaleixoyoutput="a3-c6" data-total15oumaiseixoy="a1a2-c5c6c7c8" data-total15oumaiseixoyoutput="a3-c10" data-totalgeraleixoy="a1a2-c1c2c3c4c5c6c7c8" data-totalgeraleixoyoutput="a3-c11" data-total10a19eixoy="a1a2-c3c4c5c6" data-total10a19eixoyoutput="a3-c12" />
+                            </div>
+                            <div>
+                                <input type="number" min="0" data-total15oumaiseixox="a1-c5c6c7c8" data-total15oumaiseixoxoutput="a1-c10" data-totalgeraleixox="a1-c1c2c3c4c5c6c7c8" data-totalgeraleixoxoutput="a1-c11" data-totaleixoy="a1a2-c7" data-totaleixoyoutput="a3-c7" data-total15oumaiseixoy="a1a2-c5c6c7c8" data-total15oumaiseixoyoutput="a3-c10" data-totalgeraleixoy="a1a2-c1c2c3c4c5c6c7c8" data-totalgeraleixoyoutput="a3-c11" />
+                            </div>
+                            <div class="border-right-1">
+                                <input type="number" min="0" data-total15oumaiseixox="a1-c5c6c7c8" data-total15oumaiseixoxoutput="a1-c10" data-totalgeraleixox="a1-c1c2c3c4c5c6c7c8" data-totalgeraleixoxoutput="a1-c11" data-totaleixoy="a1a2-c8" data-totaleixoyoutput="a3-c8" data-total15oumaiseixoy="a1a2-c5c6c7c8" data-total15oumaiseixoyoutput="a3-c10" data-totalgeraleixoy="a1a2-c1c2c3c4c5c6c7c8" data-totalgeraleixoyoutput="a3-c11"/>
+                            </div>
+                            <div>
+                                <input type="number" min="0" readonly class="a1-c9"/>
+                            </div>
+                            <div>
+                                <input type="number" min="0" readonly class="a1-c10"/>
+                            </div>
+                            <div class="border-right-1">
+                                <input type="number" min="0" readonly class="a1-c11"/>
+                            </div>
+                            <div>
+                                <input type="number" min="0" readonly class="a1-c12"/>
+                            </div>
+                        </div>
+
+                        <div class="linha a2">
+                            <div>
+                                <span>
+                                    A.2)
+                                </span>
+                            </div>
+                            <div>
+                                <span>Nº de pacientes que iniciou Pré-TARV (cuidados <br/> HIV) nesta unidade sanitária <strong>durante o mês</strong></span>
+                            </div>
+
+                             <div>
+                                <input type="number" min="0" data-total0a14eixox="a2-c1c2c3c4" data-total0a14eixoxoutput="a2-c9" data-totalgeraleixox="a2-c1c2c3c4c5c6c7c8" data-totalgeraleixoxoutput="a2-c11" data-totaleixoy="a1a2-c1" data-totaleixoyoutput="a3-c1" data-total0a14eixoy="a1a2-c1c2c3c4" data-total0a14eixoyoutput="a3-c9" data-totalgeraleixoy="a1a2-c1c2c3c4c5c6c7c8" data-totalgeraleixoyoutput="a3-c11"/>
+                            </div>
+                            <div>
+                                <input type="number" min="0" data-total0a14eixox="a2-c1c2c3c4" data-total0a14eixoxoutput="a2-c9" data-totalgeraleixox="a2-c1c2c3c4c5c6c7c8" data-totalgeraleixoxoutput="a2-c11" data-totaleixoy="a1a2-c2" data-totaleixoyoutput="a3-c2" data-total0a14eixoy="a1a2-c1c2c3c4" data-total0a14eixoyoutput="a3-c9" data-totalgeraleixoy="a1a2-c1c2c3c4c5c6c7c8" data-totalgeraleixoyoutput="a3-c11" />
+                            </div>
+                            <div>
+                                <input type="number" min="0" data-total0a14eixox="a2-c1c2c3c4" data-total0a14eixoxoutput="a2-c9" data-totalgeraleixox="a2-c1c2c3c4c5c6c7c8" data-totalgeraleixoxoutput="a2-c11" data-total10a19eixox="a2-c3c4c5c6" data-total10a19eixoxoutput="a2-c12" data-totaleixoy="a1a2-c3" data-totaleixoyoutput="a3-c3" data-total0a14eixoy="a1a2-c1c2c3c4" data-total0a14eixoyoutput="a3-c9" data-totalgeraleixoy="a1a2-c1c2c3c4c5c6c7c8" data-totalgeraleixoyoutput="a3-c11" data-total10a19eixoy="a1a2-c3c4c5c6" data-total10a19eixoyoutput="a3-c12" />
+                            </div>
+                            <div>
+                                <input type="number" min="0" data-total0a14eixox="a2-c1c2c3c4" data-total0a14eixoxoutput="a2-c9" data-totalgeraleixox="a2-c1c2c3c4c5c6c7c8" data-totalgeraleixoxoutput="a2-c11" data-total10a19eixox="a2-c3c4c5c6" data-total10a19eixoxoutput="a2-c12" data-totaleixoy="a1a2-c4" data-totaleixoyoutput="a3-c4" data-total0a14eixoy="a1a2-c1c2c3c4" data-total0a14eixoyoutput="a3-c9" data-totalgeraleixoy="a1a2-c1c2c3c4c5c6c7c8" data-totalgeraleixoyoutput="a3-c11"  data-total10a19eixoy="a1a2-c3c4c5c6" data-total10a19eixoyoutput="a3-c12" />
+                            </div>
+                            <div>
+                                <input type="number" min="0" data-total15oumaiseixox="a2-c5c6c7c8" data-total15oumaiseixoxoutput="a2-c10" data-totalgeraleixox="a2-c1c2c3c4c5c6c7c8" data-totalgeraleixoxoutput="a2-c11" data-total10a19eixox="a2-c3c4c5c6" data-total10a19eixoxoutput="a2-c12" data-totaleixoy="a1a2-c5" data-totaleixoyoutput="a3-c5" data-total15oumaiseixoy="a1a2-c5c6c7c8" data-total15oumaiseixoyoutput="a3-c10" data-totalgeraleixoy="a1a2-c1c2c3c4c5c6c7c8" data-totalgeraleixoyoutput="a3-c11"  data-total10a19eixoy="a1a2-c3c4c5c6" data-total10a19eixoyoutput="a3-c12" />
+                            </div>
+                            <div>
+                                <input type="number" min="0" data-total15oumaiseixox="a2-c5c6c7c8" data-total15oumaiseixoxoutput="a2-c10" data-totalgeraleixox="a2-c1c2c3c4c5c6c7c8" data-totalgeraleixoxoutput="a2-c11" data-total10a19eixox="a2-c3c4c5c6" data-total10a19eixoxoutput="a2-c12" data-totaleixoy="a1a2-c6" data-totaleixoyoutput="a3-c6" data-total15oumaiseixoy="a1a2-c5c6c7c8" data-total15oumaiseixoyoutput="a3-c10" data-totalgeraleixoy="a1a2-c1c2c3c4c5c6c7c8" data-totalgeraleixoyoutput="a3-c11" data-total10a19eixoy="a1a2-c3c4c5c6" data-total10a19eixoyoutput="a3-c12" />
+                            </div>
+                            <div>
+                                <input type="number" min="0" data-total15oumaiseixox="a2-c5c6c7c8" data-total15oumaiseixoxoutput="a2-c10" data-totalgeraleixox="a2-c1c2c3c4c5c6c7c8" data-totalgeraleixoxoutput="a2-c11" data-totaleixoy="a1a2-c7" data-totaleixoyoutput="a3-c7" data-total15oumaiseixoy="a1a2-c5c6c7c8" data-total15oumaiseixoyoutput="a3-c10" data-totalgeraleixoy="a1a2-c1c2c3c4c5c6c7c8" data-totalgeraleixoyoutput="a3-c11" />
+                            </div>
+                            <div class="border-right-1">
+                                <input type="number" min="0" data-total15oumaiseixox="a2-c5c6c7c8" data-total15oumaiseixoxoutput="a2-c10" data-totalgeraleixox="a2-c1c2c3c4c5c6c7c8" data-totalgeraleixoxoutput="a2-c11" data-totaleixoy="a1a2-c8" data-totaleixoyoutput="a3-c8" data-total15oumaiseixoy="a1a2-c5c6c7c8" data-total15oumaiseixoyoutput="a3-c10" data-totalgeraleixoy="a1a2-c1c2c3c4c5c6c7c8" data-totalgeraleixoyoutput="a3-c11"/>
+                            </div>
+                            <div>
+                                <input type="number" min="0" readonly class="a2-c9"/>
+                            </div>
+                            <div>
+                                <input type="number" min="0" readonly class="a2-c10"/>
+                            </div>
+                            <div class="border-right-1">
+                                <input type="number" min="0" readonly class="a2-c11"/>
+                            </div>
+                            <div>
+                                <input type="number" min="0" readonly class="a2-c12"/>
+                            </div>
+                        </div>
+
+                        <div class="linha a3">
+                            <div>
+                                <span>
+                                    A.3)
+                                </span>
+                            </div>
+                            <div>
+                                <span>Nº cumulativo de pacientes que iniciou Pré-TARV (cuidados HIV) nesta unidade sanitária <br/> <strong>até ao fim do mês</strong> (A.3 = A.1 + A.2)</span>
+                            </div>
+                            <div>
+                                <input type="number" min="0" readonly class="a3-c1"/>
+                            </div>
+                            <div>
+                                <input type="number" min="0" readonly class="a3-c2"/>
+                            </div>
+                            <div>
+                                <input type="number" min="0" readonly class="a3-c3"/>
+                            </div>
+                            <div>
+                                <input type="number" min="0" readonly class="a3-c4"/>
+                            </div>
+                            <div>
+                                <input type="number" min="0" readonly class="a3-c5"/>
+                            </div>
+                            <div>
+                                <input type="number" min="0" readonly class="a3-c6"/>
+                            </div>
+                            <div>
+                                <input type="number" min="0" readonly class="a3-c7"/>
+                            </div>
+                            <div class="border-right-1">
+                                <input type="number" min="0" readonly class="a3-c8" />
+                            </div>
+                            <div>
+                                <input type="number" min="0" readonly class="a3-c9" />
+                            </div>
+                            <div>
+                                <input type="number" min="0" readonly class="a3-c10"/>
+                            </div>
+                            <div class="border-right-1">
+                                <input type="number" min="0" readonly class="a3-c11"/>
+                            </div>
+                            <div>
+                                <input type="number" min="0" readonly class="a3-c12"/>
+                            </div>
+                        </div>                          
+                    </div>
+
+                    <div class="grade-intermedia">
+                        <div class="coluna-de-entradas-e-saidas">
+                            <div>
+                                <span>
+                                    Entradas
+                                </span>
+                            </div>
+                            <div>
+                                <span>
+                                    Saidas
+                                </span>
+                            </div>
+                        </div>
+                        <div class="linha-de-faixas-etarias-e-sexo-2">
+                            <div>
+                                <span>
+                                    0-4 <br/> anos
+                                </span>
+                            </div>
+
+                            <div>
+                                <span>
+                                    5-9 <br/>anos
+                                </span>
+                            </div>
+
+                            <div class="contentor-de-faixa-etaria-e-sexo">
+                                <div class="contentor-de-faixa-etaria">
+                                    <span>10-14 anos</span>
+                                </div>
+
+                                <div class="contentor-de-sexo">
+                                    <span>F</span>
+                                    <span>M</span>
+                                </div>
+                            </div>
+
+                            <div class="contentor-de-faixa-etaria-e-sexo">
+                                <div class="contentor-de-faixa-etaria">
+                                    <span>15-19 anos</span>
+                                </div>
+                                <div class="contentor-de-sexo">
+                                    <span>F</span>
+                                    <span>M</span>
+                                </div>
+                            </div>
+
+                            <div class="contentor-de-faixa-etaria-e-sexo border-right-1">
+                                <div class="contentor-de-faixa-etaria">
+                                    <span>20 /+ anos</span>
+                                </div>
+                                <div class="contentor-de-sexo">
+                                    <span>F</span>
+                                    <span class="margin-left--1">M</span>
+                                </div>
+                            </div>
+
+                           <div class="margin-left-2">
+                                <span>Total <br/> 0-14 anos</span>
+                            </div>
+
+                            <div>
+                                <span>Total <br/> 15 /+ anos</span>
+                            </div>
+
+                            <div class="border-right-1">
+                                <span>TOTAL GERAL</span>
+                            </div>
+
+                            <div class="border-right-1 margin-left-2">
+                                <span>
+                                    Adoles<br/>centes 10-19 A.
+                                </span>
+                            </div>
+                        </div>
+                        <div class="contentor-de-linhas">
+                            <div class="linha b1">
+                                <div>
+                                    <span>
+                                        B.1)
+                                    </span>
+                                </div>
+                                <div>
+                                    <span>Nº de pacientes que iniciou TARV nesta unidade sanitária <strong>durante o mês</strong></span>
+                                </div>
+                                
+                                <div>
+                                    <input type="number" min="0" data-total0a14eixox="b1-c1c2c3c4" data-total0a14eixoxoutput="b1-c9" data-totalgeraleixox="b1-c1c2c3c4c5c6c7c8" data-totalgeraleixoxoutput="b1-c11" data-totaleixoy="b1b2b3-c1" data-totaleixoyoutput="b4-c1" data-total0a14eixoy="b1b2b3-c1c2c3c4" data-total0a14eixoyoutput="b4-c9" data-totalgeraleixoy="b1b2b3-c1c2c3c4c5c6c7c8" data-totalgeraleixoyoutput="b4-c11" data-totalb11="b1b10-c1" data-totalb11output="b11-c1" data-totalb11c0a14="b1b10-c1c2c3c4" data-totalb11c0a14output="b11-c9" data-totalgeralb11="b1b10-c1c2c3c4c5c6c7c8"data-totalgeralb11output="b11-c11"/>
+                                </div>
+                                <div>
+                                    <input type="number" min="0" data-total0a14eixox="b1-c1c2c3c4" data-total0a14eixoxoutput="b1-c9" data-totalgeraleixox="b1-c1c2c3c4c5c6c7c8" data-totalgeraleixoxoutput="b1-c11" data-totaleixoy="b1b2b3-c2" data-totaleixoyoutput="b4-c2" data-total0a14eixoy="b1b2b3-c1c2c3c4" data-total0a14eixoyoutput="b4-c9" data-totalgeraleixoy="b1b2b3-c1c2c3c4c5c6c7c8" data-totalgeraleixoyoutput="b4-c11" data-totalb11="b1b10-c2" data-totalb11output="b11-c2" data-totalb11c0a14="b1b10-c1c2c3c4" data-totalb11c0a14output="b11-c9" data-totalgeralb11="b1b10-c1c2c3c4c5c6c7c8"data-totalgeralb11output="b11-c11"/>
+                                </div>
+                                <div>
+                                    <input type="number" min="0" data-total0a14eixox="b1-c1c2c3c4" data-total0a14eixoxoutput="b1-c9" data-totalgeraleixox="b1-c1c2c3c4c5c6c7c8" data-totalgeraleixoxoutput="b1-c11" data-total10a19eixox="b1-c3c4c5c6" data-total10a19eixoxoutput="b1-c12" data-totaleixoy="b1b2b3-c3" data-totaleixoyoutput="b4-c3" data-total0a14eixoy="b1b2b3-c1c2c3c4" data-total0a14eixoyoutput="b4-c9" data-totalgeraleixoy="b1b2b3-c1c2c3c4c5c6c7c8" data-totalgeraleixoyoutput="b4-c11" data-total10a19eixoy="b1b2b3-c3c4c5c6" data-total10a19eixoyoutput="b4-c12" data-totalb11="b1b10-c3" data-totalb11output="b11-c3" data-totalb11c0a14="b1b10-c1c2c3c4" data-totalb11c0a14output="b11-c9" data-totalgeralb11="b1b10-c1c2c3c4c5c6c7c8"data-totalgeralb11output="b11-c11" data-totalb11c10a19="b1b10-c3c4c5c6" data-totalb11c10a19output="b11-c12" />
+                                </div>
+                                <div>
+                                    <input type="number" min="0" data-total0a14eixox="b1-c1c2c3c4" data-total0a14eixoxoutput="b1-c9" data-totalgeraleixox="b1-c1c2c3c4c5c6c7c8" data-totalgeraleixoxoutput="b1-c11" data-total10a19eixox="b1-c3c4c5c6" data-total10a19eixoxoutput="b1-c12" data-totaleixoy="b1b2b3-c4" data-totaleixoyoutput="b4-c4" data-total0a14eixoy="b1b2b3-c1c2c3c4" data-total0a14eixoyoutput="b4-c9" data-totalgeraleixoy="b1b2b3-c1c2c3c4c5c6c7c8" data-totalgeraleixoyoutput="b4-c11" data-total10a19eixoy="b1b2b3-c3c4c5c6" data-total10a19eixoyoutput="b4-c12" data-totalb11="b1b10-c4" data-totalb11output="b11-c4" data-totalb11c0a14="b1b10-c1c2c3c4" data-totalb11c0a14output="b11-c9" data-totalgeralb11="b1b10-c1c2c3c4c5c6c7c8"data-totalgeralb11output="b11-c11" data-totalb11c10a19="b1b10-c3c4c5c6" data-totalb11c10a19output="b11-c12" />
+                                </div>
+                                <div>
+                                    <input type="number" min="0" data-total15oumaiseixox="b1-c5c6c7c8" data-total15oumaiseixoxoutput="b1-c10" data-totalgeraleixox="b1-c1c2c3c4c5c6c7c8" data-totalgeraleixoxoutput="b1-c11" data-total10a19eixox="b1-c3c4c5c6" data-total10a19eixoxoutput="b1-c12" data-totaleixoy="b1b2b3-c5" data-totaleixoyoutput="b4-c5" data-total15oumaiseixoy="b1b2b3-c5c6c7c8" data-total15oumaiseixoyoutput="b4-c10" data-totalgeraleixoy="b1b2b3-c1c2c3c4c5c6c7c8" data-totalgeraleixoyoutput="b4-c11" data-total10a19eixoy="b1b2b3-c3c4c5c6" data-total10a19eixoyoutput="b4-c12" data-totalb11="b1b10-c5" data-totalb11output="b11-c5" data-totalb11c15oumais="b1b10-c5c6c7c8" data-totalb11c15oumaisoutput="b11-c10" data-totalgeralb11="b1b10-c1c2c3c4c5c6c7c8"data-totalgeralb11output="b11-c11"  data-totalb11c10a19="b1b10-c3c4c5c6" data-totalb11c10a19output="b11-c12" />
+                                </div>
+                                <div>
+                                    <input type="number" min="0" data-total15oumaiseixox="b1-c5c6c7c8" data-total15oumaiseixoxoutput="b1-c10" data-totalgeraleixox="b1-c1c2c3c4c5c6c7c8" data-totalgeraleixoxoutput="b1-c11" data-total10a19eixox="b1-c3c4c5c6" data-total10a19eixoxoutput="b1-c12" data-totaleixoy="b1b2b3-c6" data-totaleixoyoutput="b4-c6" data-total15oumaiseixoy="b1b2b3-c5c6c7c8" data-total15oumaiseixoyoutput="b4-c10" data-totalgeraleixoy="b1b2b3-c1c2c3c4c5c6c7c8" data-totalgeraleixoyoutput="b4-c11" data-total10a19eixoy="b1b2b3-c3c4c5c6" data-total10a19eixoyoutput="b4-c12" data-totalb11="b1b10-c6" data-totalb11output="b11-c6" data-totalb11c15oumais="b1b10-c5c6c7c8" data-totalb11c15oumaisoutput="b11-c10" data-totalgeralb11="b1b10-c1c2c3c4c5c6c7c8" data-totalgeralb11output="b11-c11"  data-totalb11c10a19="b1b10-c3c4c5c6" data-totalb11c10a19output="b11-c12" />
+                                </div>
+                                <div>
+                                    <input type="number" min="0" data-total15oumaiseixox="b1-c5c6c7c8" data-total15oumaiseixoxoutput="b1-c10" data-totalgeraleixox="b1-c1c2c3c4c5c6c7c8" data-totalgeraleixoxoutput="b1-c11" data-totaleixoy="b1b2b3-c7" data-totaleixoyoutput="b4-c7" data-total15oumaiseixoy="b1b2b3-c5c6c7c8" data-total15oumaiseixoyoutput="b4-c10" data-totalgeraleixoy="b1b2b3-c1c2c3c4c5c6c7c8" data-totalgeraleixoyoutput="b4-c11" data-totalb11="b1b10-c7" data-totalb11output="b11-c7" data-totalb11c15oumais="b1b10-c5c6c7c8" data-totalb11c15oumaisoutput="b11-c10" data-totalgeralb11="b1b10-c1c2c3c4c5c6c7c8"data-totalgeralb11output="b11-c11" />
+                                </div>
+                                <div class="border-right-1">
+                                    <input type="number" min="0" data-total15oumaiseixox="b1-c5c6c7c8" data-total15oumaiseixoxoutput="b1-c10" data-totalgeraleixox="b1-c1c2c3c4c5c6c7c8" data-totalgeraleixoxoutput="b1-c11" data-totaleixoy="b1b2b3-c8" data-totaleixoyoutput="b4-c8" data-total15oumaiseixoy="b1b2b3-c5c6c7c8" data-total15oumaiseixoyoutput="b4-c10" data-totalgeraleixoy="b1b2b3-c1c2c3c4c5c6c7c8" data-totalgeraleixoyoutput="b4-c11" data-totalb11="b1b10-c8" data-totalb11output="b11-c8" data-totalb11c15oumais="b1b10-c5c6c7c8" data-totalb11c15oumaisoutput="b11-c10" data-totalgeralb11="b1b10-c1c2c3c4c5c6c7c8"data-totalgeralb11output="b11-c11" />
+                                </div>
+                                <div>
+                                    <input type="number" min="0" readonly class="b1-c9"/>
+                                </div>
+                                <div>
+                                    <input type="number" min="0" readonly class="b1-c10"/>
+                                </div>
+                                <div class="border-right-1">
+                                    <input type="number" min="0" readonly class="b1-c11"/>
+                                </div>
+                                <div>
+                                    <input type="number" min="0" readonly class="b1-c12"/>
+                                </div>
+                            </div>
+
+                            <div class="linha b2">
+                                <div>
+                                    <span>
+                                        B.2)
+                                    </span>
+                                </div>
+                                <div>
+                                    <span>Nº de transferidos de outras US em TARV <br/> <strong>durante o mês</strong></span>
+                                </div>
+                                <div>
+                                    <input type="number" min="0" data-total0a14eixox="b2-c1c2c3c4" data-total0a14eixoxoutput="b2-c9" data-totalgeraleixox="b2-c1c2c3c4c5c6c7c8" data-totalgeraleixoxoutput="b2-c11" data-totaleixoy="b1b2b3-c1" data-totaleixoyoutput="b4-c1" data-total0a14eixoy="b1b2b3-c1c2c3c4" data-total0a14eixoyoutput="b4-c9" data-totalgeraleixoy="b1b2b3-c1c2c3c4c5c6c7c8"data-totalgeraleixoyoutput="b4-c11"/>
+                                </div>
+                                <div>
+                                    <input type="number" min="0" data-total0a14eixox="b2-c1c2c3c4" data-total0a14eixoxoutput="b2-c9" data-totalgeraleixox="b2-c1c2c3c4c5c6c7c8" data-totalgeraleixoxoutput="b2-c11" data-totaleixoy="b1b2b3-c2" data-totaleixoyoutput="b4-c2" data-total0a14eixoy="b1b2b3-c1c2c3c4" data-total0a14eixoyoutput="b4-c9" data-totalgeraleixoy="b1b2b3-c1c2c3c4c5c6c7c8"data-totalgeraleixoyoutput="b4-c11"/>
+                                </div>
+                                <div>
+                                    <input type="number" min="0" data-total0a14eixox="b2-c1c2c3c4" data-total0a14eixoxoutput="b2-c9" data-totalgeraleixox="b2-c1c2c3c4c5c6c7c8" data-totalgeraleixoxoutput="b2-c11" data-total10a19eixox="b2-c3c4c5c6" data-total10a19eixoxoutput="b2-c12" data-totaleixoy="b1b2b3-c3" data-totaleixoyoutput="b4-c3" data-total0a14eixoy="b1b2b3-c1c2c3c4" data-total0a14eixoyoutput="b4-c9" data-totalgeraleixoy="b1b2b3-c1c2c3c4c5c6c7c8"data-totalgeraleixoyoutput="b4-c11" data-total10a19eixoy="b1b2b3-c3c4c5c6" data-total10a19eixoyoutput="b4-c12" />
+                                </div>
+                                <div>
+                                    <input type="number" min="0" data-total0a14eixox="b2-c1c2c3c4" data-total0a14eixoxoutput="b2-c9" data-totalgeraleixox="b2-c1c2c3c4c5c6c7c8" data-totalgeraleixoxoutput="b2-c11" data-total10a19eixox="b2-c3c4c5c6" data-total10a19eixoxoutput="b2-c12" data-totaleixoy="b1b2b3-c4" data-totaleixoyoutput="b4-c4" data-total0a14eixoy="b1b2b3-c1c2c3c4" data-total0a14eixoyoutput="b4-c9" data-totalgeraleixoy="b1b2b3-c1c2c3c4c5c6c7c8"data-totalgeraleixoyoutput="b4-c11" data-total10a19eixoy="b1b2b3-c3c4c5c6" data-total10a19eixoyoutput="b4-c12" />
+                                </div>
+                                <div>
+                                    <input type="number" min="0" data-total15oumaiseixox="b2-c5c6c7c8" data-total15oumaiseixoxoutput="b2-c10" data-totalgeraleixox="b2-c1c2c3c4c5c6c7c8" data-totalgeraleixoxoutput="b2-c11" data-total10a19eixox="b2-c3c4c5c6" data-total10a19eixoxoutput="b2-c12" data-totaleixoy="b1b2b3-c5" data-totaleixoyoutput="b4-c5" data-total15oumaiseixoy="b1b2b3-c5c6c7c8" data-total15oumaiseixoyoutput="b4-c10" data-totalgeraleixoy="b1b2b3-c1c2c3c4c5c6c7c8"data-totalgeraleixoyoutput="b4-c11"  data-total10a19eixoy="b1b2b3-c3c4c5c6" data-total10a19eixoyoutput="b4-c12" />
+                                </div>
+                                <div>
+                                    <input type="number" min="0" data-total15oumaiseixox="b2-c5c6c7c8" data-total15oumaiseixoxoutput="b2-c10" data-totalgeraleixox="b2-c1c2c3c4c5c6c7c8" data-totalgeraleixoxoutput="b2-c11" data-total10a19eixox="b2-c3c4c5c6" data-total10a19eixoxoutput="b2-c12" data-totaleixoy="b1b2b3-c6" data-totaleixoyoutput="b4-c6" data-total15oumaiseixoy="b1b2b3-c5c6c7c8" data-total15oumaiseixoyoutput="b4-c10" data-totalgeraleixoy="b1b2b3-c1c2c3c4c5c6c7c8"data-totalgeraleixoyoutput="b4-c11" data-total10a19eixoy="b1b2b3-c3c4c5c6" data-total10a19eixoyoutput="b4-c12" />
+                                </div>
+                                <div>
+                                    <input type="number" min="0" data-total15oumaiseixox="b2-c5c6c7c8" data-total15oumaiseixoxoutput="b2-c10" data-totalgeraleixox="b2-c1c2c3c4c5c6c7c8" data-totalgeraleixoxoutput="b2-c11" data-totaleixoy="b1b2b3-c7" data-totaleixoyoutput="b4-c7" data-total15oumaiseixoy="b1b2b3-c5c6c7c8" data-total15oumaiseixoyoutput="b4-c10" data-totalgeraleixoy="b1b2b3-c1c2c3c4c5c6c7c8"data-totalgeraleixoyoutput="b4-c11" />
+                                </div>
+                                <div class="border-right-1">
+                                    <input type="number" min="0" data-total15oumaiseixox="b2-c5c6c7c8" data-total15oumaiseixoxoutput="b2-c10" data-totalgeraleixox="b2-c1c2c3c4c5c6c7c8" data-totalgeraleixoxoutput="b2-c11" data-totaleixoy="b1b2b3-c8" data-totaleixoyoutput="b4-c8" data-total15oumaiseixoy="b1b2b3-c5c6c7c8" data-total15oumaiseixoyoutput="b4-c10" data-totalgeraleixoy="b1b2b3-c1c2c3c4c5c6c7c8"data-totalgeraleixoyoutput="b4-c11"/>
+                                </div>
+                                <div>
+                                    <input type="number" min="0" readonly class="b2-c9"/>
+                                </div>
+                                <div>
+                                    <input type="number" min="0" readonly class="b2-c10"/>
+                                </div>
+                                <div class="border-right-1">
+                                    <input type="number" min="0" readonly class="b2-c11"/>
+                                </div>
+                                <div>
+                                    <input type="number" min="0" readonly class="b2-c12"/>
+                                </div>
+                            </div>
+
+                            <div class="linha b3">
+                                <div>
+                                    <span>
+                                        B.3)
+                                    </span>
+                                </div>
+                                <div>
+                                    <span>Nº de reinícios TARV <strong>durante o mês</strong></span>
+                                </div>
+                                <div>
+                                    <input type="number" min="0" data-total0a14eixox="b3-c1c2c3c4" data-total0a14eixoxoutput="b3-c9" data-totalgeraleixox="b3-c1c2c3c4c5c6c7c8" data-totalgeraleixoxoutput="b3-c11" data-totaleixoy="b1b2b3-c1" data-totaleixoyoutput="b4-c1" data-total0a14eixoy="b1b2b3-c1c2c3c4" data-total0a14eixoyoutput="b4-c9" data-totalgeraleixoy="b1b2b3-c1c2c3c4c5c6c7c8"data-totalgeraleixoyoutput="b4-c11"/>
+                                </div>
+                                <div>
+                                    <input type="number" min="0" data-total0a14eixox="b3-c1c2c3c4" data-total0a14eixoxoutput="b3-c9" data-totalgeraleixox="b3-c1c2c3c4c5c6c7c8" data-totalgeraleixoxoutput="b3-c11" data-totaleixoy="b1b2b3-c2" data-totaleixoyoutput="b4-c2" data-total0a14eixoy="b1b2b3-c1c2c3c4" data-total0a14eixoyoutput="b4-c9" data-totalgeraleixoy="b1b2b3-c1c2c3c4c5c6c7c8"data-totalgeraleixoyoutput="b4-c11"/>
+                                </div>
+                                <div>
+                                    <input type="number" min="0" data-total0a14eixox="b3-c1c2c3c4" data-total0a14eixoxoutput="b3-c9" data-totalgeraleixox="b3-c1c2c3c4c5c6c7c8" data-totalgeraleixoxoutput="b3-c11" data-total10a19eixox="b3-c3c4c5c6" data-total10a19eixoxoutput="b3-c12" data-totaleixoy="b1b2b3-c3" data-totaleixoyoutput="b4-c3" data-total0a14eixoy="b1b2b3-c1c2c3c4" data-total0a14eixoyoutput="b4-c9" data-totalgeraleixoy="b1b2b3-c1c2c3c4c5c6c7c8"data-totalgeraleixoyoutput="b4-c11" data-total10a19eixoy="b1b2b3-c3c4c5c6" data-total10a19eixoyoutput="b4-c12" />
+                                </div>
+                                <div>
+                                    <input type="number" min="0" data-total0a14eixox="b3-c1c2c3c4" data-total0a14eixoxoutput="b3-c9" data-totalgeraleixox="b3-c1c2c3c4c5c6c7c8" data-totalgeraleixoxoutput="b3-c11" data-total10a19eixox="b3-c3c4c5c6" data-total10a19eixoxoutput="b3-c12" data-totaleixoy="b1b2b3-c4" data-totaleixoyoutput="b4-c4" data-total0a14eixoy="b1b2b3-c1c2c3c4" data-total0a14eixoyoutput="b4-c9" data-totalgeraleixoy="b1b2b3-c1c2c3c4c5c6c7c8"data-totalgeraleixoyoutput="b4-c11" data-total10a19eixoy="b1b2b3-c3c4c5c6" data-total10a19eixoyoutput="b4-c12" />
+                                </div>
+                                <div>
+                                    <input type="number" min="0" data-total15oumaiseixox="b3-c5c6c7c8" data-total15oumaiseixoxoutput="b3-c10" data-totalgeraleixox="b3-c1c2c3c4c5c6c7c8" data-totalgeraleixoxoutput="b3-c11" data-total10a19eixox="b3-c3c4c5c6" data-total10a19eixoxoutput="b3-c12" data-totaleixoy="b1b2b3-c5" data-totaleixoyoutput="b4-c5" data-total15oumaiseixoy="b1b2b3-c5c6c7c8" data-total15oumaiseixoyoutput="b4-c10" data-totalgeraleixoy="b1b2b3-c1c2c3c4c5c6c7c8"data-totalgeraleixoyoutput="b4-c11"  data-total10a19eixoy="b1b2b3-c3c4c5c6" data-total10a19eixoyoutput="b4-c12" />
+                                </div>
+                                <div>
+                                    <input type="number" min="0" data-total15oumaiseixox="b3-c5c6c7c8" data-total15oumaiseixoxoutput="b3-c10" data-totalgeraleixox="b3-c1c2c3c4c5c6c7c8" data-totalgeraleixoxoutput="b3-c11" data-total10a19eixox="b3-c3c4c5c6" data-total10a19eixoxoutput="b3-c12" data-totaleixoy="b1b2b3-c6" data-totaleixoyoutput="b4-c6" data-total15oumaiseixoy="b1b2b3-c5c6c7c8" data-total15oumaiseixoyoutput="b4-c10" data-totalgeraleixoy="b1b2b3-c1c2c3c4c5c6c7c8"data-totalgeraleixoyoutput="b4-c11" data-total10a19eixoy="b1b2b3-c3c4c5c6" data-total10a19eixoyoutput="b4-c12" />
+                                </div>
+                                <div>
+                                    <input type="number" min="0" data-total15oumaiseixox="b3-c5c6c7c8" data-total15oumaiseixoxoutput="b3-c10" data-totalgeraleixox="b3-c1c2c3c4c5c6c7c8" data-totalgeraleixoxoutput="b3-c11" data-totaleixoy="b1b2b3-c7" data-totaleixoyoutput="b4-c7" data-total15oumaiseixoy="b1b2b3-c5c6c7c8" data-total15oumaiseixoyoutput="b4-c10" data-totalgeraleixoy="b1b2b3-c1c2c3c4c5c6c7c8"data-totalgeraleixoyoutput="b4-c11" />
+                                </div>
+                                <div class="border-right-1">
+                                    <input type="number" min="0" data-total15oumaiseixox="b3-c5c6c7c8" data-total15oumaiseixoxoutput="b3-c10" data-totalgeraleixox="b3-c1c2c3c4c5c6c7c8" data-totalgeraleixoxoutput="b3-c11" data-totaleixoy="b1b2b3-c8" data-totaleixoyoutput="b4-c8" data-total15oumaiseixoy="b1b2b3-c5c6c7c8" data-total15oumaiseixoyoutput="b4-c10" data-totalgeraleixoy="b1b2b3-c1c2c3c4c5c6c7c8"data-totalgeraleixoyoutput="b4-c11"/>
+                                </div>
+                                <div>
+                                    <input type="number" min="0" readonly class="b3-c9"/>
+                                </div>
+                                <div>
+                                    <input type="number" min="0" readonly class="b3-c10"/>
+                                </div>
+                                <div class="border-right-1">
+                                    <input type="number" min="0" readonly class="b3-c11"/>
+                                </div>
+                                <div>
+                                    <input type="number" min="0" readonly class="b3-c12"/>
+                                </div>
+                            </div>
+
+                            <div class="linha b4">
+                                <div>
+                                    <span>
+                                        B.4)
+                                    </span>
+                                </div>
+                                <div>
+                                    <span>Nº de entradas TARV <strong>durante o mês</strong> <br/> (B.4 = B.1 + B.2 + B.3)</span>
+                                </div>
+                                <div>
+                                    <input type="number" min="0" readonly class="b4-c1"/>
+                                </div>
+                                <div>
+                                    <input type="number" min="0" readonly class="b4-c2"/>
+                                </div>
+                                <div>
+                                    <input type="number" min="0" readonly class="b4-c3"/>
+                                </div>
+                                <div>
+                                    <input type="number" min="0" readonly class="b4-c4"/>
+                                </div>
+                                <div>
+                                    <input type="number" min="0" readonly class="b4-c5"/>
+                                </div>
+                                <div>
+                                    <input type="number" min="0" readonly class="b4-c6"/>
+                                </div>
+                                <div>
+                                    <input type="number" min="0" readonly class="b4-c7"/>
+                                </div>
+                                <div class="border-right-1">
+                                    <input type="number" min="0" readonly class="b4-c8"/>
+                                </div>
+                                <div>
+                                    <input type="number" min="0" readonly class="b4-c9"/>
+                                </div>
+                                <div>
+                                    <input type="number" min="0" readonly class="b4-c10"/>
+                                </div>
+                                <div class="border-right-1">
+                                    <input type="number" min="0" readonly class="b4-c11"/>
+                                </div>
+                                <div>
+                                    <input type="number" min="0" readonly class="b4-c12"/>
+                                </div>
+                            </div>
+
+                            <div class="linha b5">
+                                <div>
+                                    <span>
+                                        B.5)
+                                    </span>
+                                </div>
+                                <div>
+                                    <span>Nº de transferidos para outras US em TARV <br/> <strong>durante o mês</strong></span>
+                                </div>
+                                <div>
+                                    <input type="number" min="0" data-total0a14eixox="b5-c1c2c3c4" data-total0a14eixoxoutput="b5-c9" data-totalgeraleixox="b5-c1c2c3c4c5c6c7c8" data-totalgeraleixoxoutput="b5-c11" data-totaleixoy="b5b6b7b8-c1" data-totaleixoyoutput="b9-c1" data-total0a14eixoy="b5b6b7b8-c1c2c3c4" data-total0a14eixoyoutput="b9-c9" data-totalgeraleixoy="b5b6b7b8-c1c2c3c4c5c6c7c8"data-totalgeraleixoyoutput="b9-c11"/>
+                                </div>
+                                <div>
+                                    <input type="number" min="0" data-total0a14eixox="b5-c1c2c3c4" data-total0a14eixoxoutput="b5-c9" data-totalgeraleixox="b5-c1c2c3c4c5c6c7c8" data-totalgeraleixoxoutput="b5-c11" data-totaleixoy="b5b6b7b8-c2" data-totaleixoyoutput="b9-c2" data-total0a14eixoy="b5b6b7b8-c1c2c3c4" data-total0a14eixoyoutput="b9-c9" data-totalgeraleixoy="b5b6b7b8-c1c2c3c4c5c6c7c8"data-totalgeraleixoyoutput="b9-c11"/>
+                                </div>
+                                <div>
+                                    <input type="number" min="0" data-total0a14eixox="b5-c1c2c3c4" data-total0a14eixoxoutput="b5-c9" data-totalgeraleixox="b5-c1c2c3c4c5c6c7c8" data-totalgeraleixoxoutput="b5-c11" data-total10a19eixox="b5-c3c4c5c6" data-total10a19eixoxoutput="b5-c12" data-totaleixoy="b5b6b7b8-c3" data-totaleixoyoutput="b9-c3" data-total0a14eixoy="b5b6b7b8-c1c2c3c4" data-total0a14eixoyoutput="b9-c9" data-totalgeraleixoy="b5b6b7b8-c1c2c3c4c5c6c7c8"data-totalgeraleixoyoutput="b9-c11" data-total10a19eixoy="b5b6b7b8-c3c4c5c6" data-total10a19eixoyoutput="b9-c12" />
+                                </div>
+                                <div>
+                                    <input type="number" min="0" data-total0a14eixox="b5-c1c2c3c4" data-total0a14eixoxoutput="b5-c9" data-totalgeraleixox="b5-c1c2c3c4c5c6c7c8" data-totalgeraleixoxoutput="b5-c11" data-total10a19eixox="b5-c3c4c5c6" data-total10a19eixoxoutput="b5-c12" data-totaleixoy="b5b6b7b8-c4" data-totaleixoyoutput="b9-c4" data-total0a14eixoy="b5b6b7b8-c1c2c3c4" data-total0a14eixoyoutput="b9-c9" data-totalgeraleixoy="b5b6b7b8-c1c2c3c4c5c6c7c8"data-totalgeraleixoyoutput="b9-c11" data-total10a19eixoy="b5b6b7b8-c3c4c5c6" data-total10a19eixoyoutput="b9-c12" />
+                                </div>
+                                <div>
+                                    <input type="number" min="0" data-total15oumaiseixox="b5-c5c6c7c8" data-total15oumaiseixoxoutput="b5-c10" data-totalgeraleixox="b5-c1c2c3c4c5c6c7c8" data-totalgeraleixoxoutput="b5-c11" data-total10a19eixox="b5-c3c4c5c6" data-total10a19eixoxoutput="b5-c12" data-totaleixoy="b5b6b7b8-c5" data-totaleixoyoutput="b9-c5" data-total15oumaiseixoy="b5b6b7b8-c5c6c7c8" data-total15oumaiseixoyoutput="b9-c10" data-totalgeraleixoy="b5b6b7b8-c1c2c3c4c5c6c7c8"data-totalgeraleixoyoutput="b9-c11"  data-total10a19eixoy="b5b6b7b8-c3c4c5c6" data-total10a19eixoyoutput="b9-c12" />
+                                </div>
+                                <div>
+                                    <input type="number" min="0" data-total15oumaiseixox="b5-c5c6c7c8" data-total15oumaiseixoxoutput="b5-c10" data-totalgeraleixox="b5-c1c2c3c4c5c6c7c8" data-totalgeraleixoxoutput="b5-c11" data-total10a19eixox="b5-c3c4c5c6" data-total10a19eixoxoutput="b5-c12" data-totaleixoy="b5b6b7b8-c6" data-totaleixoyoutput="b9-c6" data-total15oumaiseixoy="b5b6b7b8-c5c6c7c8" data-total15oumaiseixoyoutput="b9-c10" data-totalgeraleixoy="b5b6b7b8-c1c2c3c4c5c6c7c8"data-totalgeraleixoyoutput="b9-c11" data-total10a19eixoy="b5b6b7b8-c3c4c5c6" data-total10a19eixoyoutput="b9-c12"/>
+                                </div>
+                                <div>
+                                    <input type="number" min="0" data-total15oumaiseixox="b5-c5c6c7c8" data-total15oumaiseixoxoutput="b5-c10" data-totalgeraleixox="b5-c1c2c3c4c5c6c7c8" data-totalgeraleixoxoutput="b5-c11" data-totaleixoy="b5b6b7b8-c7" data-totaleixoyoutput="b9-c7" data-total15oumaiseixoy="b5b6b7b8-c5c6c7c8" data-total15oumaiseixoyoutput="b9-c10" data-totalgeraleixoy="b5b6b7b8-c1c2c3c4c5c6c7c8"data-totalgeraleixoyoutput="b9-c11" />
+                                </div>
+                                <div class="border-right-1">
+                                    <input type="number" min="0" data-total15oumaiseixox="b5-c5c6c7c8" data-total15oumaiseixoxoutput="b5-c10" data-totalgeraleixox="b5-c1c2c3c4c5c6c7c8" data-totalgeraleixoxoutput="b5-c11" data-totaleixoy="b5b6b7b8-c8" data-totaleixoyoutput="b9-c8" data-total15oumaiseixoy="b5b6b7b8-c5c6c7c8" data-total15oumaiseixoyoutput="b9-c10" data-totalgeraleixoy="b5b6b7b8-c1c2c3c4c5c6c7c8"data-totalgeraleixoyoutput="b9-c11"/>
+                                </div>
+                                <div>
+                                    <input type="number" min="0" readonly class="b5-c9"/>
+                                </div>
+                                <div>
+                                    <input type="number" min="0" readonly class="b5-c10"/>
+                                </div>
+                                <div class="border-right-1">
+                                    <input type="number" min="0" readonly class="b5-c11"/>
+                                </div>
+                                <div>
+                                    <input type="number" min="0" readonly class="b5-c12"/>
+                                </div>
+                            </div>
+
+                            <div class="linha b6">
+                                <div>
+                                    <span>
+                                        B.6)
+                                    </span>
+                                </div>
+                                <div>
+                                    <span>Nº de suspensos TARV <strong>durante o mês</strong></span>
+                                </div>
+                                <div>
+                                    <input type="number" min="0" data-total0a14eixox="b6-c1c2c3c4" data-total0a14eixoxoutput="b6-c9" data-totalgeraleixox="b6-c1c2c3c4c5c6c7c8" data-totalgeraleixoxoutput="b6-c11" data-totaleixoy="b5b6b7b8-c1" data-totaleixoyoutput="b9-c1" data-total0a14eixoy="b5b6b7b8-c1c2c3c4" data-total0a14eixoyoutput="b9-c9" data-totalgeraleixoy="b5b6b7b8-c1c2c3c4c5c6c7c8"data-totalgeraleixoyoutput="b9-c11"/>
+                                </div>
+                                <div>
+                                    <input type="number" min="0" data-total0a14eixox="b6-c1c2c3c4" data-total0a14eixoxoutput="b6-c9" data-totalgeraleixox="b6-c1c2c3c4c5c6c7c8" data-totalgeraleixoxoutput="b6-c11" data-totaleixoy="b5b6b7b8-c2" data-totaleixoyoutput="b9-c2" data-total0a14eixoy="b5b6b7b8-c1c2c3c4" data-total0a14eixoyoutput="b9-c9" data-totalgeraleixoy="b5b6b7b8-c1c2c3c4c5c6c7c8"data-totalgeraleixoyoutput="b9-c11"/>
+                                </div>
+                                <div>
+                                    <input type="number" min="0" data-total0a14eixox="b6-c1c2c3c4" data-total0a14eixoxoutput="b6-c9" data-totalgeraleixox="b6-c1c2c3c4c5c6c7c8" data-totalgeraleixoxoutput="b6-c11" data-total10a19eixox="b6-c3c4c5c6" data-total10a19eixoxoutput="b6-c12" data-totaleixoy="b5b6b7b8-c3" data-totaleixoyoutput="b9-c3" data-total0a14eixoy="b5b6b7b8-c1c2c3c4" data-total0a14eixoyoutput="b9-c9" data-totalgeraleixoy="b5b6b7b8-c1c2c3c4c5c6c7c8"data-totalgeraleixoyoutput="b9-c11" data-total10a19eixoy="b5b6b7b8-c3c4c5c6" data-total10a19eixoyoutput="b9-c12" />
+                                </div>
+                                <div>
+                                    <input type="number" min="0" data-total0a14eixox="b6-c1c2c3c4" data-total0a14eixoxoutput="b6-c9" data-totalgeraleixox="b6-c1c2c3c4c5c6c7c8" data-totalgeraleixoxoutput="b6-c11" data-total10a19eixox="b6-c3c4c5c6" data-total10a19eixoxoutput="b6-c12" data-totaleixoy="b5b6b7b8-c4" data-totaleixoyoutput="b9-c4" data-total0a14eixoy="b5b6b7b8-c1c2c3c4" data-total0a14eixoyoutput="b9-c9" data-totalgeraleixoy="b5b6b7b8-c1c2c3c4c5c6c7c8"data-totalgeraleixoyoutput="b9-c11" data-total10a19eixoy="b5b6b7b8-c3c4c5c6" data-total10a19eixoyoutput="b9-c12" />
+                                </div>
+                                <div>
+                                    <input type="number" min="0" data-total15oumaiseixox="b6-c5c6c7c8" data-total15oumaiseixoxoutput="b6-c10" data-totalgeraleixox="b6-c1c2c3c4c5c6c7c8" data-totalgeraleixoxoutput="b6-c11" data-total10a19eixox="b6-c3c4c5c6" data-total10a19eixoxoutput="b6-c12" data-totaleixoy="b5b6b7b8-c5" data-totaleixoyoutput="b9-c5" data-total15oumaiseixoy="b5b6b7b8-c5c6c7c8" data-total15oumaiseixoyoutput="b9-c10" data-totalgeraleixoy="b5b6b7b8-c1c2c3c4c5c6c7c8"data-totalgeraleixoyoutput="b9-c11"  data-total10a19eixoy="b5b6b7b8-c3c4c5c6" data-total10a19eixoyoutput="b9-c12" />
+                                </div>
+                                <div>
+                                    <input type="number" min="0" data-total15oumaiseixox="b6-c5c6c7c8" data-total15oumaiseixoxoutput="b6-c10" data-totalgeraleixox="b6-c1c2c3c4c5c6c7c8" data-totalgeraleixoxoutput="b6-c11" data-total10a19eixox="b6-c3c4c5c6" data-total10a19eixoxoutput="b6-c12" data-totaleixoy="b5b6b7b8-c6" data-totaleixoyoutput="b9-c6" data-total15oumaiseixoy="b5b6b7b8-c5c6c7c8" data-total15oumaiseixoyoutput="b9-c10" data-totalgeraleixoy="b5b6b7b8-c1c2c3c4c5c6c7c8"data-totalgeraleixoyoutput="b9-c11" data-total10a19eixoy="b5b6b7b8-c3c4c5c6" data-total10a19eixoyoutput="b9-c12"/>
+                                </div>
+                                <div>
+                                    <input type="number" min="0" data-total15oumaiseixox="b6-c5c6c7c8" data-total15oumaiseixoxoutput="b6-c10" data-totalgeraleixox="b6-c1c2c3c4c5c6c7c8" data-totalgeraleixoxoutput="b6-c11" data-totaleixoy="b5b6b7b8-c7" data-totaleixoyoutput="b9-c7" data-total15oumaiseixoy="b5b6b7b8-c5c6c7c8" data-total15oumaiseixoyoutput="b9-c10" data-totalgeraleixoy="b5b6b7b8-c1c2c3c4c5c6c7c8"data-totalgeraleixoyoutput="b9-c11" />
+                                </div>
+                                <div class="border-right-1">
+                                    <input type="number" min="0" data-total15oumaiseixox="b6-c5c6c7c8" data-total15oumaiseixoxoutput="b6-c10" data-totalgeraleixox="b6-c1c2c3c4c5c6c7c8" data-totalgeraleixoxoutput="b6-c11" data-totaleixoy="b5b6b7b8-c8" data-totaleixoyoutput="b9-c8" data-total15oumaiseixoy="b5b6b7b8-c5c6c7c8" data-total15oumaiseixoyoutput="b9-c10" data-totalgeraleixoy="b5b6b7b8-c1c2c3c4c5c6c7c8"data-totalgeraleixoyoutput="b9-c11"/>
+                                </div>
+                                <div>
+                                    <input type="number" min="0" readonly class="b6-c9"/>
+                                </div>
+                                <div>
+                                    <input type="number" min="0" readonly class="b6-c10"/>
+                                </div>
+                                <div class="border-right-1">
+                                    <input type="number" min="0" readonly class="b6-c11"/>
+                                </div>
+                                <div>
+                                    <input type="number" min="0" readonly class="b6-c12"/>
+                                </div>
+                            </div>
+
+                            <div class="linha b7">
+                                <div>
+                                    <span>
+                                        B.7)
+                                    </span>
+                                </div>
+                                <div>
+                                    <span>Nº de abandonos TARV <strong>durante o mês</strong></span>
+                                </div>
+                                <div>
+                                    <input type="number" min="0" data-total0a14eixox="b7-c1c2c3c4" data-total0a14eixoxoutput="b7-c9" data-totalgeraleixox="b7-c1c2c3c4c5c6c7c8" data-totalgeraleixoxoutput="b7-c11" data-totaleixoy="b5b6b7b8-c1" data-totaleixoyoutput="b9-c1" data-total0a14eixoy="b5b6b7b8-c1c2c3c4" data-total0a14eixoyoutput="b9-c9" data-totalgeraleixoy="b5b6b7b8-c1c2c3c4c5c6c7c8"data-totalgeraleixoyoutput="b9-c11"/>
+                                </div>
+                                <div>
+                                    <input type="number" min="0" data-total0a14eixox="b7-c1c2c3c4" data-total0a14eixoxoutput="b7-c9" data-totalgeraleixox="b7-c1c2c3c4c5c6c7c8" data-totalgeraleixoxoutput="b7-c11" data-totaleixoy="b5b6b7b8-c2" data-totaleixoyoutput="b9-c2" data-total0a14eixoy="b5b6b7b8-c1c2c3c4" data-total0a14eixoyoutput="b9-c9" data-totalgeraleixoy="b5b6b7b8-c1c2c3c4c5c6c7c8"data-totalgeraleixoyoutput="b9-c11"/>
+                                </div>
+                                <div>
+                                    <input type="number" min="0" data-total0a14eixox="b7-c1c2c3c4" data-total0a14eixoxoutput="b7-c9" data-totalgeraleixox="b7-c1c2c3c4c5c6c7c8" data-totalgeraleixoxoutput="b7-c11" data-total10a19eixox="b7-c3c4c5c6" data-total10a19eixoxoutput="b7-c12" data-totaleixoy="b5b6b7b8-c3" data-totaleixoyoutput="b9-c3" data-total0a14eixoy="b5b6b7b8-c1c2c3c4" data-total0a14eixoyoutput="b9-c9" data-totalgeraleixoy="b5b6b7b8-c1c2c3c4c5c6c7c8"data-totalgeraleixoyoutput="b9-c11" data-total10a19eixoy="b5b6b7b8-c3c4c5c6" data-total10a19eixoyoutput="b9-c12" />
+                                </div>
+                                <div>
+                                    <input type="number" min="0" data-total0a14eixox="b7-c1c2c3c4" data-total0a14eixoxoutput="b7-c9" data-totalgeraleixox="b7-c1c2c3c4c5c6c7c8" data-totalgeraleixoxoutput="b7-c11" data-total10a19eixox="b7-c3c4c5c6" data-total10a19eixoxoutput="b7-c12" data-totaleixoy="b5b6b7b8-c4" data-totaleixoyoutput="b9-c4" data-total0a14eixoy="b5b6b7b8-c1c2c3c4" data-total0a14eixoyoutput="b9-c9" data-totalgeraleixoy="b5b6b7b8-c1c2c3c4c5c6c7c8"data-totalgeraleixoyoutput="b9-c11" data-total10a19eixoy="b5b6b7b8-c3c4c5c6" data-total10a19eixoyoutput="b9-c12" />
+                                </div>
+                                <div>
+                                    <input type="number" min="0" data-total15oumaiseixox="b7-c5c6c7c8" data-total15oumaiseixoxoutput="b7-c10" data-totalgeraleixox="b7-c1c2c3c4c5c6c7c8" data-totalgeraleixoxoutput="b7-c11" data-total10a19eixox="b7-c3c4c5c6" data-total10a19eixoxoutput="b7-c12" data-totaleixoy="b5b6b7b8-c5" data-totaleixoyoutput="b9-c5" data-total15oumaiseixoy="b5b6b7b8-c5c6c7c8" data-total15oumaiseixoyoutput="b9-c10" data-totalgeraleixoy="b5b6b7b8-c1c2c3c4c5c6c7c8"data-totalgeraleixoyoutput="b9-c11"  data-total10a19eixoy="b5b6b7b8-c3c4c5c6" data-total10a19eixoyoutput="b9-c12" />
+                                </div>
+                                <div>
+                                    <input type="number" min="0" data-total15oumaiseixox="b7-c5c6c7c8" data-total15oumaiseixoxoutput="b7-c10" data-totalgeraleixox="b7-c1c2c3c4c5c6c7c8" data-totalgeraleixoxoutput="b7-c11" data-total10a19eixox="b7-c3c4c5c6" data-total10a19eixoxoutput="b7-c12" data-totaleixoy="b5b6b7b8-c6" data-totaleixoyoutput="b9-c6" data-total15oumaiseixoy="b5b6b7b8-c5c6c7c8" data-total15oumaiseixoyoutput="b9-c10" data-totalgeraleixoy="b5b6b7b8-c1c2c3c4c5c6c7c8"data-totalgeraleixoyoutput="b9-c11" data-total10a19eixoy="b5b6b7b8-c3c4c5c6" data-total10a19eixoyoutput="b9-c12"/>
+                                </div>
+                                <div>
+                                    <input type="number" min="0" data-total15oumaiseixox="b7-c5c6c7c8" data-total15oumaiseixoxoutput="b7-c10" data-totalgeraleixox="b7-c1c2c3c4c5c6c7c8" data-totalgeraleixoxoutput="b7-c11" data-totaleixoy="b5b6b7b8-c7" data-totaleixoyoutput="b9-c7" data-total15oumaiseixoy="b5b6b7b8-c5c6c7c8" data-total15oumaiseixoyoutput="b9-c10" data-totalgeraleixoy="b5b6b7b8-c1c2c3c4c5c6c7c8"data-totalgeraleixoyoutput="b9-c11" />
+                                </div>
+                                <div class="border-right-1">
+                                    <input type="number" min="0" data-total15oumaiseixox="b7-c5c6c7c8" data-total15oumaiseixoxoutput="b7-c10" data-totalgeraleixox="b7-c1c2c3c4c5c6c7c8" data-totalgeraleixoxoutput="b7-c11" data-totaleixoy="b5b6b7b8-c8" data-totaleixoyoutput="b9-c8" data-total15oumaiseixoy="b5b6b7b8-c5c6c7c8" data-total15oumaiseixoyoutput="b9-c10" data-totalgeraleixoy="b5b6b7b8-c1c2c3c4c5c6c7c8"data-totalgeraleixoyoutput="b9-c11"/>
+                                </div>
+                                <div>
+                                    <input type="number" min="0" readonly class="b7-c9"/>
+                                </div>
+                                <div>
+                                    <input type="number" min="0" readonly class="b7-c10"/>
+                                </div>
+                                <div class="border-right-1">
+                                    <input type="number" min="0" readonly class="b7-c11"/>
+                                </div>
+                                <div>
+                                    <input type="number" min="0" readonly class="b7-c12"/>
+                                </div>
+                            </div>
+
+                            <div class="linha b8">
+                                <div>
+                                    <span>
+                                        B.8)
+                                    </span>
+                                </div>
+                                <div>
+                                    <span>Nº de óbitos TARV <strong>durante o mês</strong></span>
+                                </div>
+                                <div>
+                                    <input type="number" min="0" data-total0a14eixox="b8-c1c2c3c4" data-total0a14eixoxoutput="b8-c9" data-totalgeraleixox="b8-c1c2c3c4c5c6c7c8" data-totalgeraleixoxoutput="b8-c11" data-totaleixoy="b5b6b7b8-c1" data-totaleixoyoutput="b9-c1" data-total0a14eixoy="b5b6b7b8-c1c2c3c4" data-total0a14eixoyoutput="b9-c9" data-totalgeraleixoy="b5b6b7b8-c1c2c3c4c5c6c7c8"data-totalgeraleixoyoutput="b9-c11"/>
+                                </div>
+                                <div>
+                                    <input type="number" min="0" data-total0a14eixox="b8-c1c2c3c4" data-total0a14eixoxoutput="b8-c9" data-totalgeraleixox="b8-c1c2c3c4c5c6c7c8" data-totalgeraleixoxoutput="b8-c11" data-totaleixoy="b5b6b7b8-c2" data-totaleixoyoutput="b9-c2" data-total0a14eixoy="b5b6b7b8-c1c2c3c4" data-total0a14eixoyoutput="b9-c9" data-totalgeraleixoy="b5b6b7b8-c1c2c3c4c5c6c7c8"data-totalgeraleixoyoutput="b9-c11"/>
+                                </div>
+                                <div>
+                                    <input type="number" min="0" data-total0a14eixox="b8-c1c2c3c4" data-total0a14eixoxoutput="b8-c9" data-totalgeraleixox="b8-c1c2c3c4c5c6c7c8" data-totalgeraleixoxoutput="b8-c11" data-total10a19eixox="b8-c3c4c5c6" data-total10a19eixoxoutput="b8-c12" data-totaleixoy="b5b6b7b8-c3" data-totaleixoyoutput="b9-c3" data-total0a14eixoy="b5b6b7b8-c1c2c3c4" data-total0a14eixoyoutput="b9-c9" data-totalgeraleixoy="b5b6b7b8-c1c2c3c4c5c6c7c8"data-totalgeraleixoyoutput="b9-c11" data-total10a19eixoy="b5b6b7b8-c3c4c5c6" data-total10a19eixoyoutput="b9-c12" />
+                                </div>
+                                <div>
+                                    <input type="number" min="0" data-total0a14eixox="b8-c1c2c3c4" data-total0a14eixoxoutput="b8-c9" data-totalgeraleixox="b8-c1c2c3c4c5c6c7c8" data-totalgeraleixoxoutput="b8-c11" data-total10a19eixox="b8-c3c4c5c6" data-total10a19eixoxoutput="b8-c12" data-totaleixoy="b5b6b7b8-c4" data-totaleixoyoutput="b9-c4" data-total0a14eixoy="b5b6b7b8-c1c2c3c4" data-total0a14eixoyoutput="b9-c9" data-totalgeraleixoy="b5b6b7b8-c1c2c3c4c5c6c7c8"data-totalgeraleixoyoutput="b9-c11" data-total10a19eixoy="b5b6b7b8-c3c4c5c6" data-total10a19eixoyoutput="b9-c12" />
+                                </div>
+                                <div>
+                                    <input type="number" min="0" data-total15oumaiseixox="b8-c5c6c7c8" data-total15oumaiseixoxoutput="b8-c10" data-totalgeraleixox="b8-c1c2c3c4c5c6c7c8" data-totalgeraleixoxoutput="b8-c11" data-total10a19eixox="b8-c3c4c5c6" data-total10a19eixoxoutput="b8-c12" data-totaleixoy="b5b6b7b8-c5" data-totaleixoyoutput="b9-c5" data-total15oumaiseixoy="b5b6b7b8-c5c6c7c8" data-total15oumaiseixoyoutput="b9-c10" data-totalgeraleixoy="b5b6b7b8-c1c2c3c4c5c6c7c8"data-totalgeraleixoyoutput="b9-c11"  data-total10a19eixoy="b5b6b7b8-c3c4c5c6" data-total10a19eixoyoutput="b9-c12" />
+                                </div>
+                                <div>
+                                    <input type="number" min="0" data-total15oumaiseixox="b8-c5c6c7c8" data-total15oumaiseixoxoutput="b8-c10" data-totalgeraleixox="b8-c1c2c3c4c5c6c7c8" data-totalgeraleixoxoutput="b8-c11" data-total10a19eixox="b8-c3c4c5c6" data-total10a19eixoxoutput="b8-c12" data-totaleixoy="b5b6b7b8-c6" data-totaleixoyoutput="b9-c6" data-total15oumaiseixoy="b5b6b7b8-c5c6c7c8" data-total15oumaiseixoyoutput="b9-c10" data-totalgeraleixoy="b5b6b7b8-c1c2c3c4c5c6c7c8"data-totalgeraleixoyoutput="b9-c11" data-total10a19eixoy="b5b6b7b8-c3c4c5c6" data-total10a19eixoyoutput="b9-c12"/>
+                                </div>
+                                <div>
+                                    <input type="number" min="0" data-total15oumaiseixox="b8-c5c6c7c8" data-total15oumaiseixoxoutput="b8-c10" data-totalgeraleixox="b8-c1c2c3c4c5c6c7c8" data-totalgeraleixoxoutput="b8-c11" data-totaleixoy="b5b6b7b8-c7" data-totaleixoyoutput="b9-c7" data-total15oumaiseixoy="b5b6b7b8-c5c6c7c8" data-total15oumaiseixoyoutput="b9-c10" data-totalgeraleixoy="b5b6b7b8-c1c2c3c4c5c6c7c8"data-totalgeraleixoyoutput="b9-c11" />
+                                </div>
+                                <div class="border-right-1">
+                                    <input type="number" min="0" data-total15oumaiseixox="b8-c5c6c7c8" data-total15oumaiseixoxoutput="b8-c10" data-totalgeraleixox="b8-c1c2c3c4c5c6c7c8" data-totalgeraleixoxoutput="b8-c11" data-totaleixoy="b5b6b7b8-c8" data-totaleixoyoutput="b9-c8" data-total15oumaiseixoy="b5b6b7b8-c5c6c7c8" data-total15oumaiseixoyoutput="b9-c10" data-totalgeraleixoy="b5b6b7b8-c1c2c3c4c5c6c7c8"data-totalgeraleixoyoutput="b9-c11"/>
+                                </div>
+                                <div>
+                                    <input type="number" min="0" readonly class="b8-c9"/>
+                                </div>
+                                <div>
+                                    <input type="number" min="0" readonly class="b8-c10"/>
+                                </div>
+                                <div class="border-right-1">
+                                    <input type="number" min="0" readonly class="b8-c11"/>
+                                </div>
+                                <div>
+                                    <input type="number" min="0" readonly class="b8-c12"/>
+                                </div>
+                            </div>
+
+                            <div class="linha b9">
+                                <div>
+                                    <span>
+                                        B.9)
+                                    </span>
+                                </div>
+                                <div>
+                                    <span>Nº de saídas TARV <strong>durante o mês</strong> <br/>(B.9 = B.5 + B.6 + B.7+ B.8)</span>
+                                </div>
+                                <div>
+                                    <input type="number" min="0" readonly class="b9-c1" />
+                                </div>
+                                <div>
+                                    <input type="number" min="0" readonly class="b9-c2" />
+                                </div>
+                                <div>
+                                    <input type="number" min="0" readonly class="b9-c3" />
+                                </div>
+                                <div>
+                                    <input type="number" min="0" readonly class="b9-c4" />
+                                </div>
+                                <div>
+                                    <input type="number" min="0" readonly class="b9-c5" />
+                                </div>
+                                <div>
+                                    <input type="number" min="0" readonly class="b9-c6" />
+                                </div>
+                                <div>
+                                    <input type="number" min="0" readonly class="b9-c7" />
+                                </div>
+                                <div class="border-right-1">
+                                    <input type="number" min="0" readonly class="b9-c8" />
+                                </div>
+                                <div>
+                                    <input type="number" min="0" readonly class="b9-c9" />
+                                </div>
+                                <div>
+                                    <input type="number" min="0" readonly class="b9-c10" />
+                                </div>
+                                <div class="border-right-1">
+                                    <input type="number" min="0" readonly class="b9-c11" />
+                                </div>
+                                <div>
+                                    <input type="number" min="0" readonly class="b9-c12" />
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="grade-inferior">
+                        <div class="linha b10">
+                            <div>
+                                <span>
+                                    B.10)
+                                </span>
+                            </div>
+                            <div>
+                                <span>Nº cumulativo de pacientes que iniciou TARV <br/>nesta unidade sanitária <strong>até ao fim do mês<br/> anterior</strong> (copiar B.11 do mês anterior)</span>
+                            </div>
+                            <div>
+                                <input type="number" min="0" data-total0a14eixox="b10-c1c2c3c4" data-total0a14eixoxoutput="b10-c9" data-totalgeraleixox="b10-c1c2c3c4c5c6c7c8" data-totalgeraleixoxoutput="b10-c11" data-totalb11="b1b10-c1" data-totalb11output="b11-c1" data-totalb11c0a14="b1b10-c1c2c3c4" data-totalb11c0a14output="b11-c9" data-totalgeralb11="b1b10-c1c2c3c4c5c6c7c8"data-totalgeralb11output="b11-c11" />
+                            </div>
+                            <div>
+                                <input type="number" min="0" data-total0a14eixox="b10-c1c2c3c4" data-total0a14eixoxoutput="b10-c9" data-totalgeraleixox="b10-c1c2c3c4c5c6c7c8" data-totalgeraleixoxoutput="b10-c11" data-totalb11="b1b10-c2" data-totalb11output="b11-c2" data-totalb11c0a14="b1b10-c1c2c3c4" data-totalb11c0a14output="b11-c9" data-totalgeralb11="b1b10-c1c2c3c4c5c6c7c8"data-totalgeralb11output="b11-c11" />
+                            </div>
+                            <div>
+                                <input type="number" min="0" data-total0a14eixox="b10-c1c2c3c4" data-total0a14eixoxoutput="b10-c9" data-totalgeraleixox="b10-c1c2c3c4c5c6c7c8" data-totalgeraleixoxoutput="b10-c11" data-total10a19eixox="b10-c3c4c5c6" data-total10a19eixoxoutput="b10-c12" data-totalb11="b1b10-c3" data-totalb11output="b11-c3" data-totalb11c0a14="b1b10-c1c2c3c4" data-totalb11c0a14output="b11-c9" data-totalgeralb11="b1b10-c1c2c3c4c5c6c7c8"data-totalgeralb11output="b11-c11" data-totalb11c10a19="b1b10-c3c4c5c6" data-totalb11c10a19output="b11-c12" />
+                            </div>
+                            <div>
+                                <input type="number" min="0" data-total0a14eixox="b10-c1c2c3c4" data-total0a14eixoxoutput="b10-c9" data-totalgeraleixox="b10-c1c2c3c4c5c6c7c8" data-totalgeraleixoxoutput="b10-c11" data-total10a19eixox="b10-c3c4c5c6" data-total10a19eixoxoutput="b10-c12" data-totalb11="b1b10-c4" data-totalb11output="b11-c4" data-totalb11c0a14="b1b10-c1c2c3c4" data-totalb11c0a14output="b11-c9" data-totalgeralb11="b1b10-c1c2c3c4c5c6c7c8"data-totalgeralb11output="b11-c11" data-totalb11c10a19="b1b10-c3c4c5c6" data-totalb11c10a19output="b11-c12" />
+                            </div>
+                            <div>
+                                <input type="number" min="0" data-total15oumaiseixox="b10-c5c6c7c8" data-total15oumaiseixoxoutput="b10-c10" data-totalgeraleixox="b10-c1c2c3c4c5c6c7c8" data-totalgeraleixoxoutput="b10-c11" data-total10a19eixox="b10-c3c4c5c6" data-total10a19eixoxoutput="b10-c12" data-totalb11="b1b10-c5" data-totalb11output="b11-c5" data-totalb11c15oumais="b1b10-c5c6c7c8" data-totalb11c15oumaisoutput="b11-c10" data-totalgeralb11="b1b10-c1c2c3c4c5c6c7c8"data-totalgeralb11output="b11-c11"  data-totalb11c10a19="b1b10-c3c4c5c6" data-totalb11c10a19output="b11-c12" />
+                            </div>
+                            <div>
+                                <input type="number" min="0" data-total15oumaiseixox="b10-c5c6c7c8" data-total15oumaiseixoxoutput="b10-c10" data-totalgeraleixox="b10-c1c2c3c4c5c6c7c8" data-totalgeraleixoxoutput="b10-c11" data-total10a19eixox="b10-c3c4c5c6" data-total10a19eixoxoutput="b10-c12" data-totalb11="b1b10-c6" data-totalb11output="b11-c6" data-totalb11c15oumais="b1b10-c5c6c7c8" data-totalb11c15oumaisoutput="b11-c10" data-totalgeralb11="b1b10-c1c2c3c4c5c6c7c8" data-totalgeralb11output="b11-c11"  data-totalb11c10a19="b1b10-c3c4c5c6" data-totalb11c10a19output="b11-c12"/>
+                            </div>
+                            <div>
+                                <input type="number" min="0" data-total15oumaiseixox="b10-c5c6c7c8" data-total15oumaiseixoxoutput="b10-c10" data-totalgeraleixox="b10-c1c2c3c4c5c6c7c8" data-totalgeraleixoxoutput="b10-c11" data-totalb11="b1b10-c7" data-totalb11output="b11-c7" data-totalb11c15oumais="b1b10-c5c6c7c8" data-totalb11c15oumaisoutput="b11-c10" data-totalgeralb11="b1b10-c1c2c3c4c5c6c7c8"data-totalgeralb11output="b11-c11" />
+                            </div>
+                            <div class="border-right-1">
+                                <input type="number" min="0" data-total15oumaiseixox="b10-c5c6c7c8" data-total15oumaiseixoxoutput="b10-c10" data-totalgeraleixox="b10-c1c2c3c4c5c6c7c8" data-totalgeraleixoxoutput="b10-c11" data-totalb11="b1b10-c8" data-totalb11output="b11-c8" data-totalb11c15oumais="b1b10-c5c6c7c8" data-totalb11c15oumaisoutput="b11-c10" data-totalgeralb11="b1b10-c1c2c3c4c5c6c7c8"data-totalgeralb11output="b11-c11"/>
+                            </div>
+                            <div>
+                                <input type="number" min="0" readonly class="b10-c9"/>
+                            </div>
+                            <div>
+                                <input type="number" min="0" readonly class="b10-c10"/>
+                            </div>
+                            <div class="border-right-1">
+                                <input type="number" min="0" readonly class="b10-c11"/>
+                            </div>
+                            <div>
+                                <input type="number" min="0" readonly class="b10-c12"/>
+                            </div>
+                        </div>
+
+                        <div class="linha b11">
+                            <div>
+                                <span>
+                                    B.11)
+                                </span>
+                            </div>
+                            <div>
+                                <span>Nº cumulativo de pacientes que iniciou TARV <br/>nesta unidade sanitária <strong>até ao fim do mês</strong><br/> (B.11 = B.1 + B.10)</span>
+                            </div>
+                            <div>
+                                <input type="number" min="0" readonly class="b11-c1" />
+                            </div>
+                            <div>
+                                <input type="number" min="0" readonly class="b11-c2" />
+                            </div>
+                            <div>
+                                <input type="number" min="0" readonly class="b11-c3" />
+                            </div>
+                            <div>
+                                <input type="number" min="0" readonly class="b11-c4" />
+                            </div>
+                            <div>
+                                <input type="number" min="0" readonly class="b11-c5" />
+                            </div>
+                            <div>
+                                <input type="number" min="0" readonly class="b11-c6" />
+                            </div>
+                            <div>
+                                <input type="number" min="0" readonly class="b11-c7" />
+                            </div>
+                            <div class="border-right-1">
+                                <input type="number" min="0" readonly class="b11-c8" />
+                            </div>
+                            <div>
+                                <input type="number" min="0" readonly class="b11-c9" />
+                            </div>
+                            <div>
+                                <input type="number" min="0" readonly class="b11-c10" />
+                            </div>
+                            <div class="border-right-1">
+                                <input type="number" min="0" readonly class="b11-c11" />
+                            </div>
+                            <div>
+                                <input type="number" min="0" readonly class="b11-c12" />
+                            </div>
+                        </div>
+
+                        <div class="linha b12">
+                            <div>
+                                <span>
+                                    B.12)
+                                </span>
+                            </div>
+                            <div>
+                                <span>Nº de activos em TARV <strong>até ao fim do mês anterior</strong> (copiar B.13 do mês anterior)</span>
+                            </div>
+                            <div>
+                                <input type="number" min="0" data-total0a14eixox="b12-c1c2c3c4" data-total0a14eixoxoutput="b12-c9" data-totalgeraleixox="b12-c1c2c3c4c5c6c7c8" data-totalgeraleixoxoutput="b12-c11"/>
+                            </div>
+                            <div>
+                                <input type="number" min="0" data-total0a14eixox="b12-c1c2c3c4" data-total0a14eixoxoutput="b12-c9" data-totalgeraleixox="b12-c1c2c3c4c5c6c7c8" data-totalgeraleixoxoutput="b12-c11"/>
+                            </div>
+                            <div>
+                                <input type="number" min="0" data-total0a14eixox="b12-c1c2c3c4" data-total0a14eixoxoutput="b12-c9" data-totalgeraleixox="b12-c1c2c3c4c5c6c7c8" data-totalgeraleixoxoutput="b12-c11" data-total10a19eixox="b12-c3c4c5c6" data-total10a19eixoxoutput="b12-c12" />
+                            </div>
+                            <div>
+                                <input type="number" min="0" data-total0a14eixox="b12-c1c2c3c4" data-total0a14eixoxoutput="b12-c9" data-totalgeraleixox="b12-c1c2c3c4c5c6c7c8" data-totalgeraleixoxoutput="b12-c11" data-total10a19eixox="b12-c3c4c5c6" data-total10a19eixoxoutput="b12-c12" />
+                            </div>
+                            <div>
+                                <input type="number" min="0" data-total15oumaiseixox="b12-c5c6c7c8" data-total15oumaiseixoxoutput="b12-c10" data-totalgeraleixox="b12-c1c2c3c4c5c6c7c8" data-totalgeraleixoxoutput="b12-c11" data-total10a19eixox="b12-c3c4c5c6" data-total10a19eixoxoutput="b12-c12" />
+                            </div>
+                            <div>
+                                <input type="number" min="0" data-total15oumaiseixox="b12-c5c6c7c8" data-total15oumaiseixoxoutput="b12-c10" data-totalgeraleixox="b12-c1c2c3c4c5c6c7c8" data-totalgeraleixoxoutput="b12-c11" data-total10a19eixox="b12-c3c4c5c6" data-total10a19eixoxoutput="b12-c12" />
+                            </div>
+                            <div>
+                                <input type="number" min="0" data-total15oumaiseixox="b12-c5c6c7c8" data-total15oumaiseixoxoutput="b12-c10" data-totalgeraleixox="b12-c1c2c3c4c5c6c7c8" data-totalgeraleixoxoutput="b12-c11" />
+                            </div>
+                            <div class="border-right-1">
+                                <input type="number" min="0" data-total15oumaiseixox="b12-c5c6c7c8" data-total15oumaiseixoxoutput="b12-c10" data-totalgeraleixox="b12-c1c2c3c4c5c6c7c8" data-totalgeraleixoxoutput="b12-c11"/>
+                            </div>
+                            <div>
+                                <input type="number" min="0" readonly class="b12-c9"/>
+                            </div>
+                            <div>
+                                <input type="number" min="0" readonly class="b12-c10"/>
+                            </div>
+                            <div class="border-right-1">
+                                <input type="number" min="0" readonly class="b12-c11"/>
+                            </div>
+                            <div>
+                                <input type="number" min="0" readonly class="b12-c12"/>
+                            </div>
+                        </div>
+
+                        <div class="linha b13">
+                            <div>
+                                <span>
+                                    B.13)
+                                </span>
+                            </div>
+                            <div>
+                                <span>Nº activos em TARV <strong>no fim do mês</strong> <br/> (B.13 = B.12 + B.4 - B.9)</span>
+                            </div>
+                            <div><input type="number" min="0" readonly/></div>
+                            <div><input type="number" min="0" readonly/></div>
+                            <div><input type="number" min="0" readonly/></div>
+                            <div><input type="number" min="0" readonly/></div>
+                            <div><input type="number" min="0" readonly/></div>
+                            <div><input type="number" min="0" readonly/></div>
+                            <div><input type="number" min="0" readonly/></div>
+                            <div class="border-right-1">
+                                <input type="number" min="0" readonly/>
+                            </div>
+                            <div><input type="number" min="0" readonly/></div>
+                            <div><input type="number" min="0" readonly/></div>
+                            <div class="border-right-1">
+                                <input type="number" min="0" readonly/>
+                            </div>
+                            <div><input type="number" min="0" readonly/></div>
+                        </div>
+                    </div>
+
+                    <div class="grade-extra superior">
+                        <div class="coluna-de-cs">
+                            <span>C.1)</span>
+                            <span>C.2)</span>
+                            <span>C.3)</span>
+                        </div>
+                        <div class="contentor-de-conteudo">
+                            <div>
+                                <span>Dos novos inscritos em cuidados durante o mês (A.2), subgrupo que foi rastreado para TB</span>
+                            </div>
+                            <div>
+                                <span>Dos novos inscritos em cuidados durante o mês (A.2), subgrupo de pacientes que iniciou profilaxia com <br/> isoniazida (TPI)</span>
+                            </div>
+                            <div>
+                                <span>Dos novos inscritos em cuidados durante o mês (A.2), subgrupo que foi diagnosticado com TB activa</span>
+                            </div>
+                        </div>
+                        <div class="coluna-de-total">
+                            <div class="header">
+                                <span>Total</span>
+                            </div>
+                            <div><input type="number" min="0" /></div>
+                            <div><input type="number" min="0" /></div>
+                            <div><input type="number" min="0" /></div>
+                        </div>
+                    </div>
+
+                    <div class="grade-extra intermedia">
+                        <div class="coluna-de-cs">
+                            <span>E.1)</span>
+                            <span>E.2)</span>
+                            <span>E.3)</span>
+                        </div>
+                        <div class="contentor-de-conteudo">
+                            <div>
+                                <span>Dos activos em TARV no fim do mês (B.13), subgrupo que <strong>realizou</strong> um teste de Carga Viral (CV)<br/> <strong>durante o  mês</strong> (Notificação anual!)</span>
+                            </div>
+                            <div>
+                                <span>Dos activos em TARV no fim do mês (B.13) subgrupo que <strong>recebeu um resultado</strong> de Carga Viral (CV)<br/> <strong>durante o  mês</strong> (Notificação anual!)</span>
+                            </div>
+                            
+                            <div>
+                                <span>Dos activos em TARV no fim do mês (B.13) subgrupo que <strong>recebeu resultado de CV com supressão virológica<br/> durante o mês</strong> (&lt; 1000 cópias/mL) (Notificação anual!)</span>
+                            </div>
+                        </div>
+                        
+                        <div class="coluna-de-total zero-catorze">
+                            <div class="header">
+                                <span>0-14 anos</span>
+                            </div>
+                            <div><input type="number" name="" id=""></div>
+                            <div><input type="number" name="" id=""></div>
+                            <div><input type="number" name="" id=""></div>
+                        </div>
+
+                        <div class="coluna-de-total quinze-mais">
+                            <div class="header">
+                                <span>15 /+ anos</span>
+                            </div>
+                            <div><input type="number" name="" id=""></div>
+                            <div><input type="number" name="" id=""></div>
+                            <div><input type="number" name="" id=""></div>
+                        </div>
+                        
+                    </div>
+
+                    <div class="grade-extra inferior">
+                        <div class="coluna-de-cs">
+                            <span>E.1)</span>
+                            <span>E.2)</span>
+                            <span>E.3)</span>
+                        </div>
+                        <div class="contentor-de-conteudo">
+                            <div>
+                                <span>Nº de pacientes que vieram à consulta <strong>durante o mês</strong></span>
+                            </div>
+                            <div>
+                                <span>Dos pacientes que vieram à consulta <strong>durante o mês</strong>, subgrupo que foi rastreado para TB</span>
+                            </div>
+                            <div>
+                                <span>Nº de pacientes que vieram pelo menos, à uma consulta durante o ANO (Notificação anual!)</span>
+                            </div>
+                        </div>
+                        <div class="coluna-de-total">
+                            <div class="header">
+                                <span>Total</span>
+                            </div>
+                            <div><input type="number" min="0" /></div>
+                            <div><input type="number" min="0" /></div>
+                            <div><input type="number" min="0" /></div>
+                        </div>
+                    </div>
+
+                    <div class="linha-de-assinatura">
+                        <div>
+                            <label for="nome">Nome</label>
+                            <input type="text"  id="nome" />
+                        </div>
+                        <div>
+                            <label for="assinatura">Nome</label>
+                            <input type="text"  id="assinatura" />
+                        </div>
+                        <div>
+                            <label for="data">Data</label>
+                            <input type="date"  id="data" />
+                        </div>
+                    </div>
+                </div>
+            </main>
+
+            <footer>
+            
+                <div class="linha-do-rodape">
+                    <div class="hiperligacoes">
+                        <h4>Hiperligações para outros serviços relacionados</h4>
+                        <ul>
+        
+                            <li>
+                                <a href="https://quinamine.github.io/relatoriosclinicos/totalizador-de-resumo-mensal-de-consultas-externas.html" target="_blank">Totalizador de Resumo Mensal de Consultas Externas</a>
+                            </li>
+                            <li>
+                                <a href="https://quinamine.github.io/abordagem-pediatrica/index.html" id="abordagem-pediatrica" target="_blank">Abordagem Pediátrica</a>
+                                <ul>
+                                    <li>
+                                        <a href="https://quinamine.github.io/abordagem-pediatrica/paginas/doseador-de-arvs.html" target="_blank">Doseador pediátrico de antirretrovirais</a>
+                                    </li>
+                                    <li>
+                                        <a href="https://quinamine.github.io/abordagem-pediatrica/paginas/calculadora-de-doses.html" target="_blank">Calculadora de doses pediátricas</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            
+                        </ul>       
+                    </div>
+    
+                    <p>Desenvolvido com &#128153; por <a href="https://quinamine.github.io/abordagem-pediatrica/paginas/sobremim.html">Adérito Félix Quinamine</a> | &copy; 2022 - Totalizador de Resumo Mensal de HIV/SIDA</p>
+    
+                    <a href="#involucro" class="voltar">Voltar ao topo</a>
+                </div>
+            </footer>
+        </div>
+    </body>
+</html>
+

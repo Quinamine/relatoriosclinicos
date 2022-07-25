@@ -33,15 +33,13 @@
     <link rel="stylesheet" href="estilos/print.css" />
 
     <!-- FUNCIONALIDADES -->
+    <script src="funcoes/backup.js"></script>
     <script src="funcoes/soma.js"></script>
-    <script src="funcoes/backup-rmce.js"></script>
-    <script src="funcoes/totalizador-rmce.js"></script>
-    <script src="funcoes/desfocarfundo.js"></script>
+    <script src="funcoes/totalizador.js"></script>
     <script src="funcoes/pesquisarlinha.js"></script>
-    <script src="funcoes/customizacao.js"></script>
-    <script src="funcoes/menumobile.js"></script>
+    <script src="funcoes/menu.js"></script>
     <script src="funcoes/referencia.js"></script>
-    <script src="funcoes/avisodecookies.js"></script>
+    <script src="funcoes/cookies.js"></script>
     <script src="https://kit.fontawesome.com/bddeb642f0.js" crossorigin="anonymous"></script>
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -2141,36 +2139,36 @@
                         </div>
 
                         <h4>Dados adicionais</h4>
-                        <ul>
+                        <ul class="limpadores-de-dados-adicionais">
                             <li>
-                                <input type="checkbox" id="nome-da-us" checked/>
-                                <label for="mome-da-us">Nome da US</label>
+                                <input type="checkbox" id="us" checked data-for="nome-da-us" />
+                                <label for="us">Nome da US</label>
                             </li>
                             <li>
-                                <input type="checkbox" id="month" checked/>
+                                <input type="checkbox" id="month" checked data-for="mes" />
                                 <label for="month">Mês</label>
                             </li>
                             <li>
-                                <input type="checkbox" id="nome" checked/>
+                                <input type="checkbox" id="nome" checked data-for="nome-do-ps"/>
                                 <label for="nome">Nome do responsável pelo preenchimento</label>
                             </li>
                             <li>
-                                <input type="checkbox" id="ocupacao" checked/>
+                                <input type="checkbox" id="ocupacao" checked data-for="categoria"/>
                                 <label for="ocupacao">Categoria</label>
                             </li>
 
                             <li>
-                                <input type="checkbox" id="date" checked/>
+                                <input type="checkbox" id="date" checked data-for="data-de-realizacao"/>
                                 <label for="date">Data</label>
                             </li>
                         </ul>
 
                         <div class="botoes-de-confirmacao">
                             <button class="cancelar">Cancelar</button>
-                            <button class="esvaziar">Esvaziar</button>
+                            <button class="confirmar" data-ficha="coluna-de-inputs" data-prefixodakeystorage="trmce-">Confirmar</button>
                         </div>
                     </div>
-                    <p class="resposta-para-ficha-vazia">A ficha encontra-se vazia.</p>
+                    <p class="alerta-para-ficha-vazia">A ficha encontra-se vazia.</p>
                 </section>
 
                 <!-- Atalhos do teclado -->
@@ -2183,10 +2181,13 @@
                     <p>Use a combinação das teclas abaixo para acessar as funcionalidades mais rapidamente e flexibilizar a navegação.</p>
                     <ul>
                         <li>
-                            <kbd>Ctrl</kbd> + <kbd>Space</kbd> (tecla de espaço) - Denegrir as células automáticas;
+                            <kbd>Ctrl</kbd> + <kbd>B</kbd> - Ir para linha (mostrar a caixa de pesquisa de linha);
                         </li>
                         <li>
-                            <kbd>Ctrl</kbd> + <kbd>B</kbd> - Ir para linha (pesquisar por linha);
+                            <kbd>Tab</kbd> - Migrar o cursor de uma célula para outra no eixo vertical (de cima para baixo);
+                        </li>
+                        <li>
+                            <kbd>Shift</kbd> + <kbd>Tab</kbd> - Migrar o cursor de uma célula para outra no eixo vertical (de baixo para cima);
                         </li>
                         <li>
                             <kbd>Ctrl</kbd> + <kbd>P</kbd> - Imprimir a ficha.
@@ -2199,10 +2200,10 @@
 
             <div class="aviso-de-uso-de-cookies">
                 <p>
-                    A fim de melhorar a sua experiência de navegação, esta plataforma utiliza tecnologias paralelas à cookies e, ao usá-la, você concorda com os <a href="totalizadordermce/politica-de-cookies.html">termos de serviço e armazenamento definidos qui, de acordo com a minha política de cookies</a>.
+                    Este serviço faz uso de "cookies" em conformidade com os respectivos <a href="totalizadordermce/politica-de-cookies.html">termos de serviço e armazenamento descritos aqui</a>, a fim melhorar a sua experiência de utilização. A aceitação de tais termos é dada pela utilização do Totalizador.
                 </p>
     
-                <button class="aceitar-cookies">Prosseguir</button>
+                <button class="aceitar-cookies" data-sessionkey="trmce-cookies">Prosseguir</button>
             </div> 
         </main>
 

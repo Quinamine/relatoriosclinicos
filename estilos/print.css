@@ -16,6 +16,10 @@
         margin-bottom: 0;
     } 
 
+    .rmhiv main {
+        width: 1024px;
+    }
+
     .contentor-da-ficha,
     .ficha {
         visibility: initial;

@@ -1,7 +1,7 @@
  
 const backup = {
 
-    saveGridData() {
+    saveAndReturnGridData() {
         const celulas = document.querySelectorAll(".grade input");
 
         for (let i = 0; i < celulas.length; i++) {
@@ -10,13 +10,13 @@ const backup = {
         }
     },
 
-    saveAditionalData() {
+    saveAndReturnAdicionalData() {
         const dadosAdicionais = document.querySelectorAll(".ficha header input, .linha-de-assinatura input");
 
-        for (let i = 0; i < extraInputs.length; i++) {
-            extraInputs[i].addEventListener("input", () => localStorage.setItem(`trmhiv-${extraInputs[i].id}`, `${extraInputs[i].value}`));
+        for (let i = 0; i < dadosAdicionais.length; i++) {
+            dadosAdicionais[i].addEventListener("input", () => localStorage.setItem(`trmhiv-${dadosAdicionais[i].id}`, `${dadosAdicionais[i].value}`));
 
-            extraInputs[i].value = localStorage.getItem(`trmhiv-${extraInputs[i].id}`);
+            dadosAdicionais[i].value = localStorage.getItem(`trmhiv-${dadosAdicionais[i].id}`);
         }
 
     }
@@ -24,6 +24,6 @@ const backup = {
 
 
 window.addEventListener("load", () => {
-    backup.saveGridData();
-    backup.saveAditionalData();
+    backup.saveAndReturnGridData();
+    backup.saveAndReturnAdicionalData();
 })

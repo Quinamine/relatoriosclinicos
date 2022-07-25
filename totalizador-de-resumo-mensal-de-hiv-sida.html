@@ -21,13 +21,15 @@
         <link rel="stylesheet" href="estilos/reset.css" />
         <link rel="stylesheet" href="estilos/layout.css" />
         <link rel="stylesheet" href="estilos/fichadermhiv.css" />
+        <link rel="stylesheet" href="estilos/manipulacaodomenu.css" />
         <link rel="stylesheet" href="estilos/print.css" />
 
         <!-- INTERATIVIDADE -->
         <script src="funcoes/soma.js"></script>
         <script src="funcoes/backup-rmhiv.js"></script>
         <script src="funcoes/totalizador-rmhiv.js"></script>
-        <script src="funcoes/customizacao.js"></script>
+        <script src="funcoes/menu.js"></script>
+        <script src="funcoes/cookies.js"></script>
 
         <!-- Global site tag (gtag.js) - Google Analytics -->
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-N0KRLP03SB"></script>
@@ -1115,6 +1117,98 @@
                         </div>
                     </footer>
                 </div>
+
+                <div class="manipulacao-do-menu">
+
+                    <!-- Acessar subtotais -->
+                    <p class="aviso-de-restricao-de-acesso-a-readonlyinputs">
+                        Acesso restrito. Esta célula é apenas de leitura. <span class="recomendacao">Para distinguir as células de leitura das outras, marque a opção <b>"Destacar as células automáticas"</b> </span>
+                    </p> 
+    
+                    <!-- Esvaziar ficha -->
+                    <section class="esvaziamento-da-ficha">
+                        <div class="caixa-de-confirmacao">
+                            <h3>Esvaziar ficha</h3>
+    
+                            <p>Tem certeza de que pretende esvaziar a ficha?</p>
+    
+                            <div class="alerta">
+                                <svg style="width: 40px; height: 40px; ">
+    
+                                    <linearGradient id="meuGradiente" x1="0%" y1="0%" x2="0%" y2="100%">
+                                        <stop offset="0%" style="stop-color: #aaa" />
+                                        <stop offset="100%" style="stop-color: yellow" />
+                                    </linearGradient>>
+    
+                                    <polygon points="20,0 40,40, 0,40" fill="url(#meuGradiente)" stroke-width="1" stroke="#333"/>
+    
+                                    <text x="15.335" y="35.5" style="font-weight: bold; font-size: 28px">!</text>
+                                </svg>
+    
+                                <p>Esta acção não pode ser desfeita.</p>
+    
+                            </div>
+    
+                            <h4>Dados adicionais</h4>
+                            <ul class="limpadores-de-dados-adicionais">
+                                <li>
+                                    <input type="checkbox" id="nome-da-provincia" checked data-for="provincia"/>
+                                    <label for="nome-da-provincia">Província</label>
+                                </li>
+                                <li>
+                                    <input type="checkbox" id="nome-do-distrito" checked data-for="distrito"/>
+                                    <label for="nome-do-distrito">Distrito</label>
+                                </li>
+                                <li>
+                                    <input type="checkbox" id="nome-da-us" checked data-for="us"/>
+                                    <label for="mome-da-us">Unidade Sanitária</label>
+                                </li>
+                                <li>
+                                    <input type="checkbox" id="mueri" checked data-for="mes"/>
+                                    <label for="mueri">Mês</label>
+                                </li>
+                                <li>
+                                    <input type="checkbox" id="muaka" checked data-for="ano"/>
+                                    <label for="muaka">Ano</label>
+                                </li>
+                                <li>
+                                    <input type="checkbox" id="nid-da-us" checked data-for="nid"/>
+                                    <label for="nid-da-us">NID da Unidade Sanitária</label>
+                                </li>
+                                <li>
+                                    <input type="checkbox" id="nome-do-ps" checked data-for="nome"/>
+                                    <label for="nome-do-ps">Nome do <span title="Profissional de Saúde">PS</span> que preencheu</label>
+                                </li>
+                                <li>
+                                    <input type="checkbox" id="assinatura-do-ps" checked data-for="assinatura"/>
+                                    <label for="nome-do-ps">Assinatura do <span title="Profissional de Saúde">PS</span> que preencheu</label>
+                                </li>
+
+                                <li>
+                                    <input type="checkbox" id="data-de-realizacao" checked data-for="data"/>
+                                    <label for="nome-do-ps">Data de realização</label>
+                                </li>
+
+    
+                            </ul>
+    
+                            <div class="botoes-de-confirmacao">
+                                <button class="cancelar">Cancelar</button>
+                                <button class="confirmar" data-ficha="ficha" data-prefixodakeystorage="trmhiv-" >Confirmar</button>
+                            </div>
+                        </div>
+                        <p class="resposta-para-ficha-vazia">A ficha encontra-se vazia.</p>
+                    </section>
+    
+                </div>
+    
+                <div class="aviso-de-uso-de-cookies">
+                    <p> 
+                        A fim de melhorar a sua experiência de utilização, o Totalizador faz uso de "cookies" de acordo os respectivos <a href="totalizadordermhiv/politica-de-cookies.html">termos de serviço e armazenamento descritos aqui</a>.
+                    </p>
+        
+                    <button class="aceitar-cookies" data-sessionkey="trmhiv-cookies">Consinto</button>
+                </div> 
             </main>
 
             <footer>
@@ -1148,6 +1242,7 @@
                 </div>
             </footer>
         </div>
+        <div class="desfoque-do-fundo"></div> 
     </body>
 </html>
 

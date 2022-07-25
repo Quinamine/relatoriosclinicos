@@ -83,7 +83,7 @@ input[readonly] {
 }
 
 input[readonly].gray {
-    background-color: var(--cinza12);
+    background-color: var(--cinza12) !important;
 }
 
 #involucro > header, 
@@ -149,8 +149,9 @@ input[readonly].gray {
 }
 
 .menu ul li input[type=checkbox] {
-    width: 10px;
-    height: 10px;
+    width: 12px;
+    height: 11px;
+    margin-top: 1px;
     margin-right: 4px;
     cursor: pointer;
 }

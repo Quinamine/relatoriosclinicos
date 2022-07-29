@@ -19,6 +19,27 @@ const backup = {
             dadosAdicionais[i].value = localStorage.getItem(`trmhiv-${dadosAdicionais[i].id}`);
         }
 
+    },
+
+    saveAndEReturnReadonlyInputsDarkness: () => {
+        const readonlyInputsDarker = document.querySelector("#readonlyinputs-darker");
+    
+        readonlyInputsDarker.addEventListener("change", () => {
+            if(readonlyInputsDarker.checked) {
+                localStorage.setItem("darkness", "on");
+            }
+            else {
+                localStorage.removeItem("darkness");
+            }
+        })
+        
+        if(localStorage.getItem("darkness")){
+            readonlyInputsDarker.setAttribute("checked", "");
+        }
+        else {
+            readonlyInputsDarker.removeAttribute("checked");
+        }     
+        menu.destacarReadonlyInputs();
     }
 }
 
@@ -26,4 +47,5 @@ const backup = {
 window.addEventListener("load", () => {
     backup.saveAndReturnGridData();
     backup.saveAndReturnAdicionalData();
+    backup.saveAndEReturnReadonlyInputsDarkness();
 })

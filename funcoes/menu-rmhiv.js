@@ -24,13 +24,12 @@ const  menu = {
             recomendacao.classList.add("on");
             duracaoDoAviso = 6000;
         }
-
         setTimeout( () => {aviso.classList.remove("on");}, duracaoDoAviso);
     },
 
     esvaziamento() {
         const confirmacao = document.querySelector(".caixa-de-confirmacao");
-        const celulas = document.querySelectorAll(".coluna-de-inputs input");
+        const celulas = document.querySelectorAll(".grade input");
         return {
             mostrarCaixaDeConfirmacao: () => {
                 let celulasPreenchidas = 0;
@@ -59,7 +58,7 @@ const  menu = {
 
                 for (let i = 0; i < celulas.length; i++) {
                     celulas[i].value = "";
-                    localStorage.removeItem(`trmce-cel${i}`);
+                    localStorage.removeItem(`trmhiv-c${i}`);
                     celulas[i].classList.remove("bg-red");
                 };
 
@@ -68,25 +67,12 @@ const  menu = {
                         const IdDoDadoAdicional = limpador.dataset.for; 
                         const dadoAdicional = document.querySelector(`#${IdDoDadoAdicional}`);
                         dadoAdicional.value = "";
-                        localStorage.removeItem(`trmce-${IdDoDadoAdicional}`);
+                        localStorage.removeItem(`trmhiv-${IdDoDadoAdicional}`);
                     }
                 }); 
-
                 focarFundo();  
             }
         }
-    },
-
-    abrirAtalhosDoTeclado() {
-        const atalhosDoTeclado = document.querySelector(".atalhos-do-teclado");
-        atalhosDoTeclado.classList.add("on");
-        desfocarFundo();
-    },
-
-    fecharAtalhosDoTeclado() {
-        const atalhosDoTeclado = document.querySelector(".atalhos-do-teclado");
-        atalhosDoTeclado.classList.remove("on");
-        focarFundo();
     }
 }   
 
@@ -115,22 +101,14 @@ window.addEventListener("load", () => {
     botaoConfirmar.addEventListener("click", () => {
         menu.esvaziamento().limparDados();
         menu.esvaziamento().omitirCaixaDeConfirmacao();
-        
     });
 
-    // Abrir Atalhos
-    const botaoAbrirAtalhos = document.querySelector(".abrir-atalhos-do-teclado");
-    botaoAbrirAtalhos.addEventListener("click", () => menu.abrirAtalhosDoTeclado());
-
-    const botaoFecharAtalhos = document.querySelector(".fechar-atalhos-do-teclado");
-    botaoFecharAtalhos.addEventListener("click", () => menu.fecharAtalhosDoTeclado());
-
     // Restricao de acesso a Readonly Inputs
-    const readonlyInputElements = document.querySelectorAll(".contentor-da-ficha input[readonly]");
+    const readonlyInputElements = document.querySelectorAll(".ficha input[readonly]");
     readonlyInputElements.forEach ( inputElement => {
         inputElement.addEventListener("click", () =>  menu.restringirAcessoAReadonlyInputs());
     });
-   
+    
 })
 
 

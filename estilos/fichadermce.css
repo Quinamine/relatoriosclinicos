@@ -50,12 +50,12 @@ input {
     grid-template-rows: 18px;
 }
 
-.linha-de-enumeracao-das-colunas p {
+.linha-de-enumeracao-das-colunas div {
     text-align: left;
     margin-bottom: 14px;
 }
 
-.linha-de-enumeracao-das-colunas p input {
+.linha-de-enumeracao-das-colunas div input {
     width: 84%;
     font-weight: bold;
     border-bottom: none;

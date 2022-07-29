@@ -13,7 +13,7 @@
     <!-- PARTILHA NAS REDES SOCIAIS -->
     <meta property="og:url" content="https://www.quinamine.github.io/relatoriosclinicos/totalizador-de-resumo-mensal-de-consultas-externas.html" />
 
-    <meta property="og:title" content="Totalizador de Resumo Mensal de Consultas Externas" >
+    <meta property="og:title" content="Totalizador de Resumo Mensal de Consultas Externas" />
     
     <meta property="og:description" content="Auxilia na elaboração do resumo totalizando-o automaticamente com base nos dados inseridos pelo Profissional (usuário). A sua estrutura é idêntica ao modelo da ficha actualmente vigente no SNS em Moçambique." />
 
@@ -40,6 +40,7 @@
     <script src="funcoes/menu.js"></script>
     <script src="funcoes/referencia.js"></script>
     <script src="funcoes/cookies.js"></script>
+    <script src="funcoes/input.js"></script>
     <script src="https://kit.fontawesome.com/bddeb642f0.js" crossorigin="anonymous"></script>
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -64,7 +65,7 @@
                 <section class="menu" role="navigation">
                     <ul>
                         <li class="destacar-as-celulas-automaticas" 
-                            title="Escurecer o fundo de Subtotais e Totais. (Ctrl + Tecla de espaço)">
+                            title="Escurecer o fundo de Subtotais e Totais">
                             <input type="checkbox" id="readonlyinputs-darker"/> 
                             <label for="readonlyinputs-darker">Destacar as células automáticas</label>
                         </li>
@@ -117,10 +118,10 @@
                     </h1>
 
                     <section class="linha-de-enumeracao-das-colunas">
-                        <p>
+                        <div>
                             <label for="mes">Mês:</label>
                             <input type="text" id="mes" />
-                        </p>
+                        </div>
 
                         <span class="marginleft-1">1</span>
                         <span>2</span>
@@ -2195,7 +2196,30 @@
                     </ul> 
    
                 </article>
-                  
+
+                <!-- Motivo inputs com fundo vermelho -->
+                <div class="razao-pelas-celulas-com-fundo-vermelho">
+                    <h2>Por que algumas células estão com o fundo vermelho?</h2>
+                    <p class="obs">
+                        <strong>
+                            Toda célula cujo fundo está vermelho tem UM ou MAIS algarismos omissos por indisponibilidade de espaço na respectiva célula.
+                        </strong>
+                    </p>
+                    <p>
+                        Cada célula do Totalizador tem espaço cabível no máximo para 7 algarismos visivelmente, portanto, mostra valores até <b>9 999 999</b>. A partir de 10&nbsp;000&nbsp;000, só ficam visíveis os primeiros 7 algarismos e do 8º em diate, ficam fora da viewport (área visível).
+                    </p>
+                    <p class="obs afirmacao">
+                        Convenhamos, não existe nenhuma Unidade Sanitária em Moçambique que durante 1 mês tenha um número de consultas próximo, igual ou acima de 10&nbsp;000&nbsp;000.
+                    </p>
+                    <div class="seccao-de-interatividade">
+                        <div>
+                            <input type="checkbox" id="nao-mostrar-mais" />
+                            <label for="nao-mostrar-mais">Não mostrar mais</label>
+                        </div>
+                        <button class="close-redcels-obs">Fechar</button>
+                    </div>
+                </div>
+             
             </div>
 
             <div class="aviso-de-uso-de-cookies">
@@ -2207,7 +2231,7 @@
             </div> 
         </main>
 
-        <div class="linha-de-referencia on">
+        <div class="linha-de-referencia">
             <div class="referencia">      
                 <h3>
                     <span>Referência</span>

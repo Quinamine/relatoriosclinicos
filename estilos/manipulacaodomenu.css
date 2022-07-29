@@ -1,14 +1,14 @@
 /* REUTILIZAVEL */
 
 p.aviso-de-restricao-de-acesso-a-readonlyinputs {
-    max-width: 263px;
+    max-width: 253px;
     padding: 10px;
     border-radius: 6px;
-    font-size: 14px;
+    font-size: 0.8125rem;
     position: fixed;
     bottom: -263px;
     opacity: 0;
-    left: calc(50vw - 262px * 1/2);
+    left: calc(50vw - 253px * 1/2);
     box-shadow: 0 0 15px var(--cinza5);
     background-color: var(--white);
     line-height: 1.4;
@@ -18,9 +18,6 @@ p.aviso-de-restricao-de-acesso-a-readonlyinputs {
 
 
 @-moz-document url-prefix() {
-    p.aviso-de-restricao-de-acesso-a-readonlyinputs {
-        max-width: 270px;
-    }
 
     .linha-de-assinatura p:first-child input {
         width: 305px;
@@ -55,7 +52,6 @@ p.aviso-de-restricao-de-acesso-a-readonlyinputs > span.recomendacao.on {
     right: calc(50vw - 257px / 2);
     transition: top 150ms linear;
     visibility: hidden;
-    z-index: 2;
 }
 
 .caixa-de-pesquisa.on {
@@ -97,16 +93,14 @@ p.aviso-de-restricao-de-acesso-a-readonlyinputs > span.recomendacao.on {
 }
 
 .query-sem-resultados {
-    max-width: 320px;
-    padding: 8px;
+    padding: 18px;
     position: fixed;
     top: -133px;
-    left: calc(50vw - 302.17px / 2);
-    border-radius: 4px;
+    left: calc(50vw - 326.52px / 2);
     background-color: var(--white);
     transition: top 50ms linear;
     visibility: hidden;
-    z-index: 2;
+    font-size: 0.8125rem;
 }
 
 .query-sem-resultados.on {
@@ -116,8 +110,8 @@ p.aviso-de-restricao-de-acesso-a-readonlyinputs > span.recomendacao.on {
 }
 
 .query-sem-resultados p {
-    padding: 8px;
     line-height: 1.5;
+    margin-bottom: 18px;
 }
 
 .query-sem-resultados p:nth-child(2) {
@@ -130,10 +124,10 @@ p.aviso-de-restricao-de-acesso-a-readonlyinputs > span.recomendacao.on {
     color: var(--cinza13);
     border-radius: 5px;
     padding: 4px;
-    margin: 8px 8px 8px auto;
+    margin-left: auto;
     background-color: var(--cinza4);
     line-height: 1.5;
-    font-size: 12px;
+    font-size: 0.8125rem;
 }
 
 .query-sem-resultados button:hover {
@@ -153,9 +147,9 @@ p.aviso-de-restricao-de-acesso-a-readonlyinputs > span.recomendacao.on {
     right: 0;
     background: var(--white);
     transition: top 50ms linear;
-    z-index: 2;
     visibility: hidden;
     overflow-y: auto;
+    z-index: 2;
 }  
 
 .atalhos-do-teclado.on {
@@ -236,7 +230,6 @@ button.fechar-atalhos-do-teclado:active {
     padding: 20px;
     display: none;
     z-index: 2;
-    font-weight: initial;
 }
 
 .caixa-de-confirmacao.on {
@@ -270,6 +263,28 @@ button.fechar-atalhos-do-teclado:active {
     margin-top: 10px;
 }
 
+.rmhiv .caixa-de-confirmacao ul {
+    max-height: 142px;
+    overflow-y: auto;
+}
+
+.rmhiv .caixa-de-confirmacao ul::-webkit-scrollbar {
+    width: 8px;
+}
+
+.rmhiv .caixa-de-confirmacao ul::-webkit-scrollbar-thumb {
+    background-color: var(--cinza8);
+    border-radius: 40px;
+}
+
+.rmhiv .caixa-de-confirmacao ul::-webkit-scrollbar-thumb:hover {
+    background-color: var(--cinza10);
+}
+
+.rmhiv .caixa-de-confirmacao ul::-webkit-scrollbar-thumb:active {
+    background-color: var(--cinza8);
+}
+
 .caixa-de-confirmacao ul li {
     display: flex;
 }
@@ -293,8 +308,8 @@ button.fechar-atalhos-do-teclado:active {
 
 .botoes-de-confirmacao button {
     width: calc(50% - 5px);
-    font-size: 14px;
-    padding: 5px 0;
+    font-size: 0.8125rem;
+    padding: 6px 0;
     border-radius: 4px;
 }
 
@@ -332,7 +347,12 @@ p.alerta-para-ficha-vazia {
     background-color: var(--white);
     border-radius: 5px;
     box-shadow: 0 0 8px var(--cinza5);
-}
+}    
+
+.rmhiv .esvaziamento-da-ficha 
+p.alerta-para-ficha-vazia {
+    left: calc(50vw - 179.19px / 2);
+}   
 
 .esvaziamento-da-ficha 
 p.alerta-para-ficha-vazia.on {
@@ -352,14 +372,18 @@ p.alerta-para-ficha-vazia.on {
     right: calc(50vw - 1300px / 2);
     box-shadow: 0 0 8px var(--cinza8);
     background: var(--white);
-    font-size: 14px;
-    z-index: 10;
+    font-size: 0.875rem;
     background: var(--blackalpha8); 
     color: var(--cinza13);
     visibility: hidden;
     transition: bottom 150ms ease;
+    z-index: 10;
 }
 
+.rmhiv .aviso-de-uso-de-cookies {
+    max-width: 992px;
+    right: calc(50vw - 1010px / 2 );
+}
 .aviso-de-uso-de-cookies.on {
     bottom: 20px;
     visibility: visible;
@@ -405,5 +429,90 @@ p.alerta-para-ficha-vazia.on {
     font-weight: bold;
 }
 
+/* MAIS DE 8 ALGARISMOS */
+.razao-pelas-celulas-com-fundo-vermelho {
+    max-width: 530px;
+    position: fixed;
+    top: -105vh;
+    visibility: hidden;
+    right: calc(50vw - 530px / 2);
+    background-color: var(--white);
+    box-shadow: 0 0 10px var(--cinza5);
+    padding: 15px;
+    line-height: 1.5;
+    font-size: 0.8125rem;
+    transition: top 150ms ease;
+    z-index: 10;
+}
 
+.razao-pelas-celulas-com-fundo-vermelho.on {
+    top: calc(50vh - 320px / 2);
+    visibility: visible;
+}
+
+.razao-pelas-celulas-com-fundo-vermelho h2 {
+    font-size: 1.125rem;
+}
+
+.razao-pelas-celulas-com-fundo-vermelho p {
+    margin: 20px 0 20px 16px;
+}
+
+.razao-pelas-celulas-com-fundo-vermelho p.obs {
+    margin-left: 0;
+    padding-left: 10px;
+    border-left: 6px solid var(--red);
+    border-radius: 0 4px 4px 0;
+    font-weight: bold;
+}
+
+.razao-pelas-celulas-com-fundo-vermelho > p.afirmacao {
+    border-color: var(--cinza4) !important;
+}
+
+.rmhiv .razao-pelas-celulas-com-fundo-vermelho p strong {
+    text-decoration: none;
+}
+
+.razao-pelas-celulas-com-fundo-vermelho 
+.seccao-de-interatividade {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.seccao-de-interatividade > div {
+    display: flex;
+    align-items: center;
+}
+
+.seccao-de-interatividade > div input {
+    height: 15px;
+    margin: 0 4px 0 0;
+}
+
+.seccao-de-interatividade > div input:hover, 
+.seccao-de-interatividade > div label:hover {
+    cursor: pointer;
+    opacity: .8;
+}
+
+.seccao-de-interatividade > div input:active, 
+.seccao-de-interatividade > div label:active {
+    opacity: 1;
+}
+
+.seccao-de-interatividade > button {
+    background-color: var(--white);
+    padding: 5px;
+    border: 1px solid var(--cinza10);
+}
+
+.seccao-de-interatividade > button:hover {
+    background-color: #f0f0f0;
+}
+
+.seccao-de-interatividade > button:active {
+    background-color: #ddd;
+}
 

@@ -364,7 +364,6 @@ p.alerta-para-ficha-vazia.on {
 .aviso-de-uso-de-cookies {
     width: 100%;
     max-width: 1290px;
-    margin: 0 auto;
     position: fixed;
     bottom: -132px;
     line-height: 1.5;
@@ -506,6 +505,8 @@ p.alerta-para-ficha-vazia.on {
     background-color: var(--white);
     padding: 5px;
     border: 1px solid var(--cinza10);
+    font-size: 0.8125rem;
+    display: block;
 }
 
 .seccao-de-interatividade > button:hover {

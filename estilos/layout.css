@@ -283,7 +283,7 @@ a#abordagem-pediatrica + ul {
 
 /* LINHA DE REFERENCIA */
 .linha-de-referencia {
-    display: block;
+    display: none;
     width: 100%;
     position: fixed;
     bottom: -36px;
@@ -316,7 +316,7 @@ a#abordagem-pediatrica + ul {
     align-items: center;
 }
 
-.referencia h3 span.ref {
+.referencia h3 b.ref {
     display: none;
 }
 .referencia h3, .referencia output {
@@ -388,7 +388,8 @@ input.font11 {
     font-size: 0.7375rem;
 }
 
-input.bg-red {
-    background-color: var(--red);
+input.bg-red, 
+input[readonly].gray.bg-red {
+    background-color: var(--red) !important;
     color: #fff;
 }

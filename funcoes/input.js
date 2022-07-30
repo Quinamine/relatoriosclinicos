@@ -40,7 +40,7 @@ const input = {
 
 let celulas, motivo;
 window.addEventListener("load", () => {
-    celulas = document.querySelectorAll(".contentor-da-ficha input");
+    celulas = document.querySelectorAll(".coluna-de-inputs input");
     motivo = document.querySelector(".razao-pelas-celulas-com-fundo-vermelho");
     const btnOmitirMotivo = document.querySelector(".close-redcels-obs");
 

@@ -7,8 +7,8 @@ const sexo = ["F", "M"];
 const Referencia = {
 
     mostrarIdadeESexo (outputFaixaEtaria, outputSexo) {
-        const colunas = document.querySelectorAll(".col-de-inputs");
-        const celulas = document.querySelectorAll(".col-de-inputs input");
+        const colunas = document.querySelectorAll(".coluna-de-inputs");
+        const celulas = document.querySelectorAll(".coluna-de-inputs input");
     
         for (let i = 0; i < celulas.length; i++) {
             celulas[i].addEventListener("focus", () => {
@@ -18,9 +18,9 @@ const Referencia = {
                 let currentCelParent = celulas[i].parentElement;
                 let parentIndex;
     
-                for (let p = 0; p < colunas.length; p++) {
-                    if(colunas[p] == currentCelParent) {
-                        parentIndex = p;
+                for (let index = 0; index < colunas.length; index++) {
+                    if(colunas[index] == currentCelParent) {
+                        parentIndex = index;
                     }
                 }
     
@@ -51,9 +51,9 @@ const Referencia = {
         outputSexo.innerHTML = "";
     },
 
-    mostrarOuOmitirConteudo () {
+    mostrarOuOmitirRef () {
         const referencia = document.querySelector(".linha-de-referencia");
-        const cabecalhoDaFicha = document.querySelector(".col-da-linha-superior");
+        const cabecalhoDaFicha = document.querySelector(".cabecalho-da-ficha");
         const posicao = cabecalhoDaFicha.getBoundingClientRect().top;
 
         posicao < 0 ? referencia.classList.add("on") : referencia.classList.remove("on");
@@ -75,7 +75,7 @@ window.addEventListener("load", () => {
     })
 
     // Omitir a linha de referência quando a linha de Faixas-etárias e Sexo estiver visível
-    window.addEventListener("scroll", () =>  Referencia.mostrarOuOmitirConteudo());  
+    window.addEventListener("scroll", () =>  Referencia.mostrarOuOmitirRef());  
 })
 
 

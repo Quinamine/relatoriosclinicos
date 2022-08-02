@@ -91,15 +91,7 @@ const  menu = {
 }   
 
 
-const desfocarFundo = () => divDesfocante.classList.add("on");
-const focarFundo = () => divDesfocante.classList.remove("on");
-
-let divDesfocante;
 window.addEventListener("load", () => {
-    // VARIÁVEIS GLOBAIS
-    divDesfocante = document.querySelector(".desfoque-do-fundo");
-   
-    
     // Destacar células
     const readonlyInputsDarker = document.querySelector("#readonlyinputs-darker");
     readonlyInputsDarker.addEventListener("change", () => menu.destacarReadonlyInputs());

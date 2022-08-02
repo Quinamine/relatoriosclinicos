@@ -1,4 +1,5 @@
-/* FORMATACOES GERAIS */
+/* FORMATAÇÕES GERAIS */
+
 :root {
     --fullblack: #000000;
     --blackalpha5: rgba(0, 0, 0, .5);
@@ -23,10 +24,23 @@
     --orange: #faa032;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     font-family: sans-serif, Arial, Helvetica !important;
     font-size: 0.75rem;
     color: var(--cinza3);
+}
+
+*::selection {
+    background-color: var(--cinza4);
+    color: var(--white);
+}
+
+.rmhiv *::selection {
+    background-color: var(--azulminiopaco);
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -94,17 +108,29 @@ input[readonly].gray {
     width: 100%;
 }
 
-/* HEADER */
+.linha-do-cabecalho, 
+.linha-do-rodape {
+    max-width: 1300px;
+    margin: 0 auto;
+}
+
+.rmhiv .linha-do-cabecalho,
+.rmhiv .linha-do-rodape {
+    max-width: 992px;
+}
+
+/* CABEÇALHO */
 
 #involucro > header {
     box-shadow: 0 0 10px var(--cinza13);
     line-height: 2;
 }
 
-.linha-do-cabecalho, 
-.linha-do-rodape {
-    max-width: 1300px;
-    margin: 0 auto;
+#involucro.rmhiv > header {
+    position: sticky;
+    top: 0;
+    background-color: var(--white);
+    z-index: 1;
 }
 
 .linha-do-cabecalho {
@@ -117,33 +143,36 @@ input[readonly].gray {
     color: var(--fullblack);
 }
 
+.rmhiv .linha-do-cabecalho .logo {
+    font-weight: bold;
+    color: var(--cinza3);
+}
+
 .linha-do-cabecalho .logo span:hover,
 .linha-do-cabecalho ul li label:hover {
     cursor: pointer;
 }
 
-/* NAVEGACAO */
+/* SECÇÃO DE NAVEGAÇÃO */
+
+.linha-do-cabecalho .menu, 
+.menu ul,
+.menu ul li.destacar-as-celulas-automaticas {
+    display: flex;
+    align-items: center;
+}
 
 .linha-do-cabecalho .menu {
     flex: 1;
-    display: flex;
-    align-items: center;
     margin-left: 20px;
 }
 
-.menu ul {
-    display: flex;
-    align-items: center;
+.rmhiv .linha-do-cabecalho .menu {
+    justify-content: flex-end;
+    margin-right: -10px;
 }
 
 .menu ul li.destacar-as-celulas-automaticas {
-    display: flex;
-    align-items: center;
-}
-
-.menu ul li.destacar-as-celulas-automaticas {
-    display: flex;
-    align-items: center;
     justify-content: center;
 }
 
@@ -159,7 +188,8 @@ input[readonly].gray {
     cursor: pointer;
 }
 
-/* BOTOES DO MENU e LINKS */
+/* BOTÕES DO MENU E LINKS */
+
 .menu ul li button {
     background-color: inherit;
     font-size: 0.75rem;
@@ -180,7 +210,11 @@ input[readonly].gray {
     border-radius: 50%;
 }
 
-/** Hovers e actives **/
+.rmhiv .menu ul li a.print-to-pdf span.help {
+    background-color: var(--azulminiopaco);
+}
+
+/* ESTADOS DOS ELEMENTOS DO MENU (HOVERS E ACTIVES)*/
 .menu ul li:first-child:hover,
 .menu ul li button:hover,
 .menu ul li a:hover {
@@ -194,7 +228,6 @@ input[readonly].gray {
     color: inherit;
 }
 
-/*** Botão de Impressão ***/
 .linha-do-cabecalho button.imprimir,
 article mark.print {
     display: block;
@@ -218,11 +251,17 @@ article mark.print {
     opacity: .7;
 }
 
-/* MAIN */
+
+/* CONTEÚDO PRINCIPAL */
+
 main {
     width: 100%;
     max-width: 1300px;
     margin: 30px auto;
+}
+
+.rmhiv main {
+    max-width: 1024px;
 }
 
 /* RODAPÉ */
@@ -230,6 +269,10 @@ main {
     background-color: var(--azulclaro);
     padding: 40px 0;
     color: var(--cinza5);
+}
+
+.rmhiv > footer {
+    background-color: var(--cinza13) !important;
 }
 
 .linha-do-rodape {
@@ -282,6 +325,7 @@ a#abordagem-pediatrica + ul {
 }
 
 /* LINHA DE REFERENCIA */
+
 .linha-de-referencia {
     display: none;
     width: 100%;
@@ -319,12 +363,13 @@ a#abordagem-pediatrica + ul {
 .referencia h3 b.ref {
     display: none;
 }
+
 .referencia h3, .referencia output {
     font-weight: bold;
 }
 
 .referencia output {
-    border: thin solid var(--cinza13);
+    border: thin solid var(--cinza12);
     margin: 0 5px;
     text-align: center;
     display: inline-block;
@@ -339,42 +384,12 @@ a#abordagem-pediatrica + ul {
     min-width: 24px;
 } 
 
-/* TOTALIZADOR DE RMHIV */
-#involucro.rmhiv > header {
-    position: sticky;
-    top: 0;
-    background-color: var(--white);
-    z-index: 1;
+/* MANIPULAÇÃO DE ELEMENTOS E CLASSES POR JAVASCRIPT*/
+
+body.hide-overflow {
+    overflow: hidden;
 }
 
-.rmhiv header .linha-do-cabecalho,
-.rmhiv footer .linha-do-rodape {
-    max-width: 992px;
-}
-
-.rmhiv .linha-do-cabecalho .logo {
-    font-weight: bold;
-    color: var(--cinza3);
-}
-
-.rmhiv .linha-do-cabecalho .menu {
-    justify-content: flex-end;
-    margin-right: -10px;
-}
-
-.rmhiv .menu ul li a.print-to-pdf span.help {
-    background-color: var(--azulminiopaco);
-}
-
-.rmhiv main {
-    max-width: 1024px;
-}
-
-.rmhiv > footer {
-    background-color: var(--cinza13) !important;
-}
-
-/* JAVASCRIPT */
 div.desfoque-do-fundo.on {
     width: 100%;
     height: 100vh;
@@ -385,7 +400,7 @@ div.desfoque-do-fundo.on {
 }
 
 input.font11 {
-    font-size: 0.7375rem;
+    font-size: 0.7375rem !important;
 }
 
 input.bg-red, 

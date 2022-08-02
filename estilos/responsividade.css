@@ -1,6 +1,8 @@
 
 @media screen and (max-width: 1300px) {
 
+    /* CABEÇALHO */
+
     .linha-do-cabecalho {
         padding: 7.5px 15px;
         flex-direction: column;
@@ -16,9 +18,9 @@
         margin-right: 0;
     }
 
-    /* CONTENTOR DA FICHA */
-    .contentor-da-ficha,
-    article {
+    /* FICHA */
+
+    .contentor-da-ficha {
         padding: 15px;
         max-width: 100%;
         overflow: auto;
@@ -40,11 +42,13 @@
     }
 
     /* RODAPÉ */
+
     .linha-do-rodape {
         padding: 0 15px;
     }
 
     /* COOKIES */
+
     .aviso-de-uso-de-cookies {
         max-width: 100%;
         right: 0;
@@ -57,8 +61,10 @@
 }
 
 @media screen and (max-width: 1023px) {
+
     .menu button.imprimir,
-    button.abrir-atalhos-do-teclado,
+    .li-atalhos-do-teclado,
+    li.salvar-como-pdf,
     a.print-to-pdf {
         display: none !important;
     }
@@ -74,14 +80,14 @@
     }
 }
 
-@media screen and (max-width: 800px) {
-    .linha-do-cabecalho .menu {
-        display: none;
-    }
-
+@media screen and (max-width: 865px) {
     .linha-do-cabecalho {
         justify-content: center;
         align-items: center;
+    }
+
+    .linha-do-cabecalho .menu {
+        display: none;
     }
     
     /* MENU HAMBURGUER */
@@ -91,26 +97,25 @@
         display: flex;
         flex-direction: column;
         position: absolute;
-        top: 8px;
-        top: 10px;
+        top: 8.8px;
         left: 7px;
         padding: 8px;
     }
 
     .linha-do-cabecalho .hamburguer:active {
-        background-color: #ddd;
+        background-color: var(--cinza13);
     }
 
     .hamburguer div {
         width: 100%;
         height: 2px;
-        background-color: #888;
+        background-color: var(--cinza4);
         margin: 1.5px 0;
         transition: all 250ms ease;
     }
 
     .hamburguer.on div:nth-child(1) {
-        transform: rotate(-45deg) translate(-2px, 1px);
+        transform: rotate(-45deg) translate(-4px, 4px);
     }
 
     .hamburguer.on div:nth-child(2) {
@@ -118,33 +123,28 @@
     }
 
     .hamburguer.on div:nth-child(3) {
-        transform: rotate(45deg) translate(-6px, -5px);
+        transform: rotate(45deg) translate(-3px, -3px);
     }
 
-    /* ABERTURA DO MENU*/
+    /* ABERTURA DO MENU */
+
     .linha-do-cabecalho .menu {
         display: block;
-        justify-content: flex-start;
-        align-items: flex-start;
-        width: 75vw;
-        height: 100vh;
-        padding: 15px 15px 15px 6px;
-        position: absolute;
+        position: fixed;
         top: 48px;
-        left: -100%;
-        visibility: hidden;
-        background: #fff;
-        z-index: 1;
-        transition: left 150ms linear;
+        left: 0;
+        height: 100%;
+        width: 0;
+        overflow-x: hidden;
+        overflow-y: auto;
         z-index: 10;
+        background: var(--white);
+        transition: all 100ms linear;
     }
 
-    .desfoque-do-fundo {
-        top: 48px !important;
-    }
     .linha-do-cabecalho .menu.on {
-        left: 0;
-        visibility: initial;
+        width: 86vw;
+        padding-left: 6px;
     }
 
     .menu ul {
@@ -155,6 +155,7 @@
     .menu ul li {
         line-height: 4;
         width: 100%;
+        border-bottom: 1px solid var(--cinza13);
     }
 
     .menu ul li > * {
@@ -171,6 +172,7 @@
     }
 
     /* RODAPÉ */
+
     #involucro footer {
         padding-bottom: 60px;
     }
@@ -192,8 +194,85 @@
     a.voltar {
         margin: 10px 0 0 -5px;
     }
+
+    /* COOKIES */
+
+    .aviso-de-uso-de-cookies {
+        bottom: 0 !important;
+    }
+
+    /* DESFOQUE PARCIAL DO FUNDO */
+    .desfoque-do-fundo.parcial.on {
+        top: 48px;
+    }
+
+    /* MANIPULAÇÃO DO MENU */
+
+    /* Esvaziar ficha */
+    .caixa-de-confirmacao {
+        min-width: 300px;
+        right: calc(50vw - 310.28px / 2);
+        overflow: auto;
+    }
+
+    .caixa-de-confirmacao ul li {
+        align-items: center;
+    }
+
+    .caixa-de-confirmacao ul li label {
+        flex: 1;
+        min-height: 25px;
+        display: flex;
+        align-items: center;
+    }
+
+    /* Feedback para células vermelhas */
+    
+    .razao-pelas-celulas-com-fundo-vermelho {
+        width: 100%;
+        max-width: 100%;
+        max-height: 86vh;
+        overflow: auto;
+        top: initial !important;
+        bottom: 0;
+        right: 0;  
+    }
+
+    .seccao-de-interatividade > button {
+        right: 15px;
+    }
 }
 
 @media screen and (max-width: 345px) {
+    
+    .linha-do-cabecalho {
+        justify-content: flex-end;
+    }
 
+    .linha-do-cabecalho .logo {
+        font-size: 0.875rem !important;
+    }
+
+    .linha-do-cabecalho .menu.on {
+        top: 44px;
+    }
+
+    .referencia h3 b.referencia {
+        display: none;
+    }
+
+    .referencia h3 b.ref {
+        display: initial;
+    }
+}
+
+@media screen and (max-height: 428px) {
+    .caixa-de-confirmacao ul  {
+        max-height: 80px;
+        overflow: auto;
+    }
+
+    .caixa-de-confirmacao {
+        top: calc(50vh - 343px / 2)
+    }
 }

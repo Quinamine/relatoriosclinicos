@@ -1,19 +1,12 @@
 
-/* FORMATACAO GERAL */
-html {
-    scroll-behavior: smooth;
-}
-
-*::selection {
-    background-color: var(--cinza4);
-    color: var(--white);
-}
+/* FORMATAÇÃO GERAL */
 
 input {
     border-bottom: 1px solid var(--cinza4);
 }
 
 /* FICHA */
+
 .contentor-da-ficha {
     display: grid;
     grid-template-columns: 20px 90px 228px repeat(19, 50px);
@@ -38,6 +31,11 @@ input {
     font-size: 16px;
 }
 
+.cabecalho-da-ficha span {
+    border-right: 1px solid var(--cinza8);
+    border-top: 1px solid var(--cinza8);
+}
+
 .cabecalho-da-ficha .linha-de-enumeracao-das-colunas,
 .cabecalho-da-ficha .linha-de-sexo {
     display: grid;
@@ -50,18 +48,18 @@ input {
     grid-template-rows: 18px;
 }
 
-.linha-de-enumeracao-das-colunas div {
+.linha-de-enumeracao-das-colunas .contentor-de-mes {
     text-align: left;
     margin-bottom: 14px;
 }
 
-.linha-de-enumeracao-das-colunas div input {
+.linha-de-enumeracao-das-colunas .contentor-de-mes input {
     width: 84%;
     font-weight: bold;
     border-bottom: none;
 }
 
-.cabecalho-da-ficha .linha-de-enumeracao-das-colunas span {
+.linha-de-enumeracao-das-colunas span {
     background-color: var(--cinza4);
     color: var(--cinza13);
     border-color: var(--cinza10);
@@ -71,7 +69,12 @@ input {
     margin-left: -1px;
 }
 
-/* Faixas Etárias */
+.linha-de-enumeracao-das-colunas span:last-child {
+    border-right: none;
+}
+
+/* LINHA DE FAIXAS ETÁRIAS */
+
 .cabecalho-da-ficha .linha-de-faixas-etarias {
     display: grid;
     grid-template-columns: 228px repeat(9, 100px) 50px;
@@ -79,26 +82,18 @@ input {
     text-align: center;
 }
 
-.cabecalho-da-ficha span {
-    border-right: 1px solid var(--cinza8);
-    border-top: 1px solid var(--cinza8);
-}
-
 .linha-de-faixas-etarias span:nth-child(1),
 .linha-de-sexo span:nth-child(1) {
     border-left: 1px solid var(--cinza8);
 }
 
-.linha-de-enumeracao-das-colunas span:last-child {
-    border-right: none;
-}
-
-/* Sexo */
+/* LINHA DE SEXO */
 .linha-de-sexo span.sem-borda-superior {
     border-top: none;
 }
 
 /* BORDA ESCURA */
+
 .borda-escura {
     grid-row: 2;
     grid-column: 1/23;
@@ -133,12 +128,13 @@ input {
 .coluna-de-enumeracao-das-linhas span {
     background-color: var(--cinza4);
     color: var(--cinza13);
-    border-bottom: 1px solid var(--cinza10);
-    border-left: 1px solid var(--cinza8);
-    border-right: 1px solid var(--cinza8);
+    border: 1px solid var(--cinza8);
+    border-bottom-color: var(--cinza10);
+    border-top: none;
 }
 
-/* TÍTULOS PRINCIPAIS DAS LINHAS */
+/* SEGUNDA COLUNA DA FICHA - TÍTULOS DA SECÇÕES DAS LINHAS */
+
 .coluna-de-titulos-das-secoes-das-linhas {
     display: grid;
     grid-template-rows: calc(24px*3) calc(24px*4) 1fr calc(24px*6) repeat(2, calc(24px*3));
@@ -154,7 +150,7 @@ input {
     transform: rotate(270deg);
 }
 
-/* CONSULTAS E DIAGNÓSTICOS */
+/* COLUNA DE CONSULTAS E DIAGNÓSTICOS */
 
 .coluna-de-consultas-e-diagnosticos {
     border-left: 1px solid var(--cinza8);
@@ -169,7 +165,7 @@ input {
     padding-right: 1px;
 }
 
-/* CAMPOS DE INSERÇÃO */
+/* COLUNAS DE CÉLULAS DE INSERÇÃO DE DADOS */
 
 .coluna-de-inputs {
     grid-template-columns: 50px;
@@ -194,17 +190,27 @@ input {
     flex-direction: column;
 }
 
-.linha-de-assinatura > p {
-    line-height: 4;
-}
-
-.linha-de-assinatura p input {
+.linha-de-assinatura input {
     font-weight: bold;
     border-bottom: 1px solid var(--cinza4);
 }
 
-.linha-de-assinatura > p input {
+.linha-de-assinatura input[type=date]:focus {
+    border-bottom: 1px solid var(--cinza4) !important;
+}
+
+.linha-de-assinatura .contentor-do-nome-do-profissional {
+    line-height: 4;
+}
+
+.linha-de-assinatura .contentor-do-nome-do-profissional input {
     width: 312px;
+}
+
+@-moz-document url-prefix() {
+    .linha-de-assinatura .contentor-do-nome-do-profissional input {
+        width: 305px;
+    }
 }
 
 .linha-de-assinatura div.linha-de-categoria-e-data {
@@ -212,15 +218,12 @@ input {
     justify-content: space-between;
 }
 
-div.linha-de-categoria-e-data input#categoria {
+.linha-de-categoria-e-data input#categoria {
     width: 276px;
 }
 
-.linha-de-assinatura p input[type=date]:focus {
-    border-bottom: 1px solid var(--cinza4) !important;
-}
+/* ELEMENTO(S) E CLASSE(S) MANIPULÁVEL COM JAVASCRIPT */
 
-/* JAVASCRIPT */
 .contentor-da-ficha span.fundo-laranja {
     background-color: var(--orange) !important;
     color: var(--white);

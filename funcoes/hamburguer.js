@@ -1,16 +1,56 @@
+
+const hamburguer = {
+
+    abrir() {
+        menuHamburguer.classList.add("on");
+        nav.classList.add("on");
+        desfoque.classList.add("parcial");
+        body.classList.add("hide-overflow");
+        desfocarFundo();
+    },
+
+    fechar() {
+        menuHamburguer.classList.remove("on");
+        nav.classList.remove("on");
+        desfoque.classList.remove("parcial");
+        body.classList.remove("hide-overflow");
+        focarFundo();
+    }
+}
+
+let menuHamburguer, janelasDesfocantes, desfoque, nav, body;
 window.addEventListener("load", () => {
 
-    const hamburguer = document.querySelector(".hamburguer");
-    const menu = document.querySelector(".menu");
-    const desfoque = document.querySelector(".desfoque-do-fundo");
+    // Inicialização das variáveis
+    menuHamburguer = document.querySelector(".hamburguer");
+    desfoque = document.querySelector(".desfoque-do-fundo");
+    nav = document.querySelector(".menu");
+    body = document.querySelector("body");
 
-    hamburguer.addEventListener("click", () => {
+    menuHamburguer.addEventListener("click", () => {
+        if(menuHamburguer.classList.contains("on")) {
+            hamburguer.fechar();
+        }
+        else {
+            hamburguer.abrir();
+        }
+    });
 
-        hamburguer.classList.toggle("on");
-        menu.classList.toggle("on");
-        desfoque.classList.toggle("on");
-    })
+    desfoque.addEventListener("click", hamburguer.fechar());
+});
+
+
+window.addEventListener("click", event => {
+    const isMenuHamburguer = event.target.matches(".hamburguer");
+    const isMenuHamburguerChild = event.target.matches(".camada");
+    const isMenuContainer = event.target.matches(".menu");
+
+    if ((!isMenuHamburguer) && (!isMenuHamburguerChild) && (!isMenuContainer)) {
+        if(menuHamburguer.classList.contains("on")) hamburguer.fechar();
+    }
 })
+
+
 
 
 

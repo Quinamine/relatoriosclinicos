@@ -2,7 +2,7 @@
 @media print {
     @page {
         margin: 0.5cm;
-        margin-bottom: 1.5cm;
+        margin-bottom: 2.3cm;
         width: 21cm;
         height: 29.7cm;
     }
@@ -42,8 +42,6 @@
     .cabecalho-da-linha span {
         border-color: #444 !important;
     }
-
-    
 
     @-moz-document url-prefix() {
         .coluna-de-enumeracao-das-linhas span {

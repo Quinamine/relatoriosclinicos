@@ -1,4 +1,4 @@
-/* REUTILIZAVEL */
+/* RESTRIÇÃO DE ACESSO À READONLY CELS */
 
 p.aviso-de-restricao-de-acesso-a-readonlyinputs {
     max-width: 253px;
@@ -16,14 +16,6 @@ p.aviso-de-restricao-de-acesso-a-readonlyinputs {
     visibility: hidden;
 }
 
-
-@-moz-document url-prefix() {
-
-    .linha-de-assinatura p:first-child input {
-        width: 305px;
-    }
-}
-
 p.aviso-de-restricao-de-acesso-a-readonlyinputs.on {
     opacity: 1;
     bottom: calc(50vh - 34px * 1/2); 
@@ -38,8 +30,8 @@ p.aviso-de-restricao-de-acesso-a-readonlyinputs > span.recomendacao.on {
     display: initial !important;
 }
 
+/* IR PARA - PESQUISAR POR LINHA */
 
-/* IR PARA */
 .caixa-de-pesquisa { 
     display: flex;
     align-items: center;
@@ -76,14 +68,14 @@ p.aviso-de-restricao-de-acesso-a-readonlyinputs > span.recomendacao.on {
     font-weight: bold;
 }
 
-.caixa-de-pesquisa button.fechar {
+.caixa-de-pesquisa button {
     background-color: inherit;
     color: var(--white);
     font-size: 1rem;
     margin-left: 2px;
 }
 
-.caixa-de-pesquisa button.fechar:hover {
+.caixa-de-pesquisa button:hover {
     background-color: var(--red);
     border-radius: 2px;
 }
@@ -138,7 +130,8 @@ p.aviso-de-restricao-de-acesso-a-readonlyinputs > span.recomendacao.on {
     opacity: .7;
 }
 
-/* ATALHOS */
+/* CONTEÚDO DE ATALHOS DO TECLADO  */
+
 .atalhos-do-teclado {
     max-width: 350px;
     padding: 10px;
@@ -209,17 +202,17 @@ p.aviso-de-restricao-de-acesso-a-readonlyinputs > span.recomendacao.on {
     background-color: inherit;
 }
 
-button.fechar-atalhos-do-teclado:hover  {
+.fechar-atalhos-do-teclado:hover  {
     background-color: var(--red) !important;
     color: var(--white);
 }
 
-button.fechar-atalhos-do-teclado:active {
-    opacity: .8;
+.fechar-atalhos-do-teclado:active {
+    opacity: .7;
 }
 
+/* ESVAZIAMENTO DA FICHA  */
 
-/* CAIXA DE CONFIRMACAO */
 .caixa-de-confirmacao {
     min-width: 375px;
     position: fixed;
@@ -335,7 +328,8 @@ button.confirmar:active {
     opacity: .8;
 }
 
-/* FICHA VAZIA OBS */
+/* FEEDBACK PARA QUANDO A FICHA ESTIVER VAZIA */
+
 .esvaziamento-da-ficha 
 p.alerta-para-ficha-vazia {
     position: fixed;
@@ -360,7 +354,8 @@ p.alerta-para-ficha-vazia.on {
     visibility: initial;
 }
 
-/* Aviso de uso de cookies */
+/* AVISO DE USO DE COOKIES  */
+
 .aviso-de-uso-de-cookies {
     width: 100%;
     max-width: 1290px;
@@ -383,6 +378,7 @@ p.alerta-para-ficha-vazia.on {
     max-width: 992px;
     right: calc(50vw - 1010px / 2 );
 }
+
 .aviso-de-uso-de-cookies.on {
     bottom: 20px;
     visibility: visible;
@@ -428,7 +424,8 @@ p.alerta-para-ficha-vazia.on {
     font-weight: bold;
 }
 
-/* MAIS DE 8 ALGARISMOS */
+/* FEEDBACK PARA CÉLULAS VERMELHAS */
+
 .razao-pelas-celulas-com-fundo-vermelho {
     max-width: 530px;
     position: fixed;

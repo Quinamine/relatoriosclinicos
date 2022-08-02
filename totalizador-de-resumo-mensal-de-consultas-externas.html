@@ -1,22 +1,19 @@
 <!DOCTYPE html>
-<html lang="pt-PT">
+<html lang="pt-PT" dir="ltr">
 <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Totalizador de Resumo Mensal de Consultas Externas</title>
     <meta name="robots" content="index, follow"/>
-    <meta name="description" content="Auxilia na elaboração do resumo totalizando-o automaticamente com base nos dados inseridos pelo Profissional (usuário). A sua estrutura é idêntica ao modelo da ficha actualmente vigente no SNS em Moçambique."/>
+    <meta name="description" content="Auxilia na elaboração do resumo totalizando-o automaticamente com base nos dados inseridos pelo usuário (Profissional de Saúde). A sua estrutura é idêntica ao modelo da ficha actualmente vigente no SNS em Moçambique."/>
     <meta name="keywords" content="Totalizador de resumo mensal de consultas externas, Totalizador de relatório mensal de consultas externas, Totalizador de relatório mensal, Ficha de resumo mensal de consultas externas." />
     <meta name="author" content="Adérito Félix Quinamine" />
 
     <!-- PARTILHA NAS REDES SOCIAIS -->
     <meta property="og:url" content="https://www.quinamine.github.io/relatoriosclinicos/totalizador-de-resumo-mensal-de-consultas-externas.html" />
-
     <meta property="og:title" content="Totalizador de Resumo Mensal de Consultas Externas" />
-    
-    <meta property="og:description" content="Auxilia na elaboração do resumo totalizando-o automaticamente com base nos dados inseridos pelo Profissional (usuário). A sua estrutura é idêntica ao modelo da ficha actualmente vigente no SNS em Moçambique." />
-
+    <meta property="og:description" content="Auxilia na elaboração do resumo totalizando-o automaticamente com base nos dados inseridos pelo usuário (Profissional de Saúde). A sua estrutura é idêntica ao modelo da ficha actualmente vigente no SNS em Moçambique." />
     <meta property="og:image" content="https://www.quinamine.github.io/relatoriosclinicos/imagens/previa-rmce.png" />
     <meta property="og:image:secure_url" content="https://www.quinamine.github.io/relatoriosclinicos/imagens/previa-rmce.png" />
     <meta property="og:image:type" content="image/png" />
@@ -27,18 +24,19 @@
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" href="estilos/reset.css" />
     <link rel="stylesheet" href="estilos/layout.css" />
-    <link rel="stylesheet" href="estilos/fichadermce.css" />
+    <link rel="stylesheet" href="estilos/fichadermconsultas.css" />
     <link rel="stylesheet" href="estilos/manipulacaodomenu.css" />
     <link rel="stylesheet" href="estilos/responsividade.css" />
     <link rel="stylesheet" href="estilos/print.css" />
 
     <!-- FUNCIONALIDADES -->
-    <script src="funcoes/hamburguer.js"></script>
     <script src="funcoes/backup.js"></script>
     <script src="funcoes/soma.js"></script>
     <script src="funcoes/totalizador.js"></script>
     <script src="funcoes/pesquisarlinha.js"></script>
+    <script src="funcoes/desfoque.js"></script>
     <script src="funcoes/menu.js"></script>
+    <script src="funcoes/hamburguer.js"></script>
     <script src="funcoes/input.js"></script>
     <script src="funcoes/referencia.js"></script> 
     <script src="funcoes/cookies.js"></script>
@@ -61,7 +59,7 @@
         <header>
             <div class="linha-do-cabecalho">
        
-                <a href="totalizador-de-resumo-mensal-de-consultas-externas.html" class="logo"><strong>TOTAL</strong>IZADOR DE <span title="Resumo Mensal de Consultas Externas">RMCE</span></a>
+                <a href="totalizador-de-resumo-mensal-de-consultas-externas.html" class="logo"><strong>TOTAL</strong>IZADOR DE <span title="Resumo Mensal">RM</span>-CONSULTAS</a>
                                       
                 <section class="menu" role="navigation">
                     <ul>
@@ -79,18 +77,20 @@
                             <button class="esvaziar-ficha">Esvaziar ficha</button>
                         </li>
 
-                        <li><button class="abrir-atalhos-do-teclado">Atalhos do teclado</button></li> 
+                        <li class="li-atalhos-do-teclado">
+                            <button class="abrir-atalhos-do-teclado">Atalhos do teclado</button>
+                        </li> 
 
                         <li>
-                            <a href="totalizadordermce/politica-de-cookies.html">Política de cookies</a>
+                            <a href="totalizadordermconsultas/politica-de-cookies.html">Política de cookies</a>
                         </li>
 
                         <li>
-                            <a href="totalizadordermce/sobre-o-totalizador.html">Sobre</a>
+                            <a href="totalizadordermconsultas/sobre-o-totalizador.html">Sobre</a>
                         </li>
 
-                        <li>
-                            <a href="totalizadordermce/salvar-a-ficha-como-pdf-tutorial.html" class="print-to-pdf">
+                        <li class="salvar-como-pdf">
+                            <a href="totalizadordermconsultas/salvar-a-ficha-como-pdf-tutorial.html" class="print-to-pdf">
                                 Salvar como PDF <span class="help">?</span>
                             </a>
                         </li>
@@ -102,9 +102,9 @@
                 </section>
 
                 <div class="hamburguer">
-                    <div></div>
-                    <div></div>
-                    <div></div>
+                    <div class="camada"></div>
+                    <div class="camada"></div>
+                    <div class="camada"></div>
                 </div>
             </div>
         </header>
@@ -119,7 +119,7 @@
                     </h1>
 
                     <section class="linha-de-enumeracao-das-colunas">
-                        <div>
+                        <div class="contentor-de-mes">
                             <label for="mes">Mês:</label>
                             <input type="text" id="mes" />
                         </div>
@@ -2069,21 +2069,21 @@
                 <!-- Assinatura -->
 
                 <footer class="linha-de-assinatura">
-                    <p>
+                    <div class="contentor-do-nome-do-profissional">
                         <label for="nome-do-ps">Nome legível do responsável pelo preenchimento:</label>
                         <input type="text" id="nome-do-ps" />
-                    </p>
+                    </div>
 
                     <div class="linha-de-categoria-e-data">
-                        <p>
+                        <div class="contentor-da-categoria">
                             <label for="categoria">Categoria:</label>
                             <input type="text" list="categorias" id="categoria" /> 
-                        </p>
+                        </div>
 
-                        <p>
+                        <div class="contentor-da-data">
                             <label class="data-de-realizacao">Data:</label> 
                             <input type="date" id="data-de-realizacao" />
-                        </p>
+                        </div>
                         
                         <datalist id="categorias">
                             <option value="Médico de Clínica Geral"></option>
@@ -2099,7 +2099,7 @@
 
                 <!-- Acessar subtotais -->
                 <p class="aviso-de-restricao-de-acesso-a-readonlyinputs">
-                    Inacessível. Esta célula é só de leitura. <span class="recomendacao"> Marque a opção <b>"Destacar as células automáticas"</b> para distinguir as células de leitura das outras.</span>
+                    Inacessível. Essa célula é só de leitura. <span class="recomendacao"> Marque a opção <b>"Destacar as células automáticas"</b> para distinguir as células de leitura das outras.</span>
                 </p> 
 
                 <!-- Caixa de pesquisa "Ir para" -->
@@ -2225,7 +2225,7 @@
 
             <div class="aviso-de-uso-de-cookies">
                 <p>
-                    Este serviço faz uso de "cookies" em conformidade com os respectivos <a href="totalizadordermce/politica-de-cookies.html">termos de serviço e armazenamento descritos aqui</a>, a fim melhorar a sua experiência de utilização. A aceitação de tais termos é dada pela utilização do Totalizador.
+                    Este serviço faz uso de "cookies" em conformidade com os respectivos <a href="totalizadordermconsultas/politica-de-cookies.html">termos de serviço e armazenamento descritos aqui</a>, a fim de melhorar a sua experiência de utilização. A aceitação de tais termos é dada pela utilização do Totalizador.
                 </p>
     
                 <button class="aceitar-cookies" data-sessionkey="trmce-cookies">Prosseguir</button>

@@ -65,7 +65,7 @@ input {
     border-color: var(--cinza10);
 }
 
-.linha-de-enumeracao-das-colunas span.marginleft-1 {
+.linha-de-enumeracao-das-colunas span.marginleft--1 {
     margin-left: -1px;
 }
 

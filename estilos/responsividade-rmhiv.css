@@ -1,87 +1,90 @@
 
-@media screen and (max-width: 1300px) {
-
-    /* CABEÇALHO */
-
-    .linha-do-cabecalho {
-        padding: 7.5px 15px;
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    .linha-do-cabecalho .menu {
-        width: 100%;
-        margin: 0;
-    }
-
-    .menu ul li input[type=checkbox] {
-        height: 11px;
-        margin: 1px 4px;
-    }
-
-    .menu button.imprimir {
-        margin-right: 0;
-    }
-
-    /* FICHA */
-
-    .contentor-da-ficha {
-        max-width: 100%;
-        padding: 15px;
-        margin: auto;
-        overflow: auto;
-    }
-
-    .cabecalho-da-ficha {
-        position: initial;
-    }
-
-    .coluna-de-consultas-e-diagnosticos,
-    .linha-de-faixas-etarias span:nth-child(1),
-    .linha-de-sexo span:nth-child(1),
-    .linha-de-assinatura {
-        position: -webkit-sticky;
-        position: sticky;
-        left: -15px;
-        background-color: var(--white);
-    }
-
-    /* RODAPÉ */
-
-    .linha-do-rodape {
-        padding: 0 15px;
-    }
-
-    /* COOKIES */
-
-    .aviso-de-uso-de-cookies {
-        max-width: 100%;
-        right: 0;
-    }
-
-    .linha-de-referencia {
-        display: block;
-    }
-}
 
 @media screen and (max-width: 1023px) {
 
-    .menu button.imprimir,
-    .li-atalhos-do-teclado,
+    li.imprimir-ficha,
     li.salvar-como-pdf,
     a.print-to-pdf {
         display: none !important;
     }
 
-    .linha-do-cabecalho {
-        flex-direction: row;
-        align-items: center;
+    /* CABEÇALHO */
+
+    .rmhiv > header {
+        position: initial !important;
+    }
+
+    .rmhiv .linha-do-cabecalho { 
+        max-width: 100%;
+        padding: 7.5px 15px;
     }
 
     .linha-do-cabecalho .menu {
-        justify-content: flex-end;
-        margin-right: -10px;
+        margin: 0;
     }
+
+    /* FICHA */
+
+    .ficha {
+        max-width: 100%;
+        padding: 0 15px;
+        overflow: auto;
+        align-items: flex-start;
+    }
+
+    .ficha > * {
+        width: 100%;
+    }
+
+    .ficha .linha:nth-child(n+2) > div:nth-child(2),
+    .linha.b10 > div:nth-child(2) {
+        position: -webkit-sticky;
+        position: sticky;
+        left: -15px;
+        background-color: var(--white);
+        border-right: 1px solid var(--cinza4);
+        margin-right: -1px;
+    }
+
+    footer.linha-de-assinatura {
+        width: 972px;
+        display: grid;
+        grid-template-columns: repeat(3, calc(972px / 3));
+        justify-content: space-between;
+    }
+
+    footer.linha-de-assinatura > div:nth-child(1) { 
+        justify-self: start;
+    }
+
+    footer.linha-de-assinatura > div:last-child { 
+        justify-self: end;
+    }
+
+    /* COOKIES */
+
+    .aviso-de-uso-de-cookies {
+        max-width: 100% !important;
+        right: 0 !important;
+    }
+    
+    /* REFERENCIA */
+
+    .linha-de-referencia {
+        display: block;
+    }
+
+    /* RODAPÉ */
+
+    .rmhiv .linha-do-rodape {
+        max-width: 100%;
+        padding: 0 15px;
+    }
+
+    .linha-do-rodape a.voltar {
+        margin-right: 0;
+    }
+
 }
 
 @media screen and (max-width: 970px) {
@@ -90,10 +93,6 @@
         align-items: center;
     }
 
-    .linha-do-cabecalho .logo > span { 
-        display: none;
-    }
-    
     .linha-do-cabecalho .menu {
         display: none;
     }
@@ -181,10 +180,6 @@
 
     /* RODAPÉ */
 
-    #involucro footer {
-        padding-bottom: 60px;
-    }
-    
     .linha-do-rodape {
         flex-direction: column;
     }
@@ -212,6 +207,7 @@
     /* DESFOQUE PARCIAL DO FUNDO */
     .desfoque-do-fundo.parcial.on {
         top: 48px;
+        z-index: initial;
     }
 
     /* MANIPULAÇÃO DO MENU */
@@ -251,6 +247,13 @@
     }
 }
 
+@media screen and (max-width: 670px) {
+    .ficha .linha:nth-child(n+2) > div:nth-child(2),
+    .linha.b10 > div:nth-child(2) {
+        position: initial;
+    }
+}
+
 @media screen and (max-width: 425px) {
 
     .linha-do-cabecalho .logo > strong:nth-child(1){ 
@@ -259,23 +262,11 @@
 
     .linha-do-cabecalho .logo > strong:nth-child(2){ 
         display: initial;
+        font-weight: bold;
     }
 }
 
-@media screen and (max-width: 345px) {
-    
-    .linha-do-cabecalho {
-        justify-content: flex-end;
-    }
-
-    .linha-do-cabecalho .logo {
-        font-size: 0.875rem !important;
-    }
-
-    .linha-do-cabecalho .menu.on {
-        top: 44px;
-    }
-
+@media screen and (max-width: 370px) {
     .referencia h3 b.referencia {
         display: none;
     }
@@ -287,11 +278,11 @@
 
 @media screen and (max-height: 428px) {
     .caixa-de-confirmacao ul  {
-        max-height: 80px;
+        max-height: 80px !important;
         overflow: auto;
     }
 
     .caixa-de-confirmacao {
-        top: calc(50vh - 343px / 2)
+        top: calc(50vh - 343px / 2) !important;
     }
 }

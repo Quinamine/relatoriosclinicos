@@ -1,4 +1,4 @@
-let divDesfocante;
+let divDesfocante, janelasDesfocantes;
 window.addEventListener("load", () => divDesfocante = document.querySelector(".desfoque-do-fundo"));
 
 const desfocarFundo = () => divDesfocante.classList.add("on");

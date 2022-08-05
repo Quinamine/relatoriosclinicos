@@ -4,16 +4,21 @@ p.aviso-de-restricao-de-acesso-a-readonlyinputs {
     max-width: 253px;
     padding: 10px;
     border-radius: 6px;
-    font-size: 0.8125rem;
-    position: fixed;
-    bottom: -263px;
-    opacity: 0;
-    left: calc(50vw - 253px * 1/2);
     box-shadow: 0 0 15px var(--cinza5);
     background-color: var(--white);
+    font-size: 0.8125rem;
     line-height: 1.4;
-    transition: all 150ms linear; 
+    position: fixed;
+    bottom: -263px;
+    left: calc(50vw - 253px * 1/2);
     visibility: hidden;
+    opacity: 0;
+    transition: all 150ms linear; 
+}
+
+.rmhiv p.aviso-de-restricao-de-acesso-a-readonlyinputs {
+    max-width: 300px;
+    left: calc(50vw - 297.48px * 1/2);
 }
 
 p.aviso-de-restricao-de-acesso-a-readonlyinputs.on {
@@ -35,15 +40,15 @@ p.aviso-de-restricao-de-acesso-a-readonlyinputs > span.recomendacao.on {
 .caixa-de-pesquisa { 
     display: flex;
     align-items: center;
-    background: var(--cinza4);
-    padding: 4px;
-    color: var(--white) !important;
     justify-content: space-between;
+    padding: 4px;
+    background-color: var(--cinza4);
+    color: var(--white) !important;
     position: fixed;
     top: -35px;
     right: calc(50vw - 257px / 2);
-    transition: top 150ms linear;
     visibility: hidden;
+    transition: top 150ms linear;
 }
 
 .caixa-de-pesquisa.on {
@@ -54,8 +59,8 @@ p.aviso-de-restricao-de-acesso-a-readonlyinputs > span.recomendacao.on {
 .caixa-de-pesquisa input.pesquisar-linha { 
     min-width: 188px;
     padding: 2px 0 2px 5px;
-    background-color: var(--cinza13);
     border: 2px solid var(--cinza4);
+    background-color: var(--cinza13);
 }
 
 .caixa-de-pesquisa input.pesquisar-linha:focus { 
@@ -86,13 +91,13 @@ p.aviso-de-restricao-de-acesso-a-readonlyinputs > span.recomendacao.on {
 
 .query-sem-resultados {
     padding: 18px;
+    font-size: 0.8125rem;
+    background-color: var(--white);
     position: fixed;
     top: -133px;
     left: calc(50vw - 326.52px / 2);
-    background-color: var(--white);
-    transition: top 50ms linear;
     visibility: hidden;
-    font-size: 0.8125rem;
+    transition: top 50ms linear;
 }
 
 .query-sem-resultados.on {
@@ -112,14 +117,14 @@ p.aviso-de-restricao-de-acesso-a-readonlyinputs > span.recomendacao.on {
 
 .query-sem-resultados button {
     width: 50px;
-    display: block;
-    color: var(--cinza13);
-    border-radius: 5px;
     padding: 4px;
     margin-left: auto;
+    display: block;
+    color: var(--cinza13);
     background-color: var(--cinza4);
-    line-height: 1.5;
+    border-radius: 5px;
     font-size: 0.8125rem;
+    line-height: 1.5;
 }
 
 .query-sem-resultados button:hover {
@@ -135,14 +140,14 @@ p.aviso-de-restricao-de-acesso-a-readonlyinputs > span.recomendacao.on {
 .atalhos-do-teclado {
     max-width: 350px;
     padding: 10px;
+    overflow-y: auto;
+    background: var(--white);
     position: fixed;
     top: -105vh;
     right: 0;
-    background: var(--white);
-    transition: top 50ms linear;
-    visibility: hidden;
-    overflow-y: auto;
     z-index: 2;
+    visibility: hidden;
+    transition: top 50ms linear;
 }  
 
 .atalhos-do-teclado.on {
@@ -190,16 +195,17 @@ p.aviso-de-restricao-de-acesso-a-readonlyinputs > span.recomendacao.on {
 
 .fechar-atalhos-do-teclado {
     margin: 0 !important;
+    font-size: 1.25rem !important;
+    background-color: inherit;
     width: 30px;
     height: 30px;
     position: absolute;
     top: -10px;
     right: -10px;
-    font-size: 1.25rem !important;
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: inherit;
+    
 }
 
 .fechar-atalhos-do-teclado:hover  {
@@ -215,14 +221,14 @@ p.aviso-de-restricao-de-acesso-a-readonlyinputs > span.recomendacao.on {
 
 .caixa-de-confirmacao {
     min-width: 375px;
+    padding: 20px;
+    border-radius: 10px;
+    background: var(--white);
     position: fixed;
     top: calc(50vh - 397px * 1/2);
     right: calc(50vw - 375px *  1/2);
-    background: var(--white);
-    border-radius: 10px;
-    padding: 20px;
-    display: none;
     z-index: 2;
+    display: none;
 }
 
 .caixa-de-confirmacao.on {
@@ -235,8 +241,8 @@ p.aviso-de-restricao-de-acesso-a-readonlyinputs > span.recomendacao.on {
     align-items: center;
     border: 1px solid var(--cinza10);
     padding: 10px;
-    border-radius: 4px;
     margin-top: 10px;
+    border-radius: 4px;
 }
 
 .caixa-de-confirmacao h3,
@@ -333,14 +339,14 @@ button.confirmar:active {
 .esvaziamento-da-ficha 
 p.alerta-para-ficha-vazia {
     position: fixed;
-    font-size: 0.8125rem;
     bottom: calc(-50vh - 40px / 2);
     left: calc(50vw - 168.86px / 2);
-    transition: bottom 150ms linear;
     padding: 10px;
+    box-shadow: 0 0 8px var(--cinza5);
+    font-size: 0.8125rem;
     background-color: var(--white);
     border-radius: 5px;
-    box-shadow: 0 0 8px var(--cinza5);
+    transition: bottom 150ms linear;
 }    
 
 .rmhiv .esvaziamento-da-ficha 
@@ -359,19 +365,18 @@ p.alerta-para-ficha-vazia.on {
 .aviso-de-uso-de-cookies {
     width: 100%;
     max-width: 1290px;
+    padding: 15px;
     position: fixed;
-    bottom: -132px;
-    line-height: 1.5;
-    padding: 20px;
     right: calc(50vw - 1300px / 2);
-    box-shadow: 0 0 8px var(--cinza8);
-    background: var(--white);
-    font-size: 0.875rem;
+    bottom: -132px;
+    font-size: 0.8125rem;
+    line-height: 1.5;
     background: var(--blackalpha8); 
     color: var(--cinza13);
+    box-shadow: 0 0 8px var(--cinza8);
     visibility: hidden;
-    transition: bottom 150ms ease;
     z-index: 10;
+    transition: bottom 150ms ease;
 }
 
 .rmhiv .aviso-de-uso-de-cookies {
@@ -385,7 +390,7 @@ p.alerta-para-ficha-vazia.on {
 }
 
 .aviso-de-uso-de-cookies p {
-    margin-bottom: 20px;
+    margin-bottom: 15px;
 }
 
 .aviso-de-uso-de-cookies p a {
@@ -403,14 +408,14 @@ p.alerta-para-ficha-vazia.on {
 }
 
 .aviso-de-uso-de-cookies > button {
-    min-width: 200px;
-    background-color: var(--fullblack);
-    border: 2px solid var(--cinza10);
-    padding: 10px;
-    color: var(--cinza13);
-    font-size: 0.875rem;
-    display: block;
+    min-width: 160px;
     margin: auto;
+    padding: 8px;
+    border: 2px solid var(--cinza10);
+    font-size: 0.8125rem;
+    color: var(--cinza13);
+    background-color: var(--fullblack);
+    display: block;
 }  
 
 .aviso-de-uso-de-cookies button:hover {
@@ -428,17 +433,17 @@ p.alerta-para-ficha-vazia.on {
 
 .razao-pelas-celulas-com-fundo-vermelho {
     max-width: 530px;
-    position: fixed;
-    top: -105vh;
-    visibility: hidden;
-    right: calc(50vw - 530px / 2);
-    background-color: var(--white);
-    box-shadow: 0 0 10px var(--cinza5);
     padding: 15px;
-    line-height: 1.5;
+    position: fixed;
+    right: calc(50vw - 530px / 2);
+    top: -105vh;
+    box-shadow: 0 0 10px var(--cinza5);
     font-size: 0.8125rem;
-    transition: top 150ms ease;
+    line-height: 1.5;
+    background-color: var(--white);
     z-index: 10;
+    visibility: hidden;
+    transition: top 150ms ease;
 }
 
 .razao-pelas-celulas-com-fundo-vermelho.on {

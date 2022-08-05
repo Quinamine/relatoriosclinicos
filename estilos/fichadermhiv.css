@@ -10,10 +10,11 @@ strong {
     text-decoration: underline;
 }
 
-/* Layout */
 .linha-do-cabecalho .logo strong {
     text-decoration: none;
 }
+
+/* Layout */
 
 .ficha {
     font-weight: bold;

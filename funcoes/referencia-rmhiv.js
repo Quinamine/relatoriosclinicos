@@ -1,5 +1,5 @@
 
-const faixasEtarias = ["0 - 11 meses", "1 - 4 anos", "5 - 14 anos", "15 - 24 anos", "25 - 59 anos", "&ge; 60 anos"];
+const faixasEtarias = ["0-4 anos", "5-9 anos", "10-14 anos", "15-19 anos", "20 /+ anos"];
 const sexo = ["F", "M"];
 
 
@@ -7,10 +7,9 @@ const sexo = ["F", "M"];
 const Referencia = {
 
     mostrarIdadeESexo (outputFaixaEtaria, outputSexo) {
-        const colunas = document.querySelectorAll(".coluna-de-inputs");
-        const celulas = document.querySelectorAll(".coluna-de-inputs input");
+        const celulas = document.querySelectorAll(".linha input");
     
-        for (let i = 0; i < celulas.length; i++) {
+        /*for (let i = 0; i < celulas.length; i++) {
             celulas[i].addEventListener("focus", () => {
     
                 if (celulas[i].hasAttribute("readonly")) return false;
@@ -44,7 +43,7 @@ const Referencia = {
                 outputSexo.innerHTML = sexo[sexoIndex];
             })
         }
-    },
+    */},
 
     retornarReferenciaVazia (outputFaixaEtaria, outputSexo) {
         outputFaixaEtaria.innerHTML = "";
@@ -53,7 +52,7 @@ const Referencia = {
 
     mostrarOuOmitirRef () {
         const referencia = document.querySelector(".linha-de-referencia");
-        const cabecalhoDaFicha = document.querySelector(".cabecalho-da-ficha");
+        const cabecalhoDaFicha = document.querySelector(".linha-de-faixas-etarias-e-sexo-2");
         const posicao = cabecalhoDaFicha.getBoundingClientRect().bottom;
 
         posicao < 0 ? referencia.classList.add("on") : referencia.classList.remove("on");

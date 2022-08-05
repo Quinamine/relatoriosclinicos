@@ -18,7 +18,7 @@ const hamburguer = {
     }
 }
 
-let menuHamburguer, janelasDesfocantes, desfoque, nav, body;
+let menuHamburguer, desfoque, nav, body;
 window.addEventListener("load", () => {
 
     // Inicialização das variáveis

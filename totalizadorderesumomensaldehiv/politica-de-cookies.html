@@ -1,12 +1,11 @@
 <!DOCTYPE html>
-<html lang="pt-PT">
+<html lang="pt-MZ" dir="ltr">
 <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Política de cookies e Armazenamento local - Totalizador de RM-HIV/SIDA</title>
+    <title>Política de cookies e Local Storage - Totalizador de RM-HIV/SIDA</title>
     <meta name="robots" content="index, follow"/>
-
     <meta name="description" content="O Totalizador de Resumo Mensal de HIV/SIDA utiliza uma tecnologia paralela aos cookies designada Web Storage." />
     <meta name="author" content="Adérito Félix Quinamine" />
 
@@ -15,10 +14,11 @@
     <link rel="stylesheet" href="../estilos/reset.css" />
     <link rel="stylesheet" href="../estilos/layout.css" />
     <link rel="stylesheet" href="../estilos/artigos.css" />
-    <link rel="stylesheet" href="../estilos/printrmce.css" />
+    <link rel="stylesheet" href="../estilos/responsividade-rmhiv.css" />
+    
     <!-- FUNCIONALIDADES -->
-    <script src="funcoes/menudual.js"></script>
-    <script src="funcoes/menumobile.js"></script>
+    <script src="../funcoes/desfoque.js"></script>
+    <script src="../funcoes/hamburguer.js"></script>
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-N0KRLP03SB"></script>
@@ -30,6 +30,7 @@
     gtag('config', 'G-N0KRLP03SB');
     </script>
 
+    <!-- No script -->
     <noscript>O seu navegador está com o JavaScript desabilitado e isso interfere negativamente no funcionamento deste serviço. Habilite-o nas configurações do seu navegador e recarregue a página.</noscript>
 </head>
 <body ontouchstart="">
@@ -37,35 +38,34 @@
         <header>
             <div class="linha-do-cabecalho">
        
-                <a href="../totalizador-de-resumo-mensal-de-hiv-sida.html" class="logo"><strong>Total</strong>izador de Resumo Mensal de HIV/SIDA</a>
+                <a href="../totalizador-de-resumo-mensal-de-hiv-sida.html" class="logo">
+                    <strong>Totalizador de Resumo Mensal de HIV/SIDA</strong>
+                    <strong>Totalizador de RM-HIV/SIDA</strong>
+                </a>
                                       
                 <section class="menu" role="navigation">
                     <ul>
 
-                        <li>
+                        <li title="Política de cookies">
                             <a href="politica-de-cookies.html">Cookies</a>
                         </li>
 
-                        <li>
+                        <li title="Sobre o totalizador">
                             <a href="sobre-o-totalizador.html">Sobre</a>
                         </li>
 
-                        <li>
+                        <li class="salvar-como-pdf" title="Tutorial">
                             <a href="salvar-a-ficha-como-pdf-tutorial.html" class="print-to-pdf">
                                 Salvar como PDF <span class="help">?</span>
                             </a>
                         </li>
                     </ul>
-                    
-                    <button onclick="window.print()" title="Ctrl + P" class="imprimir">
-                        Imprimir
-                    </button>
                 </section>
 
                 <div class="hamburguer">
-                    <div></div>
-                    <div></div>
-                    <div></div>
+                    <div class="camada"></div>
+                    <div class="camada"></div>
+                    <div class="camada"></div>
                 </div>
             </div>
         </header>
@@ -74,7 +74,7 @@
             <article id="politica-de-cookies">
                 <h1>Política de cookies e Web Storage</h1>
     
-                <p><b>Cookies</b> é um recurso de armazenamento local (no navegador do usuário) de dados em forma de texto que a maioria dos sites utiliza para guardar predefinições. Eles são de suma importância pois são como anotações que os sites fazem sobre o comportamento de navegação de cada usuário e posteriormente recorrem-nas para recordar-se das acções e preferências do usuário a fim de oferecê-lo a melhor experiência possível. É graças maioritariamente aos cookies que um site ou aplicativo mantém um usuário logado ou o modo escuro activo por exemplo.</p>
+                <p><b>Cookies</b> é um recurso de armazenamento local (no dispositivo do usuário) de informações que a maioria dos sites utiliza para guardar predefinições. Eles são de suma importância pois são como anotações que os sites fazem sobre o comportamento de navegação de cada usuário e posteriormente recorrem-nas para recordar-se das acções e preferências do usuário a fim de oferecê-lo a melhor experiência possível. É graças maioritariamente aos cookies que um site ou aplicativo mantém um usuário logado por exemplo, sem necessidade desse digitar a senha toda vez que abre o aplicativo.</p>
     
                 <p>Para salvar os dados da ficha no navegador do usúario, o Totalizador de Resumo Mensal de HIV/SIDA faz uso de uma tecnologia semelhante designada <b>Web Storage</b>.
                 </p>
@@ -145,9 +145,7 @@
                 
                 <p class="consentimento"><strong>Ao utilizar o Totalizador de Resumo Mensal de HIV/SIDA, você consente com os  termos de serviço e armazenamento apresentados neste bloco.</strong></p>
 
-            </article>
-
-            
+            </article>   
         </main>
 
         <footer>         

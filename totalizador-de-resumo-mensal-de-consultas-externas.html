@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-PT" dir="ltr">
+<html lang="pt-MZ" dir="ltr">
 <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -30,12 +30,12 @@
     <link rel="stylesheet" href="estilos/print.css" />
 
     <!-- FUNCIONALIDADES -->
+    <script src="funcoes/menu.js"></script>
     <script src="funcoes/backup.js"></script>
     <script src="funcoes/soma.js"></script>
     <script src="funcoes/totalizador.js"></script>
     <script src="funcoes/pesquisarlinha.js"></script>
     <script src="funcoes/desfoque.js"></script>
-    <script src="funcoes/menu.js"></script>
     <script src="funcoes/hamburguer.js"></script>
     <script src="funcoes/input.js"></script>
     <script src="funcoes/referencia.js"></script> 
@@ -52,6 +52,7 @@
     gtag('config', 'G-N0KRLP03SB');
     </script>
 
+    <!-- No script -->
     <noscript>O seu navegador está com o JavaScript desabilitado e isso interfere negativamente no funcionamento deste serviço. Habilite-o nas configurações do seu navegador e recarregue a página.</noscript>
 </head>
 <body ontouchstart="">
@@ -59,7 +60,10 @@
         <header>
             <div class="linha-do-cabecalho">
        
-                <a href="totalizador-de-resumo-mensal-de-consultas-externas.html" class="logo"><strong>TOTAL</strong>IZADOR DE <span title="Resumo Mensal">RM</span>-CONSULTAS</a>
+                <a href="totalizador-de-resumo-mensal-de-consultas-externas.html" class="logo">
+                    <strong>Totalizador de Resumo Mensal de Consultas</strong>
+                    <strong><b>TOTAL</b>IZADOR DE RM-CONSULTAS</strong>
+                </a>
                                       
                 <section class="menu" role="navigation">
                     <ul>
@@ -69,11 +73,11 @@
                             <label for="readonlyinputs-darker">Destacar as células automáticas</label>
                         </li>
 
-                        <li title="Pesquisar por um número de linha entre 1 e 53. (Ctrl + B)">
+                        <li title="Pesquisar por um número de linha entre 1 e 53 (Ctrl + B)">
                             <button class="ir-para">Ir para linha...</button>
                         </li>  
                             
-                        <li>
+                        <li title="Limpar ficha">
                             <button class="esvaziar-ficha">Esvaziar ficha</button>
                         </li>
 
@@ -82,21 +86,21 @@
                         </li> 
 
                         <li>
-                            <a href="totalizadordermconsultas/politica-de-cookies.html">Política de cookies</a>
+                            <a href="totalizadorderesumomensaldeconsultas/politica-de-cookies.html">Política de cookies</a>
                         </li>
 
-                        <li>
-                            <a href="totalizadordermconsultas/sobre-o-totalizador.html">Sobre</a>
+                        <li title="Sobre o totalizador">
+                            <a href="totalizadorderesumomensaldeconsultas/sobre-o-totalizador.html">Sobre</a>
                         </li>
 
-                        <li class="salvar-como-pdf">
-                            <a href="totalizadordermconsultas/salvar-a-ficha-como-pdf-tutorial.html" class="print-to-pdf">
+                        <li class="salvar-como-pdf" title="Tutorial">
+                            <a href="totalizadorderesumomensaldeconsultas/salvar-a-ficha-como-pdf-tutorial.html" class="print-to-pdf">
                                 Salvar como PDF <span class="help">?</span>
                             </a>
                         </li>
                     </ul>
                     
-                    <button onclick="window.print()" title="Ctrl + P" class="imprimir">
+                    <button onclick="window.print()" title="Imprimir a ficha (Ctrl + P)" class="imprimir">
                         Imprimir
                     </button>
                 </section>
@@ -124,7 +128,7 @@
                             <input type="text" id="mes" />
                         </div>
 
-                        <span class="marginleft-1">1</span>
+                        <span class="marginleft--1">1</span>
                         <span>2</span>
                         <span>3</span>
                         <span>4</span>
@@ -327,7 +331,7 @@
                     <span>US</span>
                 </section>
 
-                <!-- colunauna 0 - 11 meses sexo Feminino e Masculino  -->
+                <!-- Coluna 0 - 11 meses sexo Feminino e Masculino  -->
 
                 <section class="coluna-de-inputs coluna-0-a-11-sexo-f">
                     <input type="number" min="0" data-subtotal="l1-c1c3c5" data-subtotaloutput="l1-c7" data-totalporsexo="l1-c1c3c5c9c11c13" data-totalporsexooutput="l1-c17" data-totalgeral="l1-c1c2c3c4c5c6c9c10c11c12c13c14" data-totalgeraloutput="l1-c19" data-totaldeconsultaseixoy="l1l2-c1" data-totaldeconsultasoutput="l3-c1" data-subtotaldetotaldeconsultas="l1l2-c1c3c5" data-subtotaldetotaldeconsultasoutput="l3-c7" data-totalporsexodetotaldeconsultas="l1l2-c1c3c5c9c11c13"data-totalporsexodetotaldeconsultasoutput="l3-c17" data-totalgeraldetotaldeconsultas="l1l2-c1c2c3c4c5c6c9c10c11c12c13c14" data-totalgeraldetotaldeconsultasoutput="l3-c19"/>
@@ -548,7 +552,7 @@
                     <input type="number" min="0" data-subtotal="l53-c2c4c6" data-subtotaloutput="l53-c8" data-totalporsexo="l53-c2c4c6c10c12c14" data-totalporsexooutput="l53-c18" data-totalgeral="l53-c1c2c3c4c5c6c9c10c11c12c13c14" data-totalgeraloutput="l53-c19"/>
                 </section>
 
-                <!-- colunauna 1 - 4 anos sexo Feminino  e Masculino -->
+                <!-- Coluna 1 - 4 anos sexo Feminino  e Masculino -->
                 <section class="coluna-de-inputs coluna-1-a-4-sexo-f">
                     <input type="number" min="0" data-subtotal="l1-c1c3c5" data-subtotaloutput="l1-c7" data-totalporsexo="l1-c1c3c5c9c11c13" data-totalporsexooutput="l1-c17" data-totalgeral="l1-c1c2c3c4c5c6c9c10c11c12c13c14" data-totalgeraloutput="l1-c19" data-totaldeconsultaseixoy="l1l2-c3" data-totaldeconsultasoutput="l3-c3" data-subtotaldetotaldeconsultas="l1l2-c1c3c5" data-subtotaldetotaldeconsultasoutput="l3-c7" data-totalporsexodetotaldeconsultas="l1l2-c1c3c5c9c11c13"data-totalporsexodetotaldeconsultasoutput="l3-c17" data-totalgeraldetotaldeconsultas="l1l2-c1c2c3c4c5c6c9c10c11c12c13c14" data-totalgeraldetotaldeconsultasoutput="l3-c19"/>
 
@@ -771,7 +775,7 @@
                     <input type="number" min="0" data-subtotal="l53-c2c4c6" data-subtotaloutput="l53-c8" data-totalporsexo="l53-c2c4c6c10c12c14" data-totalporsexooutput="l53-c18" data-totalgeral="l53-c1c2c3c4c5c6c9c10c11c12c13c14" data-totalgeraloutput="l53-c19"/>
                 </section>
 
-                <!-- colunauna 5 - 14 anos sexo Feminino  e Masculino -->
+                <!-- Coluna 5 - 14 anos sexo Feminino  e Masculino -->
                 <section class="coluna-de-inputs coluna-5-a-14-sexo-f">
                     <input type="number" min="0" data-subtotal="l1-c1c3c5" data-subtotaloutput="l1-c7" data-totalporsexo="l1-c1c3c5c9c11c13" data-totalporsexooutput="l1-c17" data-totalgeral="l1-c1c2c3c4c5c6c9c10c11c12c13c14" data-totalgeraloutput="l1-c19" data-totaldeconsultaseixoy="l1l2-c5" data-totaldeconsultasoutput="l3-c5" data-subtotaldetotaldeconsultas="l1l2-c1c3c5" data-subtotaldetotaldeconsultasoutput="l3-c7" data-totalporsexodetotaldeconsultas="l1l2-c1c3c5c9c11c13"data-totalporsexodetotaldeconsultasoutput="l3-c17" data-totalgeraldetotaldeconsultas="l1l2-c1c2c3c4c5c6c9c10c11c12c13c14" data-totalgeraldetotaldeconsultasoutput="l3-c19"/>
 
@@ -994,7 +998,7 @@
                     <input type="number" min="0" data-subtotal="l53-c2c4c6" data-subtotaloutput="l53-c8" data-totalporsexo="l53-c2c4c6c10c12c14" data-totalporsexooutput="l53-c18" data-totalgeral="l53-c1c2c3c4c5c6c9c10c11c12c13c14" data-totalgeraloutput="l53-c19"/>
                 </section>
 
-                <!-- Subtotal Pediatrico -->
+                <!-- Subtotal Pediátrico -->
 
                 <section class="coluna-de-inputs coluna-subtotal-pediatrico-sexo-f">
                     <input type="number" min="0" readonly class="l1-c7"/>  
@@ -1550,7 +1554,7 @@
                     <input type="number" min="0" data-subtotal="l53-c10c12c14" data-subtotaloutput="l53-c16" data-totalporsexo="l53-c2c4c6c10c12c14" data-totalporsexooutput="l53-c18" data-totalgeral="l53-c1c2c3c4c5c6c9c10c11c12c13c14" data-totalgeraloutput="l53-c19"/>                
                 </section>
 
-                <!--- Maior de sessenta-->
+                <!--- Maiores de 59 -->
                 <section class="coluna-de-inputs coluna-60-ou-mais-sexo-f">
                     <input type="number" min="0" data-subtotal="l1-c9c11c13" data-subtotaloutput="l1-c15" data-totalporsexo="l1-c1c3c5c9c11c13" data-totalporsexooutput="l1-c17" data-totalgeral="l1-c1c2c3c4c5c6c9c10c11c12c13c14" data-totalgeraloutput="l1-c19" data-totaldeconsultaseixoy="l1l2-c13" data-totaldeconsultasoutput="l3-c13" data-subtotaldetotaldeconsultas="l1-c9c11c13-l2-c9c11c13" data-subtotaldetotaldeconsultasoutput="l3-c15" data-totalporsexodetotaldeconsultas="l1l2-c1c3c5c9c11c13"data-totalporsexodetotaldeconsultasoutput="l3-c17" data-totalgeraldetotaldeconsultas="l1l2-c1c2c3c4c5c6c9c10c11c12c13c14" data-totalgeraldetotaldeconsultasoutput="l3-c19"/>
 
@@ -2097,7 +2101,7 @@
 
             <div class="manipulacao-do-menu">
 
-                <!-- Acessar subtotais -->
+                <!-- Restrição de acesso -->
                 <p class="aviso-de-restricao-de-acesso-a-readonlyinputs">
                     Inacessível. Essa célula é só de leitura. <span class="recomendacao"> Marque a opção <b>"Destacar as células automáticas"</b> para distinguir as células de leitura das outras.</span>
                 </p> 
@@ -2200,17 +2204,17 @@
 
                 <!-- Motivo inputs com fundo vermelho -->
                 <div class="razao-pelas-celulas-com-fundo-vermelho">
-                    <h2>Por que algumas células estão com o fundo vermelho?</h2>
+                    <h2>Por que algumas células ficaram com o fundo vermelho?</h2>
                     <p class="obs">
                         <strong>
                             Toda célula cujo fundo está vermelho tem UM ou MAIS algarismos omissos por indisponibilidade de espaço na respectiva célula.
                         </strong>
                     </p>
                     <p>
-                        Cada célula do Totalizador tem espaço (na área visível) cabível no máximo para 7 algarismos, portanto, mostra valores até <b>9 999 999</b>. A partir de 10&nbsp;000&nbsp;000, só ficam visíveis os primeiros 7 algarismos e do 8º em diate, ficam fora da viewport (área visível) da célula.
+                        Cada célula do Totalizador tem espaço disponível no máximo para 7 algarismos, portanto, mostra valores até <b>9 999 999</b>. A partir de 10&nbsp;000&nbsp;000, só ficam visíveis os primeiros 7 algarismos e do 8º em diante, ficam fora da viewport (área visível) da célula.
                     </p>
                     <p class="obs afirmacao">
-                        Convenhamos, não existe nenhuma Unidade Sanitária em Moçambique que durante 1 mês tenha um número de consultas próximo, igual ou acima de 10&nbsp;000&nbsp;000.
+                        Convenhamos, nenhuma Unidade Sanitária em Moçambique tem um número de consultas próximo, igual ou acima de 10&nbsp;000&nbsp;000 num intervalo de 1 mês.
                     </p>
                     <div class="seccao-de-interatividade">
                         <div>

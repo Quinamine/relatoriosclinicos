@@ -90,7 +90,6 @@ const  menu = {
     }
 }   
 
-
 window.addEventListener("load", () => {
     // Destacar células
     const readonlyInputsDarker = document.querySelector("#readonlyinputs-darker");

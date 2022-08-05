@@ -62,9 +62,9 @@ a {
 }
 
 button {
-    color: var(--cinza3);
     border: none;
     outline: none;
+    color: var(--cinza3);
     font-family:  sans-serif, Arial, Helvetica;
 }
 
@@ -122,8 +122,8 @@ input[readonly].gray {
 /* CABEÇALHO */
 
 #involucro > header {
-    box-shadow: 0 0 10px var(--cinza13);
     line-height: 2;
+    box-shadow: 0 0 10px var(--cinza13);
 }
 
 #involucro.rmhiv > header {
@@ -140,17 +140,13 @@ input[readonly].gray {
 
 .linha-do-cabecalho .logo {
     font-size: 1rem !important;
-    color: var(--fullblack);
-}
-
-.rmhiv .linha-do-cabecalho .logo {
     font-weight: bold;
     color: var(--cinza3);
 }
 
-.linha-do-cabecalho .logo span:hover,
-.linha-do-cabecalho ul li label:hover {
-    cursor: pointer;
+.linha-do-cabecalho .logo > strong:nth-child(2) { 
+    display: none;
+    font-weight: initial;
 }
 
 /* SECÇÃO DE NAVEGAÇÃO */
@@ -164,7 +160,7 @@ input[readonly].gray {
 
 .linha-do-cabecalho .menu {
     flex: 1;
-    margin-left: 20px;
+    margin-left: 20.1875px;
 }
 
 .rmhiv .linha-do-cabecalho .menu {
@@ -174,6 +170,11 @@ input[readonly].gray {
 
 .menu ul li.destacar-as-celulas-automaticas {
     justify-content: center;
+}
+
+.menu ul li.destacar-as-celulas-automaticas:hover,
+.menu ul li.destacar-as-celulas-automaticas label{
+    cursor: pointer;
 }
 
 .menu ul li label {
@@ -208,11 +209,13 @@ input[readonly].gray {
     font-weight: bold;
     padding: 2px 6px 1px 6px;
     border-radius: 50%;
+    cursor: help;
 }
 
 .rmhiv .menu ul li a.print-to-pdf span.help {
     background-color: var(--azulminiopaco);
 }
+
 
 /* ESTADOS DOS ELEMENTOS DO MENU (HOVERS E ACTIVES)*/
 .menu ul li:first-child:hover,
@@ -231,6 +234,7 @@ input[readonly].gray {
 .linha-do-cabecalho button.imprimir,
 article mark.print {
     display: block;
+    min-width: 100px;
     margin-left: auto;
     margin-right: 9px;
     padding: 4px 3px;
@@ -239,7 +243,6 @@ article mark.print {
     background-color: var(--cinza4);
     color: var(--white);
     font: bold 0.75rem sans-serif, Arial, Helvetica;
-    min-width: 100px;
 }
 
 .linha-do-cabecalho button.imprimir:hover {
@@ -250,7 +253,6 @@ article mark.print {
 .linha-do-cabecalho button.imprimir:active {
     opacity: .7;
 }
-
 
 /* CONTEÚDO PRINCIPAL */
 
@@ -307,8 +309,8 @@ a#abordagem-pediatrica + ul {
 }
 
 .linha-do-rodape p {
-    align-self: center;
     flex: 1;
+    align-self: center;
     text-align: center;
     margin-right: 10px;
 }
@@ -347,11 +349,11 @@ a#abordagem-pediatrica + ul {
 .linha-de-referencia .referencia {
     max-width: 1300px;
     min-width: 40%;
-    display: flex;
-    align-items: center;
     margin: 0 auto;
     padding: 5px;
     line-height: 2;
+    display: flex;
+    align-items: center;
 }
 
 .linha-de-referencia .referencia > * {
@@ -369,11 +371,11 @@ a#abordagem-pediatrica + ul {
 }
 
 .referencia output {
+    display: inline-block;
+    min-height: 26px;
     border: thin solid var(--cinza12);
     margin: 0 5px;
     text-align: center;
-    display: inline-block;
-    min-height: 26px;
 }
 
 .referencia output.faixa-etaria {
@@ -407,4 +409,15 @@ input.bg-red,
 input[readonly].gray.bg-red {
     background-color: var(--red) !important;
     color: #fff;
+}
+
+@-moz-document url-prefix() {
+    input.font11 {
+        font-size: 0.7125rem !important;
+    }
+
+    input[readonly] {
+        letter-spacing: -0.5px;
+    }
+    
 }

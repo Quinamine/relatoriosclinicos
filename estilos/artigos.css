@@ -1,13 +1,19 @@
+#involucro {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+#involucro main {
+    flex: 1;
+}
+
 .linha-do-cabecalho {
     justify-content: space-between;
 }
 
 .linha-do-cabecalho .menu {
     justify-content: flex-end;
-}
-
-.menu button.imprimir {
-    display: none;
 }
 
 article {
@@ -168,7 +174,7 @@ p.consentimento {
     }
 
     article {
-        margin-left: 0;
+        margin-left: 0 !important;
         padding: 0 15px;
     }
 }

@@ -14,20 +14,22 @@ strong {
     text-decoration: none;
 }
 
-/* Layout */
+/* LAYOUT */
 
 .ficha {
     font-weight: bold;
 }
 
 /* FICHA */
+
 .ficha {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-/* Cabeçalho da ficha */
+/* CABEÇALHO DA FICHA */
+
 .ficha header {
     min-width: 974px;
     display: flex;
@@ -81,7 +83,7 @@ strong {
     max-width: 118px;
 }
 
-/* Ficha propriamente dita */
+/* FICHA PROPRIAMENTE DITA */
 
 .linha > div,
 .grade-extra .coluna-de-cs span,
@@ -185,7 +187,8 @@ strong {
     margin-left: 1px !important;
 }
 
-/* Tags filha */ 
+/* TAGS FILHAS */ 
+
 .linha > div:nth-child(1) {
     display: flex;
     justify-content: center;
@@ -210,8 +213,8 @@ input[readonly]:focus {
     border-bottom: 1px solid var(--cinza4) !important;
 }
 
-
 /* GRADE INTERMÉDIA */
+
 .grade-intermedia {
     display: grid;
     grid-template-columns: 18px 370px 604px;
@@ -242,7 +245,8 @@ input[readonly]:focus {
     background-color: var(--cinza13);
 }
 
-/*** Coluna de Entradas e Saidas  */
+/* COLUNA DE ENTRADAS E SAÍDAS  */
+
 .coluna-de-entradas-e-saidas {
     grid-row: 2;
     display: grid;
@@ -269,6 +273,7 @@ input[readonly]:focus {
 }
 
 /* GRADE INFERIOR */
+
 .grade-inferior {
     margin-top: 4px;
 }
@@ -278,6 +283,7 @@ input[readonly]:focus {
 }
 
 /* GRADE EXTRA */
+
 .grade-extra {
     max-width: 974px;
     margin-top: 8px;
@@ -341,6 +347,7 @@ input[readonly]:focus {
 }
 
 /* TITULO DA COLUNA */
+
 .grade-extra .coluna-de-total .header {
     min-height: 18px;
     justify-content: center;
@@ -351,15 +358,16 @@ input[readonly]:focus {
     min-height: 100%;
 }
 
-
 /* INPUTS */
+
 .coluna-de-total div input {
     flex: 1;
     padding: 2px;
     text-align: center;
 }
 
-/* Coluna Intermédia */
+/* COLUNA INTERMÉDIA */
+
 .grade-extra.intermedia {
     grid-template-columns: 50px calc(320px + 402px) repeat(2, 100px);
 }
@@ -377,7 +385,8 @@ input[readonly]:focus {
     width: 100%;
 }
 
-/* Linha de Assinatura */
+/* LINHA DE ASSINATURA */
+
 .linha-de-assinatura {
     width: 100%;
     max-width: 974px;
@@ -401,6 +410,14 @@ input[readonly]:focus {
     text-align: center;
 }
 
+/* CLASSES MANIPULÁVEIS COM JS */
 
+input.font11 {
+    letter-spacing: -0.3px !important;
+}
 
+input.font10 {
+    font-size: 0.68125rem !important;
+    letter-spacing: -0.5px;
+}
 

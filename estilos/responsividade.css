@@ -182,7 +182,7 @@
     /* RODAPÉ */
 
     #involucro footer {
-        padding-bottom: 60px;
+        padding-bottom: 50px;
     }
     
     .linha-do-rodape {
@@ -200,7 +200,7 @@
     }
 
     a.voltar {
-        margin: 10px 0 0 -5px;
+        margin: 20px 0 0 -5px;
     }
 
     /* COOKIES */
@@ -217,6 +217,7 @@
     /* MANIPULAÇÃO DO MENU */
 
     /* Esvaziar ficha */
+
     .caixa-de-confirmacao {
         min-width: 300px;
         right: calc(50vw - 310.28px / 2);
@@ -234,7 +235,7 @@
         align-items: center;
     }
 
-    /* Feedback para células vermelhas */
+    /* FEEDBACK PARA CÉLULAS VERMELHAS */
     
     .razao-pelas-celulas-com-fundo-vermelho {
         width: 100%;

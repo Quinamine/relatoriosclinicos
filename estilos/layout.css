@@ -65,7 +65,7 @@ button {
     border: none;
     outline: none;
     color: var(--cinza3);
-    font-family:  sans-serif, Arial, Helvetica;
+    font-family:  sans-serif, Arial, Helvetica  !important; /* Coerção para Firefox */
 }
 
 button:hover {
@@ -76,6 +76,7 @@ input {
     border: none;
     outline: none;
     color: var(--cinza3);
+    font-family:  sans-serif, Arial, Helvetica !important; /* Coerção para Firefox */
 }
 
 input::-webkit-outer-spin-button,
@@ -216,8 +217,8 @@ input[readonly].gray {
     background-color: var(--azulminiopaco);
 }
 
+/* ESTADOS DOS ELEMENTOS DO MENU (HOVERS E ACTIVES) */
 
-/* ESTADOS DOS ELEMENTOS DO MENU (HOVERS E ACTIVES)*/
 .menu ul li:first-child:hover,
 .menu ul li button:hover,
 .menu ul li a:hover {
@@ -267,6 +268,7 @@ main {
 }
 
 /* RODAPÉ */
+
 #involucro > footer {
     background-color: var(--azulclaro);
     padding: 40px 0;
@@ -334,11 +336,20 @@ a#abordagem-pediatrica + ul {
     position: fixed;
     bottom: -36px;
     background-color: var(--white);
-    line-height: 1.5;
     box-shadow: 0 -1px 5px var(--cinza14);
     z-index: 1;
     visibility: hidden;
     transition: bottom 50ms linear;
+}
+
+.rmhiv .linha-de-referencia {
+    display: block;
+    background-color: var(--azul);
+    color: var(--white);
+}
+
+.rmhiv .linha-de-referencia h3 {
+    color: var(--white) !important;
 }
 
 .linha-de-referencia.on {
@@ -348,18 +359,25 @@ a#abordagem-pediatrica + ul {
 
 .linha-de-referencia .referencia {
     max-width: 1300px;
-    min-width: 40%;
     margin: 0 auto;
-    padding: 5px;
-    line-height: 2;
+    padding: 4px 10px;
+    font-size: 0.6875rem;
     display: flex;
     align-items: center;
+}
+
+.rmhiv .linha-de-referencia .referencia {
+    max-width: 1024px;
 }
 
 .linha-de-referencia .referencia > * {
     margin: 0 5px;
     display: flex;
     align-items: center;
+}
+
+.referencia h3 b {
+    padding: 0 !important;
 }
 
 .referencia h3 b.ref {
@@ -370,12 +388,17 @@ a#abordagem-pediatrica + ul {
     font-weight: bold;
 }
 
+.rmhiv .referencia h3 b, .rmhiv .referencia output {
+    font-weight: initial;
+}
+
 .referencia output {
-    display: inline-block;
-    min-height: 26px;
+    min-height: 18px;
     border: thin solid var(--cinza12);
     margin: 0 5px;
-    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .referencia output.faixa-etaria {
@@ -405,19 +428,14 @@ input.font11 {
     font-size: 0.7375rem !important;
 }
 
+@-moz-document url-prefix() {
+    input.font11 {
+        font-size: 0.7125rem !important;
+    } 
+}
+
 input.bg-red, 
 input[readonly].gray.bg-red {
     background-color: var(--red) !important;
     color: #fff;
-}
-
-@-moz-document url-prefix() {
-    input.font11 {
-        font-size: 0.7125rem !important;
-    }
-
-    input[readonly] {
-        letter-spacing: -0.5px;
-    }
-    
 }

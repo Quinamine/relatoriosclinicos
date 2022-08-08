@@ -37,6 +37,7 @@
     }
 
     .ficha .linha:nth-child(n+2) > div:nth-child(2),
+    .linha.b1 > div:nth-child(2),
     .linha.b10 > div:nth-child(2) {
         position: -webkit-sticky;
         position: sticky;
@@ -44,6 +45,11 @@
         background-color: var(--white);
         border-right: 1px solid var(--cinza4);
         margin-right: -1px;
+    }
+
+    .linha.b4 > div:nth-child(2),
+    .linha.b9 > div:nth-child(2) {
+        background-color: var(--cinza13) !important;
     }
 
     footer.linha-de-assinatura {
@@ -67,12 +73,6 @@
         max-width: 100% !important;
         right: 0 !important;
     }
-    
-    /* REFERENCIA */
-
-    .linha-de-referencia {
-        display: block;
-    }
 
     /* RODAPÉ */
 
@@ -84,7 +84,6 @@
     .linha-do-rodape a.voltar {
         margin-right: 0;
     }
-
 }
 
 @media screen and (max-width: 970px) {
@@ -180,6 +179,10 @@
 
     /* RODAPÉ */
 
+    #involucro footer {
+        padding-bottom: 50px;
+    }
+
     .linha-do-rodape {
         flex-direction: column;
     }
@@ -195,7 +198,7 @@
     }
 
     a.voltar {
-        margin: 10px 0 0 -5px;
+        margin: 20px 0 0 -5px;
     }
 
     /* COOKIES */
@@ -205,6 +208,7 @@
     }
 
     /* DESFOQUE PARCIAL DO FUNDO */
+
     .desfoque-do-fundo.parcial.on {
         top: 48px;
         z-index: initial;
@@ -213,6 +217,7 @@
     /* MANIPULAÇÃO DO MENU */
 
     /* Esvaziar ficha */
+
     .caixa-de-confirmacao {
         min-width: 300px;
         right: calc(50vw - 310.28px / 2);
@@ -230,7 +235,7 @@
         align-items: center;
     }
 
-    /* Feedback para células vermelhas */
+    /* FEEDBACK PARA CÉLULAS VERMELHAS */
     
     .razao-pelas-celulas-com-fundo-vermelho {
         width: 100%;
@@ -249,6 +254,7 @@
 
 @media screen and (max-width: 670px) {
     .ficha .linha:nth-child(n+2) > div:nth-child(2),
+    .linha.b1 > div:nth-child(2),
     .linha.b10 > div:nth-child(2) {
         position: initial;
     }

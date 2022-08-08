@@ -5,13 +5,15 @@ const input = {
         for (const c of celulas) {
             // Reset 
             c.classList.remove("font11");
+            c.classList.remove("font10");
             c.classList.remove("bg-red");
     
             let algarismos = c.value.length;
-            if(algarismos >=7) {
-                c.classList.add("font11");
-                algarismos > 7 && c.classList.add("bg-red");
-            };
+            if(algarismos == 7) {c.classList.add("font11")}
+            else if(algarismos >= 8) {
+                c.classList.add("font10");
+                algarismos > 8 && c.classList.add("bg-red");
+            }
         }
     },
 

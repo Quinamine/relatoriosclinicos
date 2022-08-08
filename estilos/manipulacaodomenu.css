@@ -205,7 +205,6 @@ p.aviso-de-restricao-de-acesso-a-readonlyinputs > span.recomendacao.on {
     display: flex;
     align-items: center;
     justify-content: center;
-    
 }
 
 .fechar-atalhos-do-teclado:hover  {
@@ -351,12 +350,12 @@ p.alerta-para-ficha-vazia {
 
 .rmhiv .esvaziamento-da-ficha 
 p.alerta-para-ficha-vazia {
-    left: calc(50vw - 179.19px / 2);
+    left: calc(50vw - 124.78px / 2);
 }   
 
 .esvaziamento-da-ficha 
 p.alerta-para-ficha-vazia.on {
-    bottom: calc(50vh - 40px / 2);
+    bottom: calc(50vh - 33px / 2);
     visibility: initial;
 }
 
@@ -408,9 +407,9 @@ p.alerta-para-ficha-vazia.on {
 }
 
 .aviso-de-uso-de-cookies > button {
-    min-width: 160px;
+    min-width: 180px;
     margin: auto;
-    padding: 8px;
+    padding: 7px;
     border: 2px solid var(--cinza10);
     font-size: 0.8125rem;
     color: var(--cinza13);

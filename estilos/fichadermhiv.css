@@ -141,10 +141,12 @@ strong {
     border: none;
     border-bottom: 1px solid var(--cinza4);
     font-family: sans-serif, Arial, Helvetica;
+    justify-content: flex-start !important;
+    padding: 0;
 }
 
 .contentor-de-nid input {
-    max-width: 200px !important;
+    min-width: 210px !important;
     border-bottom: 1px solid var(--cinza4);
     text-align: initial !important;
 }

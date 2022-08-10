@@ -296,6 +296,10 @@ a#abordagem-pediatrica + ul {
     color: var(--cinza8);
 }
 
+.rmhiv a.voltar {
+    margin-right: 0;
+}
+
 .linha-do-rodape a.voltar:active {
     color: var(--cinza5);
 }

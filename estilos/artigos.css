@@ -132,7 +132,7 @@ p.consentimento {
 
 #politica-de-cookies p.consentimento,
 #conversao-pdf .nota {
-    padding: 2px 2px 2px 15px;
+    padding: 2px 2px 2px 13px;
     border-radius: 0 4px 4px 0;
     border: 1px solid var(--cinza10);
     border-left: 6px solid var(--cinza4);

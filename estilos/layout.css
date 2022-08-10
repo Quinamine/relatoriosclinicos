@@ -17,6 +17,7 @@
     --white: #ffffff;
     --azul: #0060EE;
     --azulminiopaco: #1558bc;
+    --azulescuro: #0f1c2e;
     --azulclaro: #dce4f4;
     --roxoclaro: rgb(116, 116, 235);
     --red: #dd0000;
@@ -59,6 +60,10 @@ body b, strong {
 a {
     text-decoration: none;
     color: var(--azulminiopaco)
+}
+
+a.sem-destaque {
+    color: inherit !important;
 }
 
 button {
@@ -161,16 +166,11 @@ input[readonly].gray {
 
 .linha-do-cabecalho .menu {
     flex: 1;
-    margin-left: 20.1875px;
+    justify-content: flex-end;
 }
 
 .rmhiv .linha-do-cabecalho .menu {
-    justify-content: flex-end;
     margin-right: -10px;
-}
-
-.menu ul li.destacar-as-celulas-automaticas {
-    justify-content: center;
 }
 
 .menu ul li.destacar-as-celulas-automaticas:hover,
@@ -205,16 +205,11 @@ input[readonly].gray {
 }
 
 .menu ul li a.print-to-pdf span.help {
-    background-color: var(--blackalpha5);
-    color: var(--white);
     font-weight: bold;
-    padding: 2px 6px 1px 6px;
+    padding: 2px 4px 1px 4px;
+    border: thin dotted var(--cinza8);
     border-radius: 50%;
     cursor: help;
-}
-
-.rmhiv .menu ul li a.print-to-pdf span.help {
-    background-color: var(--azulminiopaco);
 }
 
 /* ESTADOS DOS ELEMENTOS DO MENU (HOVERS E ACTIVES) */
@@ -230,29 +225,6 @@ input[readonly].gray {
 .menu ul li a:active {
     background-color: var(--cinza13);
     color: inherit;
-}
-
-.linha-do-cabecalho button.imprimir,
-article mark.print {
-    display: block;
-    min-width: 100px;
-    margin-left: auto;
-    margin-right: 9px;
-    padding: 4px 3px;
-    border-radius: 4px;;
-    border: 1px solid var(--cinza4);
-    background-color: var(--cinza4);
-    color: var(--white);
-    font: bold 0.75rem sans-serif, Arial, Helvetica;
-}
-
-.linha-do-cabecalho button.imprimir:hover {
-    background-color: var(--fullblack);
-    cursor: pointer;
-}
-
-.linha-do-cabecalho button.imprimir:active {
-    opacity: .7;
 }
 
 /* CONTEÚDO PRINCIPAL */
@@ -344,7 +316,7 @@ a#abordagem-pediatrica + ul {
 
 .rmhiv .linha-de-referencia {
     display: block;
-    background-color: var(--azul);
+    background-color: var(--azulescuro);
     color: var(--white);
 }
 
@@ -361,7 +333,6 @@ a#abordagem-pediatrica + ul {
     max-width: 1300px;
     margin: 0 auto;
     padding: 4px 10px;
-    font-size: 0.6875rem;
     display: flex;
     align-items: center;
 }
@@ -394,15 +365,27 @@ a#abordagem-pediatrica + ul {
 
 .referencia output {
     min-height: 18px;
-    border: thin solid var(--cinza12);
+    border: thin solid var(--white);
     margin: 0 5px;
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: var(--azulclaro);
+    color: var(--cinza5);
+}
+
+.rmhiv .referencia output {
+    background-color: inherit;
+    color: var(--white);
+    border-color: var(--azul);
 }
 
 .referencia output.faixa-etaria {
     min-width: 86px;
+}
+
+.rmhiv .referencia output.faixa-etaria {
+    min-width: 72px;
 }
 
 .referencia output.sexo {

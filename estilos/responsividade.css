@@ -4,23 +4,54 @@
     /* CABEÇALHO */
 
     .linha-do-cabecalho {
-        padding: 7.5px 15px;
-        flex-direction: column;
-        align-items: flex-start;
+        padding: 0 15px;
+        min-height: 47px;
     }
 
     .linha-do-cabecalho .menu {
         width: 100%;
-        margin: 0;
+        margin: 0 -10px 0 20px;
+    }
+
+    .menu ul {
+        overflow: auto;
+        min-height: 47px;
+    }
+
+    .trmc .menu ul {
+        margin-bottom: -8px;
+    }
+
+    @-moz-document url-prefix() {
+        .trmc .menu ul {
+            margin-bottom: -17px;
+        }
+    }
+
+    ul::-webkit-scrollbar {
+        height: 7px;
+    }
+    
+    ul::-webkit-scrollbar-thumb {
+        background-color: var(--cinza12);
+        border-radius: 40px;
+    }
+    
+    ul::-webkit-scrollbar-thumb:hover {
+        background-color: var(--cinza10);
+    }
+    
+    ul::-webkit-scrollbar-thumb:active {
+        background-color: var(--cinza8);
+    }
+
+    .menu ul li {
+        flex-shrink: 0;
     }
 
     .menu ul li input[type=checkbox] {
         height: 11px;
         margin: 1px 4px;
-    }
-
-    .menu button.imprimir {
-        margin-right: 0;
     }
 
     /* FICHA */
@@ -46,45 +77,31 @@
         background-color: var(--white);
     }
 
-    /* RODAPÉ */
-
-    .linha-do-rodape {
-        padding: 0 15px;
+    .linha-de-referencia {
+        display: block;
     }
-
-    /* COOKIES */
 
     .aviso-de-uso-de-cookies {
         max-width: 100%;
         right: 0;
     }
 
-    .linha-de-referencia {
-        display: block;
+    .linha-do-rodape {
+        padding: 0 15px;
     }
 }
 
 @media screen and (max-width: 1023px) {
 
-    .menu button.imprimir,
+    .menu li.imprimir,
     .li-atalhos-do-teclado,
     li.salvar-como-pdf,
     a.print-to-pdf {
         display: none !important;
     }
+    
+    /* CABEÇALHO */
 
-    .linha-do-cabecalho {
-        flex-direction: row;
-        align-items: center;
-    }
-
-    .linha-do-cabecalho .menu {
-        justify-content: flex-end;
-        margin-right: -10px;
-    }
-}
-
-@media screen and (max-width: 970px) {
     .linha-do-cabecalho {
         justify-content: center;
         align-items: center;
@@ -95,7 +112,12 @@
     }
     
     .linha-do-cabecalho .menu {
+        margin: 0;
         display: none;
+    }
+
+    .trmc .menu ul {
+        margin-bottom: 0 !important;
     }
     
     /* MENU HAMBURGUER */
@@ -277,6 +299,9 @@
         top: 44px;
     }
 
+    .linha-de-referencia {
+        font-size: 0.6875rem;
+    }
     .referencia h3 b.referencia {
         display: none;
     }
@@ -293,6 +318,7 @@
     }
 
     .caixa-de-confirmacao {
-        top: calc(50vh - 343px / 2)
+        top: calc(50vh - 343px / 2);
+        right: calc(50vw - 326.33px / 2);
     }
 }

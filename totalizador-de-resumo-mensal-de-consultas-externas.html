@@ -56,7 +56,7 @@
     <noscript>O seu navegador está com o JavaScript desabilitado e isso interfere negativamente no funcionamento deste serviço. Habilite-o nas configurações do seu navegador e recarregue a página.</noscript>
 </head>
 <body ontouchstart="">
-    <div id="involucro">
+    <div id="involucro" class="trmc">
         <header>
             <div class="linha-do-cabecalho">
        
@@ -77,20 +77,14 @@
                             <button class="ir-para">Ir para linha...</button>
                         </li>  
                             
-                        <li title="Limpar ficha">
-                            <button class="esvaziar-ficha">Esvaziar ficha</button>
+                        <li title="Limpar dados da ficha">
+                            <button class="esvaziar-ficha">Esvaziar</button>
                         </li>
 
-                        <li class="li-atalhos-do-teclado">
-                            <button class="abrir-atalhos-do-teclado">Atalhos do teclado</button>
-                        </li> 
-
-                        <li>
-                            <a href="totalizadorderesumomensaldeconsultas/politica-de-cookies-e-web-storage.html">Política de Cookies</a>
-                        </li>
-
-                        <li title="Sobre o totalizador">
-                            <a href="totalizadorderesumomensaldeconsultas/sobre-o-totalizador.html">Sobre</a>
+                        <li class="imprimir">
+                            <button onclick="window.print()" title="Imprimir a ficha (Ctrl + P)">
+                                Imprimir
+                            </button>
                         </li>
 
                         <li class="salvar-como-pdf" title="Tutorial">
@@ -98,11 +92,19 @@
                                 Salvar como PDF <span class="help">?</span>
                             </a>
                         </li>
+
+                        <li class="li-atalhos-do-teclado">
+                            <button class="abrir-atalhos-do-teclado">Atalhos do teclado</button>
+                        </li> 
+
+                        <li title="Armazenamento Local">
+                            <a href="totalizadorderesumomensaldeconsultas/politica-de-cookies-e-web-storage.html">Política de Cookies</a>
+                        </li>
+
+                        <li>
+                            <a href="totalizadorderesumomensaldeconsultas/sobre-o-totalizador.html">Sobre o Totalizador</a>
+                        </li>
                     </ul>
-                    
-                    <button onclick="window.print()" title="Imprimir a ficha (Ctrl + P)" class="imprimir">
-                        Imprimir
-                    </button>
                 </section>
 
                 <div class="hamburguer">
@@ -113,7 +115,7 @@
             </div>
         </header>
 
-        <main>   
+        <main>
             <div class="contentor-da-ficha">
                 
                 <header class="cabecalho-da-ficha"> 
@@ -2085,8 +2087,8 @@
                         </div>
 
                         <div class="contentor-da-data">
-                            <label class="data-de-realizacao">Data:</label> 
-                            <input type="date" id="data-de-realizacao" />
+                            <label for="data-de-elaboracao">Data:</label> 
+                            <input type="date" id="data-de-elaboracao" />
                         </div>
                         
                         <datalist id="categorias">
@@ -2156,7 +2158,7 @@
                             </li>
                             <li>
                                 <input type="checkbox" id="nome" checked data-for="nome-do-ps"/>
-                                <label for="nome">Nome do responsável pelo preenchimento</label>
+                                <label for="nome">Nome do Responsável pelo preenchimento</label>
                             </li>
                             <li>
                                 <input type="checkbox" id="ocupacao" checked data-for="categoria"/>
@@ -2164,14 +2166,14 @@
                             </li>
 
                             <li>
-                                <input type="checkbox" id="date" checked data-for="data-de-realizacao"/>
+                                <input type="checkbox" id="date" checked data-for="data-de-elaboracao"/>
                                 <label for="date">Data</label>
                             </li>
                         </ul>
 
                         <div class="botoes-de-confirmacao">
                             <button class="cancelar">Cancelar</button>
-                            <button class="confirmar" data-ficha="coluna-de-inputs" data-prefixodakeystorage="trmce-">Confirmar</button>
+                            <button class="confirmar" data-ficha="coluna-de-inputs" data-prefixodakeystorage="trmc-">Confirmar</button>
                         </div>
                     </div>
                     <p class="alerta-para-ficha-vazia">A ficha encontra-se vazia.</p>
@@ -2229,10 +2231,10 @@
 
             <div class="aviso-de-uso-de-cookies">
                 <p>                    
-                    Este serviço faz uso de tecnologias de armazenamento local, comumente referidas como <a href="totalizadorderesumomensaldeconsultas/politica-de-cookies-e-web-storage.html">cookies</a>, a fim de melhorar a sua experiência de utilização. Ao te servires do Totalizador, concordas com o uso de tais cookies de acordo com a respectiva <a href="totalizadorderesumomensaldeconsultas/politica-de-cookies-e-web-storage.html">Política de Armazenamento</a>.
+                    Este serviço faz uso de tecnologias de armazenamento local, comumente conhecidas como "<a href="totalizadorderesumomensaldeconsultas/politica-de-cookies-e-web-storage.html">cookies</a>", a fim de melhorar a tua experiência de utilização. Ao usares o Totalizador, sugere que consentes com tais cookies de acordo com a respectiva <a href="totalizadorderesumomensaldeconsultas/politica-de-cookies-e-web-storage.html">Política de Armazenamento</a>.
                 </p>
     
-                <button class="aceitar-cookies" data-sessionkey="trmce-cookies">Prosseguir</button>
+                <button class="aceitar-cookies" data-sessionkey="trmc-cookies">Prosseguir</button>
             </div> 
         </main>
 

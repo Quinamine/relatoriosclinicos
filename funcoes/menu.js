@@ -59,7 +59,7 @@ const  menu = {
 
                 for (let i = 0; i < celulas.length; i++) {
                     celulas[i].value = "";
-                    localStorage.removeItem(`trmce-cel${i}`);
+                    localStorage.removeItem(`trmc-cel${i}`);
                     celulas[i].classList.remove("bg-red");
                 };
 
@@ -68,7 +68,7 @@ const  menu = {
                         const IdDoDadoAdicional = limpador.dataset.for; 
                         const dadoAdicional = document.querySelector(`#${IdDoDadoAdicional}`);
                         dadoAdicional.value = "";
-                        localStorage.removeItem(`trmce-${IdDoDadoAdicional}`);
+                        localStorage.removeItem(`trmc-${IdDoDadoAdicional}`);
                     }
                 }); 
 

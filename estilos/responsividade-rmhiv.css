@@ -272,7 +272,7 @@
     }
 }
 
-@media screen and (max-width: 370px) {
+@media screen and (max-width: 360px) {
     .referencia h3 b.referencia {
         display: none;
     }

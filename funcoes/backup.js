@@ -5,8 +5,8 @@ const armazenamento = {
         const celulas = document.querySelectorAll(".coluna-de-inputs input");
 
         for (let i = 0; i < celulas.length; i++) {  
-            celulas[i].addEventListener("input", () =>  localStorage.setItem(`trmce-cel${i}`, celulas[i].value));
-            celulas[i].value = localStorage.getItem(`trmce-cel${i}`);
+            celulas[i].addEventListener("input", () =>  localStorage.setItem(`trmc-cel${i}`, celulas[i].value));
+            celulas[i].value = localStorage.getItem(`trmc-cel${i}`);
         }
     },
 
@@ -14,8 +14,8 @@ const armazenamento = {
         const dadosAdicionais = document.querySelectorAll(".contentor-da-ficha input[type=text], input[type=date]");
 
         dadosAdicionais.forEach ( dado => {
-            dado.addEventListener("input", () => localStorage.setItem(`trmce-${dado.id}`, `${dado.value}`));
-            dado.value = localStorage.getItem(`trmce-${dado.id}`);
+            dado.addEventListener("input", () => localStorage.setItem(`trmc-${dado.id}`, `${dado.value}`));
+            dado.value = localStorage.getItem(`trmc-${dado.id}`);
         })
     },
 

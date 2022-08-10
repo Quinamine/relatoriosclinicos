@@ -10,7 +10,7 @@ p.aviso-de-restricao-de-acesso-a-readonlyinputs {
     line-height: 1.4;
     position: fixed;
     bottom: -263px;
-    left: calc(50vw - 253px * 1/2);
+    left: calc(50vw - 247px * 1/2);
     visibility: hidden;
     opacity: 0;
     transition: all 150ms linear; 

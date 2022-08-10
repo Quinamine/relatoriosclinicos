@@ -51,6 +51,7 @@
         <noscript>O seu navegador está com o JavaScript desabilitado e isso interfere negativamente no funcionamento deste serviço. Habilite-o nas configurações do seu navegador e recarregue a página.</noscript>
     </head>
     <body ontouchstart="">
+
         <div id="involucro" class="rmhiv">
             <header>
                 <div class="linha-do-cabecalho">
@@ -75,6 +76,12 @@
                             <li class="imprimir-ficha" title="Imprimir a ficha (Ctrl + P)">
                                 <button onclick="window.print()">Imprimir</button>
                             </li>
+
+                            <li class="salvar-como-pdf" title="Tutorial">
+                                <a href="totalizadorderesumomensaldehiv/salvar-a-ficha-como-pdf-tutorial.html" class="print-to-pdf">
+                                    Salvar como PDF <span class="help">?</span>
+                                </a>
+                            </li>
                             
                             <li title="Política de cookies">
                                 <a href="totalizadorderesumomensaldehiv/politica-de-cookies-e-web-storage.html">Cookies</a>
@@ -83,13 +90,6 @@
                             <li title="Sobre o totalizador">
                                 <a href="totalizadorderesumomensaldehiv/sobre-o-totalizador.html">Sobre</a>
                             </li>
-
-                            <li class="salvar-como-pdf" title="Tutorial">
-                                <a href="totalizadorderesumomensaldehiv/salvar-a-ficha-como-pdf-tutorial.html" class="print-to-pdf">
-                                    Salvar como PDF <span class="help">?</span>
-                                </a>
-                            </li>
-    
                         </ul>            
                     </section>
     
@@ -1010,16 +1010,16 @@
                                 </li>
                                 <li>
                                     <input type="checkbox" id="nome-do-ps" checked data-for="nome"/>
-                                    <label for="nome-do-ps">Nome do Profissional que preencheu</label>
+                                    <label for="nome-do-ps">Nome do Responsável pelo <br/> preenchimento</label>
                                 </li>
                                 <li>
                                     <input type="checkbox" id="assinatura-do-ps" checked data-for="assinatura"/>
-                                    <label for="assinatura-do-ps">Assinatura do Profissional que preencheu</label>
+                                    <label for="assinatura-do-ps">Assinatura do Responsável pelo <br/> preenchimento</label>
                                 </li>
 
                                 <li>
-                                    <input type="checkbox" id="data-de-realizacao" checked data-for="data"/>
-                                    <label for="data-de-realizacao">Data de realização</label>
+                                    <input type="checkbox" id="data-de-elaboracao" checked data-for="data"/>
+                                    <label for="data-de-elaboracao">Data de realização</label>
                                 </li>
 
     
@@ -1042,11 +1042,11 @@
                             </strong>
                         </p>
                         <p>
-                            Cada célula do Totalizador tem espaço disponível no máximo para 8 algarismos, portanto, mostra valores até <b>99 999 999</b> (mais que o dobro do número de habitantes em Moçambique). A partir de 100&nbsp;000&nbsp;000, só ficam visíveis os primeiros 8 algarismos e do 9º em diante, ficam fora da viewport (área visível) da célula.
+                            Cada célula do Totalizador tem espaço disponível no máximo para 8 algarismos, portanto, mostra valores até <b>99 999 999</b> (mais que o triplo do <a href="https://energypedia.info/wiki/Moçambique:_Informação_sobre_o_País" target="_blank">número de habitantes em Moçambique de acordo com dados demográficos de 2019</a>). A partir de 100&nbsp;000&nbsp;000, só ficam visíveis os primeiros 8 algarismos e do 9º em diante, ficam fora da viewport (área visível) da célula.
                         </p>
 
                         <p class="obs afirmacao">
-                            É improvável que haja uma Unidade Sanitária em Moçambique com um número cumulativo de pacientes em cuidados e tratamento próximo, igual ou maior que 99 999 999.
+                            Obviamente, nenhuma Unidade Sanitária em Moçambique tem um número cumulativo de pacientes em cuidados e tratamento próximo, igual ou maior que 99 999 999.
                         </p>
                         <div class="seccao-de-interatividade">
                             <div>
@@ -1076,7 +1076,7 @@
                     </h3>
                     
                     <span class="seta">
-                        <i class="fa-solid fa-arrow-right"></i>
+                        <i class="fa-solid fa-circle-arrow-right"></i>
                     </span>
     
                     <div>

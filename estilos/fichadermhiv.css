@@ -145,6 +145,10 @@ strong {
     padding: 0;
 }
 
+.contentor-de-nid label {
+    margin-right: 2px;
+}
+
 .contentor-de-nid input {
     min-width: 210px !important;
     border-bottom: 1px solid var(--cinza4);

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-PT" dir="ltr">
+<html lang="pt-MZ" dir="ltr">
     <head>
         <meta charset="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -19,15 +19,24 @@
         <!-- DESING -->
         <link rel="shortcut icon" type="image/x-icon" href="favicon.ico"/>
         <link rel="stylesheet" href="estilos/reset.css" />
-        <link rel="stylesheet" href="estilos/esquema.css" />
+        <link rel="stylesheet" href="estilos/layout.css" />
         <link rel="stylesheet" href="estilos/fichadermhiv.css" />
-        <link rel="stylesheet" href="estilos/rmhiv-resp.css">
+        <link rel="stylesheet" href="estilos/manipulacaodomenu.css" />
         <link rel="stylesheet" href="estilos/print.css" />
+        <link rel="stylesheet" href="estilos/responsividade-rmhiv.css" />
+        <script src="https://kit.fontawesome.com/bddeb642f0.js" crossorigin="anonymous"></script>
 
         <!-- INTERATIVIDADE -->
-        <script src="funcoes/menumobile.js"></script>
+        <script src="funcoes/menu-rmhiv.js"></script>
+        <script src="funcoes/backup-rmhiv.js"></script>
+        <script src="funcoes/soma.js"></script>
         <script src="funcoes/totalizador-rmhiv.js"></script>
-        <script src="funcoes/readonly.js"></script>
+        <script src="funcoes/desfoque.js"></script>
+        <script src="funcoes/hamburguer.js"></script>
+        <script src="funcoes/cookies.js"></script>
+        <script src="funcoes/input-rmhiv.js"></script>
+        <script src="funcoes/referencia-rmhiv.js"></script>
+        
 
         <!-- Global site tag (gtag.js) - Google Analytics -->
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-N0KRLP03SB"></script>
@@ -39,48 +48,56 @@
         gtag('config', 'G-N0KRLP03SB');
         </script>
 
+        <!-- No script -->
         <noscript>O seu navegador está com o JavaScript desabilitado e isso interfere negativamente no funcionamento deste serviço. Habilite-o nas configurações do seu navegador e recarregue a página.</noscript>
     </head>
     <body ontouchstart="">
+
         <div id="involucro" class="rmhiv">
             <header>
                 <div class="linha-do-cabecalho">
            
-                    <a href="totalizador-de-resumo-mensal-de-hiv-sida.html" class="logo"><strong>Total</strong>izador de <span class="none-no-cel">Resumo Mensal de HIV/SIDA</span><span class="none-no-pc">RM-HIV/SIDA</span></a>
-                                          
+                    <a href="totalizador-de-resumo-mensal-de-hiv-sida.html" class="logo">
+                        <strong>Totalizador de Resumo Mensal de HIV/SIDA</strong>
+                        <strong>Totalizador de RM-HIV/SIDA</strong>
+                    </a>           
                     <section class="menu" role="navigation">
                         <ul>
                             
                             <li class="destacar-as-celulas-automaticas" 
-                            title="Escurecer o fundo de Totais.">
-                            <input type="checkbox" id="dark-readonlycels"/> 
-                            <label for="dark-readonlycels">Destacar as células automáticas</label>
+                            title="Escurecer o fundo de Totais">
+                            <input type="checkbox" id="readonlyinputs-darker"/> 
+                            <label for="readonlyinputs-darker">Destacar as células automáticas</label>
                             </li>
 
-                            <li>
-                                <button onclick="window.print()" title="Ctrl + P" class="print">Imprimir</button>
-                            </li>
-                            
-
-                            <li>
-                                <a href="totalizadordermhiv/sobre-o-totalizador.html">Sobre</a>
+                            <li title="Limpar ficha">
+                                <button class="esvaziar-ficha">Esvaziar ficha</button>
                             </li>
 
-                            <li>
-                                <a href="totalizadordermhiv/salvar-a-ficha-como-pdf-tutorial.html" class="print-to-pdf" class="print-to-pdf">
+                            <li class="imprimir-ficha" title="Imprimir a ficha (Ctrl + P)">
+                                <button onclick="window.print()">Imprimir</button>
+                            </li>
+
+                            <li class="salvar-como-pdf" title="Tutorial">
+                                <a href="totalizadorderesumomensaldehiv/salvar-a-ficha-como-pdf-tutorial.html" class="print-to-pdf">
                                     Salvar como PDF <span class="help">?</span>
                                 </a>
                             </li>
-    
-                        </ul>
-                        
-                        
+                            
+                            <li title="Política de cookies">
+                                <a href="totalizadorderesumomensaldehiv/politica-de-cookies-e-web-storage.html">Cookies</a>
+                            </li>
+
+                            <li title="Sobre o totalizador">
+                                <a href="totalizadorderesumomensaldehiv/sobre-o-totalizador.html">Sobre</a>
+                            </li>
+                        </ul>            
                     </section>
     
                     <div class="hamburguer">
-                        <div></div>
-                        <div></div>
-                        <div></div>
+                        <div class="camada"></div>
+                        <div class="camada"></div>
+                        <div class="camada"></div>
                     </div>
                 </div>
             </header>
@@ -112,7 +129,7 @@
                             
                         </div>
                     </header>
-                    <div class="grade-superior">
+                    <div class="grade grade-superior">
                         
                         <div class="linha linha-de-faixas-etarias-e-sexo-1">
                             
@@ -156,7 +173,7 @@
 
                             <div class="contentor-de-faixa-etaria-e-sexo border-right-1">
                                 <div class="contentor-de-faixa-etaria">
-                                    <span>20 /+ anos</span>
+                                    <span>20/ + anos</span>
                                 </div>
                                 <div class="contentor-de-sexo">
                                     <span>F</span>
@@ -169,7 +186,7 @@
                             </div>
 
                             <div>
-                                <span>Total <br/> 15 /+ anos</span>
+                                <span>Total <br/> 15/ + anos</span>
                             </div>
 
                             <div class="border-right-1">
@@ -193,42 +210,36 @@
                                 <span>Nº cumulativo de pacientes que iniciou Pré-TARV (cuidados HIV) nesta US <strong>até ao fim do mês anterior</strong> (copiar A.3 do mês anterior)</span>
                             </div>
 
-                            <div>
-                                <input type="number" min="0" data-total0a14eixox="a1-c1c2c3c4" data-total0a14eixoxoutput="a1-c9" data-totalgeraleixox="a1-c1c2c3c4c5c6c7c8" data-totalgeraleixoxoutput="a1-c11" data-totaleixoy="a1a2-c1" data-totaleixoyoutput="a3-c1" data-total0a14eixoy="a1a2-c1c2c3c4" data-total0a14eixoyoutput="a3-c9" data-totalgeraleixoy="a1a2-c1c2c3c4c5c6c7c8" data-totalgeraleixoyoutput="a3-c11"/>
-                            </div>
-                            <div>
-                                <input type="number" min="0" data-total0a14eixox="a1-c1c2c3c4" data-total0a14eixoxoutput="a1-c9" data-totalgeraleixox="a1-c1c2c3c4c5c6c7c8" data-totalgeraleixoxoutput="a1-c11" data-totaleixoy="a1a2-c2" data-totaleixoyoutput="a3-c2" data-total0a14eixoy="a1a2-c1c2c3c4" data-total0a14eixoyoutput="a3-c9" data-totalgeraleixoy="a1a2-c1c2c3c4c5c6c7c8" data-totalgeraleixoyoutput="a3-c11"/>
-                            </div>
-                            <div>
-                                <input type="number" min="0" data-total0a14eixox="a1-c1c2c3c4" data-total0a14eixoxoutput="a1-c9" data-totalgeraleixox="a1-c1c2c3c4c5c6c7c8" data-totalgeraleixoxoutput="a1-c11" data-total10a19eixox="a1-c3c4c5c6" data-total10a19eixoxoutput="a1-c12" data-totaleixoy="a1a2-c3" data-totaleixoyoutput="a3-c3" data-total0a14eixoy="a1a2-c1c2c3c4" data-total0a14eixoyoutput="a3-c9" data-totalgeraleixoy="a1a2-c1c2c3c4c5c6c7c8" data-totalgeraleixoyoutput="a3-c11" data-total10a19eixoy="a1a2-c3c4c5c6" data-total10a19eixoyoutput="a3-c12" />
-                            </div>
-                            <div>
-                                <input type="number" min="0" data-total0a14eixox="a1-c1c2c3c4" data-total0a14eixoxoutput="a1-c9" data-totalgeraleixox="a1-c1c2c3c4c5c6c7c8" data-totalgeraleixoxoutput="a1-c11" data-total10a19eixox="a1-c3c4c5c6" data-total10a19eixoxoutput="a1-c12" data-totaleixoy="a1a2-c4" data-totaleixoyoutput="a3-c4" data-total0a14eixoy="a1a2-c1c2c3c4" data-total0a14eixoyoutput="a3-c9" data-totalgeraleixoy="a1a2-c1c2c3c4c5c6c7c8" data-totalgeraleixoyoutput="a3-c11"  data-total10a19eixoy="a1a2-c3c4c5c6" data-total10a19eixoyoutput="a3-c12" />
-                            </div>
-                            <div>
-                                <input type="number" min="0" data-total15oumaiseixox="a1-c5c6c7c8" data-total15oumaiseixoxoutput="a1-c10" data-totalgeraleixox="a1-c1c2c3c4c5c6c7c8" data-totalgeraleixoxoutput="a1-c11" data-total10a19eixox="a1-c3c4c5c6" data-total10a19eixoxoutput="a1-c12" data-totaleixoy="a1a2-c5" data-totaleixoyoutput="a3-c5" data-total15oumaiseixoy="a1a2-c5c6c7c8" data-total15oumaiseixoyoutput="a3-c10" data-totalgeraleixoy="a1a2-c1c2c3c4c5c6c7c8" data-totalgeraleixoyoutput="a3-c11"  data-total10a19eixoy="a1a2-c3c4c5c6" data-total10a19eixoyoutput="a3-c12" />
-                            </div>
-                            <div>
-                                <input type="number" min="0" data-total15oumaiseixox="a1-c5c6c7c8" data-total15oumaiseixoxoutput="a1-c10" data-totalgeraleixox="a1-c1c2c3c4c5c6c7c8" data-totalgeraleixoxoutput="a1-c11" data-total10a19eixox="a1-c3c4c5c6" data-total10a19eixoxoutput="a1-c12" data-totaleixoy="a1a2-c6" data-totaleixoyoutput="a3-c6" data-total15oumaiseixoy="a1a2-c5c6c7c8" data-total15oumaiseixoyoutput="a3-c10" data-totalgeraleixoy="a1a2-c1c2c3c4c5c6c7c8" data-totalgeraleixoyoutput="a3-c11" data-total10a19eixoy="a1a2-c3c4c5c6" data-total10a19eixoyoutput="a3-c12" />
-                            </div>
-                            <div>
-                                <input type="number" min="0" data-total15oumaiseixox="a1-c5c6c7c8" data-total15oumaiseixoxoutput="a1-c10" data-totalgeraleixox="a1-c1c2c3c4c5c6c7c8" data-totalgeraleixoxoutput="a1-c11" data-totaleixoy="a1a2-c7" data-totaleixoyoutput="a3-c7" data-total15oumaiseixoy="a1a2-c5c6c7c8" data-total15oumaiseixoyoutput="a3-c10" data-totalgeraleixoy="a1a2-c1c2c3c4c5c6c7c8" data-totalgeraleixoyoutput="a3-c11" />
-                            </div>
-                            <div class="border-right-1">
-                                <input type="number" min="0" data-total15oumaiseixox="a1-c5c6c7c8" data-total15oumaiseixoxoutput="a1-c10" data-totalgeraleixox="a1-c1c2c3c4c5c6c7c8" data-totalgeraleixoxoutput="a1-c11" data-totaleixoy="a1a2-c8" data-totaleixoyoutput="a3-c8" data-total15oumaiseixoy="a1a2-c5c6c7c8" data-total15oumaiseixoyoutput="a3-c10" data-totalgeraleixoy="a1a2-c1c2c3c4c5c6c7c8" data-totalgeraleixoyoutput="a3-c11"/>
-                            </div>
-                            <div>
-                                <input type="number" min="0" readonly class="a1-c9"/>
-                            </div>
-                            <div>
-                                <input type="number" min="0" readonly class="a1-c10"/>
-                            </div>
-                            <div class="border-right-1">
-                                <input type="number" min="0" readonly class="a1-c11"/>
-                            </div>
-                            <div>
-                                <input type="number" min="0" readonly class="a1-c12"/>
-                            </div>
+                            
+                            <input type="number" min="0" data-total0a14eixox="a1-c1c2c3c4" data-total0a14eixoxoutput="a1-c9" data-totalgeraleixox="a1-c1c2c3c4c5c6c7c8" data-totalgeraleixoxoutput="a1-c11" data-totaleixoy="a1a2-c1" data-totaleixoyoutput="a3-c1" data-total0a14eixoy="a1a2-c1c2c3c4" data-total0a14eixoyoutput="a3-c9" data-totalgeraleixoy="a1a2-c1c2c3c4c5c6c7c8" data-totalgeraleixoyoutput="a3-c11"/>
+                            
+                            
+                            <input type="number" min="0" data-total0a14eixox="a1-c1c2c3c4" data-total0a14eixoxoutput="a1-c9" data-totalgeraleixox="a1-c1c2c3c4c5c6c7c8" data-totalgeraleixoxoutput="a1-c11" data-totaleixoy="a1a2-c2" data-totaleixoyoutput="a3-c2" data-total0a14eixoy="a1a2-c1c2c3c4" data-total0a14eixoyoutput="a3-c9" data-totalgeraleixoy="a1a2-c1c2c3c4c5c6c7c8" data-totalgeraleixoyoutput="a3-c11"/>
+                            
+                          
+                            <input type="number" min="0" data-total0a14eixox="a1-c1c2c3c4" data-total0a14eixoxoutput="a1-c9" data-totalgeraleixox="a1-c1c2c3c4c5c6c7c8" data-totalgeraleixoxoutput="a1-c11" data-total10a19eixox="a1-c3c4c5c6" data-total10a19eixoxoutput="a1-c12" data-totaleixoy="a1a2-c3" data-totaleixoyoutput="a3-c3" data-total0a14eixoy="a1a2-c1c2c3c4" data-total0a14eixoyoutput="a3-c9" data-totalgeraleixoy="a1a2-c1c2c3c4c5c6c7c8" data-totalgeraleixoyoutput="a3-c11" data-total10a19eixoy="a1a2-c3c4c5c6" data-total10a19eixoyoutput="a3-c12" />
+                           
+                            
+                            <input type="number" min="0" data-total0a14eixox="a1-c1c2c3c4" data-total0a14eixoxoutput="a1-c9" data-totalgeraleixox="a1-c1c2c3c4c5c6c7c8" data-totalgeraleixoxoutput="a1-c11" data-total10a19eixox="a1-c3c4c5c6" data-total10a19eixoxoutput="a1-c12" data-totaleixoy="a1a2-c4" data-totaleixoyoutput="a3-c4" data-total0a14eixoy="a1a2-c1c2c3c4" data-total0a14eixoyoutput="a3-c9" data-totalgeraleixoy="a1a2-c1c2c3c4c5c6c7c8" data-totalgeraleixoyoutput="a3-c11"  data-total10a19eixoy="a1a2-c3c4c5c6" data-total10a19eixoyoutput="a3-c12" />
+                            
+                            <input type="number" min="0" data-total15oumaiseixox="a1-c5c6c7c8" data-total15oumaiseixoxoutput="a1-c10" data-totalgeraleixox="a1-c1c2c3c4c5c6c7c8" data-totalgeraleixoxoutput="a1-c11" data-total10a19eixox="a1-c3c4c5c6" data-total10a19eixoxoutput="a1-c12" data-totaleixoy="a1a2-c5" data-totaleixoyoutput="a3-c5" data-total15oumaiseixoy="a1a2-c5c6c7c8" data-total15oumaiseixoyoutput="a3-c10" data-totalgeraleixoy="a1a2-c1c2c3c4c5c6c7c8" data-totalgeraleixoyoutput="a3-c11"  data-total10a19eixoy="a1a2-c3c4c5c6" data-total10a19eixoyoutput="a3-c12" />
+                        
+                            
+                            <input type="number" min="0" data-total15oumaiseixox="a1-c5c6c7c8" data-total15oumaiseixoxoutput="a1-c10" data-totalgeraleixox="a1-c1c2c3c4c5c6c7c8" data-totalgeraleixoxoutput="a1-c11" data-total10a19eixox="a1-c3c4c5c6" data-total10a19eixoxoutput="a1-c12" data-totaleixoy="a1a2-c6" data-totaleixoyoutput="a3-c6" data-total15oumaiseixoy="a1a2-c5c6c7c8" data-total15oumaiseixoyoutput="a3-c10" data-totalgeraleixoy="a1a2-c1c2c3c4c5c6c7c8" data-totalgeraleixoyoutput="a3-c11" data-total10a19eixoy="a1a2-c3c4c5c6" data-total10a19eixoyoutput="a3-c12" />
+                            
+                            
+                            <input type="number" min="0" data-total15oumaiseixox="a1-c5c6c7c8" data-total15oumaiseixoxoutput="a1-c10" data-totalgeraleixox="a1-c1c2c3c4c5c6c7c8" data-totalgeraleixoxoutput="a1-c11" data-totaleixoy="a1a2-c7" data-totaleixoyoutput="a3-c7" data-total15oumaiseixoy="a1a2-c5c6c7c8" data-total15oumaiseixoyoutput="a3-c10" data-totalgeraleixoy="a1a2-c1c2c3c4c5c6c7c8" data-totalgeraleixoyoutput="a3-c11" />
+                            
+                            
+                            <input type="number" min="0" data-total15oumaiseixox="a1-c5c6c7c8" data-total15oumaiseixoxoutput="a1-c10" data-totalgeraleixox="a1-c1c2c3c4c5c6c7c8" data-totalgeraleixoxoutput="a1-c11" data-totaleixoy="a1a2-c8" data-totaleixoyoutput="a3-c8" data-total15oumaiseixoy="a1a2-c5c6c7c8" data-total15oumaiseixoyoutput="a3-c10" data-totalgeraleixoy="a1a2-c1c2c3c4c5c6c7c8" data-totalgeraleixoyoutput="a3-c11" />
+                            
+                            <input type="number" min="0" readonly class="a1-c9"/>
+  
+                            <input type="number" min="0" readonly class="a1-c10"/>
+                            
+                            <input type="number" min="0" readonly class="a1-c11"/>
+                            
+                            <input type="number" min="0" readonly class="a1-c12"/>
                         </div>
 
                         <div class="linha a2">
@@ -241,42 +252,32 @@
                                 <span>Nº de pacientes que iniciou Pré-TARV (cuidados <br/> HIV) nesta unidade sanitária <strong>durante o mês</strong></span>
                             </div>
 
-                             <div>
-                                <input type="number" min="0" data-total0a14eixox="a2-c1c2c3c4" data-total0a14eixoxoutput="a2-c9" data-totalgeraleixox="a2-c1c2c3c4c5c6c7c8" data-totalgeraleixoxoutput="a2-c11" data-totaleixoy="a1a2-c1" data-totaleixoyoutput="a3-c1" data-total0a14eixoy="a1a2-c1c2c3c4" data-total0a14eixoyoutput="a3-c9" data-totalgeraleixoy="a1a2-c1c2c3c4c5c6c7c8" data-totalgeraleixoyoutput="a3-c11"/>
-                            </div>
-                            <div>
-                                <input type="number" min="0" data-total0a14eixox="a2-c1c2c3c4" data-total0a14eixoxoutput="a2-c9" data-totalgeraleixox="a2-c1c2c3c4c5c6c7c8" data-totalgeraleixoxoutput="a2-c11" data-totaleixoy="a1a2-c2" data-totaleixoyoutput="a3-c2" data-total0a14eixoy="a1a2-c1c2c3c4" data-total0a14eixoyoutput="a3-c9" data-totalgeraleixoy="a1a2-c1c2c3c4c5c6c7c8" data-totalgeraleixoyoutput="a3-c11" />
-                            </div>
-                            <div>
-                                <input type="number" min="0" data-total0a14eixox="a2-c1c2c3c4" data-total0a14eixoxoutput="a2-c9" data-totalgeraleixox="a2-c1c2c3c4c5c6c7c8" data-totalgeraleixoxoutput="a2-c11" data-total10a19eixox="a2-c3c4c5c6" data-total10a19eixoxoutput="a2-c12" data-totaleixoy="a1a2-c3" data-totaleixoyoutput="a3-c3" data-total0a14eixoy="a1a2-c1c2c3c4" data-total0a14eixoyoutput="a3-c9" data-totalgeraleixoy="a1a2-c1c2c3c4c5c6c7c8" data-totalgeraleixoyoutput="a3-c11" data-total10a19eixoy="a1a2-c3c4c5c6" data-total10a19eixoyoutput="a3-c12" />
-                            </div>
-                            <div>
-                                <input type="number" min="0" data-total0a14eixox="a2-c1c2c3c4" data-total0a14eixoxoutput="a2-c9" data-totalgeraleixox="a2-c1c2c3c4c5c6c7c8" data-totalgeraleixoxoutput="a2-c11" data-total10a19eixox="a2-c3c4c5c6" data-total10a19eixoxoutput="a2-c12" data-totaleixoy="a1a2-c4" data-totaleixoyoutput="a3-c4" data-total0a14eixoy="a1a2-c1c2c3c4" data-total0a14eixoyoutput="a3-c9" data-totalgeraleixoy="a1a2-c1c2c3c4c5c6c7c8" data-totalgeraleixoyoutput="a3-c11"  data-total10a19eixoy="a1a2-c3c4c5c6" data-total10a19eixoyoutput="a3-c12" />
-                            </div>
-                            <div>
-                                <input type="number" min="0" data-total15oumaiseixox="a2-c5c6c7c8" data-total15oumaiseixoxoutput="a2-c10" data-totalgeraleixox="a2-c1c2c3c4c5c6c7c8" data-totalgeraleixoxoutput="a2-c11" data-total10a19eixox="a2-c3c4c5c6" data-total10a19eixoxoutput="a2-c12" data-totaleixoy="a1a2-c5" data-totaleixoyoutput="a3-c5" data-total15oumaiseixoy="a1a2-c5c6c7c8" data-total15oumaiseixoyoutput="a3-c10" data-totalgeraleixoy="a1a2-c1c2c3c4c5c6c7c8" data-totalgeraleixoyoutput="a3-c11"  data-total10a19eixoy="a1a2-c3c4c5c6" data-total10a19eixoyoutput="a3-c12" />
-                            </div>
-                            <div>
-                                <input type="number" min="0" data-total15oumaiseixox="a2-c5c6c7c8" data-total15oumaiseixoxoutput="a2-c10" data-totalgeraleixox="a2-c1c2c3c4c5c6c7c8" data-totalgeraleixoxoutput="a2-c11" data-total10a19eixox="a2-c3c4c5c6" data-total10a19eixoxoutput="a2-c12" data-totaleixoy="a1a2-c6" data-totaleixoyoutput="a3-c6" data-total15oumaiseixoy="a1a2-c5c6c7c8" data-total15oumaiseixoyoutput="a3-c10" data-totalgeraleixoy="a1a2-c1c2c3c4c5c6c7c8" data-totalgeraleixoyoutput="a3-c11" data-total10a19eixoy="a1a2-c3c4c5c6" data-total10a19eixoyoutput="a3-c12" />
-                            </div>
-                            <div>
-                                <input type="number" min="0" data-total15oumaiseixox="a2-c5c6c7c8" data-total15oumaiseixoxoutput="a2-c10" data-totalgeraleixox="a2-c1c2c3c4c5c6c7c8" data-totalgeraleixoxoutput="a2-c11" data-totaleixoy="a1a2-c7" data-totaleixoyoutput="a3-c7" data-total15oumaiseixoy="a1a2-c5c6c7c8" data-total15oumaiseixoyoutput="a3-c10" data-totalgeraleixoy="a1a2-c1c2c3c4c5c6c7c8" data-totalgeraleixoyoutput="a3-c11" />
-                            </div>
-                            <div class="border-right-1">
-                                <input type="number" min="0" data-total15oumaiseixox="a2-c5c6c7c8" data-total15oumaiseixoxoutput="a2-c10" data-totalgeraleixox="a2-c1c2c3c4c5c6c7c8" data-totalgeraleixoxoutput="a2-c11" data-totaleixoy="a1a2-c8" data-totaleixoyoutput="a3-c8" data-total15oumaiseixoy="a1a2-c5c6c7c8" data-total15oumaiseixoyoutput="a3-c10" data-totalgeraleixoy="a1a2-c1c2c3c4c5c6c7c8" data-totalgeraleixoyoutput="a3-c11"/>
-                            </div>
-                            <div>
-                                <input type="number" min="0" readonly class="a2-c9"/>
-                            </div>
-                            <div>
-                                <input type="number" min="0" readonly class="a2-c10"/>
-                            </div>
-                            <div class="border-right-1">
-                                <input type="number" min="0" readonly class="a2-c11"/>
-                            </div>
-                            <div>
-                                <input type="number" min="0" readonly class="a2-c12"/>
-                            </div>
+                            <input type="number" min="0" data-total0a14eixox="a2-c1c2c3c4" data-total0a14eixoxoutput="a2-c9" data-totalgeraleixox="a2-c1c2c3c4c5c6c7c8" data-totalgeraleixoxoutput="a2-c11" data-totaleixoy="a1a2-c1" data-totaleixoyoutput="a3-c1" data-total0a14eixoy="a1a2-c1c2c3c4" data-total0a14eixoyoutput="a3-c9" data-totalgeraleixoy="a1a2-c1c2c3c4c5c6c7c8" data-totalgeraleixoyoutput="a3-c11"/>
+                               
+                            <input type="number" min="0" data-total0a14eixox="a2-c1c2c3c4" data-total0a14eixoxoutput="a2-c9" data-totalgeraleixox="a2-c1c2c3c4c5c6c7c8" data-totalgeraleixoxoutput="a2-c11" data-totaleixoy="a1a2-c2" data-totaleixoyoutput="a3-c2" data-total0a14eixoy="a1a2-c1c2c3c4" data-total0a14eixoyoutput="a3-c9" data-totalgeraleixoy="a1a2-c1c2c3c4c5c6c7c8" data-totalgeraleixoyoutput="a3-c11" />
+                            
+                            <input type="number" min="0" data-total0a14eixox="a2-c1c2c3c4" data-total0a14eixoxoutput="a2-c9" data-totalgeraleixox="a2-c1c2c3c4c5c6c7c8" data-totalgeraleixoxoutput="a2-c11" data-total10a19eixox="a2-c3c4c5c6" data-total10a19eixoxoutput="a2-c12" data-totaleixoy="a1a2-c3" data-totaleixoyoutput="a3-c3" data-total0a14eixoy="a1a2-c1c2c3c4" data-total0a14eixoyoutput="a3-c9" data-totalgeraleixoy="a1a2-c1c2c3c4c5c6c7c8" data-totalgeraleixoyoutput="a3-c11" data-total10a19eixoy="a1a2-c3c4c5c6" data-total10a19eixoyoutput="a3-c12" />
+                            
+                        
+                            <input type="number" min="0" data-total0a14eixox="a2-c1c2c3c4" data-total0a14eixoxoutput="a2-c9" data-totalgeraleixox="a2-c1c2c3c4c5c6c7c8" data-totalgeraleixoxoutput="a2-c11" data-total10a19eixox="a2-c3c4c5c6" data-total10a19eixoxoutput="a2-c12" data-totaleixoy="a1a2-c4" data-totaleixoyoutput="a3-c4" data-total0a14eixoy="a1a2-c1c2c3c4" data-total0a14eixoyoutput="a3-c9" data-totalgeraleixoy="a1a2-c1c2c3c4c5c6c7c8" data-totalgeraleixoyoutput="a3-c11"  data-total10a19eixoy="a1a2-c3c4c5c6" data-total10a19eixoyoutput="a3-c12" />
+                            
+                            <input type="number" min="0" data-total15oumaiseixox="a2-c5c6c7c8" data-total15oumaiseixoxoutput="a2-c10" data-totalgeraleixox="a2-c1c2c3c4c5c6c7c8" data-totalgeraleixoxoutput="a2-c11" data-total10a19eixox="a2-c3c4c5c6" data-total10a19eixoxoutput="a2-c12" data-totaleixoy="a1a2-c5" data-totaleixoyoutput="a3-c5" data-total15oumaiseixoy="a1a2-c5c6c7c8" data-total15oumaiseixoyoutput="a3-c10" data-totalgeraleixoy="a1a2-c1c2c3c4c5c6c7c8" data-totalgeraleixoyoutput="a3-c11"  data-total10a19eixoy="a1a2-c3c4c5c6" data-total10a19eixoyoutput="a3-c12" />
+                            
+                            <input type="number" min="0" data-total15oumaiseixox="a2-c5c6c7c8" data-total15oumaiseixoxoutput="a2-c10" data-totalgeraleixox="a2-c1c2c3c4c5c6c7c8" data-totalgeraleixoxoutput="a2-c11" data-total10a19eixox="a2-c3c4c5c6" data-total10a19eixoxoutput="a2-c12" data-totaleixoy="a1a2-c6" data-totaleixoyoutput="a3-c6" data-total15oumaiseixoy="a1a2-c5c6c7c8" data-total15oumaiseixoyoutput="a3-c10" data-totalgeraleixoy="a1a2-c1c2c3c4c5c6c7c8" data-totalgeraleixoyoutput="a3-c11" data-total10a19eixoy="a1a2-c3c4c5c6" data-total10a19eixoyoutput="a3-c12" />
+                            
+                           
+                            <input type="number" min="0" data-total15oumaiseixox="a2-c5c6c7c8" data-total15oumaiseixoxoutput="a2-c10" data-totalgeraleixox="a2-c1c2c3c4c5c6c7c8" data-totalgeraleixoxoutput="a2-c11" data-totaleixoy="a1a2-c7" data-totaleixoyoutput="a3-c7" data-total15oumaiseixoy="a1a2-c5c6c7c8" data-total15oumaiseixoyoutput="a3-c10" data-totalgeraleixoy="a1a2-c1c2c3c4c5c6c7c8" data-totalgeraleixoyoutput="a3-c11" />
+                            
+                            
+                            <input type="number" min="0" data-total15oumaiseixox="a2-c5c6c7c8" data-total15oumaiseixoxoutput="a2-c10" data-totalgeraleixox="a2-c1c2c3c4c5c6c7c8" data-totalgeraleixoxoutput="a2-c11" data-totaleixoy="a1a2-c8" data-totaleixoyoutput="a3-c8" data-total15oumaiseixoy="a1a2-c5c6c7c8" data-total15oumaiseixoyoutput="a3-c10" data-totalgeraleixoy="a1a2-c1c2c3c4c5c6c7c8" data-totalgeraleixoyoutput="a3-c11"/>
+                            
+                            <input type="number" min="0" readonly class="a2-c9"/>
+                          
+                            <input type="number" min="0" readonly class="a2-c10"/>
+                            
+                            <input type="number" min="0" readonly class="a2-c11"/>
+                            
+                            <input type="number" min="0" readonly class="a2-c12"/>
                         </div>
 
                         <div class="linha a3">
@@ -288,46 +289,34 @@
                             <div>
                                 <span>Nº cumulativo de pacientes que iniciou Pré-TARV (cuidados HIV) nesta unidade sanitária <br/> <strong>até ao fim do mês</strong> (A.3 = A.1 + A.2)</span>
                             </div>
-                            <div>
-                                <input type="number" min="0" readonly class="a3-c1"/>
-                            </div>
-                            <div>
-                                <input type="number" min="0" readonly class="a3-c2"/>
-                            </div>
-                            <div>
-                                <input type="number" min="0" readonly class="a3-c3"/>
-                            </div>
-                            <div>
-                                <input type="number" min="0" readonly class="a3-c4"/>
-                            </div>
-                            <div>
-                                <input type="number" min="0" readonly class="a3-c5"/>
-                            </div>
-                            <div>
-                                <input type="number" min="0" readonly class="a3-c6"/>
-                            </div>
-                            <div>
-                                <input type="number" min="0" readonly class="a3-c7"/>
-                            </div>
-                            <div class="border-right-1">
-                                <input type="number" min="0" readonly class="a3-c8" />
-                            </div>
-                            <div>
-                                <input type="number" min="0" readonly class="a3-c9" />
-                            </div>
-                            <div>
-                                <input type="number" min="0" readonly class="a3-c10"/>
-                            </div>
-                            <div class="border-right-1">
-                                <input type="number" min="0" readonly class="a3-c11"/>
-                            </div>
-                            <div>
-                                <input type="number" min="0" readonly class="a3-c12"/>
-                            </div>
+                            
+                            <input type="number" min="0" readonly class="a3-c1"/>
+
+                            <input type="number" min="0" readonly class="a3-c2"/>
+                            
+                            <input type="number" min="0" readonly class="a3-c3"/>
+                        
+                            <input type="number" min="0" readonly class="a3-c4"/>
+                            
+                            <input type="number" min="0" readonly class="a3-c5"/>
+                            
+                            <input type="number" min="0" readonly class="a3-c6"/>
+                            
+                            <input type="number" min="0" readonly class="a3-c7"/>
+                            
+                            <input type="number" min="0" readonly class="a3-c8" />
+                            
+                            <input type="number" min="0" readonly class="a3-c9" />
+                            
+                            <input type="number" min="0" readonly class="a3-c10"/>
+                         
+                            <input type="number" min="0" readonly class="a3-c11"/>
+                            
+                            <input type="number" min="0" readonly class="a3-c12"/>
                         </div>                          
                     </div>
 
-                    <div class="grade-intermedia">
+                    <div class="grade grade-intermedia">
                         <div class="coluna-de-entradas-e-saidas">
                             <div>
                                 <span>
@@ -376,7 +365,7 @@
 
                             <div class="contentor-de-faixa-etaria-e-sexo border-right-1">
                                 <div class="contentor-de-faixa-etaria">
-                                    <span>20 /+ anos</span>
+                                    <span>20/ + anos</span>
                                 </div>
                                 <div class="contentor-de-sexo">
                                     <span>F</span>
@@ -389,7 +378,7 @@
                             </div>
 
                             <div>
-                                <span>Total <br/> 15 /+ anos</span>
+                                <span>Total <br/> 15/ + anos</span>
                             </div>
 
                             <div class="border-right-1">
@@ -413,42 +402,31 @@
                                     <span>Nº de pacientes que iniciou TARV nesta unidade sanitária <strong>durante o mês</strong></span>
                                 </div>
                                 
-                                <div>
-                                    <input type="number" min="0" data-total0a14eixox="b1-c1c2c3c4" data-total0a14eixoxoutput="b1-c9" data-totalgeraleixox="b1-c1c2c3c4c5c6c7c8" data-totalgeraleixoxoutput="b1-c11" data-totaleixoy="b1b2b3-c1" data-totaleixoyoutput="b4-c1" data-total0a14eixoy="b1b2b3-c1c2c3c4" data-total0a14eixoyoutput="b4-c9" data-totalgeraleixoy="b1b2b3-c1c2c3c4c5c6c7c8" data-totalgeraleixoyoutput="b4-c11" data-totalb11="b1b10-c1" data-totalb11output="b11-c1" data-totalb11c0a14="b1b10-c1c2c3c4" data-totalb11c0a14output="b11-c9" data-totalgeralb11="b1b10-c1c2c3c4c5c6c7c8"data-totalgeralb11output="b11-c11"/>
-                                </div>
-                                <div>
-                                    <input type="number" min="0" data-total0a14eixox="b1-c1c2c3c4" data-total0a14eixoxoutput="b1-c9" data-totalgeraleixox="b1-c1c2c3c4c5c6c7c8" data-totalgeraleixoxoutput="b1-c11" data-totaleixoy="b1b2b3-c2" data-totaleixoyoutput="b4-c2" data-total0a14eixoy="b1b2b3-c1c2c3c4" data-total0a14eixoyoutput="b4-c9" data-totalgeraleixoy="b1b2b3-c1c2c3c4c5c6c7c8" data-totalgeraleixoyoutput="b4-c11" data-totalb11="b1b10-c2" data-totalb11output="b11-c2" data-totalb11c0a14="b1b10-c1c2c3c4" data-totalb11c0a14output="b11-c9" data-totalgeralb11="b1b10-c1c2c3c4c5c6c7c8"data-totalgeralb11output="b11-c11"/>
-                                </div>
-                                <div>
-                                    <input type="number" min="0" data-total0a14eixox="b1-c1c2c3c4" data-total0a14eixoxoutput="b1-c9" data-totalgeraleixox="b1-c1c2c3c4c5c6c7c8" data-totalgeraleixoxoutput="b1-c11" data-total10a19eixox="b1-c3c4c5c6" data-total10a19eixoxoutput="b1-c12" data-totaleixoy="b1b2b3-c3" data-totaleixoyoutput="b4-c3" data-total0a14eixoy="b1b2b3-c1c2c3c4" data-total0a14eixoyoutput="b4-c9" data-totalgeraleixoy="b1b2b3-c1c2c3c4c5c6c7c8" data-totalgeraleixoyoutput="b4-c11" data-total10a19eixoy="b1b2b3-c3c4c5c6" data-total10a19eixoyoutput="b4-c12" data-totalb11="b1b10-c3" data-totalb11output="b11-c3" data-totalb11c0a14="b1b10-c1c2c3c4" data-totalb11c0a14output="b11-c9" data-totalgeralb11="b1b10-c1c2c3c4c5c6c7c8"data-totalgeralb11output="b11-c11" data-totalb11c10a19="b1b10-c3c4c5c6" data-totalb11c10a19output="b11-c12" />
-                                </div>
-                                <div>
-                                    <input type="number" min="0" data-total0a14eixox="b1-c1c2c3c4" data-total0a14eixoxoutput="b1-c9" data-totalgeraleixox="b1-c1c2c3c4c5c6c7c8" data-totalgeraleixoxoutput="b1-c11" data-total10a19eixox="b1-c3c4c5c6" data-total10a19eixoxoutput="b1-c12" data-totaleixoy="b1b2b3-c4" data-totaleixoyoutput="b4-c4" data-total0a14eixoy="b1b2b3-c1c2c3c4" data-total0a14eixoyoutput="b4-c9" data-totalgeraleixoy="b1b2b3-c1c2c3c4c5c6c7c8" data-totalgeraleixoyoutput="b4-c11" data-total10a19eixoy="b1b2b3-c3c4c5c6" data-total10a19eixoyoutput="b4-c12" data-totalb11="b1b10-c4" data-totalb11output="b11-c4" data-totalb11c0a14="b1b10-c1c2c3c4" data-totalb11c0a14output="b11-c9" data-totalgeralb11="b1b10-c1c2c3c4c5c6c7c8"data-totalgeralb11output="b11-c11" data-totalb11c10a19="b1b10-c3c4c5c6" data-totalb11c10a19output="b11-c12" />
-                                </div>
-                                <div>
-                                    <input type="number" min="0" data-total15oumaiseixox="b1-c5c6c7c8" data-total15oumaiseixoxoutput="b1-c10" data-totalgeraleixox="b1-c1c2c3c4c5c6c7c8" data-totalgeraleixoxoutput="b1-c11" data-total10a19eixox="b1-c3c4c5c6" data-total10a19eixoxoutput="b1-c12" data-totaleixoy="b1b2b3-c5" data-totaleixoyoutput="b4-c5" data-total15oumaiseixoy="b1b2b3-c5c6c7c8" data-total15oumaiseixoyoutput="b4-c10" data-totalgeraleixoy="b1b2b3-c1c2c3c4c5c6c7c8" data-totalgeraleixoyoutput="b4-c11" data-total10a19eixoy="b1b2b3-c3c4c5c6" data-total10a19eixoyoutput="b4-c12" data-totalb11="b1b10-c5" data-totalb11output="b11-c5" data-totalb11c15oumais="b1b10-c5c6c7c8" data-totalb11c15oumaisoutput="b11-c10" data-totalgeralb11="b1b10-c1c2c3c4c5c6c7c8"data-totalgeralb11output="b11-c11"  data-totalb11c10a19="b1b10-c3c4c5c6" data-totalb11c10a19output="b11-c12" />
-                                </div>
-                                <div>
-                                    <input type="number" min="0" data-total15oumaiseixox="b1-c5c6c7c8" data-total15oumaiseixoxoutput="b1-c10" data-totalgeraleixox="b1-c1c2c3c4c5c6c7c8" data-totalgeraleixoxoutput="b1-c11" data-total10a19eixox="b1-c3c4c5c6" data-total10a19eixoxoutput="b1-c12" data-totaleixoy="b1b2b3-c6" data-totaleixoyoutput="b4-c6" data-total15oumaiseixoy="b1b2b3-c5c6c7c8" data-total15oumaiseixoyoutput="b4-c10" data-totalgeraleixoy="b1b2b3-c1c2c3c4c5c6c7c8" data-totalgeraleixoyoutput="b4-c11" data-total10a19eixoy="b1b2b3-c3c4c5c6" data-total10a19eixoyoutput="b4-c12" data-totalb11="b1b10-c6" data-totalb11output="b11-c6" data-totalb11c15oumais="b1b10-c5c6c7c8" data-totalb11c15oumaisoutput="b11-c10" data-totalgeralb11="b1b10-c1c2c3c4c5c6c7c8" data-totalgeralb11output="b11-c11"  data-totalb11c10a19="b1b10-c3c4c5c6" data-totalb11c10a19output="b11-c12" />
-                                </div>
-                                <div>
-                                    <input type="number" min="0" data-total15oumaiseixox="b1-c5c6c7c8" data-total15oumaiseixoxoutput="b1-c10" data-totalgeraleixox="b1-c1c2c3c4c5c6c7c8" data-totalgeraleixoxoutput="b1-c11" data-totaleixoy="b1b2b3-c7" data-totaleixoyoutput="b4-c7" data-total15oumaiseixoy="b1b2b3-c5c6c7c8" data-total15oumaiseixoyoutput="b4-c10" data-totalgeraleixoy="b1b2b3-c1c2c3c4c5c6c7c8" data-totalgeraleixoyoutput="b4-c11" data-totalb11="b1b10-c7" data-totalb11output="b11-c7" data-totalb11c15oumais="b1b10-c5c6c7c8" data-totalb11c15oumaisoutput="b11-c10" data-totalgeralb11="b1b10-c1c2c3c4c5c6c7c8"data-totalgeralb11output="b11-c11" />
-                                </div>
-                                <div class="border-right-1">
-                                    <input type="number" min="0" data-total15oumaiseixox="b1-c5c6c7c8" data-total15oumaiseixoxoutput="b1-c10" data-totalgeraleixox="b1-c1c2c3c4c5c6c7c8" data-totalgeraleixoxoutput="b1-c11" data-totaleixoy="b1b2b3-c8" data-totaleixoyoutput="b4-c8" data-total15oumaiseixoy="b1b2b3-c5c6c7c8" data-total15oumaiseixoyoutput="b4-c10" data-totalgeraleixoy="b1b2b3-c1c2c3c4c5c6c7c8" data-totalgeraleixoyoutput="b4-c11" data-totalb11="b1b10-c8" data-totalb11output="b11-c8" data-totalb11c15oumais="b1b10-c5c6c7c8" data-totalb11c15oumaisoutput="b11-c10" data-totalgeralb11="b1b10-c1c2c3c4c5c6c7c8"data-totalgeralb11output="b11-c11" />
-                                </div>
-                                <div>
-                                    <input type="number" min="0" readonly class="b1-c9"/>
-                                </div>
-                                <div>
-                                    <input type="number" min="0" readonly class="b1-c10"/>
-                                </div>
-                                <div class="border-right-1">
-                                    <input type="number" min="0" readonly class="b1-c11"/>
-                                </div>
-                                <div>
-                                    <input type="number" min="0" readonly class="b1-c12"/>
-                                </div>
+                               
+                                <input type="number" min="0" data-total0a14eixox="b1-c1c2c3c4" data-total0a14eixoxoutput="b1-c9" data-totalgeraleixox="b1-c1c2c3c4c5c6c7c8" data-totalgeraleixoxoutput="b1-c11" data-totaleixoy="b1b2b3-c1" data-totaleixoyoutput="b4-c1" data-total0a14eixoy="b1b2b3-c1c2c3c4" data-total0a14eixoyoutput="b4-c9" data-totalgeraleixoy="b1b2b3-c1c2c3c4c5c6c7c8" data-totalgeraleixoyoutput="b4-c11" data-totalb11="b1b10-c1" data-totalb11output="b11-c1" data-totalb11c0a14="b1b10-c1c2c3c4" data-totalb11c0a14output="b11-c9" data-totalgeralb11="b1b10-c1c2c3c4c5c6c7c8"data-totalgeralb11output="b11-c11"/>
+                                
+                                <input type="number" min="0" data-total0a14eixox="b1-c1c2c3c4" data-total0a14eixoxoutput="b1-c9" data-totalgeraleixox="b1-c1c2c3c4c5c6c7c8" data-totalgeraleixoxoutput="b1-c11" data-totaleixoy="b1b2b3-c2" data-totaleixoyoutput="b4-c2" data-total0a14eixoy="b1b2b3-c1c2c3c4" data-total0a14eixoyoutput="b4-c9" data-totalgeraleixoy="b1b2b3-c1c2c3c4c5c6c7c8" data-totalgeraleixoyoutput="b4-c11" data-totalb11="b1b10-c2" data-totalb11output="b11-c2" data-totalb11c0a14="b1b10-c1c2c3c4" data-totalb11c0a14output="b11-c9" data-totalgeralb11="b1b10-c1c2c3c4c5c6c7c8"data-totalgeralb11output="b11-c11"/>
+                                
+                                
+                                <input type="number" min="0" data-total0a14eixox="b1-c1c2c3c4" data-total0a14eixoxoutput="b1-c9" data-totalgeraleixox="b1-c1c2c3c4c5c6c7c8" data-totalgeraleixoxoutput="b1-c11" data-total10a19eixox="b1-c3c4c5c6" data-total10a19eixoxoutput="b1-c12" data-totaleixoy="b1b2b3-c3" data-totaleixoyoutput="b4-c3" data-total0a14eixoy="b1b2b3-c1c2c3c4" data-total0a14eixoyoutput="b4-c9" data-totalgeraleixoy="b1b2b3-c1c2c3c4c5c6c7c8" data-totalgeraleixoyoutput="b4-c11" data-total10a19eixoy="b1b2b3-c3c4c5c6" data-total10a19eixoyoutput="b4-c12" data-totalb11="b1b10-c3" data-totalb11output="b11-c3" data-totalb11c0a14="b1b10-c1c2c3c4" data-totalb11c0a14output="b11-c9" data-totalgeralb11="b1b10-c1c2c3c4c5c6c7c8"data-totalgeralb11output="b11-c11" data-totalb11c10a19="b1b10-c3c4c5c6" data-totalb11c10a19output="b11-c12" />
+                                
+                                <input type="number" min="0" data-total0a14eixox="b1-c1c2c3c4" data-total0a14eixoxoutput="b1-c9" data-totalgeraleixox="b1-c1c2c3c4c5c6c7c8" data-totalgeraleixoxoutput="b1-c11" data-total10a19eixox="b1-c3c4c5c6" data-total10a19eixoxoutput="b1-c12" data-totaleixoy="b1b2b3-c4" data-totaleixoyoutput="b4-c4" data-total0a14eixoy="b1b2b3-c1c2c3c4" data-total0a14eixoyoutput="b4-c9" data-totalgeraleixoy="b1b2b3-c1c2c3c4c5c6c7c8" data-totalgeraleixoyoutput="b4-c11" data-total10a19eixoy="b1b2b3-c3c4c5c6" data-total10a19eixoyoutput="b4-c12" data-totalb11="b1b10-c4" data-totalb11output="b11-c4" data-totalb11c0a14="b1b10-c1c2c3c4" data-totalb11c0a14output="b11-c9" data-totalgeralb11="b1b10-c1c2c3c4c5c6c7c8"data-totalgeralb11output="b11-c11" data-totalb11c10a19="b1b10-c3c4c5c6" data-totalb11c10a19output="b11-c12" />
+                            
+                                <input type="number" min="0" data-total15oumaiseixox="b1-c5c6c7c8" data-total15oumaiseixoxoutput="b1-c10" data-totalgeraleixox="b1-c1c2c3c4c5c6c7c8" data-totalgeraleixoxoutput="b1-c11" data-total10a19eixox="b1-c3c4c5c6" data-total10a19eixoxoutput="b1-c12" data-totaleixoy="b1b2b3-c5" data-totaleixoyoutput="b4-c5" data-total15oumaiseixoy="b1b2b3-c5c6c7c8" data-total15oumaiseixoyoutput="b4-c10" data-totalgeraleixoy="b1b2b3-c1c2c3c4c5c6c7c8" data-totalgeraleixoyoutput="b4-c11" data-total10a19eixoy="b1b2b3-c3c4c5c6" data-total10a19eixoyoutput="b4-c12" data-totalb11="b1b10-c5" data-totalb11output="b11-c5" data-totalb11c15oumais="b1b10-c5c6c7c8" data-totalb11c15oumaisoutput="b11-c10" data-totalgeralb11="b1b10-c1c2c3c4c5c6c7c8"data-totalgeralb11output="b11-c11"  data-totalb11c10a19="b1b10-c3c4c5c6" data-totalb11c10a19output="b11-c12" />
+                               
+                                <input type="number" min="0" data-total15oumaiseixox="b1-c5c6c7c8" data-total15oumaiseixoxoutput="b1-c10" data-totalgeraleixox="b1-c1c2c3c4c5c6c7c8" data-totalgeraleixoxoutput="b1-c11" data-total10a19eixox="b1-c3c4c5c6" data-total10a19eixoxoutput="b1-c12" data-totaleixoy="b1b2b3-c6" data-totaleixoyoutput="b4-c6" data-total15oumaiseixoy="b1b2b3-c5c6c7c8" data-total15oumaiseixoyoutput="b4-c10" data-totalgeraleixoy="b1b2b3-c1c2c3c4c5c6c7c8" data-totalgeraleixoyoutput="b4-c11" data-total10a19eixoy="b1b2b3-c3c4c5c6" data-total10a19eixoyoutput="b4-c12" data-totalb11="b1b10-c6" data-totalb11output="b11-c6" data-totalb11c15oumais="b1b10-c5c6c7c8" data-totalb11c15oumaisoutput="b11-c10" data-totalgeralb11="b1b10-c1c2c3c4c5c6c7c8" data-totalgeralb11output="b11-c11"  data-totalb11c10a19="b1b10-c3c4c5c6" data-totalb11c10a19output="b11-c12" />
+                                
+                                <input type="number" min="0" data-total15oumaiseixox="b1-c5c6c7c8" data-total15oumaiseixoxoutput="b1-c10" data-totalgeraleixox="b1-c1c2c3c4c5c6c7c8" data-totalgeraleixoxoutput="b1-c11" data-totaleixoy="b1b2b3-c7" data-totaleixoyoutput="b4-c7" data-total15oumaiseixoy="b1b2b3-c5c6c7c8" data-total15oumaiseixoyoutput="b4-c10" data-totalgeraleixoy="b1b2b3-c1c2c3c4c5c6c7c8" data-totalgeraleixoyoutput="b4-c11" data-totalb11="b1b10-c7" data-totalb11output="b11-c7" data-totalb11c15oumais="b1b10-c5c6c7c8" data-totalb11c15oumaisoutput="b11-c10" data-totalgeralb11="b1b10-c1c2c3c4c5c6c7c8"data-totalgeralb11output="b11-c11" />
+                                
+                                <input type="number" min="0" data-total15oumaiseixox="b1-c5c6c7c8" data-total15oumaiseixoxoutput="b1-c10" data-totalgeraleixox="b1-c1c2c3c4c5c6c7c8" data-totalgeraleixoxoutput="b1-c11" data-totaleixoy="b1b2b3-c8" data-totaleixoyoutput="b4-c8" data-total15oumaiseixoy="b1b2b3-c5c6c7c8" data-total15oumaiseixoyoutput="b4-c10" data-totalgeraleixoy="b1b2b3-c1c2c3c4c5c6c7c8" data-totalgeraleixoyoutput="b4-c11" data-totalb11="b1b10-c8" data-totalb11output="b11-c8" data-totalb11c15oumais="b1b10-c5c6c7c8" data-totalb11c15oumaisoutput="b11-c10" data-totalgeralb11="b1b10-c1c2c3c4c5c6c7c8"data-totalgeralb11output="b11-c11" />
+                            
+                                <input type="number" min="0" readonly class="b1-c9"/>
+                               
+                                <input type="number" min="0" readonly class="b1-c10"/>
+                                
+                                <input type="number" min="0" readonly class="b1-c11"/>
+                                
+                                <input type="number" min="0" readonly class="b1-c12"/>
                             </div>
 
                             <div class="linha b2">
@@ -460,42 +438,30 @@
                                 <div>
                                     <span>Nº de transferidos de outras US em TARV <br/> <strong>durante o mês</strong></span>
                                 </div>
-                                <div>
-                                    <input type="number" min="0" data-total0a14eixox="b2-c1c2c3c4" data-total0a14eixoxoutput="b2-c9" data-totalgeraleixox="b2-c1c2c3c4c5c6c7c8" data-totalgeraleixoxoutput="b2-c11" data-totaleixoy="b1b2b3-c1" data-totaleixoyoutput="b4-c1" data-total0a14eixoy="b1b2b3-c1c2c3c4" data-total0a14eixoyoutput="b4-c9" data-totalgeraleixoy="b1b2b3-c1c2c3c4c5c6c7c8"data-totalgeraleixoyoutput="b4-c11"/>
-                                </div>
-                                <div>
-                                    <input type="number" min="0" data-total0a14eixox="b2-c1c2c3c4" data-total0a14eixoxoutput="b2-c9" data-totalgeraleixox="b2-c1c2c3c4c5c6c7c8" data-totalgeraleixoxoutput="b2-c11" data-totaleixoy="b1b2b3-c2" data-totaleixoyoutput="b4-c2" data-total0a14eixoy="b1b2b3-c1c2c3c4" data-total0a14eixoyoutput="b4-c9" data-totalgeraleixoy="b1b2b3-c1c2c3c4c5c6c7c8"data-totalgeraleixoyoutput="b4-c11"/>
-                                </div>
-                                <div>
-                                    <input type="number" min="0" data-total0a14eixox="b2-c1c2c3c4" data-total0a14eixoxoutput="b2-c9" data-totalgeraleixox="b2-c1c2c3c4c5c6c7c8" data-totalgeraleixoxoutput="b2-c11" data-total10a19eixox="b2-c3c4c5c6" data-total10a19eixoxoutput="b2-c12" data-totaleixoy="b1b2b3-c3" data-totaleixoyoutput="b4-c3" data-total0a14eixoy="b1b2b3-c1c2c3c4" data-total0a14eixoyoutput="b4-c9" data-totalgeraleixoy="b1b2b3-c1c2c3c4c5c6c7c8"data-totalgeraleixoyoutput="b4-c11" data-total10a19eixoy="b1b2b3-c3c4c5c6" data-total10a19eixoyoutput="b4-c12" />
-                                </div>
-                                <div>
-                                    <input type="number" min="0" data-total0a14eixox="b2-c1c2c3c4" data-total0a14eixoxoutput="b2-c9" data-totalgeraleixox="b2-c1c2c3c4c5c6c7c8" data-totalgeraleixoxoutput="b2-c11" data-total10a19eixox="b2-c3c4c5c6" data-total10a19eixoxoutput="b2-c12" data-totaleixoy="b1b2b3-c4" data-totaleixoyoutput="b4-c4" data-total0a14eixoy="b1b2b3-c1c2c3c4" data-total0a14eixoyoutput="b4-c9" data-totalgeraleixoy="b1b2b3-c1c2c3c4c5c6c7c8"data-totalgeraleixoyoutput="b4-c11" data-total10a19eixoy="b1b2b3-c3c4c5c6" data-total10a19eixoyoutput="b4-c12" />
-                                </div>
-                                <div>
-                                    <input type="number" min="0" data-total15oumaiseixox="b2-c5c6c7c8" data-total15oumaiseixoxoutput="b2-c10" data-totalgeraleixox="b2-c1c2c3c4c5c6c7c8" data-totalgeraleixoxoutput="b2-c11" data-total10a19eixox="b2-c3c4c5c6" data-total10a19eixoxoutput="b2-c12" data-totaleixoy="b1b2b3-c5" data-totaleixoyoutput="b4-c5" data-total15oumaiseixoy="b1b2b3-c5c6c7c8" data-total15oumaiseixoyoutput="b4-c10" data-totalgeraleixoy="b1b2b3-c1c2c3c4c5c6c7c8"data-totalgeraleixoyoutput="b4-c11"  data-total10a19eixoy="b1b2b3-c3c4c5c6" data-total10a19eixoyoutput="b4-c12" />
-                                </div>
-                                <div>
-                                    <input type="number" min="0" data-total15oumaiseixox="b2-c5c6c7c8" data-total15oumaiseixoxoutput="b2-c10" data-totalgeraleixox="b2-c1c2c3c4c5c6c7c8" data-totalgeraleixoxoutput="b2-c11" data-total10a19eixox="b2-c3c4c5c6" data-total10a19eixoxoutput="b2-c12" data-totaleixoy="b1b2b3-c6" data-totaleixoyoutput="b4-c6" data-total15oumaiseixoy="b1b2b3-c5c6c7c8" data-total15oumaiseixoyoutput="b4-c10" data-totalgeraleixoy="b1b2b3-c1c2c3c4c5c6c7c8"data-totalgeraleixoyoutput="b4-c11" data-total10a19eixoy="b1b2b3-c3c4c5c6" data-total10a19eixoyoutput="b4-c12" />
-                                </div>
-                                <div>
-                                    <input type="number" min="0" data-total15oumaiseixox="b2-c5c6c7c8" data-total15oumaiseixoxoutput="b2-c10" data-totalgeraleixox="b2-c1c2c3c4c5c6c7c8" data-totalgeraleixoxoutput="b2-c11" data-totaleixoy="b1b2b3-c7" data-totaleixoyoutput="b4-c7" data-total15oumaiseixoy="b1b2b3-c5c6c7c8" data-total15oumaiseixoyoutput="b4-c10" data-totalgeraleixoy="b1b2b3-c1c2c3c4c5c6c7c8"data-totalgeraleixoyoutput="b4-c11" />
-                                </div>
-                                <div class="border-right-1">
-                                    <input type="number" min="0" data-total15oumaiseixox="b2-c5c6c7c8" data-total15oumaiseixoxoutput="b2-c10" data-totalgeraleixox="b2-c1c2c3c4c5c6c7c8" data-totalgeraleixoxoutput="b2-c11" data-totaleixoy="b1b2b3-c8" data-totaleixoyoutput="b4-c8" data-total15oumaiseixoy="b1b2b3-c5c6c7c8" data-total15oumaiseixoyoutput="b4-c10" data-totalgeraleixoy="b1b2b3-c1c2c3c4c5c6c7c8"data-totalgeraleixoyoutput="b4-c11"/>
-                                </div>
-                                <div>
-                                    <input type="number" min="0" readonly class="b2-c9"/>
-                                </div>
-                                <div>
-                                    <input type="number" min="0" readonly class="b2-c10"/>
-                                </div>
-                                <div class="border-right-1">
-                                    <input type="number" min="0" readonly class="b2-c11"/>
-                                </div>
-                                <div>
-                                    <input type="number" min="0" readonly class="b2-c12"/>
-                                </div>
+                               
+                                <input type="number" min="0" data-total0a14eixox="b2-c1c2c3c4" data-total0a14eixoxoutput="b2-c9" data-totalgeraleixox="b2-c1c2c3c4c5c6c7c8" data-totalgeraleixoxoutput="b2-c11" data-totaleixoy="b1b2b3-c1" data-totaleixoyoutput="b4-c1" data-total0a14eixoy="b1b2b3-c1c2c3c4" data-total0a14eixoyoutput="b4-c9" data-totalgeraleixoy="b1b2b3-c1c2c3c4c5c6c7c8"data-totalgeraleixoyoutput="b4-c11"/>
+                               
+                                <input type="number" min="0" data-total0a14eixox="b2-c1c2c3c4" data-total0a14eixoxoutput="b2-c9" data-totalgeraleixox="b2-c1c2c3c4c5c6c7c8" data-totalgeraleixoxoutput="b2-c11" data-totaleixoy="b1b2b3-c2" data-totaleixoyoutput="b4-c2" data-total0a14eixoy="b1b2b3-c1c2c3c4" data-total0a14eixoyoutput="b4-c9" data-totalgeraleixoy="b1b2b3-c1c2c3c4c5c6c7c8"data-totalgeraleixoyoutput="b4-c11"/>
+                               
+                                <input type="number" min="0" data-total0a14eixox="b2-c1c2c3c4" data-total0a14eixoxoutput="b2-c9" data-totalgeraleixox="b2-c1c2c3c4c5c6c7c8" data-totalgeraleixoxoutput="b2-c11" data-total10a19eixox="b2-c3c4c5c6" data-total10a19eixoxoutput="b2-c12" data-totaleixoy="b1b2b3-c3" data-totaleixoyoutput="b4-c3" data-total0a14eixoy="b1b2b3-c1c2c3c4" data-total0a14eixoyoutput="b4-c9" data-totalgeraleixoy="b1b2b3-c1c2c3c4c5c6c7c8"data-totalgeraleixoyoutput="b4-c11" data-total10a19eixoy="b1b2b3-c3c4c5c6" data-total10a19eixoyoutput="b4-c12" />
+                               
+                                <input type="number" min="0" data-total0a14eixox="b2-c1c2c3c4" data-total0a14eixoxoutput="b2-c9" data-totalgeraleixox="b2-c1c2c3c4c5c6c7c8" data-totalgeraleixoxoutput="b2-c11" data-total10a19eixox="b2-c3c4c5c6" data-total10a19eixoxoutput="b2-c12" data-totaleixoy="b1b2b3-c4" data-totaleixoyoutput="b4-c4" data-total0a14eixoy="b1b2b3-c1c2c3c4" data-total0a14eixoyoutput="b4-c9" data-totalgeraleixoy="b1b2b3-c1c2c3c4c5c6c7c8"data-totalgeraleixoyoutput="b4-c11" data-total10a19eixoy="b1b2b3-c3c4c5c6" data-total10a19eixoyoutput="b4-c12" />
+                                
+                                <input type="number" min="0" data-total15oumaiseixox="b2-c5c6c7c8" data-total15oumaiseixoxoutput="b2-c10" data-totalgeraleixox="b2-c1c2c3c4c5c6c7c8" data-totalgeraleixoxoutput="b2-c11" data-total10a19eixox="b2-c3c4c5c6" data-total10a19eixoxoutput="b2-c12" data-totaleixoy="b1b2b3-c5" data-totaleixoyoutput="b4-c5" data-total15oumaiseixoy="b1b2b3-c5c6c7c8" data-total15oumaiseixoyoutput="b4-c10" data-totalgeraleixoy="b1b2b3-c1c2c3c4c5c6c7c8"data-totalgeraleixoyoutput="b4-c11"  data-total10a19eixoy="b1b2b3-c3c4c5c6" data-total10a19eixoyoutput="b4-c12" />
+                                
+                                <input type="number" min="0" data-total15oumaiseixox="b2-c5c6c7c8" data-total15oumaiseixoxoutput="b2-c10" data-totalgeraleixox="b2-c1c2c3c4c5c6c7c8" data-totalgeraleixoxoutput="b2-c11" data-total10a19eixox="b2-c3c4c5c6" data-total10a19eixoxoutput="b2-c12" data-totaleixoy="b1b2b3-c6" data-totaleixoyoutput="b4-c6" data-total15oumaiseixoy="b1b2b3-c5c6c7c8" data-total15oumaiseixoyoutput="b4-c10" data-totalgeraleixoy="b1b2b3-c1c2c3c4c5c6c7c8"data-totalgeraleixoyoutput="b4-c11" data-total10a19eixoy="b1b2b3-c3c4c5c6" data-total10a19eixoyoutput="b4-c12" />
+                                
+                                <input type="number" min="0" data-total15oumaiseixox="b2-c5c6c7c8" data-total15oumaiseixoxoutput="b2-c10" data-totalgeraleixox="b2-c1c2c3c4c5c6c7c8" data-totalgeraleixoxoutput="b2-c11" data-totaleixoy="b1b2b3-c7" data-totaleixoyoutput="b4-c7" data-total15oumaiseixoy="b1b2b3-c5c6c7c8" data-total15oumaiseixoyoutput="b4-c10" data-totalgeraleixoy="b1b2b3-c1c2c3c4c5c6c7c8"data-totalgeraleixoyoutput="b4-c11" />
+                                
+                                <input type="number" min="0" data-total15oumaiseixox="b2-c5c6c7c8" data-total15oumaiseixoxoutput="b2-c10" data-totalgeraleixox="b2-c1c2c3c4c5c6c7c8" data-totalgeraleixoxoutput="b2-c11" data-totaleixoy="b1b2b3-c8" data-totaleixoyoutput="b4-c8" data-total15oumaiseixoy="b1b2b3-c5c6c7c8" data-total15oumaiseixoyoutput="b4-c10" data-totalgeraleixoy="b1b2b3-c1c2c3c4c5c6c7c8"data-totalgeraleixoyoutput="b4-c11"/>
+                                
+                                <input type="number" min="0" readonly class="b2-c9"/>
+                                
+                                <input type="number" min="0" readonly class="b2-c10"/>
+                                
+                                <input type="number" min="0" readonly class="b2-c11"/>
+                                
+                                <input type="number" min="0" readonly class="b2-c12"/>
                             </div>
 
                             <div class="linha b3">
@@ -507,42 +473,30 @@
                                 <div>
                                     <span>Nº de reinícios TARV <strong>durante o mês</strong></span>
                                 </div>
-                                <div>
-                                    <input type="number" min="0" data-total0a14eixox="b3-c1c2c3c4" data-total0a14eixoxoutput="b3-c9" data-totalgeraleixox="b3-c1c2c3c4c5c6c7c8" data-totalgeraleixoxoutput="b3-c11" data-totaleixoy="b1b2b3-c1" data-totaleixoyoutput="b4-c1" data-total0a14eixoy="b1b2b3-c1c2c3c4" data-total0a14eixoyoutput="b4-c9" data-totalgeraleixoy="b1b2b3-c1c2c3c4c5c6c7c8"data-totalgeraleixoyoutput="b4-c11"/>
-                                </div>
-                                <div>
-                                    <input type="number" min="0" data-total0a14eixox="b3-c1c2c3c4" data-total0a14eixoxoutput="b3-c9" data-totalgeraleixox="b3-c1c2c3c4c5c6c7c8" data-totalgeraleixoxoutput="b3-c11" data-totaleixoy="b1b2b3-c2" data-totaleixoyoutput="b4-c2" data-total0a14eixoy="b1b2b3-c1c2c3c4" data-total0a14eixoyoutput="b4-c9" data-totalgeraleixoy="b1b2b3-c1c2c3c4c5c6c7c8"data-totalgeraleixoyoutput="b4-c11"/>
-                                </div>
-                                <div>
-                                    <input type="number" min="0" data-total0a14eixox="b3-c1c2c3c4" data-total0a14eixoxoutput="b3-c9" data-totalgeraleixox="b3-c1c2c3c4c5c6c7c8" data-totalgeraleixoxoutput="b3-c11" data-total10a19eixox="b3-c3c4c5c6" data-total10a19eixoxoutput="b3-c12" data-totaleixoy="b1b2b3-c3" data-totaleixoyoutput="b4-c3" data-total0a14eixoy="b1b2b3-c1c2c3c4" data-total0a14eixoyoutput="b4-c9" data-totalgeraleixoy="b1b2b3-c1c2c3c4c5c6c7c8"data-totalgeraleixoyoutput="b4-c11" data-total10a19eixoy="b1b2b3-c3c4c5c6" data-total10a19eixoyoutput="b4-c12" />
-                                </div>
-                                <div>
-                                    <input type="number" min="0" data-total0a14eixox="b3-c1c2c3c4" data-total0a14eixoxoutput="b3-c9" data-totalgeraleixox="b3-c1c2c3c4c5c6c7c8" data-totalgeraleixoxoutput="b3-c11" data-total10a19eixox="b3-c3c4c5c6" data-total10a19eixoxoutput="b3-c12" data-totaleixoy="b1b2b3-c4" data-totaleixoyoutput="b4-c4" data-total0a14eixoy="b1b2b3-c1c2c3c4" data-total0a14eixoyoutput="b4-c9" data-totalgeraleixoy="b1b2b3-c1c2c3c4c5c6c7c8"data-totalgeraleixoyoutput="b4-c11" data-total10a19eixoy="b1b2b3-c3c4c5c6" data-total10a19eixoyoutput="b4-c12" />
-                                </div>
-                                <div>
-                                    <input type="number" min="0" data-total15oumaiseixox="b3-c5c6c7c8" data-total15oumaiseixoxoutput="b3-c10" data-totalgeraleixox="b3-c1c2c3c4c5c6c7c8" data-totalgeraleixoxoutput="b3-c11" data-total10a19eixox="b3-c3c4c5c6" data-total10a19eixoxoutput="b3-c12" data-totaleixoy="b1b2b3-c5" data-totaleixoyoutput="b4-c5" data-total15oumaiseixoy="b1b2b3-c5c6c7c8" data-total15oumaiseixoyoutput="b4-c10" data-totalgeraleixoy="b1b2b3-c1c2c3c4c5c6c7c8"data-totalgeraleixoyoutput="b4-c11"  data-total10a19eixoy="b1b2b3-c3c4c5c6" data-total10a19eixoyoutput="b4-c12" />
-                                </div>
-                                <div>
-                                    <input type="number" min="0" data-total15oumaiseixox="b3-c5c6c7c8" data-total15oumaiseixoxoutput="b3-c10" data-totalgeraleixox="b3-c1c2c3c4c5c6c7c8" data-totalgeraleixoxoutput="b3-c11" data-total10a19eixox="b3-c3c4c5c6" data-total10a19eixoxoutput="b3-c12" data-totaleixoy="b1b2b3-c6" data-totaleixoyoutput="b4-c6" data-total15oumaiseixoy="b1b2b3-c5c6c7c8" data-total15oumaiseixoyoutput="b4-c10" data-totalgeraleixoy="b1b2b3-c1c2c3c4c5c6c7c8"data-totalgeraleixoyoutput="b4-c11" data-total10a19eixoy="b1b2b3-c3c4c5c6" data-total10a19eixoyoutput="b4-c12" />
-                                </div>
-                                <div>
-                                    <input type="number" min="0" data-total15oumaiseixox="b3-c5c6c7c8" data-total15oumaiseixoxoutput="b3-c10" data-totalgeraleixox="b3-c1c2c3c4c5c6c7c8" data-totalgeraleixoxoutput="b3-c11" data-totaleixoy="b1b2b3-c7" data-totaleixoyoutput="b4-c7" data-total15oumaiseixoy="b1b2b3-c5c6c7c8" data-total15oumaiseixoyoutput="b4-c10" data-totalgeraleixoy="b1b2b3-c1c2c3c4c5c6c7c8"data-totalgeraleixoyoutput="b4-c11" />
-                                </div>
-                                <div class="border-right-1">
-                                    <input type="number" min="0" data-total15oumaiseixox="b3-c5c6c7c8" data-total15oumaiseixoxoutput="b3-c10" data-totalgeraleixox="b3-c1c2c3c4c5c6c7c8" data-totalgeraleixoxoutput="b3-c11" data-totaleixoy="b1b2b3-c8" data-totaleixoyoutput="b4-c8" data-total15oumaiseixoy="b1b2b3-c5c6c7c8" data-total15oumaiseixoyoutput="b4-c10" data-totalgeraleixoy="b1b2b3-c1c2c3c4c5c6c7c8"data-totalgeraleixoyoutput="b4-c11"/>
-                                </div>
-                                <div>
-                                    <input type="number" min="0" readonly class="b3-c9"/>
-                                </div>
-                                <div>
-                                    <input type="number" min="0" readonly class="b3-c10"/>
-                                </div>
-                                <div class="border-right-1">
-                                    <input type="number" min="0" readonly class="b3-c11"/>
-                                </div>
-                                <div>
-                                    <input type="number" min="0" readonly class="b3-c12"/>
-                                </div>
+                                
+                                <input type="number" min="0" data-total0a14eixox="b3-c1c2c3c4" data-total0a14eixoxoutput="b3-c9" data-totalgeraleixox="b3-c1c2c3c4c5c6c7c8" data-totalgeraleixoxoutput="b3-c11" data-totaleixoy="b1b2b3-c1" data-totaleixoyoutput="b4-c1" data-total0a14eixoy="b1b2b3-c1c2c3c4" data-total0a14eixoyoutput="b4-c9" data-totalgeraleixoy="b1b2b3-c1c2c3c4c5c6c7c8"data-totalgeraleixoyoutput="b4-c11"/>
+                            
+                                <input type="number" min="0" data-total0a14eixox="b3-c1c2c3c4" data-total0a14eixoxoutput="b3-c9" data-totalgeraleixox="b3-c1c2c3c4c5c6c7c8" data-totalgeraleixoxoutput="b3-c11" data-totaleixoy="b1b2b3-c2" data-totaleixoyoutput="b4-c2" data-total0a14eixoy="b1b2b3-c1c2c3c4" data-total0a14eixoyoutput="b4-c9" data-totalgeraleixoy="b1b2b3-c1c2c3c4c5c6c7c8"data-totalgeraleixoyoutput="b4-c11"/>
+                                
+                                <input type="number" min="0" data-total0a14eixox="b3-c1c2c3c4" data-total0a14eixoxoutput="b3-c9" data-totalgeraleixox="b3-c1c2c3c4c5c6c7c8" data-totalgeraleixoxoutput="b3-c11" data-total10a19eixox="b3-c3c4c5c6" data-total10a19eixoxoutput="b3-c12" data-totaleixoy="b1b2b3-c3" data-totaleixoyoutput="b4-c3" data-total0a14eixoy="b1b2b3-c1c2c3c4" data-total0a14eixoyoutput="b4-c9" data-totalgeraleixoy="b1b2b3-c1c2c3c4c5c6c7c8"data-totalgeraleixoyoutput="b4-c11" data-total10a19eixoy="b1b2b3-c3c4c5c6" data-total10a19eixoyoutput="b4-c12" />
+                            
+                                <input type="number" min="0" data-total0a14eixox="b3-c1c2c3c4" data-total0a14eixoxoutput="b3-c9" data-totalgeraleixox="b3-c1c2c3c4c5c6c7c8" data-totalgeraleixoxoutput="b3-c11" data-total10a19eixox="b3-c3c4c5c6" data-total10a19eixoxoutput="b3-c12" data-totaleixoy="b1b2b3-c4" data-totaleixoyoutput="b4-c4" data-total0a14eixoy="b1b2b3-c1c2c3c4" data-total0a14eixoyoutput="b4-c9" data-totalgeraleixoy="b1b2b3-c1c2c3c4c5c6c7c8"data-totalgeraleixoyoutput="b4-c11" data-total10a19eixoy="b1b2b3-c3c4c5c6" data-total10a19eixoyoutput="b4-c12" />
+                                
+                                <input type="number" min="0" data-total15oumaiseixox="b3-c5c6c7c8" data-total15oumaiseixoxoutput="b3-c10" data-totalgeraleixox="b3-c1c2c3c4c5c6c7c8" data-totalgeraleixoxoutput="b3-c11" data-total10a19eixox="b3-c3c4c5c6" data-total10a19eixoxoutput="b3-c12" data-totaleixoy="b1b2b3-c5" data-totaleixoyoutput="b4-c5" data-total15oumaiseixoy="b1b2b3-c5c6c7c8" data-total15oumaiseixoyoutput="b4-c10" data-totalgeraleixoy="b1b2b3-c1c2c3c4c5c6c7c8"data-totalgeraleixoyoutput="b4-c11"  data-total10a19eixoy="b1b2b3-c3c4c5c6" data-total10a19eixoyoutput="b4-c12" />
+                                
+                                <input type="number" min="0" data-total15oumaiseixox="b3-c5c6c7c8" data-total15oumaiseixoxoutput="b3-c10" data-totalgeraleixox="b3-c1c2c3c4c5c6c7c8" data-totalgeraleixoxoutput="b3-c11" data-total10a19eixox="b3-c3c4c5c6" data-total10a19eixoxoutput="b3-c12" data-totaleixoy="b1b2b3-c6" data-totaleixoyoutput="b4-c6" data-total15oumaiseixoy="b1b2b3-c5c6c7c8" data-total15oumaiseixoyoutput="b4-c10" data-totalgeraleixoy="b1b2b3-c1c2c3c4c5c6c7c8"data-totalgeraleixoyoutput="b4-c11" data-total10a19eixoy="b1b2b3-c3c4c5c6" data-total10a19eixoyoutput="b4-c12" />
+                                
+                                <input type="number" min="0" data-total15oumaiseixox="b3-c5c6c7c8" data-total15oumaiseixoxoutput="b3-c10" data-totalgeraleixox="b3-c1c2c3c4c5c6c7c8" data-totalgeraleixoxoutput="b3-c11" data-totaleixoy="b1b2b3-c7" data-totaleixoyoutput="b4-c7" data-total15oumaiseixoy="b1b2b3-c5c6c7c8" data-total15oumaiseixoyoutput="b4-c10" data-totalgeraleixoy="b1b2b3-c1c2c3c4c5c6c7c8"data-totalgeraleixoyoutput="b4-c11" />
+                               
+                                <input type="number" min="0" data-total15oumaiseixox="b3-c5c6c7c8" data-total15oumaiseixoxoutput="b3-c10" data-totalgeraleixox="b3-c1c2c3c4c5c6c7c8" data-totalgeraleixoxoutput="b3-c11" data-totaleixoy="b1b2b3-c8" data-totaleixoyoutput="b4-c8" data-total15oumaiseixoy="b1b2b3-c5c6c7c8" data-total15oumaiseixoyoutput="b4-c10" data-totalgeraleixoy="b1b2b3-c1c2c3c4c5c6c7c8"data-totalgeraleixoyoutput="b4-c11"/>
+                            
+                                <input type="number" min="0" readonly class="b3-c9"/>
+                                
+                                <input type="number" min="0" readonly class="b3-c10"/>
+                                
+                                <input type="number" min="0" readonly class="b3-c11"/>
+                               
+                                <input type="number" min="0" readonly class="b3-c12"/>
                             </div>
 
                             <div class="linha b4">
@@ -554,42 +508,31 @@
                                 <div>
                                     <span>Nº de entradas TARV <strong>durante o mês</strong> <br/> (B.4 = B.1 + B.2 + B.3)</span>
                                 </div>
-                                <div>
-                                    <input type="number" min="0" readonly class="b4-c1"/>
-                                </div>
-                                <div>
-                                    <input type="number" min="0" readonly class="b4-c2"/>
-                                </div>
-                                <div>
-                                    <input type="number" min="0" readonly class="b4-c3"/>
-                                </div>
-                                <div>
-                                    <input type="number" min="0" readonly class="b4-c4"/>
-                                </div>
-                                <div>
-                                    <input type="number" min="0" readonly class="b4-c5"/>
-                                </div>
-                                <div>
-                                    <input type="number" min="0" readonly class="b4-c6"/>
-                                </div>
-                                <div>
-                                    <input type="number" min="0" readonly class="b4-c7"/>
-                                </div>
-                                <div class="border-right-1">
-                                    <input type="number" min="0" readonly class="b4-c8"/>
-                                </div>
-                                <div>
-                                    <input type="number" min="0" readonly class="b4-c9"/>
-                                </div>
-                                <div>
-                                    <input type="number" min="0" readonly class="b4-c10"/>
-                                </div>
-                                <div class="border-right-1">
-                                    <input type="number" min="0" readonly class="b4-c11"/>
-                                </div>
-                                <div>
-                                    <input type="number" min="0" readonly class="b4-c12"/>
-                                </div>
+            
+                                <input type="number" min="0" readonly class="b4-c1"/>
+                                
+                                <input type="number" min="0" readonly class="b4-c2"/>
+                                
+                                <input type="number" min="0" readonly class="b4-c3"/>
+                                
+                                <input type="number" min="0" readonly class="b4-c4"/>
+                                
+                                <input type="number" min="0" readonly class="b4-c5"/>
+                                
+                                <input type="number" min="0" readonly class="b4-c6"/>
+                                
+                                <input type="number" min="0" readonly class="b4-c7"/>
+                                
+                                <input type="number" min="0" readonly class="b4-c8"/>
+                                
+                                <input type="number" min="0" readonly class="b4-c9"/>
+                                
+                                <input type="number" min="0" readonly class="b4-c10"/>
+                                
+                                <input type="number" min="0" readonly class="b4-c11"/>
+                              
+                                <input type="number" min="0" readonly class="b4-c12"/>
+                                
                             </div>
 
                             <div class="linha b5">
@@ -601,42 +544,30 @@
                                 <div>
                                     <span>Nº de transferidos para outras US em TARV <br/> <strong>durante o mês</strong></span>
                                 </div>
-                                <div>
-                                    <input type="number" min="0" data-total0a14eixox="b5-c1c2c3c4" data-total0a14eixoxoutput="b5-c9" data-totalgeraleixox="b5-c1c2c3c4c5c6c7c8" data-totalgeraleixoxoutput="b5-c11" data-totaleixoy="b5b6b7b8-c1" data-totaleixoyoutput="b9-c1" data-total0a14eixoy="b5b6b7b8-c1c2c3c4" data-total0a14eixoyoutput="b9-c9" data-totalgeraleixoy="b5b6b7b8-c1c2c3c4c5c6c7c8"data-totalgeraleixoyoutput="b9-c11"/>
-                                </div>
-                                <div>
-                                    <input type="number" min="0" data-total0a14eixox="b5-c1c2c3c4" data-total0a14eixoxoutput="b5-c9" data-totalgeraleixox="b5-c1c2c3c4c5c6c7c8" data-totalgeraleixoxoutput="b5-c11" data-totaleixoy="b5b6b7b8-c2" data-totaleixoyoutput="b9-c2" data-total0a14eixoy="b5b6b7b8-c1c2c3c4" data-total0a14eixoyoutput="b9-c9" data-totalgeraleixoy="b5b6b7b8-c1c2c3c4c5c6c7c8"data-totalgeraleixoyoutput="b9-c11"/>
-                                </div>
-                                <div>
-                                    <input type="number" min="0" data-total0a14eixox="b5-c1c2c3c4" data-total0a14eixoxoutput="b5-c9" data-totalgeraleixox="b5-c1c2c3c4c5c6c7c8" data-totalgeraleixoxoutput="b5-c11" data-total10a19eixox="b5-c3c4c5c6" data-total10a19eixoxoutput="b5-c12" data-totaleixoy="b5b6b7b8-c3" data-totaleixoyoutput="b9-c3" data-total0a14eixoy="b5b6b7b8-c1c2c3c4" data-total0a14eixoyoutput="b9-c9" data-totalgeraleixoy="b5b6b7b8-c1c2c3c4c5c6c7c8"data-totalgeraleixoyoutput="b9-c11" data-total10a19eixoy="b5b6b7b8-c3c4c5c6" data-total10a19eixoyoutput="b9-c12" />
-                                </div>
-                                <div>
-                                    <input type="number" min="0" data-total0a14eixox="b5-c1c2c3c4" data-total0a14eixoxoutput="b5-c9" data-totalgeraleixox="b5-c1c2c3c4c5c6c7c8" data-totalgeraleixoxoutput="b5-c11" data-total10a19eixox="b5-c3c4c5c6" data-total10a19eixoxoutput="b5-c12" data-totaleixoy="b5b6b7b8-c4" data-totaleixoyoutput="b9-c4" data-total0a14eixoy="b5b6b7b8-c1c2c3c4" data-total0a14eixoyoutput="b9-c9" data-totalgeraleixoy="b5b6b7b8-c1c2c3c4c5c6c7c8"data-totalgeraleixoyoutput="b9-c11" data-total10a19eixoy="b5b6b7b8-c3c4c5c6" data-total10a19eixoyoutput="b9-c12" />
-                                </div>
-                                <div>
-                                    <input type="number" min="0" data-total15oumaiseixox="b5-c5c6c7c8" data-total15oumaiseixoxoutput="b5-c10" data-totalgeraleixox="b5-c1c2c3c4c5c6c7c8" data-totalgeraleixoxoutput="b5-c11" data-total10a19eixox="b5-c3c4c5c6" data-total10a19eixoxoutput="b5-c12" data-totaleixoy="b5b6b7b8-c5" data-totaleixoyoutput="b9-c5" data-total15oumaiseixoy="b5b6b7b8-c5c6c7c8" data-total15oumaiseixoyoutput="b9-c10" data-totalgeraleixoy="b5b6b7b8-c1c2c3c4c5c6c7c8"data-totalgeraleixoyoutput="b9-c11"  data-total10a19eixoy="b5b6b7b8-c3c4c5c6" data-total10a19eixoyoutput="b9-c12" />
-                                </div>
-                                <div>
-                                    <input type="number" min="0" data-total15oumaiseixox="b5-c5c6c7c8" data-total15oumaiseixoxoutput="b5-c10" data-totalgeraleixox="b5-c1c2c3c4c5c6c7c8" data-totalgeraleixoxoutput="b5-c11" data-total10a19eixox="b5-c3c4c5c6" data-total10a19eixoxoutput="b5-c12" data-totaleixoy="b5b6b7b8-c6" data-totaleixoyoutput="b9-c6" data-total15oumaiseixoy="b5b6b7b8-c5c6c7c8" data-total15oumaiseixoyoutput="b9-c10" data-totalgeraleixoy="b5b6b7b8-c1c2c3c4c5c6c7c8"data-totalgeraleixoyoutput="b9-c11" data-total10a19eixoy="b5b6b7b8-c3c4c5c6" data-total10a19eixoyoutput="b9-c12"/>
-                                </div>
-                                <div>
-                                    <input type="number" min="0" data-total15oumaiseixox="b5-c5c6c7c8" data-total15oumaiseixoxoutput="b5-c10" data-totalgeraleixox="b5-c1c2c3c4c5c6c7c8" data-totalgeraleixoxoutput="b5-c11" data-totaleixoy="b5b6b7b8-c7" data-totaleixoyoutput="b9-c7" data-total15oumaiseixoy="b5b6b7b8-c5c6c7c8" data-total15oumaiseixoyoutput="b9-c10" data-totalgeraleixoy="b5b6b7b8-c1c2c3c4c5c6c7c8"data-totalgeraleixoyoutput="b9-c11" />
-                                </div>
-                                <div class="border-right-1">
-                                    <input type="number" min="0" data-total15oumaiseixox="b5-c5c6c7c8" data-total15oumaiseixoxoutput="b5-c10" data-totalgeraleixox="b5-c1c2c3c4c5c6c7c8" data-totalgeraleixoxoutput="b5-c11" data-totaleixoy="b5b6b7b8-c8" data-totaleixoyoutput="b9-c8" data-total15oumaiseixoy="b5b6b7b8-c5c6c7c8" data-total15oumaiseixoyoutput="b9-c10" data-totalgeraleixoy="b5b6b7b8-c1c2c3c4c5c6c7c8"data-totalgeraleixoyoutput="b9-c11"/>
-                                </div>
-                                <div>
-                                    <input type="number" min="0" readonly class="b5-c9"/>
-                                </div>
-                                <div>
-                                    <input type="number" min="0" readonly class="b5-c10"/>
-                                </div>
-                                <div class="border-right-1">
-                                    <input type="number" min="0" readonly class="b5-c11"/>
-                                </div>
-                                <div>
-                                    <input type="number" min="0" readonly class="b5-c12"/>
-                                </div>
+                                
+                                <input type="number" min="0" data-total0a14eixox="b5-c1c2c3c4" data-total0a14eixoxoutput="b5-c9" data-totalgeraleixox="b5-c1c2c3c4c5c6c7c8" data-totalgeraleixoxoutput="b5-c11" data-totaleixoy="b5b6b7b8-c1" data-totaleixoyoutput="b9-c1" data-total0a14eixoy="b5b6b7b8-c1c2c3c4" data-total0a14eixoyoutput="b9-c9" data-totalgeraleixoy="b5b6b7b8-c1c2c3c4c5c6c7c8"data-totalgeraleixoyoutput="b9-c11"/>
+                            
+                                <input type="number" min="0" data-total0a14eixox="b5-c1c2c3c4" data-total0a14eixoxoutput="b5-c9" data-totalgeraleixox="b5-c1c2c3c4c5c6c7c8" data-totalgeraleixoxoutput="b5-c11" data-totaleixoy="b5b6b7b8-c2" data-totaleixoyoutput="b9-c2" data-total0a14eixoy="b5b6b7b8-c1c2c3c4" data-total0a14eixoyoutput="b9-c9" data-totalgeraleixoy="b5b6b7b8-c1c2c3c4c5c6c7c8"data-totalgeraleixoyoutput="b9-c11"/>
+                            
+                                <input type="number" min="0" data-total0a14eixox="b5-c1c2c3c4" data-total0a14eixoxoutput="b5-c9" data-totalgeraleixox="b5-c1c2c3c4c5c6c7c8" data-totalgeraleixoxoutput="b5-c11" data-total10a19eixox="b5-c3c4c5c6" data-total10a19eixoxoutput="b5-c12" data-totaleixoy="b5b6b7b8-c3" data-totaleixoyoutput="b9-c3" data-total0a14eixoy="b5b6b7b8-c1c2c3c4" data-total0a14eixoyoutput="b9-c9" data-totalgeraleixoy="b5b6b7b8-c1c2c3c4c5c6c7c8"data-totalgeraleixoyoutput="b9-c11" data-total10a19eixoy="b5b6b7b8-c3c4c5c6" data-total10a19eixoyoutput="b9-c12" />
+                                
+                                <input type="number" min="0" data-total0a14eixox="b5-c1c2c3c4" data-total0a14eixoxoutput="b5-c9" data-totalgeraleixox="b5-c1c2c3c4c5c6c7c8" data-totalgeraleixoxoutput="b5-c11" data-total10a19eixox="b5-c3c4c5c6" data-total10a19eixoxoutput="b5-c12" data-totaleixoy="b5b6b7b8-c4" data-totaleixoyoutput="b9-c4" data-total0a14eixoy="b5b6b7b8-c1c2c3c4" data-total0a14eixoyoutput="b9-c9" data-totalgeraleixoy="b5b6b7b8-c1c2c3c4c5c6c7c8"data-totalgeraleixoyoutput="b9-c11" data-total10a19eixoy="b5b6b7b8-c3c4c5c6" data-total10a19eixoyoutput="b9-c12" />
+                            
+                                <input type="number" min="0" data-total15oumaiseixox="b5-c5c6c7c8" data-total15oumaiseixoxoutput="b5-c10" data-totalgeraleixox="b5-c1c2c3c4c5c6c7c8" data-totalgeraleixoxoutput="b5-c11" data-total10a19eixox="b5-c3c4c5c6" data-total10a19eixoxoutput="b5-c12" data-totaleixoy="b5b6b7b8-c5" data-totaleixoyoutput="b9-c5" data-total15oumaiseixoy="b5b6b7b8-c5c6c7c8" data-total15oumaiseixoyoutput="b9-c10" data-totalgeraleixoy="b5b6b7b8-c1c2c3c4c5c6c7c8"data-totalgeraleixoyoutput="b9-c11"  data-total10a19eixoy="b5b6b7b8-c3c4c5c6" data-total10a19eixoyoutput="b9-c12" />
+                            
+                                <input type="number" min="0" data-total15oumaiseixox="b5-c5c6c7c8" data-total15oumaiseixoxoutput="b5-c10" data-totalgeraleixox="b5-c1c2c3c4c5c6c7c8" data-totalgeraleixoxoutput="b5-c11" data-total10a19eixox="b5-c3c4c5c6" data-total10a19eixoxoutput="b5-c12" data-totaleixoy="b5b6b7b8-c6" data-totaleixoyoutput="b9-c6" data-total15oumaiseixoy="b5b6b7b8-c5c6c7c8" data-total15oumaiseixoyoutput="b9-c10" data-totalgeraleixoy="b5b6b7b8-c1c2c3c4c5c6c7c8"data-totalgeraleixoyoutput="b9-c11" data-total10a19eixoy="b5b6b7b8-c3c4c5c6" data-total10a19eixoyoutput="b9-c12"/>
+                                
+                                <input type="number" min="0" data-total15oumaiseixox="b5-c5c6c7c8" data-total15oumaiseixoxoutput="b5-c10" data-totalgeraleixox="b5-c1c2c3c4c5c6c7c8" data-totalgeraleixoxoutput="b5-c11" data-totaleixoy="b5b6b7b8-c7" data-totaleixoyoutput="b9-c7" data-total15oumaiseixoy="b5b6b7b8-c5c6c7c8" data-total15oumaiseixoyoutput="b9-c10" data-totalgeraleixoy="b5b6b7b8-c1c2c3c4c5c6c7c8"data-totalgeraleixoyoutput="b9-c11" />
+                            
+                                <input type="number" min="0" data-total15oumaiseixox="b5-c5c6c7c8" data-total15oumaiseixoxoutput="b5-c10" data-totalgeraleixox="b5-c1c2c3c4c5c6c7c8" data-totalgeraleixoxoutput="b5-c11" data-totaleixoy="b5b6b7b8-c8" data-totaleixoyoutput="b9-c8" data-total15oumaiseixoy="b5b6b7b8-c5c6c7c8" data-total15oumaiseixoyoutput="b9-c10" data-totalgeraleixoy="b5b6b7b8-c1c2c3c4c5c6c7c8"data-totalgeraleixoyoutput="b9-c11"/>
+                            
+                                <input type="number" min="0" readonly class="b5-c9"/>
+                               
+                                <input type="number" min="0" readonly class="b5-c10"/>
+                               
+                                <input type="number" min="0" readonly class="b5-c11"/>
+                                
+                                <input type="number" min="0" readonly class="b5-c12"/>
                             </div>
 
                             <div class="linha b6">
@@ -648,42 +579,30 @@
                                 <div>
                                     <span>Nº de suspensos TARV <strong>durante o mês</strong></span>
                                 </div>
-                                <div>
-                                    <input type="number" min="0" data-total0a14eixox="b6-c1c2c3c4" data-total0a14eixoxoutput="b6-c9" data-totalgeraleixox="b6-c1c2c3c4c5c6c7c8" data-totalgeraleixoxoutput="b6-c11" data-totaleixoy="b5b6b7b8-c1" data-totaleixoyoutput="b9-c1" data-total0a14eixoy="b5b6b7b8-c1c2c3c4" data-total0a14eixoyoutput="b9-c9" data-totalgeraleixoy="b5b6b7b8-c1c2c3c4c5c6c7c8"data-totalgeraleixoyoutput="b9-c11"/>
-                                </div>
-                                <div>
-                                    <input type="number" min="0" data-total0a14eixox="b6-c1c2c3c4" data-total0a14eixoxoutput="b6-c9" data-totalgeraleixox="b6-c1c2c3c4c5c6c7c8" data-totalgeraleixoxoutput="b6-c11" data-totaleixoy="b5b6b7b8-c2" data-totaleixoyoutput="b9-c2" data-total0a14eixoy="b5b6b7b8-c1c2c3c4" data-total0a14eixoyoutput="b9-c9" data-totalgeraleixoy="b5b6b7b8-c1c2c3c4c5c6c7c8"data-totalgeraleixoyoutput="b9-c11"/>
-                                </div>
-                                <div>
-                                    <input type="number" min="0" data-total0a14eixox="b6-c1c2c3c4" data-total0a14eixoxoutput="b6-c9" data-totalgeraleixox="b6-c1c2c3c4c5c6c7c8" data-totalgeraleixoxoutput="b6-c11" data-total10a19eixox="b6-c3c4c5c6" data-total10a19eixoxoutput="b6-c12" data-totaleixoy="b5b6b7b8-c3" data-totaleixoyoutput="b9-c3" data-total0a14eixoy="b5b6b7b8-c1c2c3c4" data-total0a14eixoyoutput="b9-c9" data-totalgeraleixoy="b5b6b7b8-c1c2c3c4c5c6c7c8"data-totalgeraleixoyoutput="b9-c11" data-total10a19eixoy="b5b6b7b8-c3c4c5c6" data-total10a19eixoyoutput="b9-c12" />
-                                </div>
-                                <div>
-                                    <input type="number" min="0" data-total0a14eixox="b6-c1c2c3c4" data-total0a14eixoxoutput="b6-c9" data-totalgeraleixox="b6-c1c2c3c4c5c6c7c8" data-totalgeraleixoxoutput="b6-c11" data-total10a19eixox="b6-c3c4c5c6" data-total10a19eixoxoutput="b6-c12" data-totaleixoy="b5b6b7b8-c4" data-totaleixoyoutput="b9-c4" data-total0a14eixoy="b5b6b7b8-c1c2c3c4" data-total0a14eixoyoutput="b9-c9" data-totalgeraleixoy="b5b6b7b8-c1c2c3c4c5c6c7c8"data-totalgeraleixoyoutput="b9-c11" data-total10a19eixoy="b5b6b7b8-c3c4c5c6" data-total10a19eixoyoutput="b9-c12" />
-                                </div>
-                                <div>
-                                    <input type="number" min="0" data-total15oumaiseixox="b6-c5c6c7c8" data-total15oumaiseixoxoutput="b6-c10" data-totalgeraleixox="b6-c1c2c3c4c5c6c7c8" data-totalgeraleixoxoutput="b6-c11" data-total10a19eixox="b6-c3c4c5c6" data-total10a19eixoxoutput="b6-c12" data-totaleixoy="b5b6b7b8-c5" data-totaleixoyoutput="b9-c5" data-total15oumaiseixoy="b5b6b7b8-c5c6c7c8" data-total15oumaiseixoyoutput="b9-c10" data-totalgeraleixoy="b5b6b7b8-c1c2c3c4c5c6c7c8"data-totalgeraleixoyoutput="b9-c11"  data-total10a19eixoy="b5b6b7b8-c3c4c5c6" data-total10a19eixoyoutput="b9-c12" />
-                                </div>
-                                <div>
-                                    <input type="number" min="0" data-total15oumaiseixox="b6-c5c6c7c8" data-total15oumaiseixoxoutput="b6-c10" data-totalgeraleixox="b6-c1c2c3c4c5c6c7c8" data-totalgeraleixoxoutput="b6-c11" data-total10a19eixox="b6-c3c4c5c6" data-total10a19eixoxoutput="b6-c12" data-totaleixoy="b5b6b7b8-c6" data-totaleixoyoutput="b9-c6" data-total15oumaiseixoy="b5b6b7b8-c5c6c7c8" data-total15oumaiseixoyoutput="b9-c10" data-totalgeraleixoy="b5b6b7b8-c1c2c3c4c5c6c7c8"data-totalgeraleixoyoutput="b9-c11" data-total10a19eixoy="b5b6b7b8-c3c4c5c6" data-total10a19eixoyoutput="b9-c12"/>
-                                </div>
-                                <div>
-                                    <input type="number" min="0" data-total15oumaiseixox="b6-c5c6c7c8" data-total15oumaiseixoxoutput="b6-c10" data-totalgeraleixox="b6-c1c2c3c4c5c6c7c8" data-totalgeraleixoxoutput="b6-c11" data-totaleixoy="b5b6b7b8-c7" data-totaleixoyoutput="b9-c7" data-total15oumaiseixoy="b5b6b7b8-c5c6c7c8" data-total15oumaiseixoyoutput="b9-c10" data-totalgeraleixoy="b5b6b7b8-c1c2c3c4c5c6c7c8"data-totalgeraleixoyoutput="b9-c11" />
-                                </div>
-                                <div class="border-right-1">
-                                    <input type="number" min="0" data-total15oumaiseixox="b6-c5c6c7c8" data-total15oumaiseixoxoutput="b6-c10" data-totalgeraleixox="b6-c1c2c3c4c5c6c7c8" data-totalgeraleixoxoutput="b6-c11" data-totaleixoy="b5b6b7b8-c8" data-totaleixoyoutput="b9-c8" data-total15oumaiseixoy="b5b6b7b8-c5c6c7c8" data-total15oumaiseixoyoutput="b9-c10" data-totalgeraleixoy="b5b6b7b8-c1c2c3c4c5c6c7c8"data-totalgeraleixoyoutput="b9-c11"/>
-                                </div>
-                                <div>
-                                    <input type="number" min="0" readonly class="b6-c9"/>
-                                </div>
-                                <div>
-                                    <input type="number" min="0" readonly class="b6-c10"/>
-                                </div>
-                                <div class="border-right-1">
-                                    <input type="number" min="0" readonly class="b6-c11"/>
-                                </div>
-                                <div>
-                                    <input type="number" min="0" readonly class="b6-c12"/>
-                                </div>
+                                
+                                <input type="number" min="0" data-total0a14eixox="b6-c1c2c3c4" data-total0a14eixoxoutput="b6-c9" data-totalgeraleixox="b6-c1c2c3c4c5c6c7c8" data-totalgeraleixoxoutput="b6-c11" data-totaleixoy="b5b6b7b8-c1" data-totaleixoyoutput="b9-c1" data-total0a14eixoy="b5b6b7b8-c1c2c3c4" data-total0a14eixoyoutput="b9-c9" data-totalgeraleixoy="b5b6b7b8-c1c2c3c4c5c6c7c8"data-totalgeraleixoyoutput="b9-c11"/>
+                            
+                                <input type="number" min="0" data-total0a14eixox="b6-c1c2c3c4" data-total0a14eixoxoutput="b6-c9" data-totalgeraleixox="b6-c1c2c3c4c5c6c7c8" data-totalgeraleixoxoutput="b6-c11" data-totaleixoy="b5b6b7b8-c2" data-totaleixoyoutput="b9-c2" data-total0a14eixoy="b5b6b7b8-c1c2c3c4" data-total0a14eixoyoutput="b9-c9" data-totalgeraleixoy="b5b6b7b8-c1c2c3c4c5c6c7c8"data-totalgeraleixoyoutput="b9-c11"/>
+                            
+                                <input type="number" min="0" data-total0a14eixox="b6-c1c2c3c4" data-total0a14eixoxoutput="b6-c9" data-totalgeraleixox="b6-c1c2c3c4c5c6c7c8" data-totalgeraleixoxoutput="b6-c11" data-total10a19eixox="b6-c3c4c5c6" data-total10a19eixoxoutput="b6-c12" data-totaleixoy="b5b6b7b8-c3" data-totaleixoyoutput="b9-c3" data-total0a14eixoy="b5b6b7b8-c1c2c3c4" data-total0a14eixoyoutput="b9-c9" data-totalgeraleixoy="b5b6b7b8-c1c2c3c4c5c6c7c8"data-totalgeraleixoyoutput="b9-c11" data-total10a19eixoy="b5b6b7b8-c3c4c5c6" data-total10a19eixoyoutput="b9-c12" />
+                              
+                                <input type="number" min="0" data-total0a14eixox="b6-c1c2c3c4" data-total0a14eixoxoutput="b6-c9" data-totalgeraleixox="b6-c1c2c3c4c5c6c7c8" data-totalgeraleixoxoutput="b6-c11" data-total10a19eixox="b6-c3c4c5c6" data-total10a19eixoxoutput="b6-c12" data-totaleixoy="b5b6b7b8-c4" data-totaleixoyoutput="b9-c4" data-total0a14eixoy="b5b6b7b8-c1c2c3c4" data-total0a14eixoyoutput="b9-c9" data-totalgeraleixoy="b5b6b7b8-c1c2c3c4c5c6c7c8"data-totalgeraleixoyoutput="b9-c11" data-total10a19eixoy="b5b6b7b8-c3c4c5c6" data-total10a19eixoyoutput="b9-c12" />
+                            
+                                <input type="number" min="0" data-total15oumaiseixox="b6-c5c6c7c8" data-total15oumaiseixoxoutput="b6-c10" data-totalgeraleixox="b6-c1c2c3c4c5c6c7c8" data-totalgeraleixoxoutput="b6-c11" data-total10a19eixox="b6-c3c4c5c6" data-total10a19eixoxoutput="b6-c12" data-totaleixoy="b5b6b7b8-c5" data-totaleixoyoutput="b9-c5" data-total15oumaiseixoy="b5b6b7b8-c5c6c7c8" data-total15oumaiseixoyoutput="b9-c10" data-totalgeraleixoy="b5b6b7b8-c1c2c3c4c5c6c7c8"data-totalgeraleixoyoutput="b9-c11"  data-total10a19eixoy="b5b6b7b8-c3c4c5c6" data-total10a19eixoyoutput="b9-c12" />
+                            
+                                <input type="number" min="0" data-total15oumaiseixox="b6-c5c6c7c8" data-total15oumaiseixoxoutput="b6-c10" data-totalgeraleixox="b6-c1c2c3c4c5c6c7c8" data-totalgeraleixoxoutput="b6-c11" data-total10a19eixox="b6-c3c4c5c6" data-total10a19eixoxoutput="b6-c12" data-totaleixoy="b5b6b7b8-c6" data-totaleixoyoutput="b9-c6" data-total15oumaiseixoy="b5b6b7b8-c5c6c7c8" data-total15oumaiseixoyoutput="b9-c10" data-totalgeraleixoy="b5b6b7b8-c1c2c3c4c5c6c7c8"data-totalgeraleixoyoutput="b9-c11" data-total10a19eixoy="b5b6b7b8-c3c4c5c6" data-total10a19eixoyoutput="b9-c12"/>
+                               
+                                <input type="number" min="0" data-total15oumaiseixox="b6-c5c6c7c8" data-total15oumaiseixoxoutput="b6-c10" data-totalgeraleixox="b6-c1c2c3c4c5c6c7c8" data-totalgeraleixoxoutput="b6-c11" data-totaleixoy="b5b6b7b8-c7" data-totaleixoyoutput="b9-c7" data-total15oumaiseixoy="b5b6b7b8-c5c6c7c8" data-total15oumaiseixoyoutput="b9-c10" data-totalgeraleixoy="b5b6b7b8-c1c2c3c4c5c6c7c8"data-totalgeraleixoyoutput="b9-c11" />
+                                
+                                <input type="number" min="0" data-total15oumaiseixox="b6-c5c6c7c8" data-total15oumaiseixoxoutput="b6-c10" data-totalgeraleixox="b6-c1c2c3c4c5c6c7c8" data-totalgeraleixoxoutput="b6-c11" data-totaleixoy="b5b6b7b8-c8" data-totaleixoyoutput="b9-c8" data-total15oumaiseixoy="b5b6b7b8-c5c6c7c8" data-total15oumaiseixoyoutput="b9-c10" data-totalgeraleixoy="b5b6b7b8-c1c2c3c4c5c6c7c8"data-totalgeraleixoyoutput="b9-c11"/>
+                            
+                                <input type="number" min="0" readonly class="b6-c9"/>
+                            
+                                <input type="number" min="0" readonly class="b6-c10"/>
+                            
+                                <input type="number" min="0" readonly class="b6-c11"/>
+                            
+                                <input type="number" min="0" readonly class="b6-c12"/>
                             </div>
 
                             <div class="linha b7">
@@ -695,42 +614,30 @@
                                 <div>
                                     <span>Nº de abandonos TARV <strong>durante o mês</strong></span>
                                 </div>
-                                <div>
-                                    <input type="number" min="0" data-total0a14eixox="b7-c1c2c3c4" data-total0a14eixoxoutput="b7-c9" data-totalgeraleixox="b7-c1c2c3c4c5c6c7c8" data-totalgeraleixoxoutput="b7-c11" data-totaleixoy="b5b6b7b8-c1" data-totaleixoyoutput="b9-c1" data-total0a14eixoy="b5b6b7b8-c1c2c3c4" data-total0a14eixoyoutput="b9-c9" data-totalgeraleixoy="b5b6b7b8-c1c2c3c4c5c6c7c8"data-totalgeraleixoyoutput="b9-c11"/>
-                                </div>
-                                <div>
-                                    <input type="number" min="0" data-total0a14eixox="b7-c1c2c3c4" data-total0a14eixoxoutput="b7-c9" data-totalgeraleixox="b7-c1c2c3c4c5c6c7c8" data-totalgeraleixoxoutput="b7-c11" data-totaleixoy="b5b6b7b8-c2" data-totaleixoyoutput="b9-c2" data-total0a14eixoy="b5b6b7b8-c1c2c3c4" data-total0a14eixoyoutput="b9-c9" data-totalgeraleixoy="b5b6b7b8-c1c2c3c4c5c6c7c8"data-totalgeraleixoyoutput="b9-c11"/>
-                                </div>
-                                <div>
-                                    <input type="number" min="0" data-total0a14eixox="b7-c1c2c3c4" data-total0a14eixoxoutput="b7-c9" data-totalgeraleixox="b7-c1c2c3c4c5c6c7c8" data-totalgeraleixoxoutput="b7-c11" data-total10a19eixox="b7-c3c4c5c6" data-total10a19eixoxoutput="b7-c12" data-totaleixoy="b5b6b7b8-c3" data-totaleixoyoutput="b9-c3" data-total0a14eixoy="b5b6b7b8-c1c2c3c4" data-total0a14eixoyoutput="b9-c9" data-totalgeraleixoy="b5b6b7b8-c1c2c3c4c5c6c7c8"data-totalgeraleixoyoutput="b9-c11" data-total10a19eixoy="b5b6b7b8-c3c4c5c6" data-total10a19eixoyoutput="b9-c12" />
-                                </div>
-                                <div>
-                                    <input type="number" min="0" data-total0a14eixox="b7-c1c2c3c4" data-total0a14eixoxoutput="b7-c9" data-totalgeraleixox="b7-c1c2c3c4c5c6c7c8" data-totalgeraleixoxoutput="b7-c11" data-total10a19eixox="b7-c3c4c5c6" data-total10a19eixoxoutput="b7-c12" data-totaleixoy="b5b6b7b8-c4" data-totaleixoyoutput="b9-c4" data-total0a14eixoy="b5b6b7b8-c1c2c3c4" data-total0a14eixoyoutput="b9-c9" data-totalgeraleixoy="b5b6b7b8-c1c2c3c4c5c6c7c8"data-totalgeraleixoyoutput="b9-c11" data-total10a19eixoy="b5b6b7b8-c3c4c5c6" data-total10a19eixoyoutput="b9-c12" />
-                                </div>
-                                <div>
-                                    <input type="number" min="0" data-total15oumaiseixox="b7-c5c6c7c8" data-total15oumaiseixoxoutput="b7-c10" data-totalgeraleixox="b7-c1c2c3c4c5c6c7c8" data-totalgeraleixoxoutput="b7-c11" data-total10a19eixox="b7-c3c4c5c6" data-total10a19eixoxoutput="b7-c12" data-totaleixoy="b5b6b7b8-c5" data-totaleixoyoutput="b9-c5" data-total15oumaiseixoy="b5b6b7b8-c5c6c7c8" data-total15oumaiseixoyoutput="b9-c10" data-totalgeraleixoy="b5b6b7b8-c1c2c3c4c5c6c7c8"data-totalgeraleixoyoutput="b9-c11"  data-total10a19eixoy="b5b6b7b8-c3c4c5c6" data-total10a19eixoyoutput="b9-c12" />
-                                </div>
-                                <div>
-                                    <input type="number" min="0" data-total15oumaiseixox="b7-c5c6c7c8" data-total15oumaiseixoxoutput="b7-c10" data-totalgeraleixox="b7-c1c2c3c4c5c6c7c8" data-totalgeraleixoxoutput="b7-c11" data-total10a19eixox="b7-c3c4c5c6" data-total10a19eixoxoutput="b7-c12" data-totaleixoy="b5b6b7b8-c6" data-totaleixoyoutput="b9-c6" data-total15oumaiseixoy="b5b6b7b8-c5c6c7c8" data-total15oumaiseixoyoutput="b9-c10" data-totalgeraleixoy="b5b6b7b8-c1c2c3c4c5c6c7c8"data-totalgeraleixoyoutput="b9-c11" data-total10a19eixoy="b5b6b7b8-c3c4c5c6" data-total10a19eixoyoutput="b9-c12"/>
-                                </div>
-                                <div>
-                                    <input type="number" min="0" data-total15oumaiseixox="b7-c5c6c7c8" data-total15oumaiseixoxoutput="b7-c10" data-totalgeraleixox="b7-c1c2c3c4c5c6c7c8" data-totalgeraleixoxoutput="b7-c11" data-totaleixoy="b5b6b7b8-c7" data-totaleixoyoutput="b9-c7" data-total15oumaiseixoy="b5b6b7b8-c5c6c7c8" data-total15oumaiseixoyoutput="b9-c10" data-totalgeraleixoy="b5b6b7b8-c1c2c3c4c5c6c7c8"data-totalgeraleixoyoutput="b9-c11" />
-                                </div>
-                                <div class="border-right-1">
-                                    <input type="number" min="0" data-total15oumaiseixox="b7-c5c6c7c8" data-total15oumaiseixoxoutput="b7-c10" data-totalgeraleixox="b7-c1c2c3c4c5c6c7c8" data-totalgeraleixoxoutput="b7-c11" data-totaleixoy="b5b6b7b8-c8" data-totaleixoyoutput="b9-c8" data-total15oumaiseixoy="b5b6b7b8-c5c6c7c8" data-total15oumaiseixoyoutput="b9-c10" data-totalgeraleixoy="b5b6b7b8-c1c2c3c4c5c6c7c8"data-totalgeraleixoyoutput="b9-c11"/>
-                                </div>
-                                <div>
-                                    <input type="number" min="0" readonly class="b7-c9"/>
-                                </div>
-                                <div>
-                                    <input type="number" min="0" readonly class="b7-c10"/>
-                                </div>
-                                <div class="border-right-1">
-                                    <input type="number" min="0" readonly class="b7-c11"/>
-                                </div>
-                                <div>
-                                    <input type="number" min="0" readonly class="b7-c12"/>
-                                </div>
+                                
+                                <input type="number" min="0" data-total0a14eixox="b7-c1c2c3c4" data-total0a14eixoxoutput="b7-c9" data-totalgeraleixox="b7-c1c2c3c4c5c6c7c8" data-totalgeraleixoxoutput="b7-c11" data-totaleixoy="b5b6b7b8-c1" data-totaleixoyoutput="b9-c1" data-total0a14eixoy="b5b6b7b8-c1c2c3c4" data-total0a14eixoyoutput="b9-c9" data-totalgeraleixoy="b5b6b7b8-c1c2c3c4c5c6c7c8"data-totalgeraleixoyoutput="b9-c11"/>
+                            
+                                <input type="number" min="0" data-total0a14eixox="b7-c1c2c3c4" data-total0a14eixoxoutput="b7-c9" data-totalgeraleixox="b7-c1c2c3c4c5c6c7c8" data-totalgeraleixoxoutput="b7-c11" data-totaleixoy="b5b6b7b8-c2" data-totaleixoyoutput="b9-c2" data-total0a14eixoy="b5b6b7b8-c1c2c3c4" data-total0a14eixoyoutput="b9-c9" data-totalgeraleixoy="b5b6b7b8-c1c2c3c4c5c6c7c8"data-totalgeraleixoyoutput="b9-c11"/>
+                            
+                                <input type="number" min="0" data-total0a14eixox="b7-c1c2c3c4" data-total0a14eixoxoutput="b7-c9" data-totalgeraleixox="b7-c1c2c3c4c5c6c7c8" data-totalgeraleixoxoutput="b7-c11" data-total10a19eixox="b7-c3c4c5c6" data-total10a19eixoxoutput="b7-c12" data-totaleixoy="b5b6b7b8-c3" data-totaleixoyoutput="b9-c3" data-total0a14eixoy="b5b6b7b8-c1c2c3c4" data-total0a14eixoyoutput="b9-c9" data-totalgeraleixoy="b5b6b7b8-c1c2c3c4c5c6c7c8"data-totalgeraleixoyoutput="b9-c11" data-total10a19eixoy="b5b6b7b8-c3c4c5c6" data-total10a19eixoyoutput="b9-c12" />
+                            
+                                <input type="number" min="0" data-total0a14eixox="b7-c1c2c3c4" data-total0a14eixoxoutput="b7-c9" data-totalgeraleixox="b7-c1c2c3c4c5c6c7c8" data-totalgeraleixoxoutput="b7-c11" data-total10a19eixox="b7-c3c4c5c6" data-total10a19eixoxoutput="b7-c12" data-totaleixoy="b5b6b7b8-c4" data-totaleixoyoutput="b9-c4" data-total0a14eixoy="b5b6b7b8-c1c2c3c4" data-total0a14eixoyoutput="b9-c9" data-totalgeraleixoy="b5b6b7b8-c1c2c3c4c5c6c7c8"data-totalgeraleixoyoutput="b9-c11" data-total10a19eixoy="b5b6b7b8-c3c4c5c6" data-total10a19eixoyoutput="b9-c12" />
+                            
+                                <input type="number" min="0" data-total15oumaiseixox="b7-c5c6c7c8" data-total15oumaiseixoxoutput="b7-c10" data-totalgeraleixox="b7-c1c2c3c4c5c6c7c8" data-totalgeraleixoxoutput="b7-c11" data-total10a19eixox="b7-c3c4c5c6" data-total10a19eixoxoutput="b7-c12" data-totaleixoy="b5b6b7b8-c5" data-totaleixoyoutput="b9-c5" data-total15oumaiseixoy="b5b6b7b8-c5c6c7c8" data-total15oumaiseixoyoutput="b9-c10" data-totalgeraleixoy="b5b6b7b8-c1c2c3c4c5c6c7c8"data-totalgeraleixoyoutput="b9-c11"  data-total10a19eixoy="b5b6b7b8-c3c4c5c6" data-total10a19eixoyoutput="b9-c12" />
+                               
+                                <input type="number" min="0" data-total15oumaiseixox="b7-c5c6c7c8" data-total15oumaiseixoxoutput="b7-c10" data-totalgeraleixox="b7-c1c2c3c4c5c6c7c8" data-totalgeraleixoxoutput="b7-c11" data-total10a19eixox="b7-c3c4c5c6" data-total10a19eixoxoutput="b7-c12" data-totaleixoy="b5b6b7b8-c6" data-totaleixoyoutput="b9-c6" data-total15oumaiseixoy="b5b6b7b8-c5c6c7c8" data-total15oumaiseixoyoutput="b9-c10" data-totalgeraleixoy="b5b6b7b8-c1c2c3c4c5c6c7c8"data-totalgeraleixoyoutput="b9-c11" data-total10a19eixoy="b5b6b7b8-c3c4c5c6" data-total10a19eixoyoutput="b9-c12"/>
+                            
+                                <input type="number" min="0" data-total15oumaiseixox="b7-c5c6c7c8" data-total15oumaiseixoxoutput="b7-c10" data-totalgeraleixox="b7-c1c2c3c4c5c6c7c8" data-totalgeraleixoxoutput="b7-c11" data-totaleixoy="b5b6b7b8-c7" data-totaleixoyoutput="b9-c7" data-total15oumaiseixoy="b5b6b7b8-c5c6c7c8" data-total15oumaiseixoyoutput="b9-c10" data-totalgeraleixoy="b5b6b7b8-c1c2c3c4c5c6c7c8"data-totalgeraleixoyoutput="b9-c11" />
+                            
+                                <input type="number" min="0" data-total15oumaiseixox="b7-c5c6c7c8" data-total15oumaiseixoxoutput="b7-c10" data-totalgeraleixox="b7-c1c2c3c4c5c6c7c8" data-totalgeraleixoxoutput="b7-c11" data-totaleixoy="b5b6b7b8-c8" data-totaleixoyoutput="b9-c8" data-total15oumaiseixoy="b5b6b7b8-c5c6c7c8" data-total15oumaiseixoyoutput="b9-c10" data-totalgeraleixoy="b5b6b7b8-c1c2c3c4c5c6c7c8"data-totalgeraleixoyoutput="b9-c11"/>
+                            
+                                <input type="number" min="0" readonly class="b7-c9"/>
+                                
+                                <input type="number" min="0" readonly class="b7-c10"/>
+                               
+                                <input type="number" min="0" readonly class="b7-c11"/>
+                                
+                                <input type="number" min="0" readonly class="b7-c12"/>
                             </div>
 
                             <div class="linha b8">
@@ -742,42 +649,30 @@
                                 <div>
                                     <span>Nº de óbitos TARV <strong>durante o mês</strong></span>
                                 </div>
-                                <div>
-                                    <input type="number" min="0" data-total0a14eixox="b8-c1c2c3c4" data-total0a14eixoxoutput="b8-c9" data-totalgeraleixox="b8-c1c2c3c4c5c6c7c8" data-totalgeraleixoxoutput="b8-c11" data-totaleixoy="b5b6b7b8-c1" data-totaleixoyoutput="b9-c1" data-total0a14eixoy="b5b6b7b8-c1c2c3c4" data-total0a14eixoyoutput="b9-c9" data-totalgeraleixoy="b5b6b7b8-c1c2c3c4c5c6c7c8"data-totalgeraleixoyoutput="b9-c11"/>
-                                </div>
-                                <div>
-                                    <input type="number" min="0" data-total0a14eixox="b8-c1c2c3c4" data-total0a14eixoxoutput="b8-c9" data-totalgeraleixox="b8-c1c2c3c4c5c6c7c8" data-totalgeraleixoxoutput="b8-c11" data-totaleixoy="b5b6b7b8-c2" data-totaleixoyoutput="b9-c2" data-total0a14eixoy="b5b6b7b8-c1c2c3c4" data-total0a14eixoyoutput="b9-c9" data-totalgeraleixoy="b5b6b7b8-c1c2c3c4c5c6c7c8"data-totalgeraleixoyoutput="b9-c11"/>
-                                </div>
-                                <div>
-                                    <input type="number" min="0" data-total0a14eixox="b8-c1c2c3c4" data-total0a14eixoxoutput="b8-c9" data-totalgeraleixox="b8-c1c2c3c4c5c6c7c8" data-totalgeraleixoxoutput="b8-c11" data-total10a19eixox="b8-c3c4c5c6" data-total10a19eixoxoutput="b8-c12" data-totaleixoy="b5b6b7b8-c3" data-totaleixoyoutput="b9-c3" data-total0a14eixoy="b5b6b7b8-c1c2c3c4" data-total0a14eixoyoutput="b9-c9" data-totalgeraleixoy="b5b6b7b8-c1c2c3c4c5c6c7c8"data-totalgeraleixoyoutput="b9-c11" data-total10a19eixoy="b5b6b7b8-c3c4c5c6" data-total10a19eixoyoutput="b9-c12" />
-                                </div>
-                                <div>
-                                    <input type="number" min="0" data-total0a14eixox="b8-c1c2c3c4" data-total0a14eixoxoutput="b8-c9" data-totalgeraleixox="b8-c1c2c3c4c5c6c7c8" data-totalgeraleixoxoutput="b8-c11" data-total10a19eixox="b8-c3c4c5c6" data-total10a19eixoxoutput="b8-c12" data-totaleixoy="b5b6b7b8-c4" data-totaleixoyoutput="b9-c4" data-total0a14eixoy="b5b6b7b8-c1c2c3c4" data-total0a14eixoyoutput="b9-c9" data-totalgeraleixoy="b5b6b7b8-c1c2c3c4c5c6c7c8"data-totalgeraleixoyoutput="b9-c11" data-total10a19eixoy="b5b6b7b8-c3c4c5c6" data-total10a19eixoyoutput="b9-c12" />
-                                </div>
-                                <div>
-                                    <input type="number" min="0" data-total15oumaiseixox="b8-c5c6c7c8" data-total15oumaiseixoxoutput="b8-c10" data-totalgeraleixox="b8-c1c2c3c4c5c6c7c8" data-totalgeraleixoxoutput="b8-c11" data-total10a19eixox="b8-c3c4c5c6" data-total10a19eixoxoutput="b8-c12" data-totaleixoy="b5b6b7b8-c5" data-totaleixoyoutput="b9-c5" data-total15oumaiseixoy="b5b6b7b8-c5c6c7c8" data-total15oumaiseixoyoutput="b9-c10" data-totalgeraleixoy="b5b6b7b8-c1c2c3c4c5c6c7c8"data-totalgeraleixoyoutput="b9-c11"  data-total10a19eixoy="b5b6b7b8-c3c4c5c6" data-total10a19eixoyoutput="b9-c12" />
-                                </div>
-                                <div>
-                                    <input type="number" min="0" data-total15oumaiseixox="b8-c5c6c7c8" data-total15oumaiseixoxoutput="b8-c10" data-totalgeraleixox="b8-c1c2c3c4c5c6c7c8" data-totalgeraleixoxoutput="b8-c11" data-total10a19eixox="b8-c3c4c5c6" data-total10a19eixoxoutput="b8-c12" data-totaleixoy="b5b6b7b8-c6" data-totaleixoyoutput="b9-c6" data-total15oumaiseixoy="b5b6b7b8-c5c6c7c8" data-total15oumaiseixoyoutput="b9-c10" data-totalgeraleixoy="b5b6b7b8-c1c2c3c4c5c6c7c8"data-totalgeraleixoyoutput="b9-c11" data-total10a19eixoy="b5b6b7b8-c3c4c5c6" data-total10a19eixoyoutput="b9-c12"/>
-                                </div>
-                                <div>
-                                    <input type="number" min="0" data-total15oumaiseixox="b8-c5c6c7c8" data-total15oumaiseixoxoutput="b8-c10" data-totalgeraleixox="b8-c1c2c3c4c5c6c7c8" data-totalgeraleixoxoutput="b8-c11" data-totaleixoy="b5b6b7b8-c7" data-totaleixoyoutput="b9-c7" data-total15oumaiseixoy="b5b6b7b8-c5c6c7c8" data-total15oumaiseixoyoutput="b9-c10" data-totalgeraleixoy="b5b6b7b8-c1c2c3c4c5c6c7c8"data-totalgeraleixoyoutput="b9-c11" />
-                                </div>
-                                <div class="border-right-1">
-                                    <input type="number" min="0" data-total15oumaiseixox="b8-c5c6c7c8" data-total15oumaiseixoxoutput="b8-c10" data-totalgeraleixox="b8-c1c2c3c4c5c6c7c8" data-totalgeraleixoxoutput="b8-c11" data-totaleixoy="b5b6b7b8-c8" data-totaleixoyoutput="b9-c8" data-total15oumaiseixoy="b5b6b7b8-c5c6c7c8" data-total15oumaiseixoyoutput="b9-c10" data-totalgeraleixoy="b5b6b7b8-c1c2c3c4c5c6c7c8"data-totalgeraleixoyoutput="b9-c11"/>
-                                </div>
-                                <div>
-                                    <input type="number" min="0" readonly class="b8-c9"/>
-                                </div>
-                                <div>
-                                    <input type="number" min="0" readonly class="b8-c10"/>
-                                </div>
-                                <div class="border-right-1">
-                                    <input type="number" min="0" readonly class="b8-c11"/>
-                                </div>
-                                <div>
-                                    <input type="number" min="0" readonly class="b8-c12"/>
-                                </div>
+                                
+                                <input type="number" min="0" data-total0a14eixox="b8-c1c2c3c4" data-total0a14eixoxoutput="b8-c9" data-totalgeraleixox="b8-c1c2c3c4c5c6c7c8" data-totalgeraleixoxoutput="b8-c11" data-totaleixoy="b5b6b7b8-c1" data-totaleixoyoutput="b9-c1" data-total0a14eixoy="b5b6b7b8-c1c2c3c4" data-total0a14eixoyoutput="b9-c9" data-totalgeraleixoy="b5b6b7b8-c1c2c3c4c5c6c7c8"data-totalgeraleixoyoutput="b9-c11"/>
+                            
+                                <input type="number" min="0" data-total0a14eixox="b8-c1c2c3c4" data-total0a14eixoxoutput="b8-c9" data-totalgeraleixox="b8-c1c2c3c4c5c6c7c8" data-totalgeraleixoxoutput="b8-c11" data-totaleixoy="b5b6b7b8-c2" data-totaleixoyoutput="b9-c2" data-total0a14eixoy="b5b6b7b8-c1c2c3c4" data-total0a14eixoyoutput="b9-c9" data-totalgeraleixoy="b5b6b7b8-c1c2c3c4c5c6c7c8"data-totalgeraleixoyoutput="b9-c11"/>
+                                
+                                <input type="number" min="0" data-total0a14eixox="b8-c1c2c3c4" data-total0a14eixoxoutput="b8-c9" data-totalgeraleixox="b8-c1c2c3c4c5c6c7c8" data-totalgeraleixoxoutput="b8-c11" data-total10a19eixox="b8-c3c4c5c6" data-total10a19eixoxoutput="b8-c12" data-totaleixoy="b5b6b7b8-c3" data-totaleixoyoutput="b9-c3" data-total0a14eixoy="b5b6b7b8-c1c2c3c4" data-total0a14eixoyoutput="b9-c9" data-totalgeraleixoy="b5b6b7b8-c1c2c3c4c5c6c7c8"data-totalgeraleixoyoutput="b9-c11" data-total10a19eixoy="b5b6b7b8-c3c4c5c6" data-total10a19eixoyoutput="b9-c12" />
+                            
+                                <input type="number" min="0" data-total0a14eixox="b8-c1c2c3c4" data-total0a14eixoxoutput="b8-c9" data-totalgeraleixox="b8-c1c2c3c4c5c6c7c8" data-totalgeraleixoxoutput="b8-c11" data-total10a19eixox="b8-c3c4c5c6" data-total10a19eixoxoutput="b8-c12" data-totaleixoy="b5b6b7b8-c4" data-totaleixoyoutput="b9-c4" data-total0a14eixoy="b5b6b7b8-c1c2c3c4" data-total0a14eixoyoutput="b9-c9" data-totalgeraleixoy="b5b6b7b8-c1c2c3c4c5c6c7c8"data-totalgeraleixoyoutput="b9-c11" data-total10a19eixoy="b5b6b7b8-c3c4c5c6" data-total10a19eixoyoutput="b9-c12" />
+                                
+                                <input type="number" min="0" data-total15oumaiseixox="b8-c5c6c7c8" data-total15oumaiseixoxoutput="b8-c10" data-totalgeraleixox="b8-c1c2c3c4c5c6c7c8" data-totalgeraleixoxoutput="b8-c11" data-total10a19eixox="b8-c3c4c5c6" data-total10a19eixoxoutput="b8-c12" data-totaleixoy="b5b6b7b8-c5" data-totaleixoyoutput="b9-c5" data-total15oumaiseixoy="b5b6b7b8-c5c6c7c8" data-total15oumaiseixoyoutput="b9-c10" data-totalgeraleixoy="b5b6b7b8-c1c2c3c4c5c6c7c8"data-totalgeraleixoyoutput="b9-c11"  data-total10a19eixoy="b5b6b7b8-c3c4c5c6" data-total10a19eixoyoutput="b9-c12" />
+                            
+                                <input type="number" min="0" data-total15oumaiseixox="b8-c5c6c7c8" data-total15oumaiseixoxoutput="b8-c10" data-totalgeraleixox="b8-c1c2c3c4c5c6c7c8" data-totalgeraleixoxoutput="b8-c11" data-total10a19eixox="b8-c3c4c5c6" data-total10a19eixoxoutput="b8-c12" data-totaleixoy="b5b6b7b8-c6" data-totaleixoyoutput="b9-c6" data-total15oumaiseixoy="b5b6b7b8-c5c6c7c8" data-total15oumaiseixoyoutput="b9-c10" data-totalgeraleixoy="b5b6b7b8-c1c2c3c4c5c6c7c8"data-totalgeraleixoyoutput="b9-c11" data-total10a19eixoy="b5b6b7b8-c3c4c5c6" data-total10a19eixoyoutput="b9-c12"/>
+                                
+                                <input type="number" min="0" data-total15oumaiseixox="b8-c5c6c7c8" data-total15oumaiseixoxoutput="b8-c10" data-totalgeraleixox="b8-c1c2c3c4c5c6c7c8" data-totalgeraleixoxoutput="b8-c11" data-totaleixoy="b5b6b7b8-c7" data-totaleixoyoutput="b9-c7" data-total15oumaiseixoy="b5b6b7b8-c5c6c7c8" data-total15oumaiseixoyoutput="b9-c10" data-totalgeraleixoy="b5b6b7b8-c1c2c3c4c5c6c7c8"data-totalgeraleixoyoutput="b9-c11" />
+                            
+                                <input type="number" min="0" data-total15oumaiseixox="b8-c5c6c7c8" data-total15oumaiseixoxoutput="b8-c10" data-totalgeraleixox="b8-c1c2c3c4c5c6c7c8" data-totalgeraleixoxoutput="b8-c11" data-totaleixoy="b5b6b7b8-c8" data-totaleixoyoutput="b9-c8" data-total15oumaiseixoy="b5b6b7b8-c5c6c7c8" data-total15oumaiseixoyoutput="b9-c10" data-totalgeraleixoy="b5b6b7b8-c1c2c3c4c5c6c7c8"data-totalgeraleixoyoutput="b9-c11"/>
+                            
+                                <input type="number" min="0" readonly class="b8-c9"/>
+                            
+                                <input type="number" min="0" readonly class="b8-c10"/>
+                            
+                                <input type="number" min="0" readonly class="b8-c11"/>
+                               
+                                <input type="number" min="0" readonly class="b8-c12"/>
                             </div>
 
                             <div class="linha b9">
@@ -789,48 +684,35 @@
                                 <div>
                                     <span>Nº de saídas TARV <strong>durante o mês</strong> <br/>(B.9 = B.5 + B.6 + B.7+ B.8)</span>
                                 </div>
-                                <div>
-                                    <input type="number" min="0" readonly class="b9-c1" />
-                                </div>
-                                <div>
-                                    <input type="number" min="0" readonly class="b9-c2" />
-                                </div>
-                                <div>
-                                    <input type="number" min="0" readonly class="b9-c3" />
-                                </div>
-                                <div>
-                                    <input type="number" min="0" readonly class="b9-c4" />
-                                </div>
-                                <div>
-                                    <input type="number" min="0" readonly class="b9-c5" />
-                                </div>
-                                <div>
-                                    <input type="number" min="0" readonly class="b9-c6" />
-                                </div>
-                                <div>
-                                    <input type="number" min="0" readonly class="b9-c7" />
-                                </div>
-                                <div class="border-right-1">
-                                    <input type="number" min="0" readonly class="b9-c8" />
-                                </div>
-                                <div>
-                                    <input type="number" min="0" readonly class="b9-c9" />
-                                </div>
-                                <div>
-                                    <input type="number" min="0" readonly class="b9-c10" />
-                                </div>
-                                <div class="border-right-1">
-                                    <input type="number" min="0" readonly class="b9-c11" />
-                                </div>
-                                <div>
-                                    <input type="number" min="0" readonly class="b9-c12" />
-                                </div>
+                                <input type="number" min="0" readonly class="b9-c1" />
+                                
+                                <input type="number" min="0" readonly class="b9-c2" />
+                               
+                                <input type="number" min="0" readonly class="b9-c3" />
+                                
+                                <input type="number" min="0" readonly class="b9-c4" />
+                                
+                                <input type="number" min="0" readonly class="b9-c5" />
+                               
+                                <input type="number" min="0" readonly class="b9-c6" />
+                                
+                                <input type="number" min="0" readonly class="b9-c7" />
+                               
+                                <input type="number" min="0" readonly class="b9-c8" />
+                                
+                                <input type="number" min="0" readonly class="b9-c9" />
+                               
+                                <input type="number" min="0" readonly class="b9-c10" />
+                                
+                                <input type="number" min="0" readonly class="b9-c11" />
+                                
+                                <input type="number" min="0" readonly class="b9-c12" />
                             </div>
 
                         </div>
                     </div>
 
-                    <div class="grade-inferior">
+                    <div class="grade grade-inferior">
                         <div class="linha b10">
                             <div>
                                 <span>
@@ -840,42 +722,30 @@
                             <div>
                                 <span>Nº cumulativo de pacientes que iniciou TARV <br/>nesta unidade sanitária <strong>até ao fim do mês<br/> anterior</strong> (copiar B.11 do mês anterior)</span>
                             </div>
-                            <div>
-                                <input type="number" min="0" data-total0a14eixox="b10-c1c2c3c4" data-total0a14eixoxoutput="b10-c9" data-totalgeraleixox="b10-c1c2c3c4c5c6c7c8" data-totalgeraleixoxoutput="b10-c11" data-totalb11="b1b10-c1" data-totalb11output="b11-c1" data-totalb11c0a14="b1b10-c1c2c3c4" data-totalb11c0a14output="b11-c9" data-totalgeralb11="b1b10-c1c2c3c4c5c6c7c8"data-totalgeralb11output="b11-c11" />
-                            </div>
-                            <div>
-                                <input type="number" min="0" data-total0a14eixox="b10-c1c2c3c4" data-total0a14eixoxoutput="b10-c9" data-totalgeraleixox="b10-c1c2c3c4c5c6c7c8" data-totalgeraleixoxoutput="b10-c11" data-totalb11="b1b10-c2" data-totalb11output="b11-c2" data-totalb11c0a14="b1b10-c1c2c3c4" data-totalb11c0a14output="b11-c9" data-totalgeralb11="b1b10-c1c2c3c4c5c6c7c8"data-totalgeralb11output="b11-c11" />
-                            </div>
-                            <div>
-                                <input type="number" min="0" data-total0a14eixox="b10-c1c2c3c4" data-total0a14eixoxoutput="b10-c9" data-totalgeraleixox="b10-c1c2c3c4c5c6c7c8" data-totalgeraleixoxoutput="b10-c11" data-total10a19eixox="b10-c3c4c5c6" data-total10a19eixoxoutput="b10-c12" data-totalb11="b1b10-c3" data-totalb11output="b11-c3" data-totalb11c0a14="b1b10-c1c2c3c4" data-totalb11c0a14output="b11-c9" data-totalgeralb11="b1b10-c1c2c3c4c5c6c7c8"data-totalgeralb11output="b11-c11" data-totalb11c10a19="b1b10-c3c4c5c6" data-totalb11c10a19output="b11-c12" />
-                            </div>
-                            <div>
-                                <input type="number" min="0" data-total0a14eixox="b10-c1c2c3c4" data-total0a14eixoxoutput="b10-c9" data-totalgeraleixox="b10-c1c2c3c4c5c6c7c8" data-totalgeraleixoxoutput="b10-c11" data-total10a19eixox="b10-c3c4c5c6" data-total10a19eixoxoutput="b10-c12" data-totalb11="b1b10-c4" data-totalb11output="b11-c4" data-totalb11c0a14="b1b10-c1c2c3c4" data-totalb11c0a14output="b11-c9" data-totalgeralb11="b1b10-c1c2c3c4c5c6c7c8"data-totalgeralb11output="b11-c11" data-totalb11c10a19="b1b10-c3c4c5c6" data-totalb11c10a19output="b11-c12" />
-                            </div>
-                            <div>
-                                <input type="number" min="0" data-total15oumaiseixox="b10-c5c6c7c8" data-total15oumaiseixoxoutput="b10-c10" data-totalgeraleixox="b10-c1c2c3c4c5c6c7c8" data-totalgeraleixoxoutput="b10-c11" data-total10a19eixox="b10-c3c4c5c6" data-total10a19eixoxoutput="b10-c12" data-totalb11="b1b10-c5" data-totalb11output="b11-c5" data-totalb11c15oumais="b1b10-c5c6c7c8" data-totalb11c15oumaisoutput="b11-c10" data-totalgeralb11="b1b10-c1c2c3c4c5c6c7c8"data-totalgeralb11output="b11-c11"  data-totalb11c10a19="b1b10-c3c4c5c6" data-totalb11c10a19output="b11-c12" />
-                            </div>
-                            <div>
-                                <input type="number" min="0" data-total15oumaiseixox="b10-c5c6c7c8" data-total15oumaiseixoxoutput="b10-c10" data-totalgeraleixox="b10-c1c2c3c4c5c6c7c8" data-totalgeraleixoxoutput="b10-c11" data-total10a19eixox="b10-c3c4c5c6" data-total10a19eixoxoutput="b10-c12" data-totalb11="b1b10-c6" data-totalb11output="b11-c6" data-totalb11c15oumais="b1b10-c5c6c7c8" data-totalb11c15oumaisoutput="b11-c10" data-totalgeralb11="b1b10-c1c2c3c4c5c6c7c8" data-totalgeralb11output="b11-c11"  data-totalb11c10a19="b1b10-c3c4c5c6" data-totalb11c10a19output="b11-c12"/>
-                            </div>
-                            <div>
-                                <input type="number" min="0" data-total15oumaiseixox="b10-c5c6c7c8" data-total15oumaiseixoxoutput="b10-c10" data-totalgeraleixox="b10-c1c2c3c4c5c6c7c8" data-totalgeraleixoxoutput="b10-c11" data-totalb11="b1b10-c7" data-totalb11output="b11-c7" data-totalb11c15oumais="b1b10-c5c6c7c8" data-totalb11c15oumaisoutput="b11-c10" data-totalgeralb11="b1b10-c1c2c3c4c5c6c7c8"data-totalgeralb11output="b11-c11" />
-                            </div>
-                            <div class="border-right-1">
-                                <input type="number" min="0" data-total15oumaiseixox="b10-c5c6c7c8" data-total15oumaiseixoxoutput="b10-c10" data-totalgeraleixox="b10-c1c2c3c4c5c6c7c8" data-totalgeraleixoxoutput="b10-c11" data-totalb11="b1b10-c8" data-totalb11output="b11-c8" data-totalb11c15oumais="b1b10-c5c6c7c8" data-totalb11c15oumaisoutput="b11-c10" data-totalgeralb11="b1b10-c1c2c3c4c5c6c7c8"data-totalgeralb11output="b11-c11"/>
-                            </div>
-                            <div>
-                                <input type="number" min="0" readonly class="b10-c9"/>
-                            </div>
-                            <div>
-                                <input type="number" min="0" readonly class="b10-c10"/>
-                            </div>
-                            <div class="border-right-1">
-                                <input type="number" min="0" readonly class="b10-c11"/>
-                            </div>
-                            <div>
-                                <input type="number" min="0" readonly class="b10-c12"/>
-                            </div>
+                            
+                            <input type="number" min="0" data-total0a14eixox="b10-c1c2c3c4" data-total0a14eixoxoutput="b10-c9" data-totalgeraleixox="b10-c1c2c3c4c5c6c7c8" data-totalgeraleixoxoutput="b10-c11" data-totalb11="b1b10-c1" data-totalb11output="b11-c1" data-totalb11c0a14="b1b10-c1c2c3c4" data-totalb11c0a14output="b11-c9" data-totalgeralb11="b1b10-c1c2c3c4c5c6c7c8"data-totalgeralb11output="b11-c11" />
+                            
+                            <input type="number" min="0" data-total0a14eixox="b10-c1c2c3c4" data-total0a14eixoxoutput="b10-c9" data-totalgeraleixox="b10-c1c2c3c4c5c6c7c8" data-totalgeraleixoxoutput="b10-c11" data-totalb11="b1b10-c2" data-totalb11output="b11-c2" data-totalb11c0a14="b1b10-c1c2c3c4" data-totalb11c0a14output="b11-c9" data-totalgeralb11="b1b10-c1c2c3c4c5c6c7c8"data-totalgeralb11output="b11-c11" />
+                            
+                            <input type="number" min="0" data-total0a14eixox="b10-c1c2c3c4" data-total0a14eixoxoutput="b10-c9" data-totalgeraleixox="b10-c1c2c3c4c5c6c7c8" data-totalgeraleixoxoutput="b10-c11" data-total10a19eixox="b10-c3c4c5c6" data-total10a19eixoxoutput="b10-c12" data-totalb11="b1b10-c3" data-totalb11output="b11-c3" data-totalb11c0a14="b1b10-c1c2c3c4" data-totalb11c0a14output="b11-c9" data-totalgeralb11="b1b10-c1c2c3c4c5c6c7c8"data-totalgeralb11output="b11-c11" data-totalb11c10a19="b1b10-c3c4c5c6" data-totalb11c10a19output="b11-c12" />
+                            
+                            <input type="number" min="0" data-total0a14eixox="b10-c1c2c3c4" data-total0a14eixoxoutput="b10-c9" data-totalgeraleixox="b10-c1c2c3c4c5c6c7c8" data-totalgeraleixoxoutput="b10-c11" data-total10a19eixox="b10-c3c4c5c6" data-total10a19eixoxoutput="b10-c12" data-totalb11="b1b10-c4" data-totalb11output="b11-c4" data-totalb11c0a14="b1b10-c1c2c3c4" data-totalb11c0a14output="b11-c9" data-totalgeralb11="b1b10-c1c2c3c4c5c6c7c8"data-totalgeralb11output="b11-c11" data-totalb11c10a19="b1b10-c3c4c5c6" data-totalb11c10a19output="b11-c12" />
+                            
+                            <input type="number" min="0" data-total15oumaiseixox="b10-c5c6c7c8" data-total15oumaiseixoxoutput="b10-c10" data-totalgeraleixox="b10-c1c2c3c4c5c6c7c8" data-totalgeraleixoxoutput="b10-c11" data-total10a19eixox="b10-c3c4c5c6" data-total10a19eixoxoutput="b10-c12" data-totalb11="b1b10-c5" data-totalb11output="b11-c5" data-totalb11c15oumais="b1b10-c5c6c7c8" data-totalb11c15oumaisoutput="b11-c10" data-totalgeralb11="b1b10-c1c2c3c4c5c6c7c8"data-totalgeralb11output="b11-c11"  data-totalb11c10a19="b1b10-c3c4c5c6" data-totalb11c10a19output="b11-c12" />
+                        
+                            <input type="number" min="0" data-total15oumaiseixox="b10-c5c6c7c8" data-total15oumaiseixoxoutput="b10-c10" data-totalgeraleixox="b10-c1c2c3c4c5c6c7c8" data-totalgeraleixoxoutput="b10-c11" data-total10a19eixox="b10-c3c4c5c6" data-total10a19eixoxoutput="b10-c12" data-totalb11="b1b10-c6" data-totalb11output="b11-c6" data-totalb11c15oumais="b1b10-c5c6c7c8" data-totalb11c15oumaisoutput="b11-c10" data-totalgeralb11="b1b10-c1c2c3c4c5c6c7c8" data-totalgeralb11output="b11-c11"  data-totalb11c10a19="b1b10-c3c4c5c6" data-totalb11c10a19output="b11-c12"/>
+                            
+                            <input type="number" min="0" data-total15oumaiseixox="b10-c5c6c7c8" data-total15oumaiseixoxoutput="b10-c10" data-totalgeraleixox="b10-c1c2c3c4c5c6c7c8" data-totalgeraleixoxoutput="b10-c11" data-totalb11="b1b10-c7" data-totalb11output="b11-c7" data-totalb11c15oumais="b1b10-c5c6c7c8" data-totalb11c15oumaisoutput="b11-c10" data-totalgeralb11="b1b10-c1c2c3c4c5c6c7c8"data-totalgeralb11output="b11-c11" />
+                            
+                            <input type="number" min="0" data-total15oumaiseixox="b10-c5c6c7c8" data-total15oumaiseixoxoutput="b10-c10" data-totalgeraleixox="b10-c1c2c3c4c5c6c7c8" data-totalgeraleixoxoutput="b10-c11" data-totalb11="b1b10-c8" data-totalb11output="b11-c8" data-totalb11c15oumais="b1b10-c5c6c7c8" data-totalb11c15oumaisoutput="b11-c10" data-totalgeralb11="b1b10-c1c2c3c4c5c6c7c8"data-totalgeralb11output="b11-c11"/>
+                           
+                            <input type="number" min="0" readonly class="b10-c9"/>
+                            
+                            <input type="number" min="0" readonly class="b10-c10"/>
+                            
+                            <input type="number" min="0" readonly class="b10-c11"/>
+                            
+                            <input type="number" min="0" readonly class="b10-c12"/>
                         </div>
 
                         <div class="linha b11">
@@ -887,42 +757,30 @@
                             <div>
                                 <span>Nº cumulativo de pacientes que iniciou TARV <br/>nesta unidade sanitária <strong>até ao fim do mês</strong><br/> (B.11 = B.1 + B.10)</span>
                             </div>
-                            <div>
-                                <input type="number" min="0" readonly class="b11-c1" />
-                            </div>
-                            <div>
-                                <input type="number" min="0" readonly class="b11-c2" />
-                            </div>
-                            <div>
-                                <input type="number" min="0" readonly class="b11-c3" />
-                            </div>
-                            <div>
-                                <input type="number" min="0" readonly class="b11-c4" />
-                            </div>
-                            <div>
-                                <input type="number" min="0" readonly class="b11-c5" />
-                            </div>
-                            <div>
-                                <input type="number" min="0" readonly class="b11-c6" />
-                            </div>
-                            <div>
-                                <input type="number" min="0" readonly class="b11-c7" />
-                            </div>
-                            <div class="border-right-1">
-                                <input type="number" min="0" readonly class="b11-c8" />
-                            </div>
-                            <div>
-                                <input type="number" min="0" readonly class="b11-c9" />
-                            </div>
-                            <div>
-                                <input type="number" min="0" readonly class="b11-c10" />
-                            </div>
-                            <div class="border-right-1">
-                                <input type="number" min="0" readonly class="b11-c11" />
-                            </div>
-                            <div>
-                                <input type="number" min="0" readonly class="b11-c12" />
-                            </div>
+
+                            <input type="number" min="0" readonly class="b11-c1" />
+                            
+                            <input type="number" min="0" readonly class="b11-c2" />
+                            
+                            <input type="number" min="0" readonly class="b11-c3" />
+                            
+                            <input type="number" min="0" readonly class="b11-c4" />
+                            
+                            <input type="number" min="0" readonly class="b11-c5" />
+                            
+                            <input type="number" min="0" readonly class="b11-c6" />
+                            
+                            <input type="number" min="0" readonly class="b11-c7" />
+                            
+                            <input type="number" min="0" readonly class="b11-c8" />
+                            
+                            <input type="number" min="0" readonly class="b11-c9" />
+                            
+                            <input type="number" min="0" readonly class="b11-c10" />
+                            
+                            <input type="number" min="0" readonly class="b11-c11" />
+                            
+                            <input type="number" min="0" readonly class="b11-c12" />
                         </div>
 
                         <div class="linha b12">
@@ -934,42 +792,31 @@
                             <div>
                                 <span>Nº de activos em TARV <strong>até ao fim do mês anterior</strong> (copiar B.13 do mês anterior)</span>
                             </div>
-                            <div>
-                                <input type="number" min="0" data-total0a14eixox="b12-c1c2c3c4" data-total0a14eixoxoutput="b12-c9" data-totalgeraleixox="b12-c1c2c3c4c5c6c7c8" data-totalgeraleixoxoutput="b12-c11"/>
-                            </div>
-                            <div>
-                                <input type="number" min="0" data-total0a14eixox="b12-c1c2c3c4" data-total0a14eixoxoutput="b12-c9" data-totalgeraleixox="b12-c1c2c3c4c5c6c7c8" data-totalgeraleixoxoutput="b12-c11"/>
-                            </div>
-                            <div>
-                                <input type="number" min="0" data-total0a14eixox="b12-c1c2c3c4" data-total0a14eixoxoutput="b12-c9" data-totalgeraleixox="b12-c1c2c3c4c5c6c7c8" data-totalgeraleixoxoutput="b12-c11" data-total10a19eixox="b12-c3c4c5c6" data-total10a19eixoxoutput="b12-c12" />
-                            </div>
-                            <div>
-                                <input type="number" min="0" data-total0a14eixox="b12-c1c2c3c4" data-total0a14eixoxoutput="b12-c9" data-totalgeraleixox="b12-c1c2c3c4c5c6c7c8" data-totalgeraleixoxoutput="b12-c11" data-total10a19eixox="b12-c3c4c5c6" data-total10a19eixoxoutput="b12-c12" />
-                            </div>
-                            <div>
-                                <input type="number" min="0" data-total15oumaiseixox="b12-c5c6c7c8" data-total15oumaiseixoxoutput="b12-c10" data-totalgeraleixox="b12-c1c2c3c4c5c6c7c8" data-totalgeraleixoxoutput="b12-c11" data-total10a19eixox="b12-c3c4c5c6" data-total10a19eixoxoutput="b12-c12" />
-                            </div>
-                            <div>
-                                <input type="number" min="0" data-total15oumaiseixox="b12-c5c6c7c8" data-total15oumaiseixoxoutput="b12-c10" data-totalgeraleixox="b12-c1c2c3c4c5c6c7c8" data-totalgeraleixoxoutput="b12-c11" data-total10a19eixox="b12-c3c4c5c6" data-total10a19eixoxoutput="b12-c12" />
-                            </div>
-                            <div>
-                                <input type="number" min="0" data-total15oumaiseixox="b12-c5c6c7c8" data-total15oumaiseixoxoutput="b12-c10" data-totalgeraleixox="b12-c1c2c3c4c5c6c7c8" data-totalgeraleixoxoutput="b12-c11" />
-                            </div>
-                            <div class="border-right-1">
-                                <input type="number" min="0" data-total15oumaiseixox="b12-c5c6c7c8" data-total15oumaiseixoxoutput="b12-c10" data-totalgeraleixox="b12-c1c2c3c4c5c6c7c8" data-totalgeraleixoxoutput="b12-c11"/>
-                            </div>
-                            <div>
-                                <input type="number" min="0" readonly class="b12-c9"/>
-                            </div>
-                            <div>
-                                <input type="number" min="0" readonly class="b12-c10"/>
-                            </div>
-                            <div class="border-right-1">
-                                <input type="number" min="0" readonly class="b12-c11"/>
-                            </div>
-                            <div>
-                                <input type="number" min="0" readonly class="b12-c12"/>
-                            </div>
+                            
+                            <input type="number" min="0" data-total0a14eixox="b12-c1c2c3c4" data-total0a14eixoxoutput="b12-c9" data-totalgeraleixox="b12-c1c2c3c4c5c6c7c8" data-totalgeraleixoxoutput="b12-c11"/>
+                        
+                            <input type="number" min="0" data-total0a14eixox="b12-c1c2c3c4" data-total0a14eixoxoutput="b12-c9" data-totalgeraleixox="b12-c1c2c3c4c5c6c7c8" data-totalgeraleixoxoutput="b12-c11"/>
+                        
+                            <input type="number" min="0" data-total0a14eixox="b12-c1c2c3c4" data-total0a14eixoxoutput="b12-c9" data-totalgeraleixox="b12-c1c2c3c4c5c6c7c8" data-totalgeraleixoxoutput="b12-c11" data-total10a19eixox="b12-c3c4c5c6" data-total10a19eixoxoutput="b12-c12" />
+                        
+                            <input type="number" min="0" data-total0a14eixox="b12-c1c2c3c4" data-total0a14eixoxoutput="b12-c9" data-totalgeraleixox="b12-c1c2c3c4c5c6c7c8" data-totalgeraleixoxoutput="b12-c11" data-total10a19eixox="b12-c3c4c5c6" data-total10a19eixoxoutput="b12-c12" />
+                        
+                            <input type="number" min="0" data-total15oumaiseixox="b12-c5c6c7c8" data-total15oumaiseixoxoutput="b12-c10" data-totalgeraleixox="b12-c1c2c3c4c5c6c7c8" data-totalgeraleixoxoutput="b12-c11" data-total10a19eixox="b12-c3c4c5c6" data-total10a19eixoxoutput="b12-c12" />
+                        
+                            <input type="number" min="0" data-total15oumaiseixox="b12-c5c6c7c8" data-total15oumaiseixoxoutput="b12-c10" data-totalgeraleixox="b12-c1c2c3c4c5c6c7c8" data-totalgeraleixoxoutput="b12-c11" data-total10a19eixox="b12-c3c4c5c6" data-total10a19eixoxoutput="b12-c12" />
+                        
+                            <input type="number" min="0" data-total15oumaiseixox="b12-c5c6c7c8" data-total15oumaiseixoxoutput="b12-c10" data-totalgeraleixox="b12-c1c2c3c4c5c6c7c8" data-totalgeraleixoxoutput="b12-c11" />
+                        
+                            <input type="number" min="0" data-total15oumaiseixox="b12-c5c6c7c8" data-total15oumaiseixoxoutput="b12-c10" data-totalgeraleixox="b12-c1c2c3c4c5c6c7c8" data-totalgeraleixoxoutput="b12-c11"/>
+                            
+                            <input type="number" min="0" readonly class="b12-c9"/>
+                            
+                            <input type="number" min="0" readonly class="b12-c10"/>
+                        
+                            <input type="number" min="0" readonly class="b12-c11"/>
+                          
+                            <input type="number" min="0" readonly class="b12-c12"/>
+                            
                         </div>
 
                         <div class="linha b13">
@@ -981,26 +828,22 @@
                             <div>
                                 <span>Nº activos em TARV <strong>no fim do mês</strong> <br/> (B.13 = B.12 + B.4 - B.9)</span>
                             </div>
-                            <div><input type="number" min="0" readonly/></div>
-                            <div><input type="number" min="0" readonly/></div>
-                            <div><input type="number" min="0" readonly/></div>
-                            <div><input type="number" min="0" readonly/></div>
-                            <div><input type="number" min="0" readonly/></div>
-                            <div><input type="number" min="0" readonly/></div>
-                            <div><input type="number" min="0" readonly/></div>
-                            <div class="border-right-1">
-                                <input type="number" min="0" readonly/>
-                            </div>
-                            <div><input type="number" min="0" readonly/></div>
-                            <div><input type="number" min="0" readonly/></div>
-                            <div class="border-right-1">
-                                <input type="number" min="0" readonly/>
-                            </div>
-                            <div><input type="number" min="0" readonly/></div>
+                            <input type="number" min="0" readonly/>
+                            <input type="number" min="0" readonly/>
+                            <input type="number" min="0" readonly/>
+                            <input type="number" min="0" readonly/>
+                            <input type="number" min="0" readonly/>
+                            <input type="number" min="0" readonly/>
+                            <input type="number" min="0" readonly/>
+                            <input type="number" min="0" readonly/>
+                            <input type="number" min="0" readonly/>
+                            <input type="number" min="0" readonly/>
+                            <input type="number" min="0" readonly/>
+                            <input type="number" min="0" readonly/>
                         </div>
                     </div>
 
-                    <div class="grade-extra superior">
+                    <div class="grade grade-extra superior">
                         <div class="coluna-de-cs">
                             <span>C.1)</span>
                             <span>C.2)</span>
@@ -1027,7 +870,7 @@
                         </div>
                     </div>
 
-                    <div class="grade-extra intermedia">
+                    <div class="grade grade-extra intermedia">
                         <div class="coluna-de-cs">
                             <span>E.1)</span>
                             <span>E.2)</span>
@@ -1057,7 +900,7 @@
 
                         <div class="coluna-de-total quinze-mais">
                             <div class="header">
-                                <span>15 /+ anos</span>
+                                <span>15/ + anos</span>
                             </div>
                             <div><input type="number" name="" id=""></div>
                             <div><input type="number" name="" id=""></div>
@@ -1066,7 +909,7 @@
                         
                     </div>
 
-                    <div class="grade-extra inferior">
+                    <div class="grade grade-extra inferior">
                         <div class="coluna-de-cs">
                             <span>E.1)</span>
                             <span>E.2)</span>
@@ -1093,7 +936,7 @@
                         </div>
                     </div>
 
-                    <div class="linha-de-assinatura">
+                    <footer class="linha-de-assinatura">
                         <div>
                             <label for="nome">Nome</label>
                             <input type="text"  id="nome" />
@@ -1106,9 +949,148 @@
                             <label for="data">Data</label>
                             <input type="date"  id="data" />
                         </div>
+                    </footer>
+                </div>
+
+                <div class="manipulacao-do-menu">
+
+                    <!-- Acessar subtotais -->
+                    <p class="aviso-de-restricao-de-acesso-a-readonlyinputs">
+                        Acesso restrito. Essa célula é apenas de leitura. <span class="recomendacao">Para distinguir as células de leitura das outras, marque a opção <b>"Destacar as células automáticas".</b> </span>
+                    </p> 
+    
+                    <!-- Esvaziar ficha -->
+                    <section class="esvaziamento-da-ficha">
+                        <div class="caixa-de-confirmacao">
+                            <h3>Esvaziar ficha</h3>
+    
+                            <p>Tem certeza de que pretende esvaziar a ficha?</p>
+    
+                            <div class="alerta">
+                                <svg style="width: 40px; height: 40px; ">
+    
+                                    <linearGradient id="meuGradiente" x1="0%" y1="0%" x2="0%" y2="100%">
+                                        <stop offset="0%" style="stop-color: gray" />
+                                        <stop offset="100%" style="stop-color: yellow" />
+                                    </linearGradient>>
+    
+                                    <polygon points="20,0 40,40, 0,40" fill="url(#meuGradiente)" stroke-width="1" stroke="#333"/>
+    
+                                    <text x="15.335" y="35.5" style="font-weight: bold; font-size: 28px">!</text>
+                                </svg>
+    
+                                <p>Esta acção não pode ser desfeita.</p>
+    
+                            </div>
+    
+                            <h4>Dados adicionais</h4>
+                            <ul class="limpadores-de-dados-adicionais">
+                                <li>
+                                    <input type="checkbox" id="nome-da-provincia" checked data-for="provincia"/>
+                                    <label for="nome-da-provincia">Província</label>
+                                </li>
+                                <li>
+                                    <input type="checkbox" id="nome-do-distrito" checked data-for="distrito"/>
+                                    <label for="nome-do-distrito">Distrito</label>
+                                </li>
+                                <li>
+                                    <input type="checkbox" id="nome-da-us" checked data-for="us"/>
+                                    <label for="mome-da-us">Unidade Sanitária</label>
+                                </li>
+                                <li>
+                                    <input type="checkbox" id="mueri" checked data-for="mes"/>
+                                    <label for="mueri">Mês</label>
+                                </li>
+                                <li>
+                                    <input type="checkbox" id="muaka" checked data-for="ano"/>
+                                    <label for="muaka">Ano</label>
+                                </li>
+                                <li>
+                                    <input type="checkbox" id="nid-da-us" checked data-for="nid"/>
+                                    <label for="nid-da-us">NID da Unidade Sanitária</label>
+                                </li>
+                                <li>
+                                    <input type="checkbox" id="nome-do-ps" checked data-for="nome"/>
+                                    <label for="nome-do-ps">Nome do Responsável pelo <br/> preenchimento</label>
+                                </li>
+                                <li>
+                                    <input type="checkbox" id="assinatura-do-ps" checked data-for="assinatura"/>
+                                    <label for="assinatura-do-ps">Assinatura do Responsável pelo <br/> preenchimento</label>
+                                </li>
+
+                                <li>
+                                    <input type="checkbox" id="data-de-elaboracao" checked data-for="data"/>
+                                    <label for="data-de-elaboracao">Data de realização</label>
+                                </li>
+
+    
+                            </ul>
+    
+                            <div class="botoes-de-confirmacao">
+                                <button class="cancelar">Cancelar</button>
+                                <button class="confirmar" data-ficha="ficha" data-prefixodakeystorage="trmhiv-" >Confirmar</button>
+                            </div>
+                        </div>
+                        <p class="alerta-para-ficha-vazia">A ficha está vazia.</p>
+                    </section>
+
+                     <!-- Motivo inputs com fundo vermelho -->
+                    <div class="razao-pelas-celulas-com-fundo-vermelho">
+                        <h2>Por que algumas células ficaram com o fundo vermelho?</h2>
+                        <p class="obs">
+                            <strong>
+                                Toda célula cujo fundo está vermelho tem UM ou MAIS algarismos omissos por indisponibilidade de espaço na respectiva célula.
+                            </strong>
+                        </p>
+                        <p>
+                            Cada célula do Totalizador tem espaço disponível no máximo para 8 algarismos, portanto, mostra valores até <b>99 999 999</b> (mais que o triplo do <a href="https://energypedia.info/wiki/Moçambique:_Informação_sobre_o_País" target="_blank">número de habitantes em Moçambique de acordo com dados demográficos de 2019</a>). A partir de 100&nbsp;000&nbsp;000, só ficam visíveis os primeiros 8 algarismos e do 9º em diante, ficam fora da viewport (área visível) da célula.
+                        </p>
+
+                        <p class="obs afirmacao">
+                            Obviamente, nenhuma Unidade Sanitária em Moçambique tem um número cumulativo de pacientes em cuidados e tratamento próximo, igual ou maior que 99 999 999.
+                        </p>
+                        <div class="seccao-de-interatividade">
+                            <div>
+                                <input type="checkbox" id="nao-mostrar-mais" />
+                                <label for="nao-mostrar-mais">Não mostrar mais</label>
+                            </div>
+                            <button class="close-redcels-obs">Fechar</button>
+                        </div>
+                    </div>
+    
+                </div>
+    
+                <div class="aviso-de-uso-de-cookies">
+                    <p> 
+                        A fim de melhorar a sua experiência de utilização, o Totalizador faz uso de "cookies" de acordo com a respectiva <a href="totalizadorderesumomensaldehiv/politica-de-cookies-e-web-storage.html">Política descrita neste endereço</a>.
+                    </p>
+        
+                    <button class="aceitar-cookies" data-sessionkey="trmhiv-cookies">Consinto</button>
+                </div> 
+            </main>
+
+            <div class="linha-de-referencia">
+                <div class="referencia">      
+                    <h3>
+                        <b class="referencia">Referência</b>
+                        <b class="ref">Ref.:</b>
+                    </h3>
+                    
+                    <span class="seta">
+                        <i class="fa-solid fa-circle-arrow-right"></i>
+                    </span>
+    
+                    <div>
+                        <span>Faixa etária:</span>
+                        <output class="faixa-etaria"></output>
+                    </div>
+    
+                    <div>
+                        <span>Sexo:</span>
+                        <output class="sexo"></output>
                     </div>
                 </div>
-            </main>
+            </div>
 
             <footer>
             
@@ -1135,12 +1117,13 @@
                         </ul>       
                     </div>
     
-                    <p>Desenvolvido com &#128153; por <a href="https://quinamine.github.io/abordagem-pediatrica/paginas/sobremim.html">Adérito Félix Quinamine</a> | &copy; 2022 - Totalizador de Resumo Mensal de HIV/SIDA</p>
+                    <p>Desenvolvido com &#128153; por <a href="https://quinamine.github.io/abordagem-pediatrica/paginas/sobremim.html">Adérito Félix Quinamine</a> |&nbsp;&copy; 2022 - Totalizador de Resumo Mensal de HIV/SIDA</p>
     
                     <a href="#involucro" class="voltar">Voltar ao topo</a>
                 </div>
             </footer>
         </div>
+        <div class="desfoque-do-fundo"></div> 
     </body>
 </html>
 

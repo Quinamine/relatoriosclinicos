@@ -1,1 +1,48 @@
-const saveOnStorage={salvarFicha(){let b=document.querySelectorAll(".col-de-inputs input");for(let a=0;a<b.length;a++){b[a].addEventListener("input",()=>{let c=`${b[a].value}`;localStorage.setItem(`cel${a}`,c)});let c=localStorage.getItem(`cel${a}`);b[a].value=c}},salvarMes(){let a=document.querySelector(".contentor-da-grade #mes");a.addEventListener("input",()=>{localStorage.setItem("mes",`${a.value}`)}),a.value=localStorage.getItem("mes")},salvarUS(){let a=document.querySelector("#nome-da-us");a.addEventListener("input",()=>{localStorage.setItem("us",`${a.value}`)}),a.value=localStorage.getItem("us")},salvarNome(){let a=document.querySelector("#nome-do-ps");a.addEventListener("input",()=>{localStorage.setItem("ps",`${a.value}`)}),a.value=localStorage.getItem("ps")},salvarCategoria(){let a=document.querySelector("#categoria");a.addEventListener("input",()=>{localStorage.setItem("categoria",`${a.value}`)}),a.value=localStorage.getItem("categoria")},salvarData(){let a=document.querySelector("#data-de-realizacao");a.addEventListener("change",()=>{localStorage.setItem("data",`${a.value}`)}),a.value=localStorage.getItem("data")},salvarReadonlyCelsBg(){let a=document.querySelector("#denegrir-readonlycels");a.addEventListener("change",()=>{localStorage.setItem("darkmode",a.checked)}),"true"==localStorage.getItem("darkmode")?a.setAttribute("checked",""):a.removeAttribute("checked")}};window.addEventListener("load",()=>{saveOnStorage.salvarFicha(),saveOnStorage.salvarMes(),saveOnStorage.salvarUS(),saveOnStorage.salvarNome(),saveOnStorage.salvarCategoria(),saveOnStorage.salvarData(),saveOnStorage.salvarReadonlyCelsBg()})
+
+const armazenamento = {
+
+    salvarERetornarFicha: () => {      
+        const celulas = document.querySelectorAll(".coluna-de-inputs input");
+
+        for (let i = 0; i < celulas.length; i++) {  
+            celulas[i].addEventListener("input", () =>  localStorage.setItem(`trmc-cel${i}`, celulas[i].value));
+            celulas[i].value = localStorage.getItem(`trmc-cel${i}`);
+        }
+    },
+
+    salvarERetornarDadosAdicionais: () => {
+        const dadosAdicionais = document.querySelectorAll(".contentor-da-ficha input[type=text], input[type=date]");
+
+        dadosAdicionais.forEach ( dado => {
+            dado.addEventListener("input", () => localStorage.setItem(`trmc-${dado.id}`, `${dado.value}`));
+            dado.value = localStorage.getItem(`trmc-${dado.id}`);
+        })
+    },
+
+    salvarERetornarDestaqueDeInputsReadonly: () => {
+        const readonlyInputsDarker = document.querySelector("#readonlyinputs-darker");
+    
+        readonlyInputsDarker.addEventListener("change", () => {
+            if(readonlyInputsDarker.checked) {
+                localStorage.setItem("destaque", "on");
+            }
+            else {
+                localStorage.removeItem("destaque");
+            }
+        })
+        
+        if(localStorage.getItem("destaque")){
+            readonlyInputsDarker.setAttribute("checked", "");
+        }
+        else {
+            readonlyInputsDarker.removeAttribute("checked");
+        }     
+        menu.destacarReadonlyInputs();
+    }
+}
+
+window.addEventListener("load", () => {
+    armazenamento.salvarERetornarFicha();
+    armazenamento.salvarERetornarDadosAdicionais();
+    armazenamento.salvarERetornarDestaqueDeInputsReadonly();
+});

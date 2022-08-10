@@ -1,1 +1,181 @@
-section.artigos article{width:100%;max-width:700px;height:100vh;overflow-y:scroll;margin:auto;padding:20px 3%;background-color:#fff;font-size:.875rem;position:fixed;top:-100vh;left:calc(50vw - 700px * (1/2));box-shadow:0 0 15px #555;visibility:hidden;transition:top 50ms linear;z-index:2}section.artigos article.on{visibility:initial;top:0}article h2,article h3,article p,article#conversao-pdf ol li{line-height:1.4;margin:20px 0}article ul li{margin-bottom:10px;line-height:1.4;list-style:disc inside}article ul li:last-child{margin-bottom:20px}article ol{list-style:decimal inside}article h2{font-size:1.375rem}article h3{font-size:1.25rem}article ol li{font-size:1.125rem}article p button{border:none;outline:0;padding:0;margin:0;background-color:inherit;font:inherit;color:#00e}article p button:active{color:red}article#conversao-pdf ol li{font-size:.875rem}article#conversao-pdf mark.print{display:inline-block;padding:4px;text-align:center;margin:0}article#conversao-pdf .nota{background-color:#dce4f4;border-top:1px solid #aaa;padding:8px;font-size:13px}article p.consentimento{border:thin solid #00e;background-color:#dce4f4;padding:10px;font-size:12px}div.close-article{position:relative;max-width:100%;display:flex;justify-content:flex-end}div.close-article button.fechar-artigo{outline:0;border:thin solid #ddd;border-right:none;position:fixed;top:0;margin-right:-3%;font-size:28px;width:35px;height:35px;opacity:.8;background-color:#fff;border:none;box-shadow:0 0 8px #ddd}article p.footer{margin:0;border-top:1px solid #ddd;padding:30px 0 50px}article.z-index-10{z-index:10!important}
+#involucro {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+#involucro main {
+    flex: 1;
+}
+
+.linha-do-cabecalho {
+    justify-content: space-between;
+}
+
+.linha-do-cabecalho .menu {
+    justify-content: flex-end;
+}
+
+article {
+    max-width: 700px;
+    font-size: 0.875rem;
+}
+
+.rmhiv article {
+    margin-left: 20px;
+}
+
+/* TITULOS */
+
+article h1 {
+	font-size: 1.5rem;
+	margin-bottom: 10px;	
+	line-height: 1.5;
+}
+
+article h2 {font-size: 1.375rem;}
+
+article h3 {font-size: 1.25rem;}
+
+article h4 {font-size: 1.125rem;}
+
+article h5 {font-size: 1rem;}
+
+article h6 {font-size: 0.875rem;}
+
+article h2, 
+article h3, 
+article h4 {
+	margin: 20px 0px 0px 0px;
+	line-height: 1.5;
+}
+
+/* ELEMENTOS DE TEXTO */
+
+article p, dl, dd, dt, 
+article li {line-height: 1.5;}
+
+article p, 
+article ul, 
+article ol,
+article dl, 
+article dl, 
+article dt  {margin: 20px 0;}
+
+article li {
+    margin: 10px 0;
+    padding-left: 3px;
+}
+
+article ul {
+    list-style-type: disc;
+    margin-left: 16px;
+}
+
+article li > ul {
+    list-style-type: circle;
+    margin: 0;
+    padding-left: 16px;
+}
+
+article ol {
+    list-style: decimal inside;
+}
+
+/* IMAGENS */
+
+img {
+    max-width: 100%;
+    object-fit: cover;
+}
+
+figure figcaption {
+    color: var(--cinza8);
+    border: 1px solid var(--cinza10);
+    max-width: 698.5px;
+    margin: -2px auto 0 auto;
+    font-size: 0.75rem;
+    padding: 2px;
+    font-style: italic;
+}
+
+/* POLÍTICA DE COOKIES */
+
+#politica-de-cookies dl dt {
+    font-weight: bold;
+}
+
+#politica-de-cookies dl dt:before {
+    font-weight: bold;
+    margin-right: 6px;
+}
+
+#politica-de-cookies dl dt#um:before {
+    content: "1.";
+}
+
+#politica-de-cookies dl dt#dois:before {
+    content: "2.";
+}
+
+#politica-de-cookies dl dt#tres:before {
+    content: "3.";
+}
+
+#politica-de-cookies dt {
+    font-size: 1rem;
+}
+
+p.consentimento {
+    margin-top: 40px;
+}
+
+#politica-de-cookies p.consentimento,
+#conversao-pdf .nota {
+    padding: 2px 2px 2px 13px;
+    border-radius: 0 4px 4px 0;
+    border: 1px solid var(--cinza10);
+    border-left: 6px solid var(--cinza4);
+    font-weight: bold;
+}
+
+.rmhiv #politica-de-cookies p.consentimento,
+.rmhiv #conversao-pdf .nota {
+    border-color: var(--azul);
+}
+
+/* SALVAR COMO PDF */
+
+#conversao-pdf mark.print {
+    display: inline-block;
+    margin: 0;
+    text-align: center;
+}
+
+#conversao-pdf .nota {
+    font-size: 12px;
+}
+
+.rmhiv #conversao-pdf .nota {
+    border-left-color: var(--azul);
+    font-size: 0.875rem;
+}
+
+/* SOBRE */
+
+.rmhiv #sobre ul:last-child {
+    font-weight: bold;
+}
+
+@media screen and (max-width: 1300px) {
+    .linha-do-cabecalho {
+        flex-direction: row !important;
+        align-items: center !important;  
+    }
+
+    article {
+        margin-left: 0 !important;
+        padding: 0 15px;
+    }
+}
+

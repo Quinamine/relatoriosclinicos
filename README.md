@@ -1,32 +1,14 @@
-# RELATÓRIOS CLÍNICOS | TOTALIZADOR DE RMCE
+﻿# RELATÓRIOS CLÍNICOS 
 
-O **Totalizador de RMCE (Resumo Mensal de Consultas Externas)** é um serviço online gratuito que auxilia na elaboração de resumo mensal de consultas externas **totalizando-o automaticamente**. Desenvolvi-o baseando-se no mesmo modelo da ficha de resumo mensal de consultas externas actualmente vigente no Serviço Nacional de Saúde (SNS).
+O **Relatórios Clinicos** é um repositório criado por mim ([Adérito Félix Quinamine](https://quinamine.github.io/abordagem-pediatrica/paginas/sobremim.html)) que engloba serviços online gratuitos de totalização de resumos mensais da área clínica. Actualmente estão disponíveis dois Totalizadores, nomeadamente: O Totalizador de Resumo Mensal de Consultas Externas e o Totalizador de Resumo Mensal de HIV/SIDA. Cada um dos Totalizadores tem sua estrutura baseada no modelo da respectiva ficha de resumo mensal actualmente (2022) vigente no Serviço Nacional de Saúde em Moçambique.
 
 ## Como funciona?
 
-O serviço espera como parâmetros, os dados colhidos do  livro de registo de Consultas Externas da  respectiva Unidade Sanitária durante o mês em consideração e com base nesses dados, **as células correspondentes aos subtotais e totais são calculadas automaticamente e em tempo real**.
+Basicamente, os Totalizadores esperam como parâmetros, entre outros, os dados colhidos do(s)  livro(s) de registo das variáveis da ficha da respectiva Unidade Sanitária durante o mês em consideração e com base nesses dados, **as células correspondentes aos subtotais e totais são calculadas automaticamente e em tempo real**.
 
-## Como prosseguir após inserir os dados e obter os (Sub)Totais?
+Para se informar com mais detalhes, acesse os seguintes endereços:
 
-Você pode optar por copiar os valores para a ficha física de resumo mensal a partir da tela do seu dispositivo ou imprimir (SOS) a ficha para fazê-lo logo a seguir. Ainda é possível salvar em formato PDF (vide instruções no último bloco).
+[Sobre o Totalizador de Resumo Mensal de Consultas Externas](https://quinamine.github.io/relatoriosclinicos/totalizadordermce/sobre-o-totalizador.html)
 
-## Quem criou?
-O serviço foi criado por mim, [Adérito Félix Quinamine](https://quinamine.github.io/abordagem-pediatrica/paginas/sobremim.html), Técnico de Medicina de profissão e Desenvolvedor Web autodidata.
-
----
-
-### Como salvar a ficha em PDF?
-
-1. Na página do Totalizador, clique na opção **"Imprimir"** destacado de preto no canto superior direito.
-2. Na janela que abrirá, no campo de **Impressora** ou **Destino** selecione a opção **“salvar como PDF”** ou **“Microsoft print to PDF”**
-3. No campo de **Layout** ou **Orientação**, selecione **Paisagem**. Isso é para que toda ficha caiba no papel e não haja omissão das últimas colunas.
-
- _Nota: Pelos testes feitos, o Firefox mostrou-se não responsivo ao modo paisagem (quebra o layout da ficha), entretanto não omitiu as últimas colunas no modo retrato._
-
-4. Por fim, clique em *Salvar* e escolha o destino no seu computador.
-
-_Não se preocupe se na janela de impressão haver omissão de algumas linhas da ficha. Isso é ilusão de óptica, as linhas ainda permanecem lá._
-
-**Importa referir que esta funcionalidade  depende do seu sistema operativo, pois não é nativa do Totalizador. Os testes foram feitos no Windows 10 e os resultados foram satisfatórios.**
-
+[Sobre o Totalizador de Resumo Mensal de HIV/SIDA](https://quinamine.github.io/relatoriosclinicos/totalizadordermhiv/sobre-o-totalizador.html)
 

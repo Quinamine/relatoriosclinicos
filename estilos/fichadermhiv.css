@@ -10,23 +10,26 @@ strong {
     text-decoration: underline;
 }
 
-/* Layout */
 .linha-do-cabecalho .logo strong {
     text-decoration: none;
 }
 
-.rmhiv main {
+/* LAYOUT */
+
+.ficha {
     font-weight: bold;
 }
 
 /* FICHA */
+
 .ficha {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-/* Cabeçalho da ficha */
+/* CABEÇALHO DA FICHA */
+
 .ficha header {
     min-width: 974px;
     display: flex;
@@ -41,7 +44,7 @@ strong {
 }
 
 .ficha  header h1 {
-    font-size: 1.2625rem/*20.2px;*/
+    font-size: 1.275rem;
 }
 
 .ficha header label {
@@ -49,7 +52,7 @@ strong {
 }
 
 .ficha header input {
-    border-bottom: 1px solid #444;
+    border-bottom: 1px solid var(--cinza4);
 }
 
 .contentor-de-provincia-e-distrito {
@@ -80,7 +83,7 @@ strong {
     max-width: 118px;
 }
 
-/* Ficha propriamente dita */
+/* FICHA PROPRIAMENTE DITA */
 
 .linha > div,
 .grade-extra .coluna-de-cs span,
@@ -88,7 +91,6 @@ strong {
     min-height: 33.78px;
     padding: 2px;
 }
-
 
 .grade-superior,
 .grade-inferior {
@@ -100,21 +102,23 @@ strong {
     grid-template-columns: 50px 320px repeat(8, 50px) 52px repeat(2, 50px) 52px;
 }
 
-.linha > div,
+.linha > *, 
 .linha-de-faixas-etarias-e-sexo-2 > div {
-    border-left: 1px solid #444;
-    border-bottom: 1px solid #444;
+    border-left: 1px solid var(--cinza4);
+    border-bottom: 1px solid var(--cinza4);
 }
 
-.linha > div:nth-child(11),
-.linha > div:last-child,
+.linha > *:nth-child(11),
+.linha > *:last-child,
 .margin-left-2 {
     margin-left: 2px;
 }
 
-.linha > div:last-child, 
+.linha > *:last-child, 
+.linha > input:nth-child(10),
+.linha > input:nth-child(13),
 .border-right-1 {
-    border-right: 1px solid #444;
+    border-right: 1px solid var(--cinza4);
 }
 
 .linha-de-faixas-etarias-e-sexo-1 {
@@ -124,7 +128,7 @@ strong {
 .linha-de-faixas-etarias-e-sexo-1 > div:nth-child(n+2),
 .linha-de-faixas-etarias-e-sexo-2 > div {
     min-height: 36px;
-    border-top: 1px solid #444;
+    border-top: 1px solid var(--cinza4);
     font-size: 11px;
     text-align: center;
     padding: 2px 0;
@@ -134,16 +138,14 @@ strong {
 }
 
 .linha-de-faixas-etarias-e-sexo-1 div.contentor-de-nid {
-    display: block !important;
     border: none;
-    border-bottom: 1px solid #444;
-    padding-bottom: 10px !important;
+    border-bottom: 1px solid var(--cinza4);
     font-family: sans-serif, Arial, Helvetica;
 }
 
 .contentor-de-nid input {
-    width: 210px;
-    border-bottom: 1px solid #444;
+    max-width: 200px !important;
+    border-bottom: 1px solid var(--cinza4);
     text-align: initial !important;
 }
 
@@ -163,7 +165,7 @@ strong {
 .contentor-de-faixa-etaria {
     align-items: center;
     justify-content: center;
-    border-bottom: 1px solid #444; 
+    border-bottom: 1px solid var(--cinza4); 
 }
 
 .contentor-de-sexo {
@@ -178,14 +180,15 @@ strong {
 }
 
 .contentor-de-sexo span:nth-child(2) {
-    border-left: 1px solid #444;
+    border-left: 1px solid var(--cinza4);
 }
 
 .contentor-de-sexo span.margin-left--1 {
     margin-left: 1px !important;
 }
 
-/* Tags filha */ 
+/* TAGS FILHAS */ 
+
 .linha > div:nth-child(1) {
     display: flex;
     justify-content: center;
@@ -203,18 +206,15 @@ strong {
 }
 
 .linha input {
-    max-width: 100%;
-    height: 100%;
-    padding: 0;
     text-align: center;
 }
 
 input[readonly]:focus {
-    border-bottom: none !important;
+    border-bottom: 1px solid var(--cinza4) !important;
 }
 
-
 /* GRADE INTERMÉDIA */
+
 .grade-intermedia {
     display: grid;
     grid-template-columns: 18px 370px 604px;
@@ -237,27 +237,27 @@ input[readonly]:focus {
 .linha.b1 > div:nth-child(1),
 .linha.b1 > div:nth-child(2) {
     margin-top: -1px;
-    border-top: 1px solid #444;
+    border-top: 1px solid var(--cinza4);
 }
 
-.linha.b4 div,
-.linha.b4 input , 
-.linha.b9 div,
-.linha.b9 input {
-    background-color: #ddd;
+.linha.b4 > *, 
+.linha.b9 > * {
+    background-color: var(--cinza13);
 }
 
-/*** Coluna de Entradas e Saidas  */
+/* COLUNA DE ENTRADAS E SAÍDAS  */
+
 .coluna-de-entradas-e-saidas {
     grid-row: 2;
     display: grid;
     grid-template-rows: calc(33.78px * 4) 1fr;
-    border: 1px solid #444;
+    border: 1px solid var(--cinza4);
     border-right: none;
     margin-top: -1px;
 }
+
 .coluna-de-entradas-e-saidas div:nth-child(1) {
-    border-bottom: 1px solid #444;
+    border-bottom: 1px solid var(--cinza4);
 }
 
 .coluna-de-entradas-e-saidas div {
@@ -273,15 +273,17 @@ input[readonly]:focus {
 }
 
 /* GRADE INFERIOR */
+
 .grade-inferior {
     margin-top: 4px;
 }
 
-.grade-inferior .linha.b10 > div {
-    border-top: 1px solid #444;
+.grade-inferior .linha.b10 > * {
+    border-top: 1px solid var(--cinza4);
 }
 
 /* GRADE EXTRA */
+
 .grade-extra {
     max-width: 974px;
     margin-top: 8px;
@@ -293,14 +295,14 @@ input[readonly]:focus {
 .grade-extra .coluna-de-cs,
 .contentor-de-conteudo {
     grid-row: 2;
-    border: 1px solid #444;
+    border: 1px solid var(--cinza4);
 }
 
 .coluna-de-cs span,
 .contentor-de-conteudo div {
     display: flex;
     align-items: center;
-    border-bottom: 1px solid #444;
+    border-bottom: 1px solid var(--cinza4);
 }
 
 .coluna-de-cs span:last-child,
@@ -326,7 +328,7 @@ input[readonly]:focus {
 }
 
 .grade-extra .coluna-de-total {
-    border: 1px solid #444;
+    border: 1px solid var(--cinza4);
 }
 
 .grade-extra .coluna-de-total {
@@ -336,7 +338,7 @@ input[readonly]:focus {
 
 .grade-extra .coluna-de-total > div {
     min-height: 33.77px;
-    border-bottom: 1px solid #444;
+    border-bottom: 1px solid var(--cinza4);
     display: flex;
 }
 
@@ -345,6 +347,7 @@ input[readonly]:focus {
 }
 
 /* TITULO DA COLUNA */
+
 .grade-extra .coluna-de-total .header {
     min-height: 18px;
     justify-content: center;
@@ -355,15 +358,16 @@ input[readonly]:focus {
     min-height: 100%;
 }
 
-
 /* INPUTS */
+
 .coluna-de-total div input {
     flex: 1;
     padding: 2px;
     text-align: center;
 }
 
-/* Coluna Intermédia */
+/* COLUNA INTERMÉDIA */
+
 .grade-extra.intermedia {
     grid-template-columns: 50px calc(320px + 402px) repeat(2, 100px);
 }
@@ -381,7 +385,8 @@ input[readonly]:focus {
     width: 100%;
 }
 
-/* Linha de Assinatura */
+/* LINHA DE ASSINATURA */
+
 .linha-de-assinatura {
     width: 100%;
     max-width: 974px;
@@ -400,17 +405,19 @@ input[readonly]:focus {
 
 .linha-de-assinatura div input,
 .linha-de-assinatura div input[type=date]:focus {
-    border-bottom: 1px solid #444;
+    border-bottom: 1px solid var(--cinza4);
     min-width: 200px;
     text-align: center;
 }
 
+/* CLASSES MANIPULÁVEIS COM JS */
 
-/** Rodapé **/
-
-footer {
-    background-color: #ddd;
+input.font11 {
+    letter-spacing: -0.3px !important;
 }
 
-
+input.font10 {
+    font-size: 0.68125rem !important;
+    letter-spacing: -0.5px;
+}
 

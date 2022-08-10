@@ -1,1 +1,0 @@
-function somarCasos(b,c){let a=0;for(let d of b)a+=Number(d.value);c.value=a}

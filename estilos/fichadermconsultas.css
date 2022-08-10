@@ -1,0 +1,230 @@
+
+/* FORMATAÇÃO GERAL */
+
+input {
+    border-bottom: 1px solid var(--cinza4);
+}
+
+/* FICHA */
+
+.contentor-da-ficha {
+    display: grid;
+    grid-template-columns: 20px 90px 228px repeat(19, 50px);
+}
+
+.cabecalho-da-ficha {
+    grid-column: 3/23;  
+    position: -webkit-sticky;
+	position: sticky;
+	top: -36px;
+	background-color: var(--white)
+}
+
+.cabecalho-da-ficha h1 {
+    font-size: 24px;
+    line-height: 1.5;
+    margin-left: 227px;
+}
+
+.cabecalho-da-ficha h1 input {
+    width: 364px;
+    font-size: 16px;
+}
+
+.cabecalho-da-ficha span {
+    border-right: 1px solid var(--cinza8);
+    border-top: 1px solid var(--cinza8);
+}
+
+.cabecalho-da-ficha .linha-de-enumeracao-das-colunas,
+.cabecalho-da-ficha .linha-de-sexo {
+    display: grid;
+    grid-template-columns: 228px repeat(19, 50px);
+    grid-template-rows: 24px;
+    text-align: center;
+}
+
+.cabecalho-da-ficha .linha-de-enumeracao-das-colunas {
+    grid-template-rows: 18px;
+}
+
+.linha-de-enumeracao-das-colunas .contentor-de-mes {
+    text-align: left;
+}
+
+.linha-de-enumeracao-das-colunas .contentor-de-mes input {
+    width: 84%;
+    font-weight: bold;
+    border-bottom: none;
+}
+
+.linha-de-enumeracao-das-colunas span {
+    background-color: var(--cinza4);
+    color: var(--cinza13);
+    border-color: var(--cinza10);
+}
+
+.linha-de-enumeracao-das-colunas span.marginleft--1 {
+    margin-left: -1px;
+}
+
+.linha-de-enumeracao-das-colunas span:last-child {
+    border-right: none;
+}
+
+/* LINHA DE FAIXAS ETÁRIAS */
+
+.cabecalho-da-ficha .linha-de-faixas-etarias {
+    display: grid;
+    grid-template-columns: 228px repeat(9, 100px) 50px;
+    grid-template-rows: 24px;
+    text-align: center;
+}
+
+.linha-de-faixas-etarias span:nth-child(1),
+.linha-de-sexo span:nth-child(1) {
+    border-left: 1px solid var(--cinza8);
+}
+
+/* LINHA DE SEXO */
+.linha-de-sexo span.sem-borda-superior {
+    border-top: none;
+}
+
+/* BORDA ESCURA */
+
+.borda-escura {
+    grid-row: 2;
+    grid-column: 1/23;
+    width: 100%;
+    height: 10px;
+    background-color: var(--cinza4);
+}
+
+/* FORMATAÇÃO COMUM */
+.coluna-de-enumeracao-das-linhas,
+.coluna-de-titulos-das-secoes-das-linhas,
+.coluna-de-consultas-e-diagnosticos,
+.coluna-de-inputs {
+    grid-row: 3;
+}
+
+.coluna-de-enumeracao-das-linhas,
+.coluna-de-consultas-e-diagnosticos,
+.coluna-de-inputs {
+    display: grid;
+    grid-template-rows: repeat(53, 24px);
+}
+
+.cabecalho-da-ficha span,
+.coluna-de-enumeracao-das-linhas span,
+.coluna-de-titulos-das-secoes-das-linhas div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.coluna-de-enumeracao-das-linhas span {
+    background-color: var(--cinza4);
+    color: var(--cinza13);
+    border: 1px solid var(--cinza8);
+    border-bottom-color: var(--cinza10);
+    border-top: none;
+}
+
+/* SEGUNDA COLUNA DA FICHA - TÍTULOS DA SECÇÕES DAS LINHAS */
+
+.coluna-de-titulos-das-secoes-das-linhas {
+    display: grid;
+    grid-template-rows: calc(24px*3) calc(24px*4) 1fr calc(24px*6) repeat(2, calc(24px*3));
+}
+
+.coluna-de-titulos-das-secoes-das-linhas div {
+    border-bottom: 1px solid var(--cinza8);
+}
+
+.coluna-de-titulos-das-secoes-das-linhas div span {
+    text-align: center;
+    font-weight: bold;
+    transform: rotate(270deg);
+}
+
+/* COLUNA DE CONSULTAS E DIAGNÓSTICOS */
+
+.coluna-de-consultas-e-diagnosticos {
+    border-left: 1px solid var(--cinza8);
+    border-right: 1px solid var(--cinza8);
+}
+
+.coluna-de-consultas-e-diagnosticos span {
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid var(--cinza8);
+    padding-left: 2px;
+    padding-right: 1px;
+}
+
+/* COLUNAS DE CÉLULAS DE INSERÇÃO DE DADOS */
+
+.coluna-de-inputs {
+    grid-template-columns: 50px;
+}
+
+.coluna-de-inputs input {
+    border-bottom: 1px solid var(--cinza8);
+    border-right: 1px solid var(--cinza8);
+    text-align: center;
+}
+
+.coluna-de-inputs input[readonly]:focus {
+    border-bottom: 1px solid var(--cinza8) !important;
+}
+
+/* LINHA DE ASSINATURA */
+
+.linha-de-assinatura {
+    grid-row: 4;
+    grid-column: 1/9;
+    display: flex;
+    flex-direction: column;
+}
+
+.linha-de-assinatura input {
+    font-weight: bold;
+    border-bottom: 1px solid var(--cinza4);
+}
+
+.linha-de-assinatura input[type=date]:focus {
+    border-bottom: 1px solid var(--cinza4) !important;
+}
+
+.linha-de-assinatura .contentor-do-nome-do-profissional {
+    line-height: 4;
+}
+
+.linha-de-assinatura .contentor-do-nome-do-profissional input {
+    width: 312px;
+}
+
+@-moz-document url-prefix() {
+    .linha-de-assinatura .contentor-do-nome-do-profissional input {
+        width: 305px;
+    }
+}
+
+.linha-de-assinatura div.linha-de-categoria-e-data {
+    display: flex;
+    justify-content: space-between;
+}
+
+.linha-de-categoria-e-data input#categoria {
+    width: 276px;
+}
+
+/* ELEMENTO(S) E CLASSE(S) MANIPULÁVEL COM JAVASCRIPT */
+
+.contentor-da-ficha span.fundo-laranja {
+    background-color: var(--orange) !important;
+    color: var(--white);
+    transition-duration: 150ms;
+}

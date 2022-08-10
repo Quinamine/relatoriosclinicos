@@ -1,9 +1,1 @@
-function somarCelulas(celulasPorSomar, celulaDeSaida) {
-    let soma = 0;
-
-    for (const celula of celulasPorSomar) {
-        soma += Number(celula.value);
-    }
-
-    celulaDeSaida.value = soma; 
-}
+function somarCelulas(b,c){let a=0;for(let d of b)a+=Number(d.value);c.value=a}
